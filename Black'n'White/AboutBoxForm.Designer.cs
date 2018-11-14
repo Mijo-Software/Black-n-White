@@ -84,7 +84,7 @@
       this.labelProductName.MaximumSize = new System.Drawing.Size(0, 17);
       this.labelProductName.Name = "labelProductName";
       this.labelProductName.Size = new System.Drawing.Size(282, 17);
-      this.labelProductName.TabIndex = 19;
+      this.labelProductName.TabIndex = 0;
       this.labelProductName.Text = "Produktname";
       this.labelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       // 
@@ -96,7 +96,7 @@
       this.labelVersion.MaximumSize = new System.Drawing.Size(0, 17);
       this.labelVersion.Name = "labelVersion";
       this.labelVersion.Size = new System.Drawing.Size(282, 17);
-      this.labelVersion.TabIndex = 0;
+      this.labelVersion.TabIndex = 1;
       this.labelVersion.Text = "Version";
       this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       // 
@@ -108,7 +108,7 @@
       this.labelCopyright.MaximumSize = new System.Drawing.Size(0, 17);
       this.labelCopyright.Name = "labelCopyright";
       this.labelCopyright.Size = new System.Drawing.Size(282, 17);
-      this.labelCopyright.TabIndex = 21;
+      this.labelCopyright.TabIndex = 2;
       this.labelCopyright.Text = "Copyright";
       this.labelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       // 
@@ -120,7 +120,7 @@
       this.labelCompanyName.MaximumSize = new System.Drawing.Size(0, 17);
       this.labelCompanyName.Name = "labelCompanyName";
       this.labelCompanyName.Size = new System.Drawing.Size(282, 17);
-      this.labelCompanyName.TabIndex = 22;
+      this.labelCompanyName.TabIndex = 3;
       this.labelCompanyName.Text = "Firmenname";
       this.labelCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       // 
@@ -134,7 +134,7 @@
       this.textBoxDescription.ReadOnly = true;
       this.textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
       this.textBoxDescription.Size = new System.Drawing.Size(282, 69);
-      this.textBoxDescription.TabIndex = 23;
+      this.textBoxDescription.TabIndex = 4;
       this.textBoxDescription.TabStop = false;
       this.textBoxDescription.Text = "Beschreibung";
       // 
@@ -145,7 +145,7 @@
       this.okButton.Location = new System.Drawing.Point(278, 151);
       this.okButton.Name = "okButton";
       this.okButton.Size = new System.Drawing.Size(75, 23);
-      this.okButton.TabIndex = 24;
+      this.okButton.TabIndex = 0;
       this.okButton.Text = "&OK";
       // 
       // AboutBoxForm
@@ -164,6 +164,7 @@
       this.ShowInTaskbar = false;
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
       this.Text = "AboutBoxForm";
+      this.Load += new System.EventHandler(this.AboutBoxForm_Load);
       this.tableLayoutPanel.ResumeLayout(false);
       this.tableLayoutPanel.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();

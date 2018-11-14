@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Resources;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -6,7 +7,7 @@ using System.Runtime.InteropServices;
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die mit einer Assembly verknüpft sind.
 [assembly: AssemblyTitle("Black'n'White")]
-[assembly: AssemblyDescription("Black'n'White ist ein kleines Logikspiel, bei dem als 9 Felder in eine einheitlich Farbe gebracht werden soll - entweder schwarz oder weiß.\r\n\r\nWenn man auf ein Feld klickt, so verändert sich die Farbe des Feldes in die andere Farbe. Das geschieht zugleich auch bei den Feldern links, rechts, unterhalb und oberhalb.\r\n\r\nZiel ist es dabei, mit möglichst wenig Klicks & Ticks, das Spiel zu lösen.\r\n\r\nJede Spielposition ist eindeutig lösbar.")]
+[assembly: AssemblyDescription("Black'n'White ist ein kleines Logikspiel, bei dem alle Felder in eine einheitlich Farbe gebracht werden soll - entweder schwarz oder weiß.\r\n\r\nWenn man auf ein Feld klickt, so verändert sich die Farbe des Feldes in die entgegen gesetzte Farbe. Das geschieht zugleich auch bei den Nachbarfeldern. Je nach Einstellung werden dabei die linearen Nachbarfelder oder die diagonalen Nachbarfelder geändert.\r\n\r\nZiel ist es dabei, mit möglichst wenig Klicks & Ticks, das Spiel zu lösen.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Mijo Software")]
 [assembly: AssemblyProduct("Black'n'White")]
@@ -32,5 +33,7 @@ using System.Runtime.InteropServices;
 // Sie können alle Werte angeben oder die standardmäßigen Build- und Revisionsnummern 
 // übernehmen, indem Sie "*" eingeben:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.1.1.4")]
-[assembly: AssemblyFileVersion("1.1.1.4")]
+[assembly: AssemblyVersion("2.0.0.5")]
+[assembly: AssemblyFileVersion("2.0.0.5")]
+[assembly: NeutralResourcesLanguage("de-DE")]
+
