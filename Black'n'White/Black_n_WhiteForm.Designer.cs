@@ -75,7 +75,7 @@
       this.toolStripMenuItemNeighbourhoodDiagonal = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItemNeighbourhoodCombined = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-      this.toolStripMenuItemCentered = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItemNeighbourhoodCentered = new System.Windows.Forms.ToolStripMenuItem();
       this.toolTip = new System.Windows.Forms.ToolTip(this.components);
       this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
       this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
@@ -643,7 +643,6 @@
             this.toolStripMenuItemGamesize4x4,
             this.toolStripMenuItemGamesize5x5});
       this.contextMenuStripGamesize.Name = "contextMenuStripGamesize";
-      this.contextMenuStripGamesize.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
       this.contextMenuStripGamesize.ShowCheckMargin = true;
       this.contextMenuStripGamesize.ShowImageMargin = false;
       this.contextMenuStripGamesize.Size = new System.Drawing.Size(92, 70);
@@ -665,9 +664,9 @@
       this.toolStripMenuItemGamesize3x3.Size = new System.Drawing.Size(91, 22);
       this.toolStripMenuItemGamesize3x3.Text = "&3x3";
       this.toolStripMenuItemGamesize3x3.ToolTipText = "Wählt die Größe des Spielfeld von 3x3";
-      this.toolStripMenuItemGamesize3x3.Click += new System.EventHandler(this.ToolStripMenuItemGamesize3x3_Click);
-      this.toolStripMenuItemGamesize3x3.MouseEnter += new System.EventHandler(this.ToolStripMenuItemGamesize3x3_MouseEnter);
-      this.toolStripMenuItemGamesize3x3.MouseLeave += new System.EventHandler(this.ToolStripMenuItemGamesize3x3_MouseLeave);
+      this.toolStripMenuItemGamesize3x3.Click += new System.EventHandler(this.toolStripMenuItemGamesize3x3_Click);
+      this.toolStripMenuItemGamesize3x3.MouseEnter += new System.EventHandler(this.toolStripMenuItemGamesize3x3_MouseEnter);
+      this.toolStripMenuItemGamesize3x3.MouseLeave += new System.EventHandler(this.toolStripMenuItemGamesize3x3_MouseLeave);
       // 
       // toolStripMenuItemGamesize4x4
       // 
@@ -681,9 +680,9 @@
       this.toolStripMenuItemGamesize4x4.Size = new System.Drawing.Size(91, 22);
       this.toolStripMenuItemGamesize4x4.Text = "&4x4";
       this.toolStripMenuItemGamesize4x4.ToolTipText = "Wählt die Größe des Spielfeld von 4x4";
-      this.toolStripMenuItemGamesize4x4.Click += new System.EventHandler(this.ToolStripMenuItemGamesize4x4_Click);
-      this.toolStripMenuItemGamesize4x4.MouseEnter += new System.EventHandler(this.ToolStripMenuItemGamesize4x4_MouseEnter);
-      this.toolStripMenuItemGamesize4x4.MouseLeave += new System.EventHandler(this.ToolStripMenuItemGamesize4x4_MouseLeave);
+      this.toolStripMenuItemGamesize4x4.Click += new System.EventHandler(this.toolStripMenuItemGamesize4x4_Click);
+      this.toolStripMenuItemGamesize4x4.MouseEnter += new System.EventHandler(this.toolStripMenuItemGamesize4x4_MouseEnter);
+      this.toolStripMenuItemGamesize4x4.MouseLeave += new System.EventHandler(this.toolStripMenuItemGamesize4x4_MouseLeave);
       // 
       // toolStripMenuItemGamesize5x5
       // 
@@ -699,9 +698,9 @@
       this.toolStripMenuItemGamesize5x5.Size = new System.Drawing.Size(91, 22);
       this.toolStripMenuItemGamesize5x5.Text = "&5x5";
       this.toolStripMenuItemGamesize5x5.ToolTipText = "Wählt die Größe des Spielfeld von 5x5";
-      this.toolStripMenuItemGamesize5x5.Click += new System.EventHandler(this.ToolStripMenuItemGamesize5x5_Click);
-      this.toolStripMenuItemGamesize5x5.MouseEnter += new System.EventHandler(this.ToolStripMenuItemGamesize5x5_MouseEnter);
-      this.toolStripMenuItemGamesize5x5.MouseLeave += new System.EventHandler(this.ToolStripMenuItemGamesize5x5_MouseLeave);
+      this.toolStripMenuItemGamesize5x5.Click += new System.EventHandler(this.toolStripMenuItemGamesize5x5_Click);
+      this.toolStripMenuItemGamesize5x5.MouseEnter += new System.EventHandler(this.toolStripMenuItemGamesize5x5_MouseEnter);
+      this.toolStripMenuItemGamesize5x5.MouseLeave += new System.EventHandler(this.toolStripMenuItemGamesize5x5_MouseLeave);
       // 
       // labelGamesize
       // 
@@ -748,9 +747,8 @@
             this.toolStripMenuItemNeighbourhoodDiagonal,
             this.toolStripMenuItemNeighbourhoodCombined,
             this.toolStripSeparator1,
-            this.toolStripMenuItemCentered});
+            this.toolStripMenuItemNeighbourhoodCentered});
       this.contextMenuStripNeighbourhood.Name = "contextMenuStripNeighbourhood";
-      this.contextMenuStripNeighbourhood.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
       this.contextMenuStripNeighbourhood.ShowCheckMargin = true;
       this.contextMenuStripNeighbourhood.ShowImageMargin = false;
       this.contextMenuStripNeighbourhood.Size = new System.Drawing.Size(153, 120);
@@ -766,16 +764,15 @@
       this.toolStripMenuItemNeighbourhoodLinear.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
       this.toolStripMenuItemNeighbourhoodLinear.AutoToolTip = true;
       this.toolStripMenuItemNeighbourhoodLinear.Checked = true;
-      this.toolStripMenuItemNeighbourhoodLinear.CheckOnClick = true;
       this.toolStripMenuItemNeighbourhoodLinear.CheckState = System.Windows.Forms.CheckState.Checked;
       this.toolStripMenuItemNeighbourhoodLinear.DoubleClickEnabled = true;
       this.toolStripMenuItemNeighbourhoodLinear.Name = "toolStripMenuItemNeighbourhoodLinear";
       this.toolStripMenuItemNeighbourhoodLinear.Size = new System.Drawing.Size(152, 22);
       this.toolStripMenuItemNeighbourhoodLinear.Text = "&linear";
       this.toolStripMenuItemNeighbourhoodLinear.ToolTipText = "Ändert die invertierbaren Nachbar-Spielfelder auf lineare Nachbar-Spielfelder";
-      this.toolStripMenuItemNeighbourhoodLinear.Click += new System.EventHandler(this.ToolStripMenuItemNeighbourhoodLinear_Click);
-      this.toolStripMenuItemNeighbourhoodLinear.MouseEnter += new System.EventHandler(this.ToolStripMenuItemNeighbourhoodLinear_MouseEnter);
-      this.toolStripMenuItemNeighbourhoodLinear.MouseLeave += new System.EventHandler(this.ToolStripMenuItemNeighbourhoodLinear_MouseLeave);
+      this.toolStripMenuItemNeighbourhoodLinear.Click += new System.EventHandler(this.toolStripMenuItemNeighbourhoodLinear_Click);
+      this.toolStripMenuItemNeighbourhoodLinear.MouseEnter += new System.EventHandler(this.toolStripMenuItemNeighbourhoodLinear_MouseEnter);
+      this.toolStripMenuItemNeighbourhoodLinear.MouseLeave += new System.EventHandler(this.toolStripMenuItemNeighbourhoodLinear_MouseLeave);
       // 
       // toolStripMenuItemNeighbourhoodDiagonal
       // 
@@ -783,16 +780,15 @@
       this.toolStripMenuItemNeighbourhoodDiagonal.AccessibleName = "Diagonal";
       this.toolStripMenuItemNeighbourhoodDiagonal.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
       this.toolStripMenuItemNeighbourhoodDiagonal.AutoToolTip = true;
-      this.toolStripMenuItemNeighbourhoodDiagonal.CheckOnClick = true;
       this.toolStripMenuItemNeighbourhoodDiagonal.DoubleClickEnabled = true;
       this.toolStripMenuItemNeighbourhoodDiagonal.Name = "toolStripMenuItemNeighbourhoodDiagonal";
       this.toolStripMenuItemNeighbourhoodDiagonal.ShortcutKeyDisplayString = "";
       this.toolStripMenuItemNeighbourhoodDiagonal.Size = new System.Drawing.Size(152, 22);
       this.toolStripMenuItemNeighbourhoodDiagonal.Text = "&diagonal";
       this.toolStripMenuItemNeighbourhoodDiagonal.ToolTipText = "Ändert die invertierbaren Nachbar-Spielfelder auf diagonale Nachbar-Spielfelder";
-      this.toolStripMenuItemNeighbourhoodDiagonal.Click += new System.EventHandler(this.ToolStripMenuItemNeighbourhoodDiagonal_Click);
-      this.toolStripMenuItemNeighbourhoodDiagonal.MouseEnter += new System.EventHandler(this.ToolStripMenuItemNeighbourhoodDiagonal_MouseEnter);
-      this.toolStripMenuItemNeighbourhoodDiagonal.MouseLeave += new System.EventHandler(this.ToolStripMenuItemNeighbourhoodDiagonal_MouseLeave);
+      this.toolStripMenuItemNeighbourhoodDiagonal.Click += new System.EventHandler(this.toolStripMenuItemNeighbourhoodDiagonal_Click);
+      this.toolStripMenuItemNeighbourhoodDiagonal.MouseEnter += new System.EventHandler(this.toolStripMenuItemNeighbourhoodDiagonal_MouseEnter);
+      this.toolStripMenuItemNeighbourhoodDiagonal.MouseLeave += new System.EventHandler(this.toolStripMenuItemNeighbourhoodDiagonal_MouseLeave);
       // 
       // toolStripMenuItemNeighbourhoodCombined
       // 
@@ -801,16 +797,15 @@
       this.toolStripMenuItemNeighbourhoodCombined.AccessibleName = "Kombiniert";
       this.toolStripMenuItemNeighbourhoodCombined.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
       this.toolStripMenuItemNeighbourhoodCombined.AutoToolTip = true;
-      this.toolStripMenuItemNeighbourhoodCombined.CheckOnClick = true;
       this.toolStripMenuItemNeighbourhoodCombined.DoubleClickEnabled = true;
       this.toolStripMenuItemNeighbourhoodCombined.Name = "toolStripMenuItemNeighbourhoodCombined";
       this.toolStripMenuItemNeighbourhoodCombined.Size = new System.Drawing.Size(152, 22);
       this.toolStripMenuItemNeighbourhoodCombined.Text = "&kombiniert";
       this.toolStripMenuItemNeighbourhoodCombined.ToolTipText = "Ändert die invertierbaren Nachbar-Spielfelder auf lineare und diagonale Nachbar-S" +
     "pielfelder";
-      this.toolStripMenuItemNeighbourhoodCombined.Click += new System.EventHandler(this.ToolStripMenuItemNeighbourhoodCombined_Click);
-      this.toolStripMenuItemNeighbourhoodCombined.MouseEnter += new System.EventHandler(this.ToolStripMenuItemNeighbourhoodCombined_MouseEnter);
-      this.toolStripMenuItemNeighbourhoodCombined.MouseLeave += new System.EventHandler(this.ToolStripMenuItemNeighbourhoodCombined_MouseLeave);
+      this.toolStripMenuItemNeighbourhoodCombined.Click += new System.EventHandler(this.toolStripMenuItemNeighbourhoodCombined_Click);
+      this.toolStripMenuItemNeighbourhoodCombined.MouseEnter += new System.EventHandler(this.toolStripMenuItemNeighbourhoodCombined_MouseEnter);
+      this.toolStripMenuItemNeighbourhoodCombined.MouseLeave += new System.EventHandler(this.toolStripMenuItemNeighbourhoodCombined_MouseLeave);
       // 
       // toolStripSeparator1
       // 
@@ -822,22 +817,22 @@
       this.toolStripSeparator1.MouseEnter += new System.EventHandler(this.toolStripSeparator1_MouseEnter);
       this.toolStripSeparator1.MouseLeave += new System.EventHandler(this.toolStripSeparator1_MouseLeave);
       // 
-      // toolStripMenuItemCentered
+      // toolStripMenuItemNeighbourhoodCentered
       // 
-      this.toolStripMenuItemCentered.AccessibleDescription = "Ändert, ob das eigene Feld invertiert werden soll";
-      this.toolStripMenuItemCentered.AccessibleName = "Zentriert";
-      this.toolStripMenuItemCentered.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-      this.toolStripMenuItemCentered.AutoToolTip = true;
-      this.toolStripMenuItemCentered.Checked = true;
-      this.toolStripMenuItemCentered.CheckOnClick = true;
-      this.toolStripMenuItemCentered.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.toolStripMenuItemCentered.DoubleClickEnabled = true;
-      this.toolStripMenuItemCentered.Name = "toolStripMenuItemCentered";
-      this.toolStripMenuItemCentered.Size = new System.Drawing.Size(152, 22);
-      this.toolStripMenuItemCentered.Text = "&zentriert";
-      this.toolStripMenuItemCentered.ToolTipText = "Ändert, ob das eigene Feld invertiert werden soll";
-      this.toolStripMenuItemCentered.MouseEnter += new System.EventHandler(this.toolStripMenuItemCentered_MouseEnter);
-      this.toolStripMenuItemCentered.MouseLeave += new System.EventHandler(this.toolStripMenuItemCentered_MouseLeave);
+      this.toolStripMenuItemNeighbourhoodCentered.AccessibleDescription = "Ändert, ob das eigene Feld invertiert werden soll";
+      this.toolStripMenuItemNeighbourhoodCentered.AccessibleName = "Zentriert";
+      this.toolStripMenuItemNeighbourhoodCentered.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
+      this.toolStripMenuItemNeighbourhoodCentered.AutoToolTip = true;
+      this.toolStripMenuItemNeighbourhoodCentered.Checked = true;
+      this.toolStripMenuItemNeighbourhoodCentered.CheckOnClick = true;
+      this.toolStripMenuItemNeighbourhoodCentered.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.toolStripMenuItemNeighbourhoodCentered.DoubleClickEnabled = true;
+      this.toolStripMenuItemNeighbourhoodCentered.Name = "toolStripMenuItemNeighbourhoodCentered";
+      this.toolStripMenuItemNeighbourhoodCentered.Size = new System.Drawing.Size(152, 22);
+      this.toolStripMenuItemNeighbourhoodCentered.Text = "&zentriert";
+      this.toolStripMenuItemNeighbourhoodCentered.ToolTipText = "Ändert, ob das eigene Feld invertiert werden soll";
+      this.toolStripMenuItemNeighbourhoodCentered.MouseEnter += new System.EventHandler(this.toolStripMenuItemNeighbourhoodCentered_MouseEnter);
+      this.toolStripMenuItemNeighbourhoodCentered.MouseLeave += new System.EventHandler(this.toolStripMenuItemNeighbourhoodCentered_MouseLeave);
       // 
       // backgroundWorker
       // 
@@ -1011,7 +1006,7 @@
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemNeighbourhoodDiagonal;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemNeighbourhoodCombined;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCentered;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemNeighbourhoodCentered;
     private System.Windows.Forms.ToolTip toolTip;
     private System.ComponentModel.BackgroundWorker backgroundWorker;
     private System.Windows.Forms.OpenFileDialog openFileDialog;
