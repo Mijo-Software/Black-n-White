@@ -100,8 +100,5 @@ namespace Black_n_White
     }
     #endregion
 
-    private void AboutBoxForm_Load(object sender, EventArgs e)
-    {
-    }
   }
 }

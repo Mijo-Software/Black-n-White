@@ -48,112 +48,112 @@ namespace Black_n_White
       intWhites = 0;
 
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField1.BackColor = Color.Black; else pictureBoxField1.BackColor = Color.White;
+      if (r % 2 == 0) buttonField1.BackColor = Color.Black; else buttonField1.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField2.BackColor = Color.Black; else pictureBoxField2.BackColor = Color.White;
+      if (r % 2 == 0) buttonField2.BackColor = Color.Black; else buttonField2.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField3.BackColor = Color.Black; else pictureBoxField3.BackColor = Color.White;
+      if (r % 2 == 0) buttonField3.BackColor = Color.Black; else buttonField3.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField4.BackColor = Color.Black; else pictureBoxField4.BackColor = Color.White;
+      if (r % 2 == 0) buttonField4.BackColor = Color.Black; else buttonField4.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField5.BackColor = Color.Black; else pictureBoxField5.BackColor = Color.White;
+      if (r % 2 == 0) buttonField5.BackColor = Color.Black; else buttonField5.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField6.BackColor = Color.Black; else pictureBoxField6.BackColor = Color.White;
+      if (r % 2 == 0) buttonField6.BackColor = Color.Black; else buttonField6.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField7.BackColor = Color.Black; else pictureBoxField7.BackColor = Color.White;
+      if (r % 2 == 0) buttonField7.BackColor = Color.Black; else buttonField7.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField8.BackColor = Color.Black; else pictureBoxField8.BackColor = Color.White;
+      if (r % 2 == 0) buttonField8.BackColor = Color.Black; else buttonField8.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField9.BackColor = Color.Black; else pictureBoxField9.BackColor = Color.White;
+      if (r % 2 == 0) buttonField9.BackColor = Color.Black; else buttonField9.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField10.BackColor = Color.Black; else pictureBoxField10.BackColor = Color.White;
+      if (r % 2 == 0) buttonField10.BackColor = Color.Black; else buttonField10.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField11.BackColor = Color.Black; else pictureBoxField11.BackColor = Color.White;
+      if (r % 2 == 0) buttonField11.BackColor = Color.Black; else buttonField11.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField12.BackColor = Color.Black; else pictureBoxField12.BackColor = Color.White;
+      if (r % 2 == 0) buttonField12.BackColor = Color.Black; else buttonField12.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField13.BackColor = Color.Black; else pictureBoxField13.BackColor = Color.White;
+      if (r % 2 == 0) buttonField13.BackColor = Color.Black; else buttonField13.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField14.BackColor = Color.Black; else pictureBoxField14.BackColor = Color.White;
+      if (r % 2 == 0) buttonField14.BackColor = Color.Black; else buttonField14.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField15.BackColor = Color.Black; else pictureBoxField15.BackColor = Color.White;
+      if (r % 2 == 0) buttonField15.BackColor = Color.Black; else buttonField15.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField16.BackColor = Color.Black; else pictureBoxField16.BackColor = Color.White;
+      if (r % 2 == 0) buttonField16.BackColor = Color.Black; else buttonField16.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField17.BackColor = Color.Black; else pictureBoxField17.BackColor = Color.White;
+      if (r % 2 == 0) buttonField17.BackColor = Color.Black; else buttonField17.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField18.BackColor = Color.Black; else pictureBoxField18.BackColor = Color.White;
+      if (r % 2 == 0) buttonField18.BackColor = Color.Black; else buttonField18.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField19.BackColor = Color.Black; else pictureBoxField19.BackColor = Color.White;
+      if (r % 2 == 0) buttonField19.BackColor = Color.Black; else buttonField19.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField20.BackColor = Color.Black; else pictureBoxField20.BackColor = Color.White;
+      if (r % 2 == 0) buttonField20.BackColor = Color.Black; else buttonField20.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField21.BackColor = Color.Black; else pictureBoxField21.BackColor = Color.White;
+      if (r % 2 == 0) buttonField21.BackColor = Color.Black; else buttonField21.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField22.BackColor = Color.Black; else pictureBoxField22.BackColor = Color.White;
+      if (r % 2 == 0) buttonField22.BackColor = Color.Black; else buttonField22.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField23.BackColor = Color.Black; else pictureBoxField23.BackColor = Color.White;
+      if (r % 2 == 0) buttonField23.BackColor = Color.Black; else buttonField23.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField24.BackColor = Color.Black; else pictureBoxField24.BackColor = Color.White;
+      if (r % 2 == 0) buttonField24.BackColor = Color.Black; else buttonField24.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField25.BackColor = Color.Black; else pictureBoxField25.BackColor = Color.White;
+      if (r % 2 == 0) buttonField25.BackColor = Color.Black; else buttonField25.BackColor = Color.White;
 
       if (intGamesize == 3)
       {
-        pictureBoxField4.Hide();
-        pictureBoxField5.Hide();
-        pictureBoxField9.Hide();
-        pictureBoxField10.Hide();
-        pictureBoxField14.Hide();
-        pictureBoxField15.Hide();
-        pictureBoxField16.Hide();
-        pictureBoxField17.Hide();
-        pictureBoxField18.Hide();
-        pictureBoxField19.Hide();
-        pictureBoxField20.Hide();
-        pictureBoxField21.Hide();
-        pictureBoxField22.Hide();
-        pictureBoxField23.Hide();
-        pictureBoxField24.Hide();
-        pictureBoxField25.Hide();
+        buttonField4.Hide();
+        buttonField5.Hide();
+        buttonField9.Hide();
+        buttonField10.Hide();
+        buttonField14.Hide();
+        buttonField15.Hide();
+        buttonField16.Hide();
+        buttonField17.Hide();
+        buttonField18.Hide();
+        buttonField19.Hide();
+        buttonField20.Hide();
+        buttonField21.Hide();
+        buttonField22.Hide();
+        buttonField23.Hide();
+        buttonField24.Hide();
+        buttonField25.Hide();
       }
       else if (intGamesize == 4)
       {
-        pictureBoxField4.Show();
-        pictureBoxField5.Hide();
-        pictureBoxField9.Show();
-        pictureBoxField10.Hide();
-        pictureBoxField14.Show();
-        pictureBoxField15.Hide();
-        pictureBoxField16.Show();
-        pictureBoxField17.Show();
-        pictureBoxField18.Show();
-        pictureBoxField19.Show();
-        pictureBoxField20.Hide();
-        pictureBoxField21.Hide();
-        pictureBoxField22.Hide();
-        pictureBoxField23.Hide();
-        pictureBoxField24.Hide();
-        pictureBoxField25.Hide();
+        buttonField4.Show();
+        buttonField5.Hide();
+        buttonField9.Show();
+        buttonField10.Hide();
+        buttonField14.Show();
+        buttonField15.Hide();
+        buttonField16.Show();
+        buttonField17.Show();
+        buttonField18.Show();
+        buttonField19.Show();
+        buttonField20.Hide();
+        buttonField21.Hide();
+        buttonField22.Hide();
+        buttonField23.Hide();
+        buttonField24.Hide();
+        buttonField25.Hide();
       }
       else if (intGamesize == 5)
       {
-        pictureBoxField4.Show();
-        pictureBoxField5.Show();
-        pictureBoxField9.Show();
-        pictureBoxField10.Show();
-        pictureBoxField14.Show();
-        pictureBoxField15.Show();
-        pictureBoxField16.Show();
-        pictureBoxField17.Show();
-        pictureBoxField18.Show();
-        pictureBoxField19.Show();
-        pictureBoxField20.Show();
-        pictureBoxField21.Show();
-        pictureBoxField22.Show();
-        pictureBoxField23.Show();
-        pictureBoxField24.Show();
-        pictureBoxField25.Show();
+        buttonField4.Show();
+        buttonField5.Show();
+        buttonField9.Show();
+        buttonField10.Show();
+        buttonField14.Show();
+        buttonField15.Show();
+        buttonField16.Show();
+        buttonField17.Show();
+        buttonField18.Show();
+        buttonField19.Show();
+        buttonField20.Show();
+        buttonField21.Show();
+        buttonField22.Show();
+        buttonField23.Show();
+        buttonField24.Show();
+        buttonField25.Show();
       }
 
       labelClicks.Text = "Klicks: " + intClicks;
@@ -168,24 +168,24 @@ namespace Black_n_White
       if (intGamesize == 3)
       {
         if (
-          (pictureBoxField1.BackColor == Color.Black &&
-          pictureBoxField2.BackColor == Color.Black &&
-          pictureBoxField3.BackColor == Color.Black &&
-          pictureBoxField6.BackColor == Color.Black &&
-          pictureBoxField7.BackColor == Color.Black &&
-          pictureBoxField8.BackColor == Color.Black &&
-          pictureBoxField11.BackColor == Color.Black &&
-          pictureBoxField12.BackColor == Color.Black &&
-          pictureBoxField13.BackColor == Color.Black) ||
-          (pictureBoxField1.BackColor == Color.White &&
-          pictureBoxField2.BackColor == Color.White &&
-          pictureBoxField3.BackColor == Color.White &&
-          pictureBoxField6.BackColor == Color.White &&
-          pictureBoxField7.BackColor == Color.White &&
-          pictureBoxField8.BackColor == Color.White &&
-          pictureBoxField11.BackColor == Color.White &&
-          pictureBoxField12.BackColor == Color.White &&
-          pictureBoxField13.BackColor == Color.White)
+          (buttonField1.BackColor == Color.Black &&
+          buttonField2.BackColor == Color.Black &&
+          buttonField3.BackColor == Color.Black &&
+          buttonField6.BackColor == Color.Black &&
+          buttonField7.BackColor == Color.Black &&
+          buttonField8.BackColor == Color.Black &&
+          buttonField11.BackColor == Color.Black &&
+          buttonField12.BackColor == Color.Black &&
+          buttonField13.BackColor == Color.Black) ||
+          (buttonField1.BackColor == Color.White &&
+          buttonField2.BackColor == Color.White &&
+          buttonField3.BackColor == Color.White &&
+          buttonField6.BackColor == Color.White &&
+          buttonField7.BackColor == Color.White &&
+          buttonField8.BackColor == Color.White &&
+          buttonField11.BackColor == Color.White &&
+          buttonField12.BackColor == Color.White &&
+          buttonField13.BackColor == Color.White)
         )
         {
           timer.Stop();
@@ -196,45 +196,45 @@ namespace Black_n_White
           result = MessageBox.Show(message, caption, buttons);
           InitializeGame();
           boolIsGameRunning = false;
-          buttonNewGameSize.Enabled = true;
+          buttonNewGamesize.Enabled = true;
           buttonOptions.Enabled = true;
         }
       }
       else if (intGamesize == 4)
       {
         if (
-          (pictureBoxField1.BackColor == Color.Black &&
-          pictureBoxField2.BackColor == Color.Black &&
-          pictureBoxField3.BackColor == Color.Black &&
-          pictureBoxField4.BackColor == Color.Black &&
-          pictureBoxField6.BackColor == Color.Black &&
-          pictureBoxField7.BackColor == Color.Black &&
-          pictureBoxField8.BackColor == Color.Black &&
-          pictureBoxField9.BackColor == Color.Black &&
-          pictureBoxField11.BackColor == Color.Black &&
-          pictureBoxField12.BackColor == Color.Black &&
-          pictureBoxField13.BackColor == Color.Black &&
-          pictureBoxField14.BackColor == Color.Black &&
-          pictureBoxField16.BackColor == Color.Black &&
-          pictureBoxField17.BackColor == Color.Black &&
-          pictureBoxField18.BackColor == Color.Black &&
-          pictureBoxField19.BackColor == Color.Black) ||
-          (pictureBoxField1.BackColor == Color.White &&
-          pictureBoxField2.BackColor == Color.White &&
-          pictureBoxField3.BackColor == Color.White &&
-          pictureBoxField4.BackColor == Color.White &&
-          pictureBoxField6.BackColor == Color.White &&
-          pictureBoxField7.BackColor == Color.White &&
-          pictureBoxField8.BackColor == Color.White &&
-          pictureBoxField9.BackColor == Color.White &&
-          pictureBoxField11.BackColor == Color.White &&
-          pictureBoxField12.BackColor == Color.White &&
-          pictureBoxField13.BackColor == Color.White &&
-          pictureBoxField14.BackColor == Color.White &&
-          pictureBoxField16.BackColor == Color.White &&
-          pictureBoxField17.BackColor == Color.White &&
-          pictureBoxField18.BackColor == Color.White &&
-          pictureBoxField19.BackColor == Color.White)
+          (buttonField1.BackColor == Color.Black &&
+          buttonField2.BackColor == Color.Black &&
+          buttonField3.BackColor == Color.Black &&
+          buttonField4.BackColor == Color.Black &&
+          buttonField6.BackColor == Color.Black &&
+          buttonField7.BackColor == Color.Black &&
+          buttonField8.BackColor == Color.Black &&
+          buttonField9.BackColor == Color.Black &&
+          buttonField11.BackColor == Color.Black &&
+          buttonField12.BackColor == Color.Black &&
+          buttonField13.BackColor == Color.Black &&
+          buttonField14.BackColor == Color.Black &&
+          buttonField16.BackColor == Color.Black &&
+          buttonField17.BackColor == Color.Black &&
+          buttonField18.BackColor == Color.Black &&
+          buttonField19.BackColor == Color.Black) ||
+          (buttonField1.BackColor == Color.White &&
+          buttonField2.BackColor == Color.White &&
+          buttonField3.BackColor == Color.White &&
+          buttonField4.BackColor == Color.White &&
+          buttonField6.BackColor == Color.White &&
+          buttonField7.BackColor == Color.White &&
+          buttonField8.BackColor == Color.White &&
+          buttonField9.BackColor == Color.White &&
+          buttonField11.BackColor == Color.White &&
+          buttonField12.BackColor == Color.White &&
+          buttonField13.BackColor == Color.White &&
+          buttonField14.BackColor == Color.White &&
+          buttonField16.BackColor == Color.White &&
+          buttonField17.BackColor == Color.White &&
+          buttonField18.BackColor == Color.White &&
+          buttonField19.BackColor == Color.White)
         )
         {
           timer.Stop();
@@ -245,63 +245,63 @@ namespace Black_n_White
           result = MessageBox.Show(message, caption, buttons);
           InitializeGame();
           boolIsGameRunning = false;
-          buttonNewGameSize.Enabled = true;
+          buttonNewGamesize.Enabled = true;
           buttonOptions.Enabled = true;
         }
       }
       if (intGamesize == 5)
       {
         if (
-          (pictureBoxField1.BackColor == Color.Black &&
-          pictureBoxField2.BackColor == Color.Black &&
-          pictureBoxField3.BackColor == Color.Black &&
-          pictureBoxField4.BackColor == Color.Black &&
-          pictureBoxField5.BackColor == Color.Black &&
-          pictureBoxField6.BackColor == Color.Black &&
-          pictureBoxField7.BackColor == Color.Black &&
-          pictureBoxField8.BackColor == Color.Black &&
-          pictureBoxField9.BackColor == Color.Black &&
-          pictureBoxField10.BackColor == Color.Black &&
-          pictureBoxField11.BackColor == Color.Black &&
-          pictureBoxField12.BackColor == Color.Black &&
-          pictureBoxField13.BackColor == Color.Black &&
-          pictureBoxField14.BackColor == Color.Black &&
-          pictureBoxField15.BackColor == Color.Black &&
-          pictureBoxField16.BackColor == Color.Black &&
-          pictureBoxField17.BackColor == Color.Black &&
-          pictureBoxField18.BackColor == Color.Black &&
-          pictureBoxField19.BackColor == Color.Black &&
-          pictureBoxField20.BackColor == Color.Black &&
-          pictureBoxField21.BackColor == Color.Black &&
-          pictureBoxField22.BackColor == Color.Black &&
-          pictureBoxField23.BackColor == Color.Black &&
-          pictureBoxField24.BackColor == Color.Black &&
-          pictureBoxField25.BackColor == Color.Black) ||
-          (pictureBoxField1.BackColor == Color.White &&
-          pictureBoxField2.BackColor == Color.White &&
-          pictureBoxField3.BackColor == Color.White &&
-          pictureBoxField4.BackColor == Color.White &&
-          pictureBoxField5.BackColor == Color.White &&
-          pictureBoxField6.BackColor == Color.White &&
-          pictureBoxField7.BackColor == Color.White &&
-          pictureBoxField8.BackColor == Color.White &&
-          pictureBoxField9.BackColor == Color.White &&
-          pictureBoxField10.BackColor == Color.White &&
-          pictureBoxField11.BackColor == Color.White &&
-          pictureBoxField12.BackColor == Color.White &&
-          pictureBoxField13.BackColor == Color.White &&
-          pictureBoxField14.BackColor == Color.White &&
-          pictureBoxField15.BackColor == Color.White &&
-          pictureBoxField16.BackColor == Color.White &&
-          pictureBoxField17.BackColor == Color.White &&
-          pictureBoxField18.BackColor == Color.White &&
-          pictureBoxField19.BackColor == Color.White &&
-          pictureBoxField20.BackColor == Color.White &&
-          pictureBoxField21.BackColor == Color.White &&
-          pictureBoxField22.BackColor == Color.White &&
-          pictureBoxField23.BackColor == Color.White &&
-          pictureBoxField24.BackColor == Color.White &&
-          pictureBoxField25.BackColor == Color.White)
+          (buttonField1.BackColor == Color.Black &&
+          buttonField2.BackColor == Color.Black &&
+          buttonField3.BackColor == Color.Black &&
+          buttonField4.BackColor == Color.Black &&
+          buttonField5.BackColor == Color.Black &&
+          buttonField6.BackColor == Color.Black &&
+          buttonField7.BackColor == Color.Black &&
+          buttonField8.BackColor == Color.Black &&
+          buttonField9.BackColor == Color.Black &&
+          buttonField10.BackColor == Color.Black &&
+          buttonField11.BackColor == Color.Black &&
+          buttonField12.BackColor == Color.Black &&
+          buttonField13.BackColor == Color.Black &&
+          buttonField14.BackColor == Color.Black &&
+          buttonField15.BackColor == Color.Black &&
+          buttonField16.BackColor == Color.Black &&
+          buttonField17.BackColor == Color.Black &&
+          buttonField18.BackColor == Color.Black &&
+          buttonField19.BackColor == Color.Black &&
+          buttonField20.BackColor == Color.Black &&
+          buttonField21.BackColor == Color.Black &&
+          buttonField22.BackColor == Color.Black &&
+          buttonField23.BackColor == Color.Black &&
+          buttonField24.BackColor == Color.Black &&
+          buttonField25.BackColor == Color.Black) ||
+          (buttonField1.BackColor == Color.White &&
+          buttonField2.BackColor == Color.White &&
+          buttonField3.BackColor == Color.White &&
+          buttonField4.BackColor == Color.White &&
+          buttonField5.BackColor == Color.White &&
+          buttonField6.BackColor == Color.White &&
+          buttonField7.BackColor == Color.White &&
+          buttonField8.BackColor == Color.White &&
+          buttonField9.BackColor == Color.White &&
+          buttonField10.BackColor == Color.White &&
+          buttonField11.BackColor == Color.White &&
+          buttonField12.BackColor == Color.White &&
+          buttonField13.BackColor == Color.White &&
+          buttonField14.BackColor == Color.White &&
+          buttonField15.BackColor == Color.White &&
+          buttonField16.BackColor == Color.White &&
+          buttonField17.BackColor == Color.White &&
+          buttonField18.BackColor == Color.White &&
+          buttonField19.BackColor == Color.White &&
+          buttonField20.BackColor == Color.White &&
+          buttonField21.BackColor == Color.White &&
+          buttonField22.BackColor == Color.White &&
+          buttonField23.BackColor == Color.White &&
+          buttonField24.BackColor == Color.White &&
+          buttonField25.BackColor == Color.White)
         )
         {
           timer.Stop();
@@ -312,7 +312,7 @@ namespace Black_n_White
           result = MessageBox.Show(message, caption, buttons);
           InitializeGame();
           boolIsGameRunning = false;
-          buttonNewGameSize.Enabled = true;
+          buttonNewGamesize.Enabled = true;
           buttonOptions.Enabled = true;
         }
       }
@@ -323,7 +323,7 @@ namespace Black_n_White
       if (boolIsGameRunning == false)
       {
         boolIsGameRunning = true;
-        buttonNewGameSize.Enabled = false;
+        buttonNewGamesize.Enabled = false;
         buttonOptions.Enabled = false;
       }
     }
@@ -333,155 +333,155 @@ namespace Black_n_White
       switch (n)
       {
         case 1:
-        {
-          if (pictureBoxField1.BackColor == Color.Black) pictureBoxField1.BackColor = Color.White;
-          else if (pictureBoxField1.BackColor == Color.White) pictureBoxField1.BackColor = Color.Black;
-          break;
-        }
+          {
+            if (buttonField1.BackColor == Color.Black) buttonField1.BackColor = Color.White;
+            else if (buttonField1.BackColor == Color.White) buttonField1.BackColor = Color.Black;
+            break;
+          }
         case 2:
-        {
-          if (pictureBoxField2.BackColor == Color.Black) pictureBoxField2.BackColor = Color.White;
-          else if (pictureBoxField2.BackColor == Color.White) pictureBoxField2.BackColor = Color.Black;
-          break;
-        }
+          {
+            if (buttonField2.BackColor == Color.Black) buttonField2.BackColor = Color.White;
+            else if (buttonField2.BackColor == Color.White) buttonField2.BackColor = Color.Black;
+            break;
+          }
         case 3:
-        {
-          if (pictureBoxField3.BackColor == Color.Black) pictureBoxField3.BackColor = Color.White;
-          else if (pictureBoxField3.BackColor == Color.White) pictureBoxField3.BackColor = Color.Black;
-          break;
-        }
+          {
+            if (buttonField3.BackColor == Color.Black) buttonField3.BackColor = Color.White;
+            else if (buttonField3.BackColor == Color.White) buttonField3.BackColor = Color.Black;
+            break;
+          }
         case 4:
-        {
-          if (pictureBoxField4.BackColor == Color.Black) pictureBoxField4.BackColor = Color.White;
-          else if (pictureBoxField4.BackColor == Color.White) pictureBoxField4.BackColor = Color.Black;
-          break;
-        }
+          {
+            if (buttonField4.BackColor == Color.Black) buttonField4.BackColor = Color.White;
+            else if (buttonField4.BackColor == Color.White) buttonField4.BackColor = Color.Black;
+            break;
+          }
         case 5:
-        {
-          if (pictureBoxField5.BackColor == Color.Black) pictureBoxField5.BackColor = Color.White;
-          else if (pictureBoxField5.BackColor == Color.White) pictureBoxField5.BackColor = Color.Black;
-          break;
-        }
+          {
+            if (buttonField5.BackColor == Color.Black) buttonField5.BackColor = Color.White;
+            else if (buttonField5.BackColor == Color.White) buttonField5.BackColor = Color.Black;
+            break;
+          }
         case 6:
-        {
-          if (pictureBoxField6.BackColor == Color.Black) pictureBoxField6.BackColor = Color.White;
-          else if (pictureBoxField6.BackColor == Color.White) pictureBoxField6.BackColor = Color.Black;
-          break;
-        }
+          {
+            if (buttonField6.BackColor == Color.Black) buttonField6.BackColor = Color.White;
+            else if (buttonField6.BackColor == Color.White) buttonField6.BackColor = Color.Black;
+            break;
+          }
         case 7:
-        {
-          if (pictureBoxField7.BackColor == Color.Black) pictureBoxField7.BackColor = Color.White;
-          else if (pictureBoxField7.BackColor == Color.White) pictureBoxField7.BackColor = Color.Black;
-          break;
-        }
+          {
+            if (buttonField7.BackColor == Color.Black) buttonField7.BackColor = Color.White;
+            else if (buttonField7.BackColor == Color.White) buttonField7.BackColor = Color.Black;
+            break;
+          }
         case 8:
-        {
-          if (pictureBoxField8.BackColor == Color.Black) pictureBoxField8.BackColor = Color.White;
-          else if (pictureBoxField8.BackColor == Color.White) pictureBoxField8.BackColor = Color.Black;
-          break;
-        }
+          {
+            if (buttonField8.BackColor == Color.Black) buttonField8.BackColor = Color.White;
+            else if (buttonField8.BackColor == Color.White) buttonField8.BackColor = Color.Black;
+            break;
+          }
         case 9:
-        {
-          if (pictureBoxField9.BackColor == Color.Black) pictureBoxField9.BackColor = Color.White;
-          else if (pictureBoxField9.BackColor == Color.White) pictureBoxField9.BackColor = Color.Black;
-          break;
-        }
+          {
+            if (buttonField9.BackColor == Color.Black) buttonField9.BackColor = Color.White;
+            else if (buttonField9.BackColor == Color.White) buttonField9.BackColor = Color.Black;
+            break;
+          }
         case 10:
-        {
-          if (pictureBoxField10.BackColor == Color.Black) pictureBoxField10.BackColor = Color.White;
-          else if (pictureBoxField10.BackColor == Color.White) pictureBoxField10.BackColor = Color.Black;
-          break;
-        }
+          {
+            if (buttonField10.BackColor == Color.Black) buttonField10.BackColor = Color.White;
+            else if (buttonField10.BackColor == Color.White) buttonField10.BackColor = Color.Black;
+            break;
+          }
         case 11:
-        {
-          if (pictureBoxField11.BackColor == Color.Black) pictureBoxField11.BackColor = Color.White;
-          else if (pictureBoxField11.BackColor == Color.White) pictureBoxField11.BackColor = Color.Black;
-          break;
-        }
+          {
+            if (buttonField11.BackColor == Color.Black) buttonField11.BackColor = Color.White;
+            else if (buttonField11.BackColor == Color.White) buttonField11.BackColor = Color.Black;
+            break;
+          }
         case 12:
-        {
-          if (pictureBoxField12.BackColor == Color.Black) pictureBoxField12.BackColor = Color.White;
-          else if (pictureBoxField12.BackColor == Color.White) pictureBoxField12.BackColor = Color.Black;
-          break;
-        }
+          {
+            if (buttonField12.BackColor == Color.Black) buttonField12.BackColor = Color.White;
+            else if (buttonField12.BackColor == Color.White) buttonField12.BackColor = Color.Black;
+            break;
+          }
         case 13:
-        {
-          if (pictureBoxField13.BackColor == Color.Black) pictureBoxField13.BackColor = Color.White;
-          else if (pictureBoxField13.BackColor == Color.White) pictureBoxField13.BackColor = Color.Black;
-          break;
-        }
+          {
+            if (buttonField13.BackColor == Color.Black) buttonField13.BackColor = Color.White;
+            else if (buttonField13.BackColor == Color.White) buttonField13.BackColor = Color.Black;
+            break;
+          }
         case 14:
-        {
-          if (pictureBoxField14.BackColor == Color.Black) pictureBoxField14.BackColor = Color.White;
-          else if (pictureBoxField14.BackColor == Color.White) pictureBoxField14.BackColor = Color.Black;
-          break;
-        }
+          {
+            if (buttonField14.BackColor == Color.Black) buttonField14.BackColor = Color.White;
+            else if (buttonField14.BackColor == Color.White) buttonField14.BackColor = Color.Black;
+            break;
+          }
         case 15:
-        {
-          if (pictureBoxField15.BackColor == Color.Black) pictureBoxField15.BackColor = Color.White;
-          else if (pictureBoxField15.BackColor == Color.White) pictureBoxField15.BackColor = Color.Black;
-          break;
-        }
+          {
+            if (buttonField15.BackColor == Color.Black) buttonField15.BackColor = Color.White;
+            else if (buttonField15.BackColor == Color.White) buttonField15.BackColor = Color.Black;
+            break;
+          }
         case 16:
-        {
-          if (pictureBoxField16.BackColor == Color.Black) pictureBoxField16.BackColor = Color.White;
-          else if (pictureBoxField16.BackColor == Color.White) pictureBoxField16.BackColor = Color.Black;
-          break;
-        }
+          {
+            if (buttonField16.BackColor == Color.Black) buttonField16.BackColor = Color.White;
+            else if (buttonField16.BackColor == Color.White) buttonField16.BackColor = Color.Black;
+            break;
+          }
         case 17:
-        {
-          if (pictureBoxField17.BackColor == Color.Black) pictureBoxField17.BackColor = Color.White;
-          else if (pictureBoxField17.BackColor == Color.White) pictureBoxField17.BackColor = Color.Black;
-          break;
-        }
+          {
+            if (buttonField17.BackColor == Color.Black) buttonField17.BackColor = Color.White;
+            else if (buttonField17.BackColor == Color.White) buttonField17.BackColor = Color.Black;
+            break;
+          }
         case 18:
-        {
-          if (pictureBoxField18.BackColor == Color.Black) pictureBoxField18.BackColor = Color.White;
-          else if (pictureBoxField18.BackColor == Color.White) pictureBoxField18.BackColor = Color.Black;
-          break;
-        }
+          {
+            if (buttonField18.BackColor == Color.Black) buttonField18.BackColor = Color.White;
+            else if (buttonField18.BackColor == Color.White) buttonField18.BackColor = Color.Black;
+            break;
+          }
         case 19:
-        {
-          if (pictureBoxField19.BackColor == Color.Black) pictureBoxField19.BackColor = Color.White;
-          else if (pictureBoxField19.BackColor == Color.White) pictureBoxField19.BackColor = Color.Black;
-          break;
-        }
+          {
+            if (buttonField19.BackColor == Color.Black) buttonField19.BackColor = Color.White;
+            else if (buttonField19.BackColor == Color.White) buttonField19.BackColor = Color.Black;
+            break;
+          }
         case 20:
-        {
-          if (pictureBoxField20.BackColor == Color.Black) pictureBoxField20.BackColor = Color.White;
-          else if (pictureBoxField20.BackColor == Color.White) pictureBoxField20.BackColor = Color.Black;
-          break;
-        }
+          {
+            if (buttonField20.BackColor == Color.Black) buttonField20.BackColor = Color.White;
+            else if (buttonField20.BackColor == Color.White) buttonField20.BackColor = Color.Black;
+            break;
+          }
         case 21:
-        {
-          if (pictureBoxField21.BackColor == Color.Black) pictureBoxField21.BackColor = Color.White;
-          else if (pictureBoxField21.BackColor == Color.White) pictureBoxField21.BackColor = Color.Black;
-          break;
-        }
+          {
+            if (buttonField21.BackColor == Color.Black) buttonField21.BackColor = Color.White;
+            else if (buttonField21.BackColor == Color.White) buttonField21.BackColor = Color.Black;
+            break;
+          }
         case 22:
-        {
-          if (pictureBoxField22.BackColor == Color.Black) pictureBoxField22.BackColor = Color.White;
-          else if (pictureBoxField22.BackColor == Color.White) pictureBoxField22.BackColor = Color.Black;
-          break;
-        }
+          {
+            if (buttonField22.BackColor == Color.Black) buttonField22.BackColor = Color.White;
+            else if (buttonField22.BackColor == Color.White) buttonField22.BackColor = Color.Black;
+            break;
+          }
         case 23:
-        {
-          if (pictureBoxField23.BackColor == Color.Black) pictureBoxField23.BackColor = Color.White;
-          else if (pictureBoxField23.BackColor == Color.White) pictureBoxField23.BackColor = Color.Black;
-          break;
-        }
+          {
+            if (buttonField23.BackColor == Color.Black) buttonField23.BackColor = Color.White;
+            else if (buttonField23.BackColor == Color.White) buttonField23.BackColor = Color.Black;
+            break;
+          }
         case 24:
-        {
-          if (pictureBoxField24.BackColor == Color.Black) pictureBoxField24.BackColor = Color.White;
-          else if (pictureBoxField24.BackColor == Color.White) pictureBoxField24.BackColor = Color.Black;
-          break;
-        }
+          {
+            if (buttonField24.BackColor == Color.Black) buttonField24.BackColor = Color.White;
+            else if (buttonField24.BackColor == Color.White) buttonField24.BackColor = Color.Black;
+            break;
+          }
         case 25:
-        {
-          if (pictureBoxField25.BackColor == Color.Black) pictureBoxField25.BackColor = Color.White;
-          else if (pictureBoxField25.BackColor == Color.White) pictureBoxField25.BackColor = Color.Black;
-          break;
-        }
+          {
+            if (buttonField25.BackColor == Color.Black) buttonField25.BackColor = Color.White;
+            else if (buttonField25.BackColor == Color.White) buttonField25.BackColor = Color.Black;
+            break;
+          }
       }
     }
 
@@ -491,127 +491,128 @@ namespace Black_n_White
       intWhites = 0;
       if (intGamesize == 3)
       {
-        if (pictureBoxField1.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField1.BackColor == Color.White) intWhites++;
-        if (pictureBoxField2.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField2.BackColor == Color.White) intWhites++;
-        if (pictureBoxField3.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField3.BackColor == Color.White) intWhites++;
-        if (pictureBoxField6.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField6.BackColor == Color.White) intWhites++;
-        if (pictureBoxField7.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField7.BackColor == Color.White) intWhites++;
-        if (pictureBoxField8.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField8.BackColor == Color.White) intWhites++;
-        if (pictureBoxField11.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField11.BackColor == Color.White) intWhites++;
-        if (pictureBoxField12.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField12.BackColor == Color.White) intWhites++;
-        if (pictureBoxField13.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField13.BackColor == Color.White) intWhites++;
+        if (buttonField1.BackColor == Color.Black) intBlacks++;
+        else if (buttonField1.BackColor == Color.White) intWhites++;
+        if (buttonField2.BackColor == Color.Black) intBlacks++;
+        else if (buttonField2.BackColor == Color.White) intWhites++;
+        if (buttonField3.BackColor == Color.Black) intBlacks++;
+        else if (buttonField3.BackColor == Color.White) intWhites++;
+        if (buttonField6.BackColor == Color.Black) intBlacks++;
+        else if (buttonField6.BackColor == Color.White) intWhites++;
+        if (buttonField7.BackColor == Color.Black) intBlacks++;
+        else if (buttonField7.BackColor == Color.White) intWhites++;
+        if (buttonField8.BackColor == Color.Black) intBlacks++;
+        else if (buttonField8.BackColor == Color.White) intWhites++;
+        if (buttonField11.BackColor == Color.Black) intBlacks++;
+        else if (buttonField11.BackColor == Color.White) intWhites++;
+        if (buttonField12.BackColor == Color.Black) intBlacks++;
+        else if (buttonField12.BackColor == Color.White) intWhites++;
+        if (buttonField13.BackColor == Color.Black) intBlacks++;
+        else if (buttonField13.BackColor == Color.White) intWhites++;
       }
       else if (intGamesize == 4)
       {
-        if (pictureBoxField1.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField1.BackColor == Color.White) intWhites++;
-        if (pictureBoxField2.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField2.BackColor == Color.White) intWhites++;
-        if (pictureBoxField3.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField3.BackColor == Color.White) intWhites++;
-        if (pictureBoxField4.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField4.BackColor == Color.White) intWhites++;
-        if (pictureBoxField6.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField6.BackColor == Color.White) intWhites++;
-        if (pictureBoxField7.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField7.BackColor == Color.White) intWhites++;
-        if (pictureBoxField8.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField8.BackColor == Color.White) intWhites++;
-        if (pictureBoxField9.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField9.BackColor == Color.White) intWhites++;
-        if (pictureBoxField11.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField11.BackColor == Color.White) intWhites++;
-        if (pictureBoxField12.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField12.BackColor == Color.White) intWhites++;
-        if (pictureBoxField13.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField13.BackColor == Color.White) intWhites++;
-        if (pictureBoxField14.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField14.BackColor == Color.White) intWhites++;
-        if (pictureBoxField16.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField16.BackColor == Color.White) intWhites++;
-        if (pictureBoxField17.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField17.BackColor == Color.White) intWhites++;
-        if (pictureBoxField18.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField18.BackColor == Color.White) intWhites++;
-        if (pictureBoxField19.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField19.BackColor == Color.White) intWhites++;
+        if (buttonField1.BackColor == Color.Black) intBlacks++;
+        else if (buttonField1.BackColor == Color.White) intWhites++;
+        if (buttonField2.BackColor == Color.Black) intBlacks++;
+        else if (buttonField2.BackColor == Color.White) intWhites++;
+        if (buttonField3.BackColor == Color.Black) intBlacks++;
+        else if (buttonField3.BackColor == Color.White) intWhites++;
+        if (buttonField4.BackColor == Color.Black) intBlacks++;
+        else if (buttonField4.BackColor == Color.White) intWhites++;
+        if (buttonField6.BackColor == Color.Black) intBlacks++;
+        else if (buttonField6.BackColor == Color.White) intWhites++;
+        if (buttonField7.BackColor == Color.Black) intBlacks++;
+        else if (buttonField7.BackColor == Color.White) intWhites++;
+        if (buttonField8.BackColor == Color.Black) intBlacks++;
+        else if (buttonField8.BackColor == Color.White) intWhites++;
+        if (buttonField9.BackColor == Color.Black) intBlacks++;
+        else if (buttonField9.BackColor == Color.White) intWhites++;
+        if (buttonField11.BackColor == Color.Black) intBlacks++;
+        else if (buttonField11.BackColor == Color.White) intWhites++;
+        if (buttonField12.BackColor == Color.Black) intBlacks++;
+        else if (buttonField12.BackColor == Color.White) intWhites++;
+        if (buttonField13.BackColor == Color.Black) intBlacks++;
+        else if (buttonField13.BackColor == Color.White) intWhites++;
+        if (buttonField14.BackColor == Color.Black) intBlacks++;
+        else if (buttonField14.BackColor == Color.White) intWhites++;
+        if (buttonField16.BackColor == Color.Black) intBlacks++;
+        else if (buttonField16.BackColor == Color.White) intWhites++;
+        if (buttonField17.BackColor == Color.Black) intBlacks++;
+        else if (buttonField17.BackColor == Color.White) intWhites++;
+        if (buttonField18.BackColor == Color.Black) intBlacks++;
+        else if (buttonField18.BackColor == Color.White) intWhites++;
+        if (buttonField19.BackColor == Color.Black) intBlacks++;
+        else if (buttonField19.BackColor == Color.White) intWhites++;
       }
       if (intGamesize == 5)
       {
-        if (pictureBoxField1.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField1.BackColor == Color.White) intWhites++;
-        if (pictureBoxField2.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField2.BackColor == Color.White) intWhites++;
-        if (pictureBoxField3.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField3.BackColor == Color.White) intWhites++;
-        if (pictureBoxField4.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField4.BackColor == Color.White) intWhites++;
-        if (pictureBoxField5.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField5.BackColor == Color.White) intWhites++;
-        if (pictureBoxField6.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField6.BackColor == Color.White) intWhites++;
-        if (pictureBoxField7.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField7.BackColor == Color.White) intWhites++;
-        if (pictureBoxField8.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField8.BackColor == Color.White) intWhites++;
-        if (pictureBoxField9.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField9.BackColor == Color.White) intWhites++;
-        if (pictureBoxField10.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField10.BackColor == Color.White) intWhites++;
-        if (pictureBoxField11.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField11.BackColor == Color.White) intWhites++;
-        if (pictureBoxField12.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField12.BackColor == Color.White) intWhites++;
-        if (pictureBoxField13.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField13.BackColor == Color.White) intWhites++;
-        if (pictureBoxField14.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField14.BackColor == Color.White) intWhites++;
-        if (pictureBoxField15.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField15.BackColor == Color.White) intWhites++;
-        if (pictureBoxField16.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField16.BackColor == Color.White) intWhites++;
-        if (pictureBoxField17.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField17.BackColor == Color.White) intWhites++;
-        if (pictureBoxField18.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField18.BackColor == Color.White) intWhites++;
-        if (pictureBoxField19.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField19.BackColor == Color.White) intWhites++;
-        if (pictureBoxField20.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField20.BackColor == Color.White) intWhites++;
-        if (pictureBoxField21.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField21.BackColor == Color.White) intWhites++;
-        if (pictureBoxField22.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField22.BackColor == Color.White) intWhites++;
-        if (pictureBoxField23.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField23.BackColor == Color.White) intWhites++;
-        if (pictureBoxField24.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField24.BackColor == Color.White) intWhites++;
-        if (pictureBoxField25.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField25.BackColor == Color.White) intWhites++;
+        if (buttonField1.BackColor == Color.Black) intBlacks++;
+        else if (buttonField1.BackColor == Color.White) intWhites++;
+        if (buttonField2.BackColor == Color.Black) intBlacks++;
+        else if (buttonField2.BackColor == Color.White) intWhites++;
+        if (buttonField3.BackColor == Color.Black) intBlacks++;
+        else if (buttonField3.BackColor == Color.White) intWhites++;
+        if (buttonField4.BackColor == Color.Black) intBlacks++;
+        else if (buttonField4.BackColor == Color.White) intWhites++;
+        if (buttonField5.BackColor == Color.Black) intBlacks++;
+        else if (buttonField5.BackColor == Color.White) intWhites++;
+        if (buttonField6.BackColor == Color.Black) intBlacks++;
+        else if (buttonField6.BackColor == Color.White) intWhites++;
+        if (buttonField7.BackColor == Color.Black) intBlacks++;
+        else if (buttonField7.BackColor == Color.White) intWhites++;
+        if (buttonField8.BackColor == Color.Black) intBlacks++;
+        else if (buttonField8.BackColor == Color.White) intWhites++;
+        if (buttonField9.BackColor == Color.Black) intBlacks++;
+        else if (buttonField9.BackColor == Color.White) intWhites++;
+        if (buttonField10.BackColor == Color.Black) intBlacks++;
+        else if (buttonField10.BackColor == Color.White) intWhites++;
+        if (buttonField11.BackColor == Color.Black) intBlacks++;
+        else if (buttonField11.BackColor == Color.White) intWhites++;
+        if (buttonField12.BackColor == Color.Black) intBlacks++;
+        else if (buttonField12.BackColor == Color.White) intWhites++;
+        if (buttonField13.BackColor == Color.Black) intBlacks++;
+        else if (buttonField13.BackColor == Color.White) intWhites++;
+        if (buttonField14.BackColor == Color.Black) intBlacks++;
+        else if (buttonField14.BackColor == Color.White) intWhites++;
+        if (buttonField15.BackColor == Color.Black) intBlacks++;
+        else if (buttonField15.BackColor == Color.White) intWhites++;
+        if (buttonField16.BackColor == Color.Black) intBlacks++;
+        else if (buttonField16.BackColor == Color.White) intWhites++;
+        if (buttonField17.BackColor == Color.Black) intBlacks++;
+        else if (buttonField17.BackColor == Color.White) intWhites++;
+        if (buttonField18.BackColor == Color.Black) intBlacks++;
+        else if (buttonField18.BackColor == Color.White) intWhites++;
+        if (buttonField19.BackColor == Color.Black) intBlacks++;
+        else if (buttonField19.BackColor == Color.White) intWhites++;
+        if (buttonField20.BackColor == Color.Black) intBlacks++;
+        else if (buttonField20.BackColor == Color.White) intWhites++;
+        if (buttonField21.BackColor == Color.Black) intBlacks++;
+        else if (buttonField21.BackColor == Color.White) intWhites++;
+        if (buttonField22.BackColor == Color.Black) intBlacks++;
+        else if (buttonField22.BackColor == Color.White) intWhites++;
+        if (buttonField23.BackColor == Color.Black) intBlacks++;
+        else if (buttonField23.BackColor == Color.White) intWhites++;
+        if (buttonField24.BackColor == Color.Black) intBlacks++;
+        else if (buttonField24.BackColor == Color.White) intWhites++;
+        if (buttonField25.BackColor == Color.Black) intBlacks++;
+        else if (buttonField25.BackColor == Color.White) intWhites++;
       }
       labelBlacks.Text = "Blacks: " + intBlacks;
       labelWhites.Text = "Whites: " + intWhites;
     }
+
 
     private void Black_n_WhiteForm_Load(object sender, EventArgs e)
     {
       InitializeGame();
     }
 
-    private void pictureBoxField1_Click(object sender, EventArgs e)
+    private void buttonField1_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
-      if (toolStripMenuItemCentered.Checked) InvertField(1);
+      if (ToolStripMenuItemNeighbourhoodCentered.Checked) InvertField(1);
       if (ToolStripMenuItemNeighbourhoodLinear.Checked)
       {
         InvertField(2);
@@ -632,11 +633,11 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField2_Click(object sender, EventArgs e)
+    private void buttonField2_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
-      if (toolStripMenuItemCentered.Checked) InvertField(2);
+      if (ToolStripMenuItemNeighbourhoodCentered.Checked) InvertField(2);
       if (ToolStripMenuItemNeighbourhoodLinear.Checked)
       {
         InvertField(1);
@@ -661,11 +662,11 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField3_Click(object sender, EventArgs e)
+    private void buttonField3_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
-      if (toolStripMenuItemCentered.Checked) InvertField(3);
+      if (ToolStripMenuItemNeighbourhoodCentered.Checked) InvertField(3);
       if (ToolStripMenuItemNeighbourhoodLinear.Checked)
       {
         InvertField(2);
@@ -690,11 +691,11 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField4_Click(object sender, EventArgs e)
+    private void buttonField4_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
-      if (toolStripMenuItemCentered.Checked) InvertField(4);
+      if (ToolStripMenuItemNeighbourhoodCentered.Checked) InvertField(4);
       if (ToolStripMenuItemNeighbourhoodLinear.Checked)
       {
         InvertField(3);
@@ -719,11 +720,11 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField5_Click(object sender, EventArgs e)
+    private void buttonField5_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
-      if (toolStripMenuItemCentered.Checked) InvertField(5);
+      if (ToolStripMenuItemNeighbourhoodCentered.Checked) InvertField(5);
       if (ToolStripMenuItemNeighbourhoodLinear.Checked)
       {
         InvertField(4);
@@ -744,11 +745,11 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField6_Click(object sender, EventArgs e)
+    private void buttonField6_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
-      if (toolStripMenuItemCentered.Checked) InvertField(6);
+      if (ToolStripMenuItemNeighbourhoodCentered.Checked) InvertField(6);
       if (ToolStripMenuItemNeighbourhoodLinear.Checked)
       {
         InvertField(1);
@@ -773,11 +774,11 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField7_Click(object sender, EventArgs e)
+    private void buttonField7_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
-      if (toolStripMenuItemCentered.Checked) InvertField(7);
+      if (ToolStripMenuItemNeighbourhoodCentered.Checked) InvertField(7);
       if (ToolStripMenuItemNeighbourhoodLinear.Checked)
       {
         InvertField(2);
@@ -808,11 +809,11 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField8_Click(object sender, EventArgs e)
+    private void buttonField8_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
-      if (toolStripMenuItemCentered.Checked) InvertField(8);
+      if (ToolStripMenuItemNeighbourhoodCentered.Checked) InvertField(8);
       if (ToolStripMenuItemNeighbourhoodLinear.Checked)
       {
         InvertField(3);
@@ -843,11 +844,11 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField9_Click(object sender, EventArgs e)
+    private void buttonField9_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
-      if (toolStripMenuItemCentered.Checked) InvertField(9);
+      if (ToolStripMenuItemNeighbourhoodCentered.Checked) InvertField(9);
       if (ToolStripMenuItemNeighbourhoodLinear.Checked)
       {
         InvertField(4);
@@ -878,11 +879,11 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField10_Click(object sender, EventArgs e)
+    private void buttonField10_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
-      if (toolStripMenuItemCentered.Checked) InvertField(10);
+      if (ToolStripMenuItemNeighbourhoodCentered.Checked) InvertField(10);
       if (ToolStripMenuItemNeighbourhoodLinear.Checked)
       {
         InvertField(5);
@@ -907,11 +908,11 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField11_Click(object sender, EventArgs e)
+    private void buttonField11_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
-      if (toolStripMenuItemCentered.Checked) InvertField(11);
+      if (ToolStripMenuItemNeighbourhoodCentered.Checked) InvertField(11);
       if (ToolStripMenuItemNeighbourhoodLinear.Checked)
       {
         InvertField(6);
@@ -936,11 +937,11 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField12_Click(object sender, EventArgs e)
+    private void buttonField12_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
-      if (toolStripMenuItemCentered.Checked) InvertField(12);
+      if (ToolStripMenuItemNeighbourhoodCentered.Checked) InvertField(12);
       if (ToolStripMenuItemNeighbourhoodLinear.Checked)
       {
         InvertField(7);
@@ -950,32 +951,32 @@ namespace Black_n_White
       }
       else if (ToolStripMenuItemNeighbourhoodDiagonal.Checked)
       {
-        InvertField(6);
-        InvertField(8);
-        InvertField(16);
-        InvertField(18);
-      }
-      else if (ToolStripMenuItemNeighbourhoodCombined.Checked)
-      {
-        InvertField(7);
-        InvertField(11);
-        InvertField(13);
-        InvertField(17);
         InvertField(6);
         InvertField(8);
         InvertField(16);
         InvertField(18);
       }
+      else if (ToolStripMenuItemNeighbourhoodCombined.Checked)
+      {
+        InvertField(7);
+        InvertField(11);
+        InvertField(13);
+        InvertField(17);
+        InvertField(6);
+        InvertField(8);
+        InvertField(16);
+        InvertField(18);
+      }
       UpdateClicks();
       CountBlacksAndWhites();
       CheckForWin();
     }
 
-    private void pictureBoxField13_Click(object sender, EventArgs e)
+    private void buttonField13_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
-      if (toolStripMenuItemCentered.Checked) InvertField(13);
+      if (ToolStripMenuItemNeighbourhoodCentered.Checked) InvertField(13);
       if (ToolStripMenuItemNeighbourhoodLinear.Checked)
       {
         InvertField(8);
@@ -1006,11 +1007,11 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField14_Click(object sender, EventArgs e)
+    private void buttonField14_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
-      if (toolStripMenuItemCentered.Checked) InvertField(14);
+      if (ToolStripMenuItemNeighbourhoodCentered.Checked) InvertField(14);
       if (ToolStripMenuItemNeighbourhoodLinear.Checked)
       {
         InvertField(9);
@@ -1041,11 +1042,11 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField15_Click(object sender, EventArgs e)
+    private void buttonField15_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
-      if (toolStripMenuItemCentered.Checked) InvertField(15);
+      if (ToolStripMenuItemNeighbourhoodCentered.Checked) InvertField(15);
       if (ToolStripMenuItemNeighbourhoodLinear.Checked)
       {
         InvertField(10);
@@ -1070,11 +1071,11 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField16_Click(object sender, EventArgs e)
+    private void buttonField16_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
-      if (toolStripMenuItemCentered.Checked) InvertField(16);
+      if (ToolStripMenuItemNeighbourhoodCentered.Checked) InvertField(16);
       if (ToolStripMenuItemNeighbourhoodLinear.Checked)
       {
         InvertField(11);
@@ -1099,11 +1100,11 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField17_Click(object sender, EventArgs e)
+    private void buttonField17_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
-      if (toolStripMenuItemCentered.Checked) InvertField(17);
+      if (ToolStripMenuItemNeighbourhoodCentered.Checked) InvertField(17);
       if (ToolStripMenuItemNeighbourhoodLinear.Checked)
       {
         InvertField(12);
@@ -1113,32 +1114,32 @@ namespace Black_n_White
       }
       else if (ToolStripMenuItemNeighbourhoodDiagonal.Checked)
       {
-        InvertField(11);
-        InvertField(13);
-        InvertField(21);
-        InvertField(23);
-      }
-      else if (ToolStripMenuItemNeighbourhoodCombined.Checked)
-      {
-        InvertField(12);
-        InvertField(16);
-        InvertField(18);
-        InvertField(22);
         InvertField(11);
         InvertField(13);
         InvertField(21);
         InvertField(23);
       }
+      else if (ToolStripMenuItemNeighbourhoodCombined.Checked)
+      {
+        InvertField(12);
+        InvertField(16);
+        InvertField(18);
+        InvertField(22);
+        InvertField(11);
+        InvertField(13);
+        InvertField(21);
+        InvertField(23);
+      }
       UpdateClicks();
       CountBlacksAndWhites();
       CheckForWin();
     }
 
-    private void pictureBoxField18_Click(object sender, EventArgs e)
+    private void buttonField18_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
-      if (toolStripMenuItemCentered.Checked) InvertField(18);
+      if (ToolStripMenuItemNeighbourhoodCentered.Checked) InvertField(18);
       if (ToolStripMenuItemNeighbourhoodLinear.Checked)
       {
         InvertField(13);
@@ -1169,11 +1170,11 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField19_Click(object sender, EventArgs e)
+    private void buttonField19_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
-      if (toolStripMenuItemCentered.Checked) InvertField(19);
+      if (ToolStripMenuItemNeighbourhoodCentered.Checked) InvertField(19);
       if (ToolStripMenuItemNeighbourhoodLinear.Checked)
       {
         InvertField(14);
@@ -1204,11 +1205,11 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField20_Click(object sender, EventArgs e)
+    private void buttonField20_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
-      if (toolStripMenuItemCentered.Checked) InvertField(20);
+      if (ToolStripMenuItemNeighbourhoodCentered.Checked) InvertField(20);
       if (ToolStripMenuItemNeighbourhoodLinear.Checked)
       {
         InvertField(15);
@@ -1233,11 +1234,11 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField21_Click(object sender, EventArgs e)
+    private void buttonField21_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
-      if (toolStripMenuItemCentered.Checked) InvertField(21);
+      if (ToolStripMenuItemNeighbourhoodCentered.Checked) InvertField(21);
       if (ToolStripMenuItemNeighbourhoodLinear.Checked)
       {
         InvertField(16);
@@ -1258,11 +1259,11 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField22_Click(object sender, EventArgs e)
+    private void buttonField22_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
-      if (toolStripMenuItemCentered.Checked) InvertField(22);
+      if (ToolStripMenuItemNeighbourhoodCentered.Checked) InvertField(22);
       if (ToolStripMenuItemNeighbourhoodLinear.Checked)
       {
         InvertField(17);
@@ -1287,11 +1288,11 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField23_Click(object sender, EventArgs e)
+    private void buttonField23_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
-      if (toolStripMenuItemCentered.Checked) InvertField(23);
+      if (ToolStripMenuItemNeighbourhoodCentered.Checked) InvertField(23);
       if (ToolStripMenuItemNeighbourhoodLinear.Checked)
       {
         InvertField(18);
@@ -1316,11 +1317,11 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField24_Click(object sender, EventArgs e)
+    private void buttonField24_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
-      if (toolStripMenuItemCentered.Checked) InvertField(24);
+      if (ToolStripMenuItemNeighbourhoodCentered.Checked) InvertField(24);
       if (ToolStripMenuItemNeighbourhoodLinear.Checked)
       {
         InvertField(19);
@@ -1345,11 +1346,11 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField25_Click(object sender, EventArgs e)
+    private void buttonField25_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
-      if (toolStripMenuItemCentered.Checked) InvertField(25);
+      if (ToolStripMenuItemNeighbourhoodCentered.Checked) InvertField(25);
       if (ToolStripMenuItemNeighbourhoodLinear.Checked)
       {
         InvertField(20);
@@ -1375,7 +1376,7 @@ namespace Black_n_White
       InitializeGame();
       CountBlacksAndWhites();
       boolIsGameRunning = false;
-      buttonNewGameSize.Enabled = true;
+      buttonNewGamesize.Enabled = true;
       buttonOptions.Enabled = true;
     }
 
@@ -1414,33 +1415,28 @@ namespace Black_n_White
       labelTicks.Text = "Ticks: " + intTicks;
     }
 
-    private void buttonNewGameSize_Click(object sender, EventArgs e)
-    {
-      contextMenuStripGamesize.Show(buttonNewGameSize, 0, buttonNewGameSize.Size.Height);
-    }
-
     private void ToolStripMenuItemGamesize3x3_Click(object sender, EventArgs e)
     {
       intGamesize = 3;
       ToolStripMenuItemGamesize4x4.Checked = false;
       ToolStripMenuItemGamesize5x5.Checked = false;
       labelGamesize.Text = "Größe: " + intGamesize.ToString() + "x" + intGamesize.ToString();
-      pictureBoxField4.Hide();
-      pictureBoxField5.Hide();
-      pictureBoxField9.Hide();
-      pictureBoxField10.Hide();
-      pictureBoxField14.Hide();
-      pictureBoxField15.Hide();
-      pictureBoxField16.Hide();
-      pictureBoxField17.Hide();
-      pictureBoxField18.Hide();
-      pictureBoxField19.Hide();
-      pictureBoxField20.Hide();
-      pictureBoxField21.Hide();
-      pictureBoxField22.Hide();
-      pictureBoxField23.Hide();
-      pictureBoxField24.Hide();
-      pictureBoxField25.Hide();
+      buttonField4.Hide();
+      buttonField5.Hide();
+      buttonField9.Hide();
+      buttonField10.Hide();
+      buttonField14.Hide();
+      buttonField15.Hide();
+      buttonField16.Hide();
+      buttonField17.Hide();
+      buttonField18.Hide();
+      buttonField19.Hide();
+      buttonField20.Hide();
+      buttonField21.Hide();
+      buttonField22.Hide();
+      buttonField23.Hide();
+      buttonField24.Hide();
+      buttonField25.Hide();
       CountBlacksAndWhites();
     }
 
@@ -1450,22 +1446,22 @@ namespace Black_n_White
       ToolStripMenuItemGamesize3x3.Checked = false;
       ToolStripMenuItemGamesize5x5.Checked = false;
       labelGamesize.Text = "Größe: " + intGamesize.ToString() + "x" + intGamesize.ToString();
-      pictureBoxField4.Show();
-      pictureBoxField5.Hide();
-      pictureBoxField9.Show();
-      pictureBoxField10.Hide();
-      pictureBoxField14.Show();
-      pictureBoxField15.Hide();
-      pictureBoxField16.Show();
-      pictureBoxField17.Show();
-      pictureBoxField18.Show();
-      pictureBoxField19.Show();
-      pictureBoxField20.Hide();
-      pictureBoxField21.Hide();
-      pictureBoxField22.Hide();
-      pictureBoxField23.Hide();
-      pictureBoxField24.Hide();
-      pictureBoxField25.Hide();
+      buttonField4.Show();
+      buttonField5.Hide();
+      buttonField9.Show();
+      buttonField10.Hide();
+      buttonField14.Show();
+      buttonField15.Hide();
+      buttonField16.Show();
+      buttonField17.Show();
+      buttonField18.Show();
+      buttonField19.Show();
+      buttonField20.Hide();
+      buttonField21.Hide();
+      buttonField22.Hide();
+      buttonField23.Hide();
+      buttonField24.Hide();
+      buttonField25.Hide();
       CountBlacksAndWhites();
     }
 
@@ -1475,28 +1471,23 @@ namespace Black_n_White
       ToolStripMenuItemGamesize3x3.Checked = false;
       ToolStripMenuItemGamesize4x4.Checked = false;
       labelGamesize.Text = "Größe: " + intGamesize.ToString() + "x" + intGamesize.ToString();
-      pictureBoxField4.Show();
-      pictureBoxField5.Show();
-      pictureBoxField9.Show();
-      pictureBoxField10.Show();
-      pictureBoxField14.Show();
-      pictureBoxField15.Show();
-      pictureBoxField16.Show();
-      pictureBoxField17.Show();
-      pictureBoxField18.Show();
-      pictureBoxField19.Show();
-      pictureBoxField20.Show();
-      pictureBoxField21.Show();
-      pictureBoxField22.Show();
-      pictureBoxField23.Show();
-      pictureBoxField24.Show();
-      pictureBoxField25.Show();
+      buttonField4.Show();
+      buttonField5.Show();
+      buttonField9.Show();
+      buttonField10.Show();
+      buttonField14.Show();
+      buttonField15.Show();
+      buttonField16.Show();
+      buttonField17.Show();
+      buttonField18.Show();
+      buttonField19.Show();
+      buttonField20.Show();
+      buttonField21.Show();
+      buttonField22.Show();
+      buttonField23.Show();
+      buttonField24.Show();
+      buttonField25.Show();
       CountBlacksAndWhites();
-    }
-
-    private void buttonOptions_Click(object sender, EventArgs e)
-    {
-      contextMenuStripNeighbourhood.Show(buttonOptions, 0, buttonOptions.Size.Height);
     }
 
     private void ToolStripMenuItemNeighbourhoodLinear_Click(object sender, EventArgs e)
@@ -1516,5 +1507,20 @@ namespace Black_n_White
       ToolStripMenuItemNeighbourhoodLinear.Checked = false;
       ToolStripMenuItemNeighbourhoodDiagonal.Checked = false;
     }
+
+    private void ToolStripMenuItemNeighbourhoodCentered_Click(object sender, EventArgs e)
+    {
+    }
+
+    private void buttonNewGamesize_Click(object sender, EventArgs e)
+    {
+      contextMenuStripGamesize.Show(buttonNewGamesize, 0, buttonNewGamesize.Size.Height);
+    }
+
+    private void buttonOptions_Click(object sender, EventArgs e)
+    {
+      contextMenuStripNeighbourhood.Show(buttonOptions, 0, buttonOptions.Size.Height);
+    }
+
   }
 }
