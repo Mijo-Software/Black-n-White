@@ -27,7 +27,6 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBoxForm));
       this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
       this.logoPictureBox = new System.Windows.Forms.PictureBox();
@@ -37,15 +36,14 @@
       this.labelCompanyName = new System.Windows.Forms.Label();
       this.textBoxDescription = new System.Windows.Forms.TextBox();
       this.okButton = new System.Windows.Forms.Button();
-      this.toolTip = new System.Windows.Forms.ToolTip(this.components);
       this.tableLayoutPanel.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
       this.SuspendLayout();
       // 
       // tableLayoutPanel
       // 
-      this.tableLayoutPanel.AccessibleDescription = "Gruppiert die einzelnen GUI-Elemente";
-      this.tableLayoutPanel.AccessibleName = "Panel";
+      this.tableLayoutPanel.AccessibleDescription = "Gruppiert die graphischen Elemente";
+      this.tableLayoutPanel.AccessibleName = "Table Layout Panel";
       this.tableLayoutPanel.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
       this.tableLayoutPanel.ColumnCount = 2;
       this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.45638F));
@@ -73,7 +71,7 @@
       // logoPictureBox
       // 
       this.logoPictureBox.AccessibleDescription = "Das ist das Symbol der Anwendung";
-      this.logoPictureBox.AccessibleName = "Icon";
+      this.logoPictureBox.AccessibleName = "Symbol";
       this.logoPictureBox.AccessibleRole = System.Windows.Forms.AccessibleRole.Graphic;
       this.logoPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
       this.logoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("logoPictureBox.Image")));
@@ -83,11 +81,10 @@
       this.logoPictureBox.Size = new System.Drawing.Size(59, 171);
       this.logoPictureBox.TabIndex = 12;
       this.logoPictureBox.TabStop = false;
-      this.toolTip.SetToolTip(this.logoPictureBox, "Das ist das Symbol der Anwendung");
       // 
       // labelProductName
       // 
-      this.labelProductName.AccessibleDescription = "Zeigt den Produktname an";
+      this.labelProductName.AccessibleDescription = "Zeigt den Produktnamen an";
       this.labelProductName.AccessibleName = "Produktname";
       this.labelProductName.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
       this.labelProductName.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -96,14 +93,13 @@
       this.labelProductName.MaximumSize = new System.Drawing.Size(0, 17);
       this.labelProductName.Name = "labelProductName";
       this.labelProductName.Size = new System.Drawing.Size(282, 17);
-      this.labelProductName.TabIndex = 0;
+      this.labelProductName.TabIndex = 19;
       this.labelProductName.Text = "Produktname";
       this.labelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.toolTip.SetToolTip(this.labelProductName, "Zeigt den Produktname an");
       // 
       // labelVersion
       // 
-      this.labelVersion.AccessibleDescription = "Zeigt die Versionnummer an";
+      this.labelVersion.AccessibleDescription = "Zeigt die Versionsnummer an";
       this.labelVersion.AccessibleName = "Version";
       this.labelVersion.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
       this.labelVersion.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -112,10 +108,9 @@
       this.labelVersion.MaximumSize = new System.Drawing.Size(0, 17);
       this.labelVersion.Name = "labelVersion";
       this.labelVersion.Size = new System.Drawing.Size(282, 17);
-      this.labelVersion.TabIndex = 1;
+      this.labelVersion.TabIndex = 0;
       this.labelVersion.Text = "Version";
       this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.toolTip.SetToolTip(this.labelVersion, "Zeigt die Versionnummer an");
       // 
       // labelCopyright
       // 
@@ -128,14 +123,13 @@
       this.labelCopyright.MaximumSize = new System.Drawing.Size(0, 17);
       this.labelCopyright.Name = "labelCopyright";
       this.labelCopyright.Size = new System.Drawing.Size(282, 17);
-      this.labelCopyright.TabIndex = 2;
+      this.labelCopyright.TabIndex = 21;
       this.labelCopyright.Text = "Copyright";
       this.labelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.toolTip.SetToolTip(this.labelCopyright, "Zeigt den Copyright-Vermerk an");
       // 
       // labelCompanyName
       // 
-      this.labelCompanyName.AccessibleDescription = "Zeigt den Firmenname an";
+      this.labelCompanyName.AccessibleDescription = "Zeigt den Firmenname an an";
       this.labelCompanyName.AccessibleName = "Firmenname";
       this.labelCompanyName.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
       this.labelCompanyName.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -144,10 +138,9 @@
       this.labelCompanyName.MaximumSize = new System.Drawing.Size(0, 17);
       this.labelCompanyName.Name = "labelCompanyName";
       this.labelCompanyName.Size = new System.Drawing.Size(282, 17);
-      this.labelCompanyName.TabIndex = 3;
+      this.labelCompanyName.TabIndex = 22;
       this.labelCompanyName.Text = "Firmenname";
       this.labelCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.toolTip.SetToolTip(this.labelCompanyName, "Zeigt den Firmenname an");
       // 
       // textBoxDescription
       // 
@@ -162,30 +155,26 @@
       this.textBoxDescription.ReadOnly = true;
       this.textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
       this.textBoxDescription.Size = new System.Drawing.Size(282, 69);
-      this.textBoxDescription.TabIndex = 4;
+      this.textBoxDescription.TabIndex = 23;
       this.textBoxDescription.TabStop = false;
       this.textBoxDescription.Text = "Beschreibung";
-      this.toolTip.SetToolTip(this.textBoxDescription, "Zeigt die Beschreibung an");
       // 
       // okButton
       // 
-      this.okButton.AccessibleDescription = "Schließt den Dialog";
-      this.okButton.AccessibleName = "Okay";
       this.okButton.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
       this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-      this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+      this.okButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.okButton.Location = new System.Drawing.Point(278, 151);
       this.okButton.Name = "okButton";
       this.okButton.Size = new System.Drawing.Size(75, 23);
-      this.okButton.TabIndex = 0;
+      this.okButton.TabIndex = 24;
       this.okButton.Text = "&OK";
-      this.toolTip.SetToolTip(this.okButton, "Okay");
       // 
       // AboutBoxForm
       // 
       this.AcceptButton = this.okButton;
-      this.AccessibleDescription = "Zeigt einige grundlegende Informationen zum Programm an";
-      this.AccessibleName = "About-Dialog";
+      this.AccessibleDescription = "Zeigt ein paar grundlegende Informationen zum Programm an";
+      this.AccessibleName = "About Dialog";
       this.AccessibleRole = System.Windows.Forms.AccessibleRole.Dialog;
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -218,6 +207,5 @@
     private System.Windows.Forms.TextBox textBoxDescription;
     private System.Windows.Forms.Button okButton;
     private System.Windows.Forms.PictureBox logoPictureBox;
-    private System.Windows.Forms.ToolTip toolTip;
   }
 }

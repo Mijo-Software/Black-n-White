@@ -1,21 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Black_n_White
 {
   public partial class Black_n_WhiteForm : Form
   {
-    const String Space = " ";
-    const String Colon = ":";
-    const int intNumberOfAllFields = 5 * 5;
     int intClicks = 0;
     int intTicks = 0;
     int intBlacks = 0;
     int intWhites = 0;
     int intGamesize = 5;
-    bool boolFirstClickDone = false;                    
+    bool boolFirstClickDone = false;
     bool boolIsGameRunning = false;
 
     public Black_n_WhiteForm()
@@ -29,7 +29,7 @@ namespace Black_n_White
       labelClicks.Text = "Klicks: " + intClicks;
     }
 
-    private void CheckIfTimerIsEnabled()
+    private void CheckForEnabledTimer()
     {
       if (!boolFirstClickDone)
       {
@@ -38,132 +38,122 @@ namespace Black_n_White
       }
     }
 
-    private void ShowFields(params int[] Values)
-    {
-      for (int i = 1; i < Values.Length + 1; i++)
-      {
-        switch (Values[i - 1])
-        {
-          case 0: pictureBoxField1.Show(); break;
-          case 1: pictureBoxField2.Show(); break;
-          case 2: pictureBoxField3.Show(); break;
-          case 3: pictureBoxField4.Show(); break;
-          case 4: pictureBoxField5.Show(); break;
-          case 5: pictureBoxField6.Show(); break;
-          case 6: pictureBoxField7.Show(); break;
-          case 7: pictureBoxField8.Show(); break;
-          case 8: pictureBoxField9.Show(); break;
-          case 9: pictureBoxField10.Show(); break;
-          case 10: pictureBoxField11.Show(); break;
-          case 11: pictureBoxField12.Show(); break;
-          case 12: pictureBoxField13.Show(); break;
-          case 13: pictureBoxField14.Show(); break;
-          case 14: pictureBoxField15.Show(); break;
-          case 15: pictureBoxField16.Show(); break;
-          case 16: pictureBoxField17.Show(); break;
-          case 17: pictureBoxField18.Show(); break;
-          case 18: pictureBoxField19.Show(); break;
-          case 19: pictureBoxField20.Show(); break;
-          case 20: pictureBoxField21.Show(); break;
-          case 21: pictureBoxField22.Show(); break;
-          case 22: pictureBoxField23.Show(); break;
-          case 23: pictureBoxField24.Show(); break;
-          case 24: pictureBoxField25.Show(); break;
-        }
-      }
-    }
-
-    private void HideFields(params int[] Values)
-    {
-      for (int i = 1; i < Values.Length + 1; i++)
-      {
-        switch (Values[i - 1])
-        {
-          case 0: pictureBoxField1.Hide(); break;
-          case 1: pictureBoxField2.Hide(); break;
-          case 2: pictureBoxField3.Hide(); break;
-          case 3: pictureBoxField4.Hide(); break;
-          case 4: pictureBoxField5.Hide(); break;
-          case 5: pictureBoxField6.Hide(); break;
-          case 6: pictureBoxField7.Hide(); break;
-          case 7: pictureBoxField8.Hide(); break;
-          case 8: pictureBoxField9.Hide(); break;
-          case 9: pictureBoxField10.Hide(); break;
-          case 10: pictureBoxField11.Hide(); break;
-          case 11: pictureBoxField12.Hide(); break;
-          case 12: pictureBoxField13.Hide(); break;
-          case 13: pictureBoxField14.Hide(); break;
-          case 14: pictureBoxField15.Hide(); break;
-          case 15: pictureBoxField16.Hide(); break;
-          case 16: pictureBoxField17.Hide(); break;
-          case 17: pictureBoxField18.Hide(); break;
-          case 18: pictureBoxField19.Hide(); break;
-          case 19: pictureBoxField20.Hide(); break;
-          case 20: pictureBoxField21.Hide(); break;
-          case 21: pictureBoxField22.Hide(); break;
-          case 22: pictureBoxField23.Hide(); break;
-          case 23: pictureBoxField24.Hide(); break;
-          case 24: pictureBoxField25.Hide(); break;
-        }
-      }
-    }
-
     private void InitializeGame()
     {
       Random rnd = new Random();
       int r = 0;
-      Color color;
       intTicks = 0;
       intClicks = 0;
       intBlacks = 0;
       intWhites = 0;
 
-      for (int i = 0; i < intNumberOfAllFields; i++)
-      {
-        r = rnd.Next();
-        if (r % 2 == 0) color = Color.Black; else color = Color.White;
-        switch (i)
-        {
-          case 0: pictureBoxField1.BackColor = color; break;
-          case 1: pictureBoxField2.BackColor = color; break;
-          case 2: pictureBoxField3.BackColor = color; break;
-          case 3: pictureBoxField4.BackColor = color; break;
-          case 4: pictureBoxField5.BackColor = color; break;
-          case 5: pictureBoxField6.BackColor = color; break;
-          case 6: pictureBoxField7.BackColor = color; break;
-          case 7: pictureBoxField8.BackColor = color; break;
-          case 8: pictureBoxField9.BackColor = color; break;
-          case 9: pictureBoxField10.BackColor = color; break;
-          case 10: pictureBoxField11.BackColor = color; break;
-          case 11: pictureBoxField12.BackColor = color; break;
-          case 12: pictureBoxField13.BackColor = color; break;
-          case 13: pictureBoxField14.BackColor = color; break;
-          case 14: pictureBoxField15.BackColor = color; break;
-          case 15: pictureBoxField16.BackColor = color; break;
-          case 16: pictureBoxField17.BackColor = color; break;
-          case 17: pictureBoxField18.BackColor = color; break;
-          case 18: pictureBoxField19.BackColor = color; break;
-          case 19: pictureBoxField20.BackColor = color; break;
-          case 20: pictureBoxField21.BackColor = color; break;
-          case 21: pictureBoxField22.BackColor = color; break;
-          case 22: pictureBoxField23.BackColor = color; break;
-          case 23: pictureBoxField24.BackColor = color; break;
-          case 24: pictureBoxField25.BackColor = color; break;
-        }
-      }
+      r = rnd.Next();
+      if (r % 2 == 0) buttonField1.BackColor = Color.Black; else buttonField1.BackColor = Color.White;
+      r = rnd.Next();
+      if (r % 2 == 0) buttonField2.BackColor = Color.Black; else buttonField2.BackColor = Color.White;
+      r = rnd.Next();
+      if (r % 2 == 0) buttonField3.BackColor = Color.Black; else buttonField3.BackColor = Color.White;
+      r = rnd.Next();
+      if (r % 2 == 0) buttonField4.BackColor = Color.Black; else buttonField4.BackColor = Color.White;
+      r = rnd.Next();
+      if (r % 2 == 0) buttonField5.BackColor = Color.Black; else buttonField5.BackColor = Color.White;
+      r = rnd.Next();
+      if (r % 2 == 0) buttonField6.BackColor = Color.Black; else buttonField6.BackColor = Color.White;
+      r = rnd.Next();
+      if (r % 2 == 0) buttonField7.BackColor = Color.Black; else buttonField7.BackColor = Color.White;
+      r = rnd.Next();
+      if (r % 2 == 0) buttonField8.BackColor = Color.Black; else buttonField8.BackColor = Color.White;
+      r = rnd.Next();
+      if (r % 2 == 0) buttonField9.BackColor = Color.Black; else buttonField9.BackColor = Color.White;
+      r = rnd.Next();
+      if (r % 2 == 0) buttonField10.BackColor = Color.Black; else buttonField10.BackColor = Color.White;
+      r = rnd.Next();
+      if (r % 2 == 0) buttonField11.BackColor = Color.Black; else buttonField11.BackColor = Color.White;
+      r = rnd.Next();
+      if (r % 2 == 0) buttonField12.BackColor = Color.Black; else buttonField12.BackColor = Color.White;
+      r = rnd.Next();
+      if (r % 2 == 0) buttonField13.BackColor = Color.Black; else buttonField13.BackColor = Color.White;
+      r = rnd.Next();
+      if (r % 2 == 0) buttonField14.BackColor = Color.Black; else buttonField14.BackColor = Color.White;
+      r = rnd.Next();
+      if (r % 2 == 0) buttonField15.BackColor = Color.Black; else buttonField15.BackColor = Color.White;
+      r = rnd.Next();
+      if (r % 2 == 0) buttonField16.BackColor = Color.Black; else buttonField16.BackColor = Color.White;
+      r = rnd.Next();
+      if (r % 2 == 0) buttonField17.BackColor = Color.Black; else buttonField17.BackColor = Color.White;
+      r = rnd.Next();
+      if (r % 2 == 0) buttonField18.BackColor = Color.Black; else buttonField18.BackColor = Color.White;
+      r = rnd.Next();
+      if (r % 2 == 0) buttonField19.BackColor = Color.Black; else buttonField19.BackColor = Color.White;
+      r = rnd.Next();
+      if (r % 2 == 0) buttonField20.BackColor = Color.Black; else buttonField20.BackColor = Color.White;
+      r = rnd.Next();
+      if (r % 2 == 0) buttonField21.BackColor = Color.Black; else buttonField21.BackColor = Color.White;
+      r = rnd.Next();
+      if (r % 2 == 0) buttonField22.BackColor = Color.Black; else buttonField22.BackColor = Color.White;
+      r = rnd.Next();
+      if (r % 2 == 0) buttonField23.BackColor = Color.Black; else buttonField23.BackColor = Color.White;
+      r = rnd.Next();
+      if (r % 2 == 0) buttonField24.BackColor = Color.Black; else buttonField24.BackColor = Color.White;
+      r = rnd.Next();
+      if (r % 2 == 0) buttonField25.BackColor = Color.Black; else buttonField25.BackColor = Color.White;
 
       if (intGamesize == 3)
       {
-        HideFields(4, 5, 9, 10, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25);
+        buttonField4.Hide();
+        buttonField5.Hide();
+        buttonField9.Hide();
+        buttonField10.Hide();
+        buttonField14.Hide();
+        buttonField15.Hide();
+        buttonField16.Hide();
+        buttonField17.Hide();
+        buttonField18.Hide();
+        buttonField19.Hide();
+        buttonField20.Hide();
+        buttonField21.Hide();
+        buttonField22.Hide();
+        buttonField23.Hide();
+        buttonField24.Hide();
+        buttonField25.Hide();
       }
       else if (intGamesize == 4)
       {
-        ShowFields(4, 9, 14, 16, 17, 18, 19);
-        HideFields(5, 10, 15, 20, 21, 22, 23, 24, 25);
+        buttonField4.Show();
+        buttonField5.Hide();
+        buttonField9.Show();
+        buttonField10.Hide();
+        buttonField14.Show();
+        buttonField15.Hide();
+        buttonField16.Show();
+        buttonField17.Show();
+        buttonField18.Show();
+        buttonField19.Show();
+        buttonField20.Hide();
+        buttonField21.Hide();
+        buttonField22.Hide();
+        buttonField23.Hide();
+        buttonField24.Hide();
+        buttonField25.Hide();
       }
       else if (intGamesize == 5)
       {
-        ShowFields(4, 5, 9, 10, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25);
+        buttonField4.Show();
+        buttonField5.Show();
+        buttonField9.Show();
+        buttonField10.Show();
+        buttonField14.Show();
+        buttonField15.Show();
+        buttonField16.Show();
+        buttonField17.Show();
+        buttonField18.Show();
+        buttonField19.Show();
+        buttonField20.Show();
+        buttonField21.Show();
+        buttonField22.Show();
+        buttonField23.Show();
+        buttonField24.Show();
+        buttonField25.Show();
       }
 
       labelClicks.Text = "Klicks: " + intClicks;
@@ -173,149 +163,158 @@ namespace Black_n_White
       timer.Enabled = false;
     }
 
-    private bool isFieldUnicolor()
+    private void CheckForWin()
     {
       if (intGamesize == 3)
       {
         if (
-          (pictureBoxField1.BackColor == Color.Black &&
-          pictureBoxField2.BackColor == Color.Black &&
-          pictureBoxField3.BackColor == Color.Black &&
-          pictureBoxField6.BackColor == Color.Black &&
-          pictureBoxField7.BackColor == Color.Black &&
-          pictureBoxField8.BackColor == Color.Black &&
-          pictureBoxField11.BackColor == Color.Black &&
-          pictureBoxField12.BackColor == Color.Black &&
-          pictureBoxField13.BackColor == Color.Black) ||
-          (pictureBoxField1.BackColor == Color.White &&
-          pictureBoxField2.BackColor == Color.White &&
-          pictureBoxField3.BackColor == Color.White &&
-          pictureBoxField6.BackColor == Color.White &&
-          pictureBoxField7.BackColor == Color.White &&
-          pictureBoxField8.BackColor == Color.White &&
-          pictureBoxField11.BackColor == Color.White &&
-          pictureBoxField12.BackColor == Color.White &&
-          pictureBoxField13.BackColor == Color.White)
+          (buttonField1.BackColor == Color.Black &&
+          buttonField2.BackColor == Color.Black &&
+          buttonField3.BackColor == Color.Black &&
+          buttonField6.BackColor == Color.Black &&
+          buttonField7.BackColor == Color.Black &&
+          buttonField8.BackColor == Color.Black &&
+          buttonField11.BackColor == Color.Black &&
+          buttonField12.BackColor == Color.Black &&
+          buttonField13.BackColor == Color.Black) ||
+          (buttonField1.BackColor == Color.White &&
+          buttonField2.BackColor == Color.White &&
+          buttonField3.BackColor == Color.White &&
+          buttonField6.BackColor == Color.White &&
+          buttonField7.BackColor == Color.White &&
+          buttonField8.BackColor == Color.White &&
+          buttonField11.BackColor == Color.White &&
+          buttonField12.BackColor == Color.White &&
+          buttonField13.BackColor == Color.White)
         )
         {
-          return true;
+          timer.Stop();
+          string message = "Du hast gewonnen mit " + intClicks + " Klicks in " + intTicks + " Ticks.";
+          string caption = "Gewonnen";
+          MessageBoxButtons buttons = MessageBoxButtons.OK;
+          DialogResult result;
+          result = MessageBox.Show(message, caption, buttons);
+          InitializeGame();
+          boolIsGameRunning = false;
+          buttonNewGamesize.Enabled = true;
+          buttonOptions.Enabled = true;
         }
       }
       else if (intGamesize == 4)
       {
         if (
-          (pictureBoxField1.BackColor == Color.Black &&
-          pictureBoxField2.BackColor == Color.Black &&
-          pictureBoxField3.BackColor == Color.Black &&
-          pictureBoxField4.BackColor == Color.Black &&
-          pictureBoxField6.BackColor == Color.Black &&
-          pictureBoxField7.BackColor == Color.Black &&
-          pictureBoxField8.BackColor == Color.Black &&
-          pictureBoxField9.BackColor == Color.Black &&
-          pictureBoxField11.BackColor == Color.Black &&
-          pictureBoxField12.BackColor == Color.Black &&
-          pictureBoxField13.BackColor == Color.Black &&
-          pictureBoxField14.BackColor == Color.Black &&
-          pictureBoxField16.BackColor == Color.Black &&
-          pictureBoxField17.BackColor == Color.Black &&
-          pictureBoxField18.BackColor == Color.Black &&
-          pictureBoxField19.BackColor == Color.Black) ||
-          (pictureBoxField1.BackColor == Color.White &&
-          pictureBoxField2.BackColor == Color.White &&
-          pictureBoxField3.BackColor == Color.White &&
-          pictureBoxField4.BackColor == Color.White &&
-          pictureBoxField6.BackColor == Color.White &&
-          pictureBoxField7.BackColor == Color.White &&
-          pictureBoxField8.BackColor == Color.White &&
-          pictureBoxField9.BackColor == Color.White &&
-          pictureBoxField11.BackColor == Color.White &&
-          pictureBoxField12.BackColor == Color.White &&
-          pictureBoxField13.BackColor == Color.White &&
-          pictureBoxField14.BackColor == Color.White &&
-          pictureBoxField16.BackColor == Color.White &&
-          pictureBoxField17.BackColor == Color.White &&
-          pictureBoxField18.BackColor == Color.White &&
-          pictureBoxField19.BackColor == Color.White)
+          (buttonField1.BackColor == Color.Black &&
+          buttonField2.BackColor == Color.Black &&
+          buttonField3.BackColor == Color.Black &&
+          buttonField4.BackColor == Color.Black &&
+          buttonField6.BackColor == Color.Black &&
+          buttonField7.BackColor == Color.Black &&
+          buttonField8.BackColor == Color.Black &&
+          buttonField9.BackColor == Color.Black &&
+          buttonField11.BackColor == Color.Black &&
+          buttonField12.BackColor == Color.Black &&
+          buttonField13.BackColor == Color.Black &&
+          buttonField14.BackColor == Color.Black &&
+          buttonField16.BackColor == Color.Black &&
+          buttonField17.BackColor == Color.Black &&
+          buttonField18.BackColor == Color.Black &&
+          buttonField19.BackColor == Color.Black) ||
+          (buttonField1.BackColor == Color.White &&
+          buttonField2.BackColor == Color.White &&
+          buttonField3.BackColor == Color.White &&
+          buttonField4.BackColor == Color.White &&
+          buttonField6.BackColor == Color.White &&
+          buttonField7.BackColor == Color.White &&
+          buttonField8.BackColor == Color.White &&
+          buttonField9.BackColor == Color.White &&
+          buttonField11.BackColor == Color.White &&
+          buttonField12.BackColor == Color.White &&
+          buttonField13.BackColor == Color.White &&
+          buttonField14.BackColor == Color.White &&
+          buttonField16.BackColor == Color.White &&
+          buttonField17.BackColor == Color.White &&
+          buttonField18.BackColor == Color.White &&
+          buttonField19.BackColor == Color.White)
         )
         {
-          return true;
+          timer.Stop();
+          string message = "Du hast gewonnen mit " + intClicks + " Klicks in " + intTicks + " Ticks.";
+          string caption = "Gewonnen";
+          MessageBoxButtons buttons = MessageBoxButtons.OK;
+          DialogResult result;
+          result = MessageBox.Show(message, caption, buttons);
+          InitializeGame();
+          boolIsGameRunning = false;
+          buttonNewGamesize.Enabled = true;
+          buttonOptions.Enabled = true;
         }
       }
       if (intGamesize == 5)
       {
         if (
-          (pictureBoxField1.BackColor == Color.Black &&
-          pictureBoxField2.BackColor == Color.Black &&
-          pictureBoxField3.BackColor == Color.Black &&
-          pictureBoxField4.BackColor == Color.Black &&
-          pictureBoxField5.BackColor == Color.Black &&
-          pictureBoxField6.BackColor == Color.Black &&
-          pictureBoxField7.BackColor == Color.Black &&
-          pictureBoxField8.BackColor == Color.Black &&
-          pictureBoxField9.BackColor == Color.Black &&
-          pictureBoxField10.BackColor == Color.Black &&
-          pictureBoxField11.BackColor == Color.Black &&
-          pictureBoxField12.BackColor == Color.Black &&
-          pictureBoxField13.BackColor == Color.Black &&
-          pictureBoxField14.BackColor == Color.Black &&
-          pictureBoxField15.BackColor == Color.Black &&
-          pictureBoxField16.BackColor == Color.Black &&
-          pictureBoxField17.BackColor == Color.Black &&
-          pictureBoxField18.BackColor == Color.Black &&
-          pictureBoxField19.BackColor == Color.Black &&
-          pictureBoxField20.BackColor == Color.Black &&
-          pictureBoxField21.BackColor == Color.Black &&
-          pictureBoxField22.BackColor == Color.Black &&
-          pictureBoxField23.BackColor == Color.Black &&
-          pictureBoxField24.BackColor == Color.Black &&
-          pictureBoxField25.BackColor == Color.Black) ||
-          (pictureBoxField1.BackColor == Color.White &&
-          pictureBoxField2.BackColor == Color.White &&
-          pictureBoxField3.BackColor == Color.White &&
-          pictureBoxField4.BackColor == Color.White &&
-          pictureBoxField5.BackColor == Color.White &&
-          pictureBoxField6.BackColor == Color.White &&
-          pictureBoxField7.BackColor == Color.White &&
-          pictureBoxField8.BackColor == Color.White &&
-          pictureBoxField9.BackColor == Color.White &&
-          pictureBoxField10.BackColor == Color.White &&
-          pictureBoxField11.BackColor == Color.White &&
-          pictureBoxField12.BackColor == Color.White &&
-          pictureBoxField13.BackColor == Color.White &&
-          pictureBoxField14.BackColor == Color.White &&
-          pictureBoxField15.BackColor == Color.White &&
-          pictureBoxField16.BackColor == Color.White &&
-          pictureBoxField17.BackColor == Color.White &&
-          pictureBoxField18.BackColor == Color.White &&
-          pictureBoxField19.BackColor == Color.White &&
-          pictureBoxField20.BackColor == Color.White &&
-          pictureBoxField21.BackColor == Color.White &&
-          pictureBoxField22.BackColor == Color.White &&
-          pictureBoxField23.BackColor == Color.White &&
-          pictureBoxField24.BackColor == Color.White &&
-          pictureBoxField25.BackColor == Color.White)
+          (buttonField1.BackColor == Color.Black &&
+          buttonField2.BackColor == Color.Black &&
+          buttonField3.BackColor == Color.Black &&
+          buttonField4.BackColor == Color.Black &&
+          buttonField5.BackColor == Color.Black &&
+          buttonField6.BackColor == Color.Black &&
+          buttonField7.BackColor == Color.Black &&
+          buttonField8.BackColor == Color.Black &&
+          buttonField9.BackColor == Color.Black &&
+          buttonField10.BackColor == Color.Black &&
+          buttonField11.BackColor == Color.Black &&
+          buttonField12.BackColor == Color.Black &&
+          buttonField13.BackColor == Color.Black &&
+          buttonField14.BackColor == Color.Black &&
+          buttonField15.BackColor == Color.Black &&
+          buttonField16.BackColor == Color.Black &&
+          buttonField17.BackColor == Color.Black &&
+          buttonField18.BackColor == Color.Black &&
+          buttonField19.BackColor == Color.Black &&
+          buttonField20.BackColor == Color.Black &&
+          buttonField21.BackColor == Color.Black &&
+          buttonField22.BackColor == Color.Black &&
+          buttonField23.BackColor == Color.Black &&
+          buttonField24.BackColor == Color.Black &&
+          buttonField25.BackColor == Color.Black) ||
+          (buttonField1.BackColor == Color.White &&
+          buttonField2.BackColor == Color.White &&
+          buttonField3.BackColor == Color.White &&
+          buttonField4.BackColor == Color.White &&
+          buttonField5.BackColor == Color.White &&
+          buttonField6.BackColor == Color.White &&
+          buttonField7.BackColor == Color.White &&
+          buttonField8.BackColor == Color.White &&
+          buttonField9.BackColor == Color.White &&
+          buttonField10.BackColor == Color.White &&
+          buttonField11.BackColor == Color.White &&
+          buttonField12.BackColor == Color.White &&
+          buttonField13.BackColor == Color.White &&
+          buttonField14.BackColor == Color.White &&
+          buttonField15.BackColor == Color.White &&
+          buttonField16.BackColor == Color.White &&
+          buttonField17.BackColor == Color.White &&
+          buttonField18.BackColor == Color.White &&
+          buttonField19.BackColor == Color.White &&
+          buttonField20.BackColor == Color.White &&
+          buttonField21.BackColor == Color.White &&
+          buttonField22.BackColor == Color.White &&
+          buttonField23.BackColor == Color.White &&
+          buttonField24.BackColor == Color.White &&
+          buttonField25.BackColor == Color.White)
         )
         {
-          return true;
+          timer.Stop();
+          string message = "Du hast gewonnen mit " + intClicks + " Klicks in " + intTicks + " Ticks.";
+          string caption = "Gewonnen";
+          MessageBoxButtons buttons = MessageBoxButtons.OK;
+          DialogResult result;
+          result = MessageBox.Show(message, caption, buttons);
+          InitializeGame();
+          boolIsGameRunning = false;
+          buttonNewGamesize.Enabled = true;
+          buttonOptions.Enabled = true;
         }
-      }
-      return false;
-    }
-
-    private void CheckIfWinning()
-    {
-      if (isFieldUnicolor())
-      {
-        timer.Stop();
-        string message = "Du hast gewonnen mit " + intClicks + " Klicks in " + intTicks + " Ticks.";
-        string caption = "Gewonnen";
-        MessageBoxButtons buttons = MessageBoxButtons.OK;
-        DialogResult result;
-        result = MessageBox.Show(message, caption, buttons);
-         InitializeGame();
-        boolIsGameRunning = false;
-        buttonNewGameSize.Enabled = true;
-        buttonOptions.Enabled = true;
       }
     }
 
@@ -324,106 +323,165 @@ namespace Black_n_White
       if (boolIsGameRunning == false)
       {
         boolIsGameRunning = true;
-        buttonNewGameSize.Enabled = false;
+        buttonNewGamesize.Enabled = false;
         buttonOptions.Enabled = false;
       }
     }
 
     private void InvertField(byte n)
     {
-      Color backColor = Color.Red;
       switch (n)
       {
-        case 1: { backColor = pictureBoxField1.BackColor; break; }
-        case 2: { backColor = pictureBoxField2.BackColor; break; }
-        case 3: { backColor = pictureBoxField3.BackColor; break; }
-        case 4: { backColor = pictureBoxField4.BackColor; break; }
-        case 5: { backColor = pictureBoxField5.BackColor; break; }
-        case 6: { backColor = pictureBoxField6.BackColor; break; }
-        case 7: { backColor = pictureBoxField7.BackColor; break; }
-        case 8: { backColor = pictureBoxField8.BackColor; break; }
-        case 9: { backColor = pictureBoxField9.BackColor; break; }
-        case 10: { backColor = pictureBoxField10.BackColor; break; }
-        case 11: { backColor = pictureBoxField11.BackColor; break; }
-        case 12: { backColor = pictureBoxField12.BackColor; break; }
-        case 13: { backColor = pictureBoxField13.BackColor; break; }
-        case 14: { backColor = pictureBoxField14.BackColor; break; }
-        case 15: { backColor = pictureBoxField15.BackColor; break; }
-        case 16: { backColor = pictureBoxField16.BackColor; break; }
-        case 17: { backColor = pictureBoxField17.BackColor; break; }
-        case 18: { backColor = pictureBoxField18.BackColor; break; }
-        case 19: { backColor = pictureBoxField19.BackColor; break; }
-        case 20: { backColor = pictureBoxField20.BackColor; break; }
-        case 21: { backColor = pictureBoxField21.BackColor; break; }
-        case 22: { backColor = pictureBoxField22.BackColor; break; }
-        case 23: { backColor = pictureBoxField23.BackColor; break; }
-        case 24: { backColor = pictureBoxField24.BackColor; break; }
-        case 25: { backColor = pictureBoxField25.BackColor; break; }
-      }
-      if (backColor == Color.Black) backColor = Color.White;
-      else if (backColor == Color.White) backColor = Color.Black;
-      switch (n)
-      {
-        case 1: { pictureBoxField1.BackColor = backColor; break; }
-        case 2: { pictureBoxField2.BackColor = backColor; break; }
-        case 3: { pictureBoxField3.BackColor = backColor; break; }
-        case 4: { pictureBoxField4.BackColor = backColor; break; }
-        case 5: { pictureBoxField5.BackColor = backColor; break; }
-        case 6: { pictureBoxField6.BackColor = backColor; break; }
-        case 7: { pictureBoxField7.BackColor = backColor; break; }
-        case 8: { pictureBoxField8.BackColor = backColor; break; }
-        case 9: { pictureBoxField9.BackColor = backColor; break; }
-        case 10: { pictureBoxField10.BackColor = backColor; break; }
-        case 11: { pictureBoxField11.BackColor = backColor; break; }
-        case 12: { pictureBoxField12.BackColor = backColor; break; }
-        case 13: { pictureBoxField13.BackColor = backColor; break; }
-        case 14: { pictureBoxField14.BackColor = backColor; break; }
-        case 15: { pictureBoxField15.BackColor = backColor; break; }
-        case 16: { pictureBoxField16.BackColor = backColor; break; }
-        case 17: { pictureBoxField17.BackColor = backColor; break; }
-        case 18: { pictureBoxField18.BackColor = backColor; break; }
-        case 19: { pictureBoxField19.BackColor = backColor; break; }
-        case 20: { pictureBoxField20.BackColor = backColor; break; }
-        case 21: { pictureBoxField21.BackColor = backColor; break; }
-        case 22: { pictureBoxField22.BackColor = backColor; break; }
-        case 23: { pictureBoxField23.BackColor = backColor; break; }
-        case 24: { pictureBoxField24.BackColor = backColor; break; }
-        case 25: { pictureBoxField25.BackColor = backColor; break; }
-      }
-    }
-
-    private void InvertFields(params int[] Values)
-    {
-      for (int i = 1; i < Values.Length + 1; i++)
-      {
-        switch (Values[i - 1])
-        {
-          case 1: InvertField(1); break;
-          case 2: InvertField(2); break;
-          case 3: InvertField(3); break;
-          case 4: InvertField(4); break;
-          case 5: InvertField(5); break;
-          case 6: InvertField(6); break;
-          case 7: InvertField(7); break;
-          case 8: InvertField(8); break;
-          case 9: InvertField(9); break;
-          case 10: InvertField(10); break;
-          case 11: InvertField(11); break;
-          case 12: InvertField(12); break;
-          case 13: InvertField(13); break;
-          case 14: InvertField(14); break;
-          case 15: InvertField(15); break;
-          case 16: InvertField(16); break;
-          case 17: InvertField(17); break;
-          case 18: InvertField(18); break;
-          case 19: InvertField(19); break;
-          case 20: InvertField(20); break;
-          case 21: InvertField(21); break;
-          case 22: InvertField(22); break;
-          case 23: InvertField(23); break;
-          case 24: InvertField(24); break;
-          case 25: InvertField(25); break;
-        }
+        case 1:
+          {
+            if (buttonField1.BackColor == Color.Black) buttonField1.BackColor = Color.White;
+            else if (buttonField1.BackColor == Color.White) buttonField1.BackColor = Color.Black;
+            break;
+          }
+        case 2:
+          {
+            if (buttonField2.BackColor == Color.Black) buttonField2.BackColor = Color.White;
+            else if (buttonField2.BackColor == Color.White) buttonField2.BackColor = Color.Black;
+            break;
+          }
+        case 3:
+          {
+            if (buttonField3.BackColor == Color.Black) buttonField3.BackColor = Color.White;
+            else if (buttonField3.BackColor == Color.White) buttonField3.BackColor = Color.Black;
+            break;
+          }
+        case 4:
+          {
+            if (buttonField4.BackColor == Color.Black) buttonField4.BackColor = Color.White;
+            else if (buttonField4.BackColor == Color.White) buttonField4.BackColor = Color.Black;
+            break;
+          }
+        case 5:
+          {
+            if (buttonField5.BackColor == Color.Black) buttonField5.BackColor = Color.White;
+            else if (buttonField5.BackColor == Color.White) buttonField5.BackColor = Color.Black;
+            break;
+          }
+        case 6:
+          {
+            if (buttonField6.BackColor == Color.Black) buttonField6.BackColor = Color.White;
+            else if (buttonField6.BackColor == Color.White) buttonField6.BackColor = Color.Black;
+            break;
+          }
+        case 7:
+          {
+            if (buttonField7.BackColor == Color.Black) buttonField7.BackColor = Color.White;
+            else if (buttonField7.BackColor == Color.White) buttonField7.BackColor = Color.Black;
+            break;
+          }
+        case 8:
+          {
+            if (buttonField8.BackColor == Color.Black) buttonField8.BackColor = Color.White;
+            else if (buttonField8.BackColor == Color.White) buttonField8.BackColor = Color.Black;
+            break;
+          }
+        case 9:
+          {
+            if (buttonField9.BackColor == Color.Black) buttonField9.BackColor = Color.White;
+            else if (buttonField9.BackColor == Color.White) buttonField9.BackColor = Color.Black;
+            break;
+          }
+        case 10:
+          {
+            if (buttonField10.BackColor == Color.Black) buttonField10.BackColor = Color.White;
+            else if (buttonField10.BackColor == Color.White) buttonField10.BackColor = Color.Black;
+            break;
+          }
+        case 11:
+          {
+            if (buttonField11.BackColor == Color.Black) buttonField11.BackColor = Color.White;
+            else if (buttonField11.BackColor == Color.White) buttonField11.BackColor = Color.Black;
+            break;
+          }
+        case 12:
+          {
+            if (buttonField12.BackColor == Color.Black) buttonField12.BackColor = Color.White;
+            else if (buttonField12.BackColor == Color.White) buttonField12.BackColor = Color.Black;
+            break;
+          }
+        case 13:
+          {
+            if (buttonField13.BackColor == Color.Black) buttonField13.BackColor = Color.White;
+            else if (buttonField13.BackColor == Color.White) buttonField13.BackColor = Color.Black;
+            break;
+          }
+        case 14:
+          {
+            if (buttonField14.BackColor == Color.Black) buttonField14.BackColor = Color.White;
+            else if (buttonField14.BackColor == Color.White) buttonField14.BackColor = Color.Black;
+            break;
+          }
+        case 15:
+          {
+            if (buttonField15.BackColor == Color.Black) buttonField15.BackColor = Color.White;
+            else if (buttonField15.BackColor == Color.White) buttonField15.BackColor = Color.Black;
+            break;
+          }
+        case 16:
+          {
+            if (buttonField16.BackColor == Color.Black) buttonField16.BackColor = Color.White;
+            else if (buttonField16.BackColor == Color.White) buttonField16.BackColor = Color.Black;
+            break;
+          }
+        case 17:
+          {
+            if (buttonField17.BackColor == Color.Black) buttonField17.BackColor = Color.White;
+            else if (buttonField17.BackColor == Color.White) buttonField17.BackColor = Color.Black;
+            break;
+          }
+        case 18:
+          {
+            if (buttonField18.BackColor == Color.Black) buttonField18.BackColor = Color.White;
+            else if (buttonField18.BackColor == Color.White) buttonField18.BackColor = Color.Black;
+            break;
+          }
+        case 19:
+          {
+            if (buttonField19.BackColor == Color.Black) buttonField19.BackColor = Color.White;
+            else if (buttonField19.BackColor == Color.White) buttonField19.BackColor = Color.Black;
+            break;
+          }
+        case 20:
+          {
+            if (buttonField20.BackColor == Color.Black) buttonField20.BackColor = Color.White;
+            else if (buttonField20.BackColor == Color.White) buttonField20.BackColor = Color.Black;
+            break;
+          }
+        case 21:
+          {
+            if (buttonField21.BackColor == Color.Black) buttonField21.BackColor = Color.White;
+            else if (buttonField21.BackColor == Color.White) buttonField21.BackColor = Color.Black;
+            break;
+          }
+        case 22:
+          {
+            if (buttonField22.BackColor == Color.Black) buttonField22.BackColor = Color.White;
+            else if (buttonField22.BackColor == Color.White) buttonField22.BackColor = Color.Black;
+            break;
+          }
+        case 23:
+          {
+            if (buttonField23.BackColor == Color.Black) buttonField23.BackColor = Color.White;
+            else if (buttonField23.BackColor == Color.White) buttonField23.BackColor = Color.Black;
+            break;
+          }
+        case 24:
+          {
+            if (buttonField24.BackColor == Color.Black) buttonField24.BackColor = Color.White;
+            else if (buttonField24.BackColor == Color.White) buttonField24.BackColor = Color.Black;
+            break;
+          }
+        case 25:
+          {
+            if (buttonField25.BackColor == Color.Black) buttonField25.BackColor = Color.White;
+            else if (buttonField25.BackColor == Color.White) buttonField25.BackColor = Color.Black;
+            break;
+          }
       }
     }
 
@@ -433,115 +491,120 @@ namespace Black_n_White
       intWhites = 0;
       if (intGamesize == 3)
       {
-        if (pictureBoxField1.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField1.BackColor == Color.White) intWhites++;
-        if (pictureBoxField2.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField2.BackColor == Color.White) intWhites++;
-        if (pictureBoxField3.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField3.BackColor == Color.White) intWhites++;
-        if (pictureBoxField6.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField6.BackColor == Color.White) intWhites++;
-        if (pictureBoxField7.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField7.BackColor == Color.White) intWhites++;
-        if (pictureBoxField8.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField8.BackColor == Color.White) intWhites++;
-        if (pictureBoxField11.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField11.BackColor == Color.White) intWhites++;
-        if (pictureBoxField12.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField12.BackColor == Color.White) intWhites++;
-        if (pictureBoxField13.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField13.BackColor == Color.White) intWhites++;
+        if (buttonField1.BackColor == Color.Black) intBlacks++;
+        else if (buttonField1.BackColor == Color.White) intWhites++;
+        if (buttonField2.BackColor == Color.Black) intBlacks++;
+        else if (buttonField2.BackColor == Color.White) intWhites++;
+        if (buttonField3.BackColor == Color.Black) intBlacks++;
+        else if (buttonField3.BackColor == Color.White) intWhites++;
+        if (buttonField6.BackColor == Color.Black) intBlacks++;
+        else if (buttonField6.BackColor == Color.White) intWhites++;
+        if (buttonField7.BackColor == Color.Black) intBlacks++;
+        else if (buttonField7.BackColor == Color.White) intWhites++;
+        if (buttonField8.BackColor == Color.Black) intBlacks++;
+        else if (buttonField8.BackColor == Color.White) intWhites++;
+        if (buttonField11.BackColor == Color.Black) intBlacks++;
+        else if (buttonField11.BackColor == Color.White) intWhites++;
+        if (buttonField12.BackColor == Color.Black) intBlacks++;
+        else if (buttonField12.BackColor == Color.White) intWhites++;
+        if (buttonField13.BackColor == Color.Black) intBlacks++;
+        else if (buttonField13.BackColor == Color.White) intWhites++;
       }
       else if (intGamesize == 4)
       {
-        if (pictureBoxField1.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField1.BackColor == Color.White) intWhites++;
-        if (pictureBoxField2.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField2.BackColor == Color.White) intWhites++;
-        if (pictureBoxField3.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField3.BackColor == Color.White) intWhites++;
-        if (pictureBoxField4.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField4.BackColor == Color.White) intWhites++;
-        if (pictureBoxField6.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField6.BackColor == Color.White) intWhites++;
-        if (pictureBoxField7.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField7.BackColor == Color.White) intWhites++;
-        if (pictureBoxField8.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField8.BackColor == Color.White) intWhites++;
-        if (pictureBoxField9.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField9.BackColor == Color.White) intWhites++;
-        if (pictureBoxField11.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField11.BackColor == Color.White) intWhites++;
-        if (pictureBoxField12.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField12.BackColor == Color.White) intWhites++;
-        if (pictureBoxField13.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField13.BackColor == Color.White) intWhites++;
-        if (pictureBoxField14.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField14.BackColor == Color.White) intWhites++;
-        if (pictureBoxField16.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField16.BackColor == Color.White) intWhites++;
-        if (pictureBoxField17.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField17.BackColor == Color.White) intWhites++;
-        if (pictureBoxField18.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField18.BackColor == Color.White) intWhites++;
-        if (pictureBoxField19.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField19.BackColor == Color.White) intWhites++;
+        if (buttonField1.BackColor == Color.Black) intBlacks++;
+        else if (buttonField1.BackColor == Color.White) intWhites++;
+        if (buttonField2.BackColor == Color.Black) intBlacks++;
+        else if (buttonField2.BackColor == Color.White) intWhites++;
+        if (buttonField3.BackColor == Color.Black) intBlacks++;
+        else if (buttonField3.BackColor == Color.White) intWhites++;
+        if (buttonField4.BackColor == Color.Black) intBlacks++;
+        else if (buttonField4.BackColor == Color.White) intWhites++;
+        if (buttonField6.BackColor == Color.Black) intBlacks++;
+        else if (buttonField6.BackColor == Color.White) intWhites++;
+        if (buttonField7.BackColor == Color.Black) intBlacks++;
+        else if (buttonField7.BackColor == Color.White) intWhites++;
+        if (buttonField8.BackColor == Color.Black) intBlacks++;
+        else if (buttonField8.BackColor == Color.White) intWhites++;
+        if (buttonField9.BackColor == Color.Black) intBlacks++;
+        else if (buttonField9.BackColor == Color.White) intWhites++;
+        if (buttonField11.BackColor == Color.Black) intBlacks++;
+        else if (buttonField11.BackColor == Color.White) intWhites++;
+        if (buttonField12.BackColor == Color.Black) intBlacks++;
+        else if (buttonField12.BackColor == Color.White) intWhites++;
+        if (buttonField13.BackColor == Color.Black) intBlacks++;
+        else if (buttonField13.BackColor == Color.White) intWhites++;
+        if (buttonField14.BackColor == Color.Black) intBlacks++;
+        else if (buttonField14.BackColor == Color.White) intWhites++;
+        if (buttonField16.BackColor == Color.Black) intBlacks++;
+        else if (buttonField16.BackColor == Color.White) intWhites++;
+        if (buttonField17.BackColor == Color.Black) intBlacks++;
+        else if (buttonField17.BackColor == Color.White) intWhites++;
+        if (buttonField18.BackColor == Color.Black) intBlacks++;
+        else if (buttonField18.BackColor == Color.White) intWhites++;
+        if (buttonField19.BackColor == Color.Black) intBlacks++;
+        else if (buttonField19.BackColor == Color.White) intWhites++;
       }
       if (intGamesize == 5)
       {
-        if (pictureBoxField1.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField1.BackColor == Color.White) intWhites++;
-        if (pictureBoxField2.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField2.BackColor == Color.White) intWhites++;
-        if (pictureBoxField3.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField3.BackColor == Color.White) intWhites++;
-        if (pictureBoxField4.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField4.BackColor == Color.White) intWhites++;
-        if (pictureBoxField5.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField5.BackColor == Color.White) intWhites++;
-        if (pictureBoxField6.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField6.BackColor == Color.White) intWhites++;
-        if (pictureBoxField7.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField7.BackColor == Color.White) intWhites++;
-        if (pictureBoxField8.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField8.BackColor == Color.White) intWhites++;
-        if (pictureBoxField9.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField9.BackColor == Color.White) intWhites++;
-        if (pictureBoxField10.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField10.BackColor == Color.White) intWhites++;
-        if (pictureBoxField11.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField11.BackColor == Color.White) intWhites++;
-        if (pictureBoxField12.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField12.BackColor == Color.White) intWhites++;
-        if (pictureBoxField13.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField13.BackColor == Color.White) intWhites++;
-        if (pictureBoxField14.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField14.BackColor == Color.White) intWhites++;
-        if (pictureBoxField15.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField15.BackColor == Color.White) intWhites++;
-        if (pictureBoxField16.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField16.BackColor == Color.White) intWhites++;
-        if (pictureBoxField17.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField17.BackColor == Color.White) intWhites++;
-        if (pictureBoxField18.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField18.BackColor == Color.White) intWhites++;
-        if (pictureBoxField19.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField19.BackColor == Color.White) intWhites++;
-        if (pictureBoxField20.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField20.BackColor == Color.White) intWhites++;
-        if (pictureBoxField21.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField21.BackColor == Color.White) intWhites++;
-        if (pictureBoxField22.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField22.BackColor == Color.White) intWhites++;
-        if (pictureBoxField23.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField23.BackColor == Color.White) intWhites++;
-        if (pictureBoxField24.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField24.BackColor == Color.White) intWhites++;
-        if (pictureBoxField25.BackColor == Color.Black) intBlacks++;
-        else if (pictureBoxField25.BackColor == Color.White) intWhites++;
+        if (buttonField1.BackColor == Color.Black) intBlacks++;
+        else if (buttonField1.BackColor == Color.White) intWhites++;
+        if (buttonField2.BackColor == Color.Black) intBlacks++;
+        else if (buttonField2.BackColor == Color.White) intWhites++;
+        if (buttonField3.BackColor == Color.Black) intBlacks++;
+        else if (buttonField3.BackColor == Color.White) intWhites++;
+        if (buttonField4.BackColor == Color.Black) intBlacks++;
+        else if (buttonField4.BackColor == Color.White) intWhites++;
+        if (buttonField5.BackColor == Color.Black) intBlacks++;
+        else if (buttonField5.BackColor == Color.White) intWhites++;
+        if (buttonField6.BackColor == Color.Black) intBlacks++;
+        else if (buttonField6.BackColor == Color.White) intWhites++;
+        if (buttonField7.BackColor == Color.Black) intBlacks++;
+        else if (buttonField7.BackColor == Color.White) intWhites++;
+        if (buttonField8.BackColor == Color.Black) intBlacks++;
+        else if (buttonField8.BackColor == Color.White) intWhites++;
+        if (buttonField9.BackColor == Color.Black) intBlacks++;
+        else if (buttonField9.BackColor == Color.White) intWhites++;
+        if (buttonField10.BackColor == Color.Black) intBlacks++;
+        else if (buttonField10.BackColor == Color.White) intWhites++;
+        if (buttonField11.BackColor == Color.Black) intBlacks++;
+        else if (buttonField11.BackColor == Color.White) intWhites++;
+        if (buttonField12.BackColor == Color.Black) intBlacks++;
+        else if (buttonField12.BackColor == Color.White) intWhites++;
+        if (buttonField13.BackColor == Color.Black) intBlacks++;
+        else if (buttonField13.BackColor == Color.White) intWhites++;
+        if (buttonField14.BackColor == Color.Black) intBlacks++;
+        else if (buttonField14.BackColor == Color.White) intWhites++;
+        if (buttonField15.BackColor == Color.Black) intBlacks++;
+        else if (buttonField15.BackColor == Color.White) intWhites++;
+        if (buttonField16.BackColor == Color.Black) intBlacks++;
+        else if (buttonField16.BackColor == Color.White) intWhites++;
+        if (buttonField17.BackColor == Color.Black) intBlacks++;
+        else if (buttonField17.BackColor == Color.White) intWhites++;
+        if (buttonField18.BackColor == Color.Black) intBlacks++;
+        else if (buttonField18.BackColor == Color.White) intWhites++;
+        if (buttonField19.BackColor == Color.Black) intBlacks++;
+        else if (buttonField19.BackColor == Color.White) intWhites++;
+        if (buttonField20.BackColor == Color.Black) intBlacks++;
+        else if (buttonField20.BackColor == Color.White) intWhites++;
+        if (buttonField21.BackColor == Color.Black) intBlacks++;
+        else if (buttonField21.BackColor == Color.White) intWhites++;
+        if (buttonField22.BackColor == Color.Black) intBlacks++;
+        else if (buttonField22.BackColor == Color.White) intWhites++;
+        if (buttonField23.BackColor == Color.Black) intBlacks++;
+        else if (buttonField23.BackColor == Color.White) intWhites++;
+        if (buttonField24.BackColor == Color.Black) intBlacks++;
+        else if (buttonField24.BackColor == Color.White) intWhites++;
+        if (buttonField25.BackColor == Color.Black) intBlacks++;
+        else if (buttonField25.BackColor == Color.White) intWhites++;
       }
       labelBlacks.Text = "Blacks: " + intBlacks;
       labelWhites.Text = "Whites: " + intWhites;
+    }
+
+    private void clearStatusbarText()
+    {
+      toolStripStatusLabel.Text = "";
     }
 
     private void setStatusbarText(String str)
@@ -549,32 +612,21 @@ namespace Black_n_White
       toolStripStatusLabel.Text = str;
     }
 
-    private void clearStatusbar()
-    {
-      setStatusbarText("");
-    }
-
-    private String getBackcolorInGerman(PictureBox picBox)
-    {
-      String str = "???";
-      if (picBox.BackColor == Color.Black) str = "schwarz"; else if (picBox.BackColor == Color.White) str = "weiß";
-      return str;
-    }
-
     private void Black_n_WhiteForm_Load(object sender, EventArgs e)
     {
       InitializeGame();
-      clearStatusbar();
+      clearStatusbarText();
     }
 
-    private void pictureBoxField1_Click(object sender, EventArgs e)
+    private void buttonField1_Click(object sender, EventArgs e)
     {
-      CheckIfTimerIsEnabled();
+      CheckForEnabledTimer();
       CheckForGameIsRunning();
       if (toolStripMenuItemNeighbourhoodCentered.Checked) InvertField(1);
       if (toolStripMenuItemNeighbourhoodLinear.Checked)
       {
-        InvertFields(2, 6);
+        InvertField(2);
+        InvertField(6);
       }
       else if (toolStripMenuItemNeighbourhoodDiagonal.Checked)
       {
@@ -582,91 +634,127 @@ namespace Black_n_White
       }
       else if (toolStripMenuItemNeighbourhoodCombined.Checked)
       {
-        InvertFields(2, 6, 7);
+        InvertField(2);
+        InvertField(6);
+        InvertField(7);
       }
       UpdateClicks();
       CountBlacksAndWhites();
-      setStatusbarText(pictureBoxField1.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField1));
-      CheckIfWinning();
+      String str;
+      if (buttonField1.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField1.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 1x1: " + str);
+      CheckForWin();
     }
 
-    private void pictureBoxField2_Click(object sender, EventArgs e)
+    private void buttonField2_Click(object sender, EventArgs e)
     {
-      CheckIfTimerIsEnabled();
+      CheckForEnabledTimer();
       CheckForGameIsRunning();
       if (toolStripMenuItemNeighbourhoodCentered.Checked) InvertField(2);
       if (toolStripMenuItemNeighbourhoodLinear.Checked)
       {
-        InvertFields(1, 3, 7);
+        InvertField(1);
+        InvertField(3);
+        InvertField(7);
       }
       else if (toolStripMenuItemNeighbourhoodDiagonal.Checked)
       {
-        InvertFields(6, 8);
+        InvertField(6);
+        InvertField(8);
       }
       else if (toolStripMenuItemNeighbourhoodCombined.Checked)
       {
-        InvertFields(1, 3, 6, 7, 8);
+        InvertField(1);
+        InvertField(3);
+        InvertField(7);
+        InvertField(6);
+        InvertField(8);
       }
       UpdateClicks();
       CountBlacksAndWhites();
-      setStatusbarText(pictureBoxField2.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField2));
-      CheckIfWinning();
+      String str;
+      if (buttonField2.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField2.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 1x2: " + str);
+      CheckForWin();
     }
 
-    private void pictureBoxField3_Click(object sender, EventArgs e)
+    private void buttonField3_Click(object sender, EventArgs e)
     {
-      CheckIfTimerIsEnabled();
+      CheckForEnabledTimer();
       CheckForGameIsRunning();
       if (toolStripMenuItemNeighbourhoodCentered.Checked) InvertField(3);
       if (toolStripMenuItemNeighbourhoodLinear.Checked)
       {
-        InvertFields(2, 4, 8);
+        InvertField(2);
+        InvertField(4);
+        InvertField(8);
       }
       else if (toolStripMenuItemNeighbourhoodDiagonal.Checked)
       {
-        InvertFields(7, 9);
+        InvertField(7);
+        InvertField(9);
       }
       else if (toolStripMenuItemNeighbourhoodCombined.Checked)
       {
-        InvertFields(2, 4, 7, 8, 9);
+        InvertField(2);
+        InvertField(4);
+        InvertField(8);
+        InvertField(7);
+        InvertField(9);
       }
       UpdateClicks();
       CountBlacksAndWhites();
-      setStatusbarText(pictureBoxField3.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField3));
-      CheckIfWinning();
+      String str;
+      if (buttonField3.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField3.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 1x3: " + str);
+      CheckForWin();
     }
 
-    private void pictureBoxField4_Click(object sender, EventArgs e)
+    private void buttonField4_Click(object sender, EventArgs e)
     {
-      CheckIfTimerIsEnabled();
+      CheckForEnabledTimer();
       CheckForGameIsRunning();
       if (toolStripMenuItemNeighbourhoodCentered.Checked) InvertField(4);
       if (toolStripMenuItemNeighbourhoodLinear.Checked)
       {
-        InvertFields(3, 5, 9);
+        InvertField(3);
+        InvertField(5);
+        InvertField(9);
       }
       else if (toolStripMenuItemNeighbourhoodDiagonal.Checked)
       {
-        InvertFields(8, 10);
+        InvertField(8);
+        InvertField(10);
       }
       else if (toolStripMenuItemNeighbourhoodCombined.Checked)
       {
-        InvertFields(3, 5, 8, 9, 10);
+        InvertField(3);
+        InvertField(5);
+        InvertField(9);
+        InvertField(8);
+        InvertField(10);
       }
       UpdateClicks();
       CountBlacksAndWhites();
-      setStatusbarText(pictureBoxField4.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField4));
-      CheckIfWinning();
+      String str;
+      if (buttonField4.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField4.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 1x4: " + str);
+      CheckForWin();
     }
 
-    private void pictureBoxField5_Click(object sender, EventArgs e)
+    private void buttonField5_Click(object sender, EventArgs e)
     {
-      CheckIfTimerIsEnabled();
+      CheckForEnabledTimer();
       CheckForGameIsRunning();
       if (toolStripMenuItemNeighbourhoodCentered.Checked) InvertField(5);
       if (toolStripMenuItemNeighbourhoodLinear.Checked)
       {
-        InvertFields(4, 10);
+        InvertField(4);
+        InvertField(10);
       }
       else if (toolStripMenuItemNeighbourhoodDiagonal.Checked)
       {
@@ -674,367 +762,577 @@ namespace Black_n_White
       }
       else if (toolStripMenuItemNeighbourhoodCombined.Checked)
       {
-        InvertFields(4, 9, 10);
+        InvertField(4);
+        InvertField(10);
+        InvertField(9);
       }
       UpdateClicks();
       CountBlacksAndWhites();
-      setStatusbarText(pictureBoxField5.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField5));
-      CheckIfWinning();
+      String str;
+      if (buttonField5.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField5.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 1x5: " + str);
+      CheckForWin();
     }
 
-    private void pictureBoxField6_Click(object sender, EventArgs e)
+    private void buttonField6_Click(object sender, EventArgs e)
     {
-      CheckIfTimerIsEnabled();
+      CheckForEnabledTimer();
       CheckForGameIsRunning();
       if (toolStripMenuItemNeighbourhoodCentered.Checked) InvertField(6);
       if (toolStripMenuItemNeighbourhoodLinear.Checked)
       {
-        InvertFields(1, 7, 11);
+        InvertField(1);
+        InvertField(7);
+        InvertField(11);
       }
       else if (toolStripMenuItemNeighbourhoodDiagonal.Checked)
       {
-        InvertFields(2, 12);
+        InvertField(2);
+        InvertField(12);
       }
       else if (toolStripMenuItemNeighbourhoodCombined.Checked)
       {
-        InvertFields(1, 2, 7, 11, 12);
+        InvertField(1);
+        InvertField(7);
+        InvertField(11);
+        InvertField(2);
+        InvertField(12);
       }
       UpdateClicks();
       CountBlacksAndWhites();
-      setStatusbarText(pictureBoxField6.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField6));
-      CheckIfWinning();
+      String str;
+      if (buttonField6.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField6.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 2x1: " + str);
+      CheckForWin();
     }
 
-    private void pictureBoxField7_Click(object sender, EventArgs e)
+    private void buttonField7_Click(object sender, EventArgs e)
     {
-      CheckIfTimerIsEnabled();
+      CheckForEnabledTimer();
       CheckForGameIsRunning();
       if (toolStripMenuItemNeighbourhoodCentered.Checked) InvertField(7);
       if (toolStripMenuItemNeighbourhoodLinear.Checked)
       {
-        InvertFields(2, 6, 8, 12);
+        InvertField(2);
+        InvertField(6);
+        InvertField(8);
+        InvertField(12);
       }
       else if (toolStripMenuItemNeighbourhoodDiagonal.Checked)
       {
-        InvertFields(1, 3, 11, 13);
+        InvertField(1);
+        InvertField(3);
+        InvertField(11);
+        InvertField(13);
       }
       else if (toolStripMenuItemNeighbourhoodCombined.Checked)
       {
-        InvertFields(1, 2, 3, 6, 8, 11, 12, 13);
+        InvertField(2);
+        InvertField(6);
+        InvertField(8);
+        InvertField(12);
+        InvertField(1);
+        InvertField(3);
+        InvertField(11);
+        InvertField(13);
       }
       UpdateClicks();
       CountBlacksAndWhites();
-      setStatusbarText(pictureBoxField7.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField7));
-      CheckIfWinning();
+      String str;
+      if (buttonField7.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField7.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 2x2: " + str);
+      CheckForWin();
     }
 
-    private void pictureBoxField8_Click(object sender, EventArgs e)
+    private void buttonField8_Click(object sender, EventArgs e)
     {
-      CheckIfTimerIsEnabled();
+      CheckForEnabledTimer();
       CheckForGameIsRunning();
       if (toolStripMenuItemNeighbourhoodCentered.Checked) InvertField(8);
       if (toolStripMenuItemNeighbourhoodLinear.Checked)
       {
-        InvertFields(3, 7, 9, 13);
+        InvertField(3);
+        InvertField(7);
+        InvertField(9);
+        InvertField(13);
       }
       else if (toolStripMenuItemNeighbourhoodDiagonal.Checked)
       {
-        InvertFields(2, 4, 12, 14);
+        InvertField(2);
+        InvertField(4);
+        InvertField(12);
+        InvertField(14);
       }
       else if (toolStripMenuItemNeighbourhoodCombined.Checked)
       {
-        InvertFields(2, 3, 4, 7, 9, 12, 13, 14);
+        InvertField(3);
+        InvertField(7);
+        InvertField(9);
+        InvertField(13);
+        InvertField(2);
+        InvertField(4);
+        InvertField(12);
+        InvertField(14);
       }
       UpdateClicks();
       CountBlacksAndWhites();
-      setStatusbarText(pictureBoxField8.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField8));
-      CheckIfWinning();
+      String str;
+      if (buttonField8.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField8.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 2x3: " + str);
+      CheckForWin();
     }
 
-    private void pictureBoxField9_Click(object sender, EventArgs e)
+    private void buttonField9_Click(object sender, EventArgs e)
     {
-      CheckIfTimerIsEnabled();
+      CheckForEnabledTimer();
       CheckForGameIsRunning();
       if (toolStripMenuItemNeighbourhoodCentered.Checked) InvertField(9);
       if (toolStripMenuItemNeighbourhoodLinear.Checked)
       {
-        InvertFields(4, 8, 10, 14);
+        InvertField(4);
+        InvertField(8);
+        InvertField(10);
+        InvertField(14);
       }
       else if (toolStripMenuItemNeighbourhoodDiagonal.Checked)
       {
-        InvertFields(3, 5, 13, 15);
+        InvertField(3);
+        InvertField(5);
+        InvertField(13);
+        InvertField(15);
       }
       else if (toolStripMenuItemNeighbourhoodCombined.Checked)
       {
-        InvertFields(3, 4, 5, 8, 10, 13, 14, 15);
+        InvertField(4);
+        InvertField(8);
+        InvertField(10);
+        InvertField(14);
+        InvertField(3);
+        InvertField(5);
+        InvertField(13);
+        InvertField(15);
       }
       UpdateClicks();
       CountBlacksAndWhites();
-      setStatusbarText(pictureBoxField9.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField9));
-      CheckIfWinning();
+      String str;
+      if (buttonField9.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField9.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 2x4: " + str);
+      CheckForWin();
     }
 
-    private void pictureBoxField10_Click(object sender, EventArgs e)
+    private void buttonField10_Click(object sender, EventArgs e)
     {
-      CheckIfTimerIsEnabled();
+      CheckForEnabledTimer();
       CheckForGameIsRunning();
       if (toolStripMenuItemNeighbourhoodCentered.Checked) InvertField(10);
       if (toolStripMenuItemNeighbourhoodLinear.Checked)
       {
-        InvertFields(5, 9, 15);
+        InvertField(5);
+        InvertField(9);
+        InvertField(15);
       }
       else if (toolStripMenuItemNeighbourhoodDiagonal.Checked)
       {
-        InvertFields(4, 14);
+        InvertField(4);
+        InvertField(14);
       }
       else if (toolStripMenuItemNeighbourhoodCombined.Checked)
       {
-        InvertFields(4, 5, 9, 14, 15);
+        InvertField(5);
+        InvertField(9);
+        InvertField(15);
+        InvertField(4);
+        InvertField(14);
       }
       UpdateClicks();
       CountBlacksAndWhites();
-      setStatusbarText(pictureBoxField10.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField10));
-      CheckIfWinning();
+      String str;
+      if (buttonField10.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField10.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 2x5: " + str);
+      CheckForWin();
     }
 
-    private void pictureBoxField11_Click(object sender, EventArgs e)
+    private void buttonField11_Click(object sender, EventArgs e)
     {
-      CheckIfTimerIsEnabled();
+      CheckForEnabledTimer();
       CheckForGameIsRunning();
       if (toolStripMenuItemNeighbourhoodCentered.Checked) InvertField(11);
       if (toolStripMenuItemNeighbourhoodLinear.Checked)
       {
-        InvertFields(6, 12, 16);
+        InvertField(6);
+        InvertField(12);
+        InvertField(16);
       }
       else if (toolStripMenuItemNeighbourhoodDiagonal.Checked)
       {
-        InvertFields(7, 17);
+        InvertField(7);
+        InvertField(17);
       }
       else if (toolStripMenuItemNeighbourhoodCombined.Checked)
       {
-        InvertFields(6, 7, 12, 16, 17);
+        InvertField(6);
+        InvertField(12);
+        InvertField(16);
+        InvertField(7);
+        InvertField(17);
       }
       UpdateClicks();
       CountBlacksAndWhites();
-      setStatusbarText(pictureBoxField11.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField11));
-      CheckIfWinning();
+      String str;
+      if (buttonField11.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField11.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 3x1: " + str);
+      CheckForWin();
     }
 
-    private void pictureBoxField12_Click(object sender, EventArgs e)
+    private void buttonField12_Click(object sender, EventArgs e)
     {
-      CheckIfTimerIsEnabled();
+      CheckForEnabledTimer();
       CheckForGameIsRunning();
       if (toolStripMenuItemNeighbourhoodCentered.Checked) InvertField(12);
       if (toolStripMenuItemNeighbourhoodLinear.Checked)
       {
-        InvertFields(7, 11, 13, 17);
+        InvertField(7);
+        InvertField(11);
+        InvertField(13);
+        InvertField(17);
       }
       else if (toolStripMenuItemNeighbourhoodDiagonal.Checked)
       {
-        InvertFields(6, 8, 16, 18);
+        InvertField(6);
+        InvertField(8);
+        InvertField(16);
+        InvertField(18);
       }
       else if (toolStripMenuItemNeighbourhoodCombined.Checked)
       {
-        InvertFields(6, 7, 11, 13, 16, 17, 18);
+        InvertField(7);
+        InvertField(11);
+        InvertField(13);
+        InvertField(17);
+        InvertField(6);
+        InvertField(8);
+        InvertField(16);
+        InvertField(18);
       }
       UpdateClicks();
       CountBlacksAndWhites();
-      setStatusbarText(pictureBoxField12.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField12));
-      CheckIfWinning();
+      String str;
+      if (buttonField12.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField12.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 3x2: " + str);
+      CheckForWin();
     }
 
-    private void pictureBoxField13_Click(object sender, EventArgs e)
+    private void buttonField13_Click(object sender, EventArgs e)
     {
-      CheckIfTimerIsEnabled();
+      CheckForEnabledTimer();
       CheckForGameIsRunning();
       if (toolStripMenuItemNeighbourhoodCentered.Checked) InvertField(13);
       if (toolStripMenuItemNeighbourhoodLinear.Checked)
       {
-        InvertFields(8, 12, 14, 18);
+        InvertField(8);
+        InvertField(12);
+        InvertField(14);
+        InvertField(18);
       }
       else if (toolStripMenuItemNeighbourhoodDiagonal.Checked)
       {
-        InvertFields(7, 9, 17, 19);
+        InvertField(7);
+        InvertField(9);
+        InvertField(17);
+        InvertField(19);
       }
       else if (toolStripMenuItemNeighbourhoodCombined.Checked)
       {
-        InvertFields(7, 8, 9, 12, 14, 17, 18, 19);
+        InvertField(8);
+        InvertField(12);
+        InvertField(14);
+        InvertField(18);
+        InvertField(7);
+        InvertField(9);
+        InvertField(17);
+        InvertField(19);
       }
       UpdateClicks();
       CountBlacksAndWhites();
-      setStatusbarText(pictureBoxField13.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField13));
-      CheckIfWinning();
+      String str;
+      if (buttonField13.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField13.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 3x3: " + str);
+      CheckForWin();
     }
 
-    private void pictureBoxField14_Click(object sender, EventArgs e)
+    private void buttonField14_Click(object sender, EventArgs e)
     {
-      CheckIfTimerIsEnabled();
+      CheckForEnabledTimer();
       CheckForGameIsRunning();
       if (toolStripMenuItemNeighbourhoodCentered.Checked) InvertField(14);
       if (toolStripMenuItemNeighbourhoodLinear.Checked)
       {
-        InvertFields(9, 13, 15, 19);
+        InvertField(9);
+        InvertField(13);
+        InvertField(15);
+        InvertField(19);
       }
       else if (toolStripMenuItemNeighbourhoodDiagonal.Checked)
       {
-        InvertFields(8, 10, 18, 20);
+        InvertField(8);
+        InvertField(10);
+        InvertField(18);
+        InvertField(20);
       }
       else if (toolStripMenuItemNeighbourhoodCombined.Checked)
       {
-        InvertFields(8, 9, 10, 13, 15, 18, 19, 20);
+        InvertField(9);
+        InvertField(13);
+        InvertField(15);
+        InvertField(19);
+        InvertField(8);
+        InvertField(10);
+        InvertField(18);
+        InvertField(20);
       }
       UpdateClicks();
       CountBlacksAndWhites();
-      setStatusbarText(pictureBoxField14.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField14));
-      CheckIfWinning();
+      String str;
+      if (buttonField14.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField14.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 3x4: " + str);
+      CheckForWin();
     }
 
-    private void pictureBoxField15_Click(object sender, EventArgs e)
+    private void buttonField15_Click(object sender, EventArgs e)
     {
-      CheckIfTimerIsEnabled();
+      CheckForEnabledTimer();
       CheckForGameIsRunning();
       if (toolStripMenuItemNeighbourhoodCentered.Checked) InvertField(15);
       if (toolStripMenuItemNeighbourhoodLinear.Checked)
       {
-        InvertFields(10, 14, 20);
+        InvertField(10);
+        InvertField(14);
+        InvertField(20);
       }
       else if (toolStripMenuItemNeighbourhoodDiagonal.Checked)
       {
-        InvertFields(9, 19);
+        InvertField(9);
+        InvertField(19);
       }
       else if (toolStripMenuItemNeighbourhoodCombined.Checked)
       {
-        InvertFields(9, 10, 14, 19, 20);
+        InvertField(10);
+        InvertField(14);
+        InvertField(20);
+        InvertField(9);
+        InvertField(19);
       }
       UpdateClicks();
       CountBlacksAndWhites();
-      setStatusbarText(pictureBoxField15.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField15));
-      CheckIfWinning();
+      String str;
+      if (buttonField15.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField15.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 3x5: " + str);
+      CheckForWin();
     }
 
-    private void pictureBoxField16_Click(object sender, EventArgs e)
+    private void buttonField16_Click(object sender, EventArgs e)
     {
-      CheckIfTimerIsEnabled();
+      CheckForEnabledTimer();
       CheckForGameIsRunning();
       if (toolStripMenuItemNeighbourhoodCentered.Checked) InvertField(16);
       if (toolStripMenuItemNeighbourhoodLinear.Checked)
       {
-        InvertFields(11, 17, 21);
+        InvertField(11);
+        InvertField(17);
+        InvertField(21);
       }
       else if (toolStripMenuItemNeighbourhoodDiagonal.Checked)
       {
-        InvertFields(12, 22);
+        InvertField(12);
+        InvertField(22);
       }
       else if (toolStripMenuItemNeighbourhoodCombined.Checked)
       {
-        InvertFields(11, 12, 17, 21, 22);
+        InvertField(11);
+        InvertField(17);
+        InvertField(21);
+        InvertField(12);
+        InvertField(22);
       }
       UpdateClicks();
       CountBlacksAndWhites();
-      setStatusbarText(pictureBoxField16.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField16));
-      CheckIfWinning();
+      String str;
+      if (buttonField16.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField16.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 4x1: " + str);
+      CheckForWin();
     }
 
-    private void pictureBoxField17_Click(object sender, EventArgs e)
+    private void buttonField17_Click(object sender, EventArgs e)
     {
-      CheckIfTimerIsEnabled();
+      CheckForEnabledTimer();
       CheckForGameIsRunning();
       if (toolStripMenuItemNeighbourhoodCentered.Checked) InvertField(17);
       if (toolStripMenuItemNeighbourhoodLinear.Checked)
       {
-        InvertFields(12, 16, 18, 22);
+        InvertField(12);
+        InvertField(16);
+        InvertField(18);
+        InvertField(22);
       }
       else if (toolStripMenuItemNeighbourhoodDiagonal.Checked)
       {
-        InvertFields(11, 13, 21, 23);
+        InvertField(11);
+        InvertField(13);
+        InvertField(21);
+        InvertField(23);
       }
       else if (toolStripMenuItemNeighbourhoodCombined.Checked)
       {
-        InvertFields(11, 12, 13, 16, 18, 21, 22, 23);
+        InvertField(12);
+        InvertField(16);
+        InvertField(18);
+        InvertField(22);
+        InvertField(11);
+        InvertField(13);
+        InvertField(21);
+        InvertField(23);
       }
       UpdateClicks();
       CountBlacksAndWhites();
-      setStatusbarText(pictureBoxField17.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField17));
-      CheckIfWinning();
+      String str;
+      if (buttonField17.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField17.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 4x2: " + str);
+      CheckForWin();
     }
 
-    private void pictureBoxField18_Click(object sender, EventArgs e)
+    private void buttonField18_Click(object sender, EventArgs e)
     {
-      CheckIfTimerIsEnabled();
+      CheckForEnabledTimer();
       CheckForGameIsRunning();
       if (toolStripMenuItemNeighbourhoodCentered.Checked) InvertField(18);
       if (toolStripMenuItemNeighbourhoodLinear.Checked)
       {
-        InvertFields(13, 17, 19, 23);
+        InvertField(13);
+        InvertField(17);
+        InvertField(19);
+        InvertField(23);
       }
       else if (toolStripMenuItemNeighbourhoodDiagonal.Checked)
       {
-        InvertFields(12, 14, 22, 24);
+        InvertField(12);
+        InvertField(14);
+        InvertField(22);
+        InvertField(24);
       }
       else if (toolStripMenuItemNeighbourhoodCombined.Checked)
       {
-        InvertFields(12, 13, 14, 17, 19, 22, 23, 24);
+        InvertField(13);
+        InvertField(17);
+        InvertField(19);
+        InvertField(23);
+        InvertField(12);
+        InvertField(14);
+        InvertField(22);
+        InvertField(24);
       }
       UpdateClicks();
       CountBlacksAndWhites();
-      setStatusbarText(pictureBoxField18.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField18));
-      CheckIfWinning();
+      String str;
+      if (buttonField18.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField18.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 4x3: " + str);
+      CheckForWin();
     }
 
-    private void pictureBoxField19_Click(object sender, EventArgs e)
+    private void buttonField19_Click(object sender, EventArgs e)
     {
-      CheckIfTimerIsEnabled();
+      CheckForEnabledTimer();
       CheckForGameIsRunning();
       if (toolStripMenuItemNeighbourhoodCentered.Checked) InvertField(19);
       if (toolStripMenuItemNeighbourhoodLinear.Checked)
       {
-        InvertFields(14, 18, 20, 24);
+        InvertField(14);
+        InvertField(18);
+        InvertField(20);
+        InvertField(24);
       }
       else if (toolStripMenuItemNeighbourhoodDiagonal.Checked)
       {
-        InvertFields(13, 15, 23, 25);
+        InvertField(13);
+        InvertField(15);
+        InvertField(23);
+        InvertField(25);
       }
       else if (toolStripMenuItemNeighbourhoodCombined.Checked)
       {
-        InvertFields(13, 14, 15, 18, 20, 23, 24, 25);
+        InvertField(14);
+        InvertField(18);
+        InvertField(20);
+        InvertField(24);
+        InvertField(13);
+        InvertField(15);
+        InvertField(23);
+        InvertField(25);
       }
       UpdateClicks();
       CountBlacksAndWhites();
-      setStatusbarText(pictureBoxField19.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField19));
-      CheckIfWinning();
+      String str;
+      if (buttonField19.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField19.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 4x4: " + str);
+      CheckForWin();
     }
 
-    private void pictureBoxField20_Click(object sender, EventArgs e)
+    private void buttonField20_Click(object sender, EventArgs e)
     {
-      CheckIfTimerIsEnabled();
+      CheckForEnabledTimer();
       CheckForGameIsRunning();
       if (toolStripMenuItemNeighbourhoodCentered.Checked) InvertField(20);
       if (toolStripMenuItemNeighbourhoodLinear.Checked)
       {
-        InvertFields(15, 19, 25);
+        InvertField(15);
+        InvertField(19);
+        InvertField(25);
       }
       else if (toolStripMenuItemNeighbourhoodDiagonal.Checked)
       {
-        InvertFields(14, 24);
+        InvertField(14);
+        InvertField(24);
       }
       else if (toolStripMenuItemNeighbourhoodCombined.Checked)
       {
-        InvertFields(14, 15, 19, 24, 25);
+        InvertField(15);
+        InvertField(19);
+        InvertField(25);
+        InvertField(14);
+        InvertField(24);
       }
       UpdateClicks();
       CountBlacksAndWhites();
-      setStatusbarText(pictureBoxField20.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField20));
-      CheckIfWinning();
+      String str;
+      if (buttonField20.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField20.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 4x5: " + str);
+      CheckForWin();
     }
 
-    private void pictureBoxField21_Click(object sender, EventArgs e)
+    private void buttonField21_Click(object sender, EventArgs e)
     {
-      CheckIfTimerIsEnabled();
+      CheckForEnabledTimer();
       CheckForGameIsRunning();
       if (toolStripMenuItemNeighbourhoodCentered.Checked) InvertField(21);
       if (toolStripMenuItemNeighbourhoodLinear.Checked)
       {
-        InvertFields(16, 22);
+        InvertField(16);
+        InvertField(22);
       }
       else if (toolStripMenuItemNeighbourhoodDiagonal.Checked)
       {
@@ -1042,91 +1340,127 @@ namespace Black_n_White
       }
       else if (toolStripMenuItemNeighbourhoodCombined.Checked)
       {
-        InvertFields(16, 17, 22);
+        InvertField(16);
+        InvertField(22);
+        InvertField(17);
       }
       UpdateClicks();
       CountBlacksAndWhites();
-      setStatusbarText(pictureBoxField21.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField21));
-      CheckIfWinning();
+      String str;
+      if (buttonField21.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField21.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 5x1: " + str);
+      CheckForWin();
     }
 
-    private void pictureBoxField22_Click(object sender, EventArgs e)
+    private void buttonField22_Click(object sender, EventArgs e)
     {
-      CheckIfTimerIsEnabled();
+      CheckForEnabledTimer();
       CheckForGameIsRunning();
       if (toolStripMenuItemNeighbourhoodCentered.Checked) InvertField(22);
       if (toolStripMenuItemNeighbourhoodLinear.Checked)
       {
-        InvertFields(17, 21, 23);
+        InvertField(17);
+        InvertField(21);
+        InvertField(23);
       }
       else if (toolStripMenuItemNeighbourhoodDiagonal.Checked)
       {
-        InvertFields(16, 18);
+        InvertField(16);
+        InvertField(18);
       }
       else if (toolStripMenuItemNeighbourhoodCombined.Checked)
       {
-        InvertFields(16, 17, 18, 21, 23);
+        InvertField(17);
+        InvertField(21);
+        InvertField(23);
+        InvertField(16);
+        InvertField(18);
       }
       UpdateClicks();
       CountBlacksAndWhites();
-      setStatusbarText(pictureBoxField22.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField22));
-      CheckIfWinning();
+      String str;
+      if (buttonField22.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField22.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 5x2: " + str);
+      CheckForWin();
     }
 
-    private void pictureBoxField23_Click(object sender, EventArgs e)
+    private void buttonField23_Click(object sender, EventArgs e)
     {
-      CheckIfTimerIsEnabled();
+      CheckForEnabledTimer();
       CheckForGameIsRunning();
       if (toolStripMenuItemNeighbourhoodCentered.Checked) InvertField(23);
       if (toolStripMenuItemNeighbourhoodLinear.Checked)
       {
-        InvertFields(18, 22, 24);
+        InvertField(18);
+        InvertField(22);
+        InvertField(24);
       }
       else if (toolStripMenuItemNeighbourhoodDiagonal.Checked)
       {
-        InvertFields(17, 19);
+        InvertField(17);
+        InvertField(19);
       }
       else if (toolStripMenuItemNeighbourhoodCombined.Checked)
       {
-        InvertFields(17, 18, 19, 22, 24);
+        InvertField(18);
+        InvertField(22);
+        InvertField(24);
+        InvertField(17);
+        InvertField(19);
       }
       UpdateClicks();
       CountBlacksAndWhites();
-      setStatusbarText(pictureBoxField23.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField23));
-      CheckIfWinning();
+      String str;
+      if (buttonField23.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField23.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 5x3: " + str);
+      CheckForWin();
     }
 
-    private void pictureBoxField24_Click(object sender, EventArgs e)
+    private void buttonField24_Click(object sender, EventArgs e)
     {
-      CheckIfTimerIsEnabled();
+      CheckForEnabledTimer();
       CheckForGameIsRunning();
       if (toolStripMenuItemNeighbourhoodCentered.Checked) InvertField(24);
       if (toolStripMenuItemNeighbourhoodLinear.Checked)
       {
-        InvertFields(19, 23, 25);
+        InvertField(19);
+        InvertField(23);
+        InvertField(25);
       }
       else if (toolStripMenuItemNeighbourhoodDiagonal.Checked)
       {
-        InvertFields(18, 20);
+        InvertField(18);
+        InvertField(20);
       }
       else if (toolStripMenuItemNeighbourhoodCombined.Checked)
       {
-        InvertFields(18, 19, 20, 23, 25);
+        InvertField(19);
+        InvertField(23);
+        InvertField(25);
+        InvertField(18);
+        InvertField(20);
       }
       UpdateClicks();
       CountBlacksAndWhites();
-      setStatusbarText(pictureBoxField24.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField24));
-      CheckIfWinning();
+      String str;
+      if (buttonField24.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField24.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 5x4: " + str);
+      CheckForWin();
     }
 
-    private void pictureBoxField25_Click(object sender, EventArgs e)
+    private void buttonField25_Click(object sender, EventArgs e)
     {
-      CheckIfTimerIsEnabled();
+      CheckForEnabledTimer();
       CheckForGameIsRunning();
       if (toolStripMenuItemNeighbourhoodCentered.Checked) InvertField(25);
       if (toolStripMenuItemNeighbourhoodLinear.Checked)
       {
-        InvertFields(20, 24);
+        InvertField(20);
+        InvertField(24);
       }
       else if (toolStripMenuItemNeighbourhoodDiagonal.Checked)
       {
@@ -1134,12 +1468,17 @@ namespace Black_n_White
       }
       else if (toolStripMenuItemNeighbourhoodCombined.Checked)
       {
-        InvertFields(19, 20, 24);
+        InvertField(20);
+        InvertField(24);
+        InvertField(19);
       }
       UpdateClicks();
       CountBlacksAndWhites();
-      setStatusbarText(pictureBoxField25.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField25));
-      CheckIfWinning();
+      String str;
+      if (buttonField25.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField25.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 5x5: " + str);
+      CheckForWin();
     }
 
     private void buttonNewGame_Click(object sender, EventArgs e)
@@ -1147,7 +1486,7 @@ namespace Black_n_White
       InitializeGame();
       CountBlacksAndWhites();
       boolIsGameRunning = false;
-      buttonNewGameSize.Enabled = true;
+      buttonNewGamesize.Enabled = true;
       buttonOptions.Enabled = true;
     }
 
@@ -1186,43 +1525,106 @@ namespace Black_n_White
       labelTicks.Text = "Ticks: " + intTicks;
     }
 
-    private void buttonNewGameSize_Click(object sender, EventArgs e)
-    {
-      contextMenuStripGamesize.Show(buttonNewGameSize, 0, buttonNewGameSize.Size.Height);
-    }
-
-    private void toolStripMenuItemGamesize3x3_Click(object sender, EventArgs e)
+    private void ToolStripMenuItemGamesize3x3_Click(object sender, EventArgs e)
     {
       intGamesize = 3;
-      toolStripMenuItemGamesize3x3.Checked = true;
       toolStripMenuItemGamesize4x4.Checked = false;
       toolStripMenuItemGamesize5x5.Checked = false;
       labelGamesize.Text = "Größe: " + intGamesize.ToString() + "x" + intGamesize.ToString();
-      HideFields(4, 5, 9, 10, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25);
+      buttonField4.Hide();
+      buttonField5.Hide();
+      buttonField9.Hide();
+      buttonField10.Hide();
+      buttonField14.Hide();
+      buttonField15.Hide();
+      buttonField16.Hide();
+      buttonField17.Hide();
+      buttonField18.Hide();
+      buttonField19.Hide();
+      buttonField20.Hide();
+      buttonField21.Hide();
+      buttonField22.Hide();
+      buttonField23.Hide();
+      buttonField24.Hide();
+      buttonField25.Hide();
       CountBlacksAndWhites();
     }
 
-    private void toolStripMenuItemGamesize4x4_Click(object sender, EventArgs e)
+    private void ToolStripMenuItemGamesize4x4_Click(object sender, EventArgs e)
     {
       intGamesize = 4;
       toolStripMenuItemGamesize3x3.Checked = false;
-      toolStripMenuItemGamesize4x4.Checked = true;
       toolStripMenuItemGamesize5x5.Checked = false;
       labelGamesize.Text = "Größe: " + intGamesize.ToString() + "x" + intGamesize.ToString();
-      ShowFields(4, 9, 14, 16, 17, 18, 19);
-      HideFields(5, 10, 15, 20, 21, 22, 23, 24, 25);
+      buttonField4.Show();
+      buttonField5.Hide();
+      buttonField9.Show();
+      buttonField10.Hide();
+      buttonField14.Show();
+      buttonField15.Hide();
+      buttonField16.Show();
+      buttonField17.Show();
+      buttonField18.Show();
+      buttonField19.Show();
+      buttonField20.Hide();
+      buttonField21.Hide();
+      buttonField22.Hide();
+      buttonField23.Hide();
+      buttonField24.Hide();
+      buttonField25.Hide();
       CountBlacksAndWhites();
     }
 
-    private void toolStripMenuItemGamesize5x5_Click(object sender, EventArgs e)
+    private void ToolStripMenuItemGamesize5x5_Click(object sender, EventArgs e)
     {
       intGamesize = 5;
       toolStripMenuItemGamesize3x3.Checked = false;
       toolStripMenuItemGamesize4x4.Checked = false;
-      toolStripMenuItemGamesize5x5.Checked = true;
       labelGamesize.Text = "Größe: " + intGamesize.ToString() + "x" + intGamesize.ToString();
-      ShowFields(4, 5, 9, 10, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25);
+      buttonField4.Show();
+      buttonField5.Show();
+      buttonField9.Show();
+      buttonField10.Show();
+      buttonField14.Show();
+      buttonField15.Show();
+      buttonField16.Show();
+      buttonField17.Show();
+      buttonField18.Show();
+      buttonField19.Show();
+      buttonField20.Show();
+      buttonField21.Show();
+      buttonField22.Show();
+      buttonField23.Show();
+      buttonField24.Show();
+      buttonField25.Show();
       CountBlacksAndWhites();
+    }
+
+    private void ToolStripMenuItemNeighbourhoodLinear_Click(object sender, EventArgs e)
+    {
+      toolStripMenuItemNeighbourhoodDiagonal.Checked = false;
+      toolStripMenuItemNeighbourhoodCombined.Checked = false;
+    }
+
+    private void ToolStripMenuItemNeighbourhoodDiagonal_Click(object sender, EventArgs e)
+    {
+      toolStripMenuItemNeighbourhoodLinear.Checked = false;
+      toolStripMenuItemNeighbourhoodCombined.Checked = false;
+    }
+
+    private void ToolStripMenuItemNeighbourhoodCombined_Click(object sender, EventArgs e)
+    {
+      toolStripMenuItemNeighbourhoodLinear.Checked = false;
+      toolStripMenuItemNeighbourhoodDiagonal.Checked = false;
+    }
+
+    private void ToolStripMenuItemNeighbourhoodCentered_Click(object sender, EventArgs e)
+    {
+    }
+
+    private void buttonNewGamesize_Click(object sender, EventArgs e)
+    {
+      contextMenuStripGamesize.Show(buttonNewGamesize, 0, buttonNewGamesize.Size.Height);
     }
 
     private void buttonOptions_Click(object sender, EventArgs e)
@@ -1230,290 +1632,629 @@ namespace Black_n_White
       contextMenuStripNeighbourhood.Show(buttonOptions, 0, buttonOptions.Size.Height);
     }
 
-    private void toolStripMenuItemNeighbourhoodLinear_Click(object sender, EventArgs e)
+    private void buttonField1_Enter(object sender, EventArgs e)
     {
-      toolStripMenuItemNeighbourhoodLinear.Checked = true;
-      toolStripMenuItemNeighbourhoodDiagonal.Checked = false;
-      toolStripMenuItemNeighbourhoodCombined.Checked = false;
+      String str;
+      if (buttonField1.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField1.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 1x1: " + str);
     }
 
-    private void toolStripMenuItemNeighbourhoodDiagonal_Click(object sender, EventArgs e)
+    private void buttonField2_Enter(object sender, EventArgs e)
     {
-      toolStripMenuItemNeighbourhoodLinear.Checked = false;
-      toolStripMenuItemNeighbourhoodDiagonal.Checked = true;
-      toolStripMenuItemNeighbourhoodCombined.Checked = false;
+      String str;
+      if (buttonField2.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField2.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 1x2: " + str);
     }
 
-    private void toolStripMenuItemNeighbourhoodCombined_Click(object sender, EventArgs e)
+    private void buttonField3_Enter(object sender, EventArgs e)
     {
-      toolStripMenuItemNeighbourhoodLinear.Checked = false;
-      toolStripMenuItemNeighbourhoodDiagonal.Checked = false;
-      toolStripMenuItemNeighbourhoodCombined.Checked = true;
+      String str;
+      if (buttonField3.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField3.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 1x3: " + str);
     }
 
-    private void pictureBoxField1_MouseEnter(object sender, EventArgs e)
+    private void buttonField4_Enter(object sender, EventArgs e)
     {
-      setStatusbarText(pictureBoxField1.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField1));
+      String str;
+      if (buttonField4.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField4.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 1x4: " + str);
     }
 
-    private void pictureBoxField2_MouseEnter(object sender, EventArgs e)
+    private void buttonField5_Enter(object sender, EventArgs e)
     {
-      setStatusbarText(pictureBoxField2.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField2));
+      String str;
+      if (buttonField5.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField5.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 1x5: " + str);
     }
 
-    private void pictureBoxField3_MouseEnter(object sender, EventArgs e)
+    private void buttonField6_Enter(object sender, EventArgs e)
     {
-      setStatusbarText(pictureBoxField3.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField3));
+      String str;
+      if (buttonField6.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField6.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 2x1: " + str);
     }
 
-    private void pictureBoxField4_MouseEnter(object sender, EventArgs e)
+    private void buttonField7_Enter(object sender, EventArgs e)
     {
-      setStatusbarText(pictureBoxField4.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField4));
+      String str;
+      if (buttonField7.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField7.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 2x2: " + str);
     }
 
-    private void pictureBoxField5_MouseEnter(object sender, EventArgs e)
+    private void buttonField8_Enter(object sender, EventArgs e)
     {
-      setStatusbarText(pictureBoxField5.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField5));
+      String str;
+      if (buttonField8.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField8.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 2x3: " + str);
     }
 
-    private void pictureBoxField6_MouseEnter(object sender, EventArgs e)
+    private void buttonField9_Enter(object sender, EventArgs e)
     {
-      setStatusbarText(pictureBoxField6.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField6));
+      String str;
+      if (buttonField9.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField9.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 2x4: " + str);
     }
 
-    private void pictureBoxField7_MouseEnter(object sender, EventArgs e)
+    private void buttonField10_Enter(object sender, EventArgs e)
     {
-      setStatusbarText(pictureBoxField7.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField7));
+      String str;
+      if (buttonField10.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField10.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 2x5: " + str);
     }
 
-    private void pictureBoxField8_MouseEnter(object sender, EventArgs e)
+    private void buttonField11_Enter(object sender, EventArgs e)
     {
-      setStatusbarText(pictureBoxField8.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField8));
+      String str;
+      if (buttonField11.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField11.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 3x1: " + str);
     }
 
-    private void pictureBoxField9_MouseEnter(object sender, EventArgs e)
+    private void buttonField12_Enter(object sender, EventArgs e)
     {
-      setStatusbarText(pictureBoxField9.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField9));
+      String str;
+      if (buttonField12.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField12.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 3x2: " + str);
     }
 
-    private void pictureBoxField10_MouseEnter(object sender, EventArgs e)
+    private void buttonField13_Enter(object sender, EventArgs e)
     {
-      setStatusbarText(pictureBoxField10.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField10));
+      String str;
+      if (buttonField13.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField13.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 3x3: " + str);
     }
 
-    private void pictureBoxField11_MouseEnter(object sender, EventArgs e)
+    private void buttonField14_Enter(object sender, EventArgs e)
     {
-      setStatusbarText(pictureBoxField11.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField11));
+      String str;
+      if (buttonField14.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField14.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 3x4: " + str);
     }
 
-    private void pictureBoxField12_MouseEnter(object sender, EventArgs e)
+    private void buttonField15_Enter(object sender, EventArgs e)
     {
-      setStatusbarText(pictureBoxField12.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField12));
+      String str;
+      if (buttonField15.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField15.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 3x5: " + str);
     }
 
-    private void pictureBoxField13_MouseEnter(object sender, EventArgs e)
+    private void buttonField16_Enter(object sender, EventArgs e)
     {
-      setStatusbarText(pictureBoxField13.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField13));
+      String str;
+      if (buttonField16.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField16.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 4x1: " + str);
     }
 
-    private void pictureBoxField14_MouseEnter(object sender, EventArgs e)
+    private void buttonField17_Enter(object sender, EventArgs e)
     {
-      setStatusbarText(pictureBoxField14.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField14));
+      String str;
+      if (buttonField17.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField17.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 4x2: " + str);
     }
 
-    private void pictureBoxField15_MouseEnter(object sender, EventArgs e)
+    private void buttonField18_Enter(object sender, EventArgs e)
     {
-      setStatusbarText(pictureBoxField15.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField15));
+      String str;
+      if (buttonField18.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField18.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 4x3: " + str);
     }
 
-    private void pictureBoxField16_MouseEnter(object sender, EventArgs e)
+    private void buttonField19_Enter(object sender, EventArgs e)
     {
-      setStatusbarText(pictureBoxField16.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField16));
+      String str;
+      if (buttonField19.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField19.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 4x4: " + str);
     }
 
-    private void pictureBoxField17_MouseEnter(object sender, EventArgs e)
+    private void buttonField20_Enter(object sender, EventArgs e)
     {
-      setStatusbarText(pictureBoxField17.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField17));
+      String str;
+      if (buttonField20.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField20.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 4x5: " + str);
     }
 
-    private void pictureBoxField18_MouseEnter(object sender, EventArgs e)
+    private void buttonField21_Enter(object sender, EventArgs e)
     {
-      setStatusbarText(pictureBoxField18.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField18));
+      String str;
+      if (buttonField21.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField21.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 5x1: " + str);
     }
 
-    private void pictureBoxField19_MouseEnter(object sender, EventArgs e)
+    private void buttonField22_Enter(object sender, EventArgs e)
     {
-      setStatusbarText(pictureBoxField19.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField19));
+      String str;
+      if (buttonField22.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField22.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 5x2: " + str);
     }
 
-    private void pictureBoxField20_MouseEnter(object sender, EventArgs e)
+    private void buttonField23_Enter(object sender, EventArgs e)
     {
-      setStatusbarText(pictureBoxField20.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField20));
+      String str;
+      if (buttonField23.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField23.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 5x3: " + str);
     }
 
-    private void pictureBoxField21_MouseEnter(object sender, EventArgs e)
+    private void buttonField24_Enter(object sender, EventArgs e)
     {
-      setStatusbarText(pictureBoxField21.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField21));
+      String str;
+      if (buttonField24.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField24.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 5x4: " + str);
     }
 
-    private void pictureBoxField22_MouseEnter(object sender, EventArgs e)
+    private void buttonField25_Enter(object sender, EventArgs e)
     {
-      setStatusbarText(pictureBoxField22.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField22));
+      String str;
+      if (buttonField25.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField25.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 5x5: " + str);
     }
 
-    private void pictureBoxField23_MouseEnter(object sender, EventArgs e)
+    private void buttonField1_MouseEnter(object sender, EventArgs e)
     {
-      setStatusbarText(pictureBoxField23.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField23));
+      String str;
+      if (buttonField1.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField1.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 1x1: " + str);
     }
 
-    private void pictureBoxField24_MouseEnter(object sender, EventArgs e)
+    private void buttonField2_MouseEnter(object sender, EventArgs e)
     {
-      setStatusbarText(pictureBoxField24.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField24));
+      String str;
+      if (buttonField2.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField2.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 1x2: " + str);
     }
 
-    private void pictureBoxField25_MouseEnter(object sender, EventArgs e)
+    private void buttonField3_MouseEnter(object sender, EventArgs e)
     {
-      setStatusbarText(pictureBoxField25.AccessibleName + Colon + Space + getBackcolorInGerman(pictureBoxField25));
+      String str;
+      if (buttonField3.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField3.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 1x3: " + str);
     }
 
-    private void pictureBoxField1_MouseLeave(object sender, EventArgs e)
+    private void buttonField4_MouseEnter(object sender, EventArgs e)
     {
-      clearStatusbar();
+      String str;
+      if (buttonField4.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField4.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 1x4: " + str);
     }
 
-    private void pictureBoxField2_MouseLeave(object sender, EventArgs e)
+    private void buttonField5_MouseEnter(object sender, EventArgs e)
     {
-      clearStatusbar();
+      String str;
+      if (buttonField5.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField5.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 1x5: " + str);
     }
 
-    private void pictureBoxField3_MouseLeave(object sender, EventArgs e)
+    private void buttonField6_MouseEnter(object sender, EventArgs e)
     {
-      clearStatusbar();
+      String str;
+      if (buttonField6.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField6.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 2x1: " + str);
     }
 
-    private void pictureBoxField4_MouseLeave(object sender, EventArgs e)
+    private void buttonField7_MouseEnter(object sender, EventArgs e)
     {
-      clearStatusbar();
+      String str;
+      if (buttonField7.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField7.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 2x2: " + str);
     }
 
-    private void pictureBoxField5_MouseLeave(object sender, EventArgs e)
+    private void buttonField8_MouseEnter(object sender, EventArgs e)
     {
-      clearStatusbar();
+      String str;
+      if (buttonField8.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField8.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 2x3: " + str);
     }
 
-    private void pictureBoxField6_MouseLeave(object sender, EventArgs e)
+    private void buttonField9_MouseEnter(object sender, EventArgs e)
     {
-      clearStatusbar();
+      String str;
+      if (buttonField9.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField9.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 2x4: " + str);
     }
 
-    private void pictureBoxField7_MouseLeave(object sender, EventArgs e)
+    private void buttonField10_MouseEnter(object sender, EventArgs e)
     {
-      clearStatusbar();
+      String str;
+      if (buttonField10.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField10.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 2x5: " + str);
     }
 
-    private void pictureBoxField8_MouseLeave(object sender, EventArgs e)
+    private void buttonField11_MouseEnter(object sender, EventArgs e)
     {
-      clearStatusbar();
+      String str;
+      if (buttonField11.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField11.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 3x1: " + str);
     }
 
-    private void pictureBoxField9_MouseLeave(object sender, EventArgs e)
+    private void buttonField12_MouseEnter(object sender, EventArgs e)
     {
-      clearStatusbar();
+      String str;
+      if (buttonField12.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField12.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 3x2: " + str);
     }
 
-    private void pictureBoxField10_MouseLeave(object sender, EventArgs e)
+    private void buttonField13_MouseEnter(object sender, EventArgs e)
     {
-      clearStatusbar();
+      String str;
+      if (buttonField13.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField13.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 3x3: " + str);
     }
 
-    private void pictureBoxField11_MouseLeave(object sender, EventArgs e)
+    private void buttonField14_MouseEnter(object sender, EventArgs e)
     {
-      clearStatusbar();
+      String str;
+      if (buttonField14.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField14.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 3x4: " + str);
     }
 
-    private void pictureBoxField12_MouseLeave(object sender, EventArgs e)
+    private void buttonField15_MouseEnter(object sender, EventArgs e)
     {
-      clearStatusbar();
+      String str;
+      if (buttonField15.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField15.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 3x5: " + str);
     }
 
-    private void pictureBoxField13_MouseLeave(object sender, EventArgs e)
+    private void buttonField16_MouseEnter(object sender, EventArgs e)
     {
-      clearStatusbar();
+      String str;
+      if (buttonField16.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField16.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 4x1: " + str);
     }
 
-    private void pictureBoxField14_MouseLeave(object sender, EventArgs e)
+    private void buttonField17_MouseEnter(object sender, EventArgs e)
     {
-      clearStatusbar();
+      String str;
+      if (buttonField17.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField17.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 4x2: " + str);
     }
 
-    private void pictureBoxField15_MouseLeave(object sender, EventArgs e)
+    private void buttonField18_MouseEnter(object sender, EventArgs e)
     {
-      clearStatusbar();
+      String str;
+      if (buttonField18.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField18.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 4x3: " + str);
     }
 
-    private void pictureBoxField16_MouseLeave(object sender, EventArgs e)
+    private void buttonField19_MouseEnter(object sender, EventArgs e)
     {
-      clearStatusbar();
+      String str;
+      if (buttonField19.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField19.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 4x4: " + str);
     }
 
-    private void pictureBoxField17_MouseLeave(object sender, EventArgs e)
+    private void buttonField20_MouseEnter(object sender, EventArgs e)
     {
-      clearStatusbar();
+      String str;
+      if (buttonField20.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField20.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 4x5: " + str);
     }
 
-    private void pictureBoxField18_MouseLeave(object sender, EventArgs e)
+    private void buttonField21_MouseEnter(object sender, EventArgs e)
     {
-      clearStatusbar();
+      String str;
+      if (buttonField21.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField21.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 5x1: " + str);
     }
 
-    private void pictureBoxField19_MouseLeave(object sender, EventArgs e)
+    private void buttonField22_MouseEnter(object sender, EventArgs e)
     {
-      clearStatusbar();
+      String str;
+      if (buttonField22.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField22.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 5x2: " + str);
     }
 
-    private void pictureBoxField20_MouseLeave(object sender, EventArgs e)
+    private void buttonField23_MouseEnter(object sender, EventArgs e)
     {
-      clearStatusbar();
+      String str;
+      if (buttonField23.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField23.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 5x3: " + str);
     }
 
-    private void pictureBoxField21_MouseLeave(object sender, EventArgs e)
+    private void buttonField24_MouseEnter(object sender, EventArgs e)
     {
-      clearStatusbar();
+      String str;
+      if (buttonField24.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField24.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 5x4: " + str);
     }
 
-    private void pictureBoxField22_MouseLeave(object sender, EventArgs e)
+    private void buttonField25_MouseEnter(object sender, EventArgs e)
     {
-      clearStatusbar();
+      String str;
+      if (buttonField25.BackColor == Color.Black) str = "schwarz";
+      else if (buttonField25.BackColor == Color.White) str = "weiß"; else str = "???";
+      setStatusbarText("Feld 5x5: " + str);
     }
 
-    private void pictureBoxField23_MouseLeave(object sender, EventArgs e)
+    private void buttonField1_Leave(object sender, EventArgs e)
     {
-      clearStatusbar();
+      clearStatusbarText();
     }
 
-    private void pictureBoxField24_MouseLeave(object sender, EventArgs e)
+    private void buttonField2_Leave(object sender, EventArgs e)
     {
-      clearStatusbar();
+      clearStatusbarText();
     }
 
-    private void pictureBoxField25_MouseLeave(object sender, EventArgs e)
+    private void buttonField3_Leave(object sender, EventArgs e)
     {
-      clearStatusbar();
+      clearStatusbarText();
     }
 
-    private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+    private void buttonField4_Leave(object sender, EventArgs e)
     {
-      clearStatusbar();
+      clearStatusbarText();
     }
 
-    private void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+    private void buttonField5_Leave(object sender, EventArgs e)
     {
-      clearStatusbar();
+      clearStatusbarText();
     }
 
-    private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+    private void buttonField6_Leave(object sender, EventArgs e)
     {
-      clearStatusbar();
+
+    }
+
+    private void buttonField7_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void buttonField8_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void buttonField9_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void buttonField10_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void buttonField11_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void buttonField12_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void buttonField13_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void buttonField14_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void buttonField15_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void buttonField16_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void buttonField17_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void buttonField18_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void buttonField19_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void buttonField20_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void buttonField21_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void buttonField22_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void buttonField23_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void buttonField24_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void buttonField25_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void buttonField1_MouseHover(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonField2_MouseHover(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonField3_MouseHover(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonField4_MouseHover(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonField5_MouseHover(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonField11_MouseHover(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonField12_MouseHover(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonField13_MouseHover(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonField14_MouseHover(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonField15_MouseHover(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonField16_MouseHover(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonField17_MouseHover(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonField18_MouseHover(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonField19_MouseHover(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonField20_MouseHover(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonField21_MouseHover(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonField22_MouseHover(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonField23_MouseHover(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonField24_MouseHover(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonField25_MouseHover(object sender, EventArgs e)
+    {
+
     }
 
     private void buttonNewGame_Enter(object sender, EventArgs e)
@@ -1521,9 +2262,9 @@ namespace Black_n_White
       setStatusbarText(buttonNewGame.AccessibleDescription);
     }
 
-    private void buttonNewGameSize_Enter(object sender, EventArgs e)
+    private void buttonNewGamesize_Enter(object sender, EventArgs e)
     {
-      setStatusbarText(buttonNewGameSize.AccessibleDescription);
+      setStatusbarText(buttonNewGamesize.AccessibleDescription);
     }
 
     private void buttonOptions_Enter(object sender, EventArgs e)
@@ -1566,14 +2307,64 @@ namespace Black_n_White
       setStatusbarText(labelWhites.AccessibleDescription);
     }
 
+    private void buttonNewGame_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void buttonNewGamesize_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void buttonOptions_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void buttonGameConcept_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void buttonQuitGame_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void labelGamesize_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void labelClicks_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void labelTicks_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void labelBlacks_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
+    private void labelWhites_Leave(object sender, EventArgs e)
+    {
+      clearStatusbarText();
+    }
+
     private void buttonNewGame_MouseEnter(object sender, EventArgs e)
     {
       setStatusbarText(buttonNewGame.AccessibleDescription);
     }
 
-    private void buttonNewGameSize_MouseEnter(object sender, EventArgs e)
+    private void buttonNewGamesize_MouseEnter(object sender, EventArgs e)
     {
-      setStatusbarText(buttonNewGameSize.AccessibleDescription);
+      setStatusbarText(buttonNewGamesize.AccessibleDescription);
     }
 
     private void buttonOptions_MouseEnter(object sender, EventArgs e)
@@ -1616,104 +2407,54 @@ namespace Black_n_White
       setStatusbarText(labelWhites.AccessibleDescription);
     }
 
-    private void buttonNewGame_Leave(object sender, EventArgs e)
-    {
-      clearStatusbar();
-    }
-
-    private void buttonNewGameSize_Leave(object sender, EventArgs e)
-    {
-      clearStatusbar();
-    }
-
-    private void buttonOptions_Leave(object sender, EventArgs e)
-    {
-      clearStatusbar();
-    }
-
-    private void buttonGameConcept_Leave(object sender, EventArgs e)
-    {
-      clearStatusbar();
-    }
-
-    private void buttonQuitGame_Leave(object sender, EventArgs e)
-    {
-      clearStatusbar();
-    }
-
-    private void labelGamesize_Leave(object sender, EventArgs e)
-    {
-      clearStatusbar();
-    }
-
-    private void labelClicks_Leave(object sender, EventArgs e)
-    {
-      clearStatusbar();
-    }
-
-    private void labelTicks_Leave(object sender, EventArgs e)
-    {
-      clearStatusbar();
-    }
-
-    private void labelBlacks_Leave(object sender, EventArgs e)
-    {
-      clearStatusbar();
-    }
-
-    private void labelWhites_Leave(object sender, EventArgs e)
-    {
-      clearStatusbar();
-    }
-
     private void buttonNewGame_MouseLeave(object sender, EventArgs e)
     {
-      clearStatusbar();
+      clearStatusbarText();
     }
 
-    private void buttonNewGameSize_MouseLeave(object sender, EventArgs e)
+    private void buttonNewGamesize_MouseLeave(object sender, EventArgs e)
     {
-      clearStatusbar();
+      clearStatusbarText();
     }
 
     private void buttonOptions_MouseLeave(object sender, EventArgs e)
     {
-      clearStatusbar();
+      clearStatusbarText();
     }
 
     private void buttonGameConcept_MouseLeave(object sender, EventArgs e)
     {
-      clearStatusbar();
+      clearStatusbarText();
     }
 
     private void buttonQuitGame_MouseLeave(object sender, EventArgs e)
     {
-      clearStatusbar();
+      clearStatusbarText();
     }
 
     private void labelGamesize_MouseLeave(object sender, EventArgs e)
     {
-      clearStatusbar();
+      clearStatusbarText();
     }
 
     private void labelClicks_MouseLeave(object sender, EventArgs e)
     {
-      clearStatusbar();
+      clearStatusbarText();
     }
 
     private void labelTicks_MouseLeave(object sender, EventArgs e)
     {
-      clearStatusbar();
+      clearStatusbarText();
     }
 
     private void labelBlacks_MouseLeave(object sender, EventArgs e)
     {
-      clearStatusbar();
+      clearStatusbarText();
     }
 
     private void labelWhites_MouseLeave(object sender, EventArgs e)
     {
-      clearStatusbar();
+      clearStatusbarText();
     }
 
     private void contextMenuStripGamesize_MouseEnter(object sender, EventArgs e)
@@ -1725,7 +2466,7 @@ namespace Black_n_White
     {
       setStatusbarText(toolStripMenuItemGamesize3x3.AccessibleDescription);
     }
- 
+
     private void toolStripMenuItemGamesize4x4_MouseEnter(object sender, EventArgs e)
     {
       setStatusbarText(toolStripMenuItemGamesize4x4.AccessibleDescription);
@@ -1741,26 +2482,26 @@ namespace Black_n_White
       setStatusbarText(contextMenuStripNeighbourhood.AccessibleDescription);
     }
 
-    private void toolStripMenuItemNeighbourhoodLinear_MouseEnter(object sender, EventArgs e)
+    private void ToolStripMenuItemNeighbourhoodLinear_MouseEnter(object sender, EventArgs e)
     {
       setStatusbarText(toolStripMenuItemNeighbourhoodLinear.AccessibleDescription);
     }
 
-    private void toolStripMenuItemNeighbourhoodDiagonal_MouseEnter(object sender, EventArgs e)
+    private void ToolStripMenuItemNeighbourhoodDiagonal_MouseEnter(object sender, EventArgs e)
     {
       setStatusbarText(toolStripMenuItemNeighbourhoodDiagonal.AccessibleDescription);
     }
 
-    private void toolStripMenuItemNeighbourhoodCombined_MouseEnter(object sender, EventArgs e)
+    private void ToolStripMenuItemNeighbourhoodCombined_MouseEnter(object sender, EventArgs e)
     {
       setStatusbarText(toolStripMenuItemNeighbourhoodCombined.AccessibleDescription);
     }
 
-    private void toolStripMenuItemNeighbourhoodCentered_MouseEnter(object sender, EventArgs e)
+    private void ToolStripMenuItemNeighbourhoodCentered_MouseEnter(object sender, EventArgs e)
     {
       setStatusbarText(toolStripMenuItemNeighbourhoodCentered.AccessibleDescription);
     }
-                                       
+
     private void toolStripSeparator1_MouseEnter(object sender, EventArgs e)
     {
       setStatusbarText(toolStripSeparator1.AccessibleDescription);
@@ -1768,52 +2509,64 @@ namespace Black_n_White
 
     private void contextMenuStripGamesize_MouseLeave(object sender, EventArgs e)
     {
-      clearStatusbar();
+      clearStatusbarText();
     }
 
     private void toolStripMenuItemGamesize3x3_MouseLeave(object sender, EventArgs e)
     {
-      clearStatusbar();
+      clearStatusbarText();
     }
 
     private void toolStripMenuItemGamesize4x4_MouseLeave(object sender, EventArgs e)
     {
-      clearStatusbar();
+      clearStatusbarText();
     }
 
     private void toolStripMenuItemGamesize5x5_MouseLeave(object sender, EventArgs e)
     {
-      clearStatusbar();
+      clearStatusbarText();
     }
 
     private void contextMenuStripNeighbourhood_MouseLeave(object sender, EventArgs e)
     {
-      clearStatusbar();
+      clearStatusbarText();
     }
 
-    private void toolStripMenuItemNeighbourhoodLinear_MouseLeave(object sender, EventArgs e)
+    private void ToolStripMenuItemNeighbourhoodLinear_MouseLeave(object sender, EventArgs e)
     {
-      clearStatusbar();
+      clearStatusbarText();
     }
 
-    private void toolStripMenuItemNeighbourhoodDiagonal_MouseLeave(object sender, EventArgs e)
+    private void ToolStripMenuItemNeighbourhoodDiagonal_MouseLeave(object sender, EventArgs e)
     {
-      clearStatusbar();
+      clearStatusbarText();
     }
 
-    private void toolStripMenuItemNeighbourhoodCombined_MouseLeave(object sender, EventArgs e)
+    private void ToolStripMenuItemNeighbourhoodCombined_MouseLeave(object sender, EventArgs e)
     {
-      clearStatusbar();
+      clearStatusbarText();
     }
 
-    private void toolStripMenuItemNeighbourhoodCentered_MouseLeave(object sender, EventArgs e)
+    private void ToolStripMenuItemNeighbourhoodCentered_MouseLeave(object sender, EventArgs e)
     {
-      clearStatusbar();
+      clearStatusbarText();
     }
 
     private void toolStripSeparator1_MouseLeave(object sender, EventArgs e)
     {
-      clearStatusbar();
+      clearStatusbarText();
+    }
+
+    private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+    {
+    }
+
+    private void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+    {
+    }
+
+    private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+    {
     }
   }
 }
