@@ -41,23 +41,23 @@ namespace Black_n_White
       int r = 0;
       intTicks = 0;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField1.BackColor = Color.Black; else pictureBoxField1.BackColor = Color.White;
+      if (r % 2 == 0) buttonField1.BackColor = Color.Black; else buttonField1.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField2.BackColor = Color.Black; else pictureBoxField2.BackColor = Color.White;
+      if (r % 2 == 0) buttonField2.BackColor = Color.Black; else buttonField2.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField3.BackColor = Color.Black; else pictureBoxField3.BackColor = Color.White;
+      if (r % 2 == 0) buttonField3.BackColor = Color.Black; else buttonField3.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField4.BackColor = Color.Black; else pictureBoxField4.BackColor = Color.White;
+      if (r % 2 == 0) buttonField4.BackColor = Color.Black; else buttonField4.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField5.BackColor = Color.Black; else pictureBoxField5.BackColor = Color.White;
+      if (r % 2 == 0) buttonField5.BackColor = Color.Black; else buttonField5.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField6.BackColor = Color.Black; else pictureBoxField6.BackColor = Color.White;
+      if (r % 2 == 0) buttonField6.BackColor = Color.Black; else buttonField6.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField7.BackColor = Color.Black; else pictureBoxField7.BackColor = Color.White;
+      if (r % 2 == 0) buttonField7.BackColor = Color.Black; else buttonField7.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField8.BackColor = Color.Black; else pictureBoxField8.BackColor = Color.White;
+      if (r % 2 == 0) buttonField8.BackColor = Color.Black; else buttonField8.BackColor = Color.White;
       r = rnd.Next();
-      if (r % 2 == 0) pictureBoxField9.BackColor = Color.Black; else pictureBoxField9.BackColor = Color.White;
+      if (r % 2 == 0) buttonField9.BackColor = Color.Black; else buttonField9.BackColor = Color.White;
       intClicks = 0;
       labelClicks.Text = "Klicks: " + intClicks;
       labelTicks.Text = "Ticks: " + intTicks;
@@ -68,24 +68,24 @@ namespace Black_n_White
     private void CheckForWin()
     {
       if (
-        (pictureBoxField1.BackColor == Color.Black &&
-        pictureBoxField2.BackColor == Color.Black &&
-        pictureBoxField3.BackColor == Color.Black &&
-        pictureBoxField4.BackColor == Color.Black &&
-        pictureBoxField5.BackColor == Color.Black &&
-        pictureBoxField6.BackColor == Color.Black &&
-        pictureBoxField7.BackColor == Color.Black &&
-        pictureBoxField8.BackColor == Color.Black &&
-        pictureBoxField9.BackColor == Color.Black) ||
-        (pictureBoxField1.BackColor == Color.White &&
-        pictureBoxField2.BackColor == Color.White &&
-        pictureBoxField3.BackColor == Color.White &&
-        pictureBoxField4.BackColor == Color.White &&
-        pictureBoxField5.BackColor == Color.White &&
-        pictureBoxField6.BackColor == Color.White &&
-        pictureBoxField7.BackColor == Color.White &&
-        pictureBoxField8.BackColor == Color.White &&
-        pictureBoxField9.BackColor == Color.White)
+        (buttonField1.BackColor == Color.Black &&
+        buttonField2.BackColor == Color.Black &&
+        buttonField3.BackColor == Color.Black &&
+        buttonField4.BackColor == Color.Black &&
+        buttonField5.BackColor == Color.Black &&
+        buttonField6.BackColor == Color.Black &&
+        buttonField7.BackColor == Color.Black &&
+        buttonField8.BackColor == Color.Black &&
+        buttonField9.BackColor == Color.Black) ||
+        (buttonField1.BackColor == Color.White &&
+        buttonField2.BackColor == Color.White &&
+        buttonField3.BackColor == Color.White &&
+        buttonField4.BackColor == Color.White &&
+        buttonField5.BackColor == Color.White &&
+        buttonField6.BackColor == Color.White &&
+        buttonField7.BackColor == Color.White &&
+        buttonField8.BackColor == Color.White &&
+        buttonField9.BackColor == Color.White)
         )
       {
         timer.Stop();
@@ -110,56 +110,56 @@ namespace Black_n_White
       {
         case 1:
         {
-          if (pictureBoxField1.BackColor == Color.Black) pictureBoxField1.BackColor = Color.White;
-          else if (pictureBoxField1.BackColor == Color.White) pictureBoxField1.BackColor = Color.Black;
+          if (buttonField1.BackColor == Color.Black) buttonField1.BackColor = Color.White;
+          else if (buttonField1.BackColor == Color.White) buttonField1.BackColor = Color.Black;
           break;
         }
         case 2:
         {
-          if (pictureBoxField2.BackColor == Color.Black) pictureBoxField2.BackColor = Color.White;
-          else if (pictureBoxField2.BackColor == Color.White) pictureBoxField2.BackColor = Color.Black;
+          if (buttonField2.BackColor == Color.Black) buttonField2.BackColor = Color.White;
+          else if (buttonField2.BackColor == Color.White) buttonField2.BackColor = Color.Black;
           break;
         }
         case 3:
         {
-          if (pictureBoxField3.BackColor == Color.Black) pictureBoxField3.BackColor = Color.White;
-          else if (pictureBoxField3.BackColor == Color.White) pictureBoxField3.BackColor = Color.Black;
+          if (buttonField3.BackColor == Color.Black) buttonField3.BackColor = Color.White;
+          else if (buttonField3.BackColor == Color.White) buttonField3.BackColor = Color.Black;
           break;
         }
         case 4:
         {
-          if (pictureBoxField4.BackColor == Color.Black) pictureBoxField4.BackColor = Color.White;
-          else if (pictureBoxField4.BackColor == Color.White) pictureBoxField4.BackColor = Color.Black;
+          if (buttonField4.BackColor == Color.Black) buttonField4.BackColor = Color.White;
+          else if (buttonField4.BackColor == Color.White) buttonField4.BackColor = Color.Black;
           break;
         }
         case 5:
         {
-          if (pictureBoxField5.BackColor == Color.Black) pictureBoxField5.BackColor = Color.White;
-          else if (pictureBoxField5.BackColor == Color.White) pictureBoxField5.BackColor = Color.Black;
+          if (buttonField5.BackColor == Color.Black) buttonField5.BackColor = Color.White;
+          else if (buttonField5.BackColor == Color.White) buttonField5.BackColor = Color.Black;
           break;
         }
         case 6:
         {
-          if (pictureBoxField6.BackColor == Color.Black) pictureBoxField6.BackColor = Color.White;
-          else if (pictureBoxField6.BackColor == Color.White) pictureBoxField6.BackColor = Color.Black;
+          if (buttonField6.BackColor == Color.Black) buttonField6.BackColor = Color.White;
+          else if (buttonField6.BackColor == Color.White) buttonField6.BackColor = Color.Black;
           break;
         }
         case 7:
         {
-          if (pictureBoxField7.BackColor == Color.Black) pictureBoxField7.BackColor = Color.White;
-          else if (pictureBoxField7.BackColor == Color.White) pictureBoxField7.BackColor = Color.Black;
+          if (buttonField7.BackColor == Color.Black) buttonField7.BackColor = Color.White;
+          else if (buttonField7.BackColor == Color.White) buttonField7.BackColor = Color.Black;
           break;
         }
         case 8:
         {
-          if (pictureBoxField8.BackColor == Color.Black) pictureBoxField8.BackColor = Color.White;
-          else if (pictureBoxField8.BackColor == Color.White) pictureBoxField8.BackColor = Color.Black;
+          if (buttonField8.BackColor == Color.Black) buttonField8.BackColor = Color.White;
+          else if (buttonField8.BackColor == Color.White) buttonField8.BackColor = Color.Black;
           break;
         }
         case 9:
         {
-          if (pictureBoxField9.BackColor == Color.Black) pictureBoxField9.BackColor = Color.White;
-          else if (pictureBoxField9.BackColor == Color.White) pictureBoxField9.BackColor = Color.Black;
+          if (buttonField9.BackColor == Color.Black) buttonField9.BackColor = Color.White;
+          else if (buttonField9.BackColor == Color.White) buttonField9.BackColor = Color.Black;
           break;
         }
       }
@@ -170,7 +170,7 @@ namespace Black_n_White
       InitializeGame();
     }
 
-    private void pictureBoxField1_Click(object sender, EventArgs e)
+    private void buttonField1_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
@@ -181,7 +181,7 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField2_Click(object sender, EventArgs e)
+    private void buttonField2_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
@@ -193,7 +193,7 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField3_Click(object sender, EventArgs e)
+    private void buttonField3_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
@@ -204,7 +204,7 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField4_Click(object sender, EventArgs e)
+    private void buttonField4_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
@@ -216,7 +216,7 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField5_Click(object sender, EventArgs e)
+    private void buttonField5_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
@@ -229,7 +229,7 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField6_Click(object sender, EventArgs e)
+    private void buttonField6_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
@@ -241,7 +241,7 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField7_Click(object sender, EventArgs e)
+    private void buttonField7_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
@@ -252,7 +252,7 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField8_Click(object sender, EventArgs e)
+    private void buttonField8_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
@@ -264,7 +264,7 @@ namespace Black_n_White
       CheckForWin();
     }
 
-    private void pictureBoxField9_Click(object sender, EventArgs e)
+    private void buttonField9_Click(object sender, EventArgs e)
     {
       CheckForEnabledTimer();
       CheckForGameIsRunning();
