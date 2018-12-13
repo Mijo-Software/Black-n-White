@@ -77,5 +77,41 @@ namespace Black_n_White {
                 return ResourceManager.GetString("colorNameWhite", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Das Spiel ist pausiert. Klicke auf OK, um die Pause zu beenden! ähnelt.
+        /// </summary>
+        internal static string gamePaused {
+            get {
+                return ResourceManager.GetString("gamePaused", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Pause ähnelt.
+        /// </summary>
+        internal static string paused {
+            get {
+                return ResourceManager.GetString("paused", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Klicks: 0 - Ticks: 0 - Blacks: 0 - Whites: 0 ähnelt.
+        /// </summary>
+        internal static string statisticDefault {
+            get {
+                return ResourceManager.GetString("statisticDefault", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Gewonnen ähnelt.
+        /// </summary>
+        internal static string won {
+            get {
+                return ResourceManager.GetString("won", resourceCulture);
+            }
+        }
     }
 }

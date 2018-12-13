@@ -123,4 +123,16 @@
   <data name="colorNameWhite" xml:space="preserve">
     <value>weiß</value>
   </data>
+  <data name="gamePaused" xml:space="preserve">
+    <value>Das Spiel ist pausiert. Klicke auf OK, um die Pause zu beenden!</value>
+  </data>
+  <data name="paused" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="statisticDefault" xml:space="preserve">
+    <value>Klicks: 0 - Ticks: 0 - Blacks: 0 - Whites: 0</value>
+  </data>
+  <data name="won" xml:space="preserve">
+    <value>Gewonnen</value>
+  </data>
 </root>

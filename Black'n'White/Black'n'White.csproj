@@ -137,6 +137,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Black%27n%27White-new.ico" />
+    <None Include="Resources\Black%27n%27White-logo-48.png" />
+    <None Include="Resources\checkerboard.png" />
     <None Include="Resources\control_stop_blue.png" />
     <None Include="Resources\control_pause_blue.png" />
     <None Include="Resources\control_play_blue.png" />
