@@ -70,7 +70,6 @@ namespace Office2007Rendering
 			_g = g;
 			_old = _g.TextRenderingHint;
 			_g.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
-
 		}
 
 		/// <summary>
@@ -131,5 +130,4 @@ namespace Office2007Rendering
 		}
 		#endregion
 	}
-
 }

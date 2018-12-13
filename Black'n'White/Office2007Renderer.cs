@@ -35,38 +35,47 @@ namespace Office2007Rendering
 			/// 
 			/// </summary>
 			public Color InsideTop1;
+
 			/// <summary>
 			/// 
 			/// </summary>
 			public Color InsideTop2;
+
 			/// <summary>
 			/// 
 			/// </summary>
 			public Color InsideBottom1;
+
 			/// <summary>
 			/// 
 			/// </summary>
 			public Color InsideBottom2;
+
 			/// <summary>
 			/// 
 			/// </summary>
 			public Color FillTop1;
+
 			/// <summary>
 			/// 
 			/// </summary>
 			public Color FillTop2;
+
 			/// <summary>
 			/// 
 			/// </summary>
 			public Color FillBottom1;
+
 			/// <summary>
 			/// 
 			/// </summary>
 			public Color FillBottom2;
+
 			/// <summary>
 			/// 
 			/// </summary>
 			public Color Border1;
+
 			/// <summary>
 			/// 
 			/// </summary>
@@ -109,18 +118,18 @@ namespace Office2007Rendering
 		#endregion
 
 		#region Static Metrics
-		private static readonly int _gripOffset = 1;
-		private static readonly int _gripSquare = 2;
-		private static readonly int _gripSize = 3;
-		private static readonly int _gripMove = 4;
-		private static readonly int _gripLines = 3;
-		private static readonly int _checkInset = 1;
-		private static readonly int _marginInset = 2;
-		private static readonly int _separatorInset = 31;
-		private static readonly float _cutToolItemMenu = 1.0f;
-		private static readonly float _cutContextMenu = 0f;
-		private static readonly float _cutMenuItemBack = 1.2f;
-		private static readonly float _contextCheckTickThickness = 1.6f;
+		private const int _gripOffset = 1;
+		private const int _gripSquare = 2;
+		private const int _gripSize = 3;
+		private const int _gripMove = 4;
+		private const int _gripLines = 3;
+		private const int _checkInset = 1;
+		private const int _marginInset = 2;
+		private const int _separatorInset = 31;
+		private const float _cutToolItemMenu = 1.0f;
+		private const float _cutContextMenu = 0f;
+		private const float _cutMenuItemBack = 1.2f;
+		private const float _contextCheckTickThickness = 1.6f;
 		private static readonly Blend _statusStripBlend;
 		#endregion
 
@@ -389,10 +398,10 @@ namespace Office2007Rendering
 		/// <param name="e">An ToolStripItemTextRenderEventArgs containing the event data.</param>
 		protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
 		{
-			if ((e.ToolStrip is MenuStrip) ||
-					(e.ToolStrip is ToolStrip) ||
-					(e.ToolStrip is ContextMenuStrip) ||
-					(e.ToolStrip is ToolStripDropDownMenu))
+			if ((e.ToolStrip is MenuStrip)
+					|| (e.ToolStrip is ToolStrip)
+					|| (e.ToolStrip is ContextMenuStrip)
+					|| (e.ToolStrip is ToolStripDropDownMenu))
 			{
 				// We set the color depending on the enabled state
 				if (!e.Item.Enabled)
@@ -436,8 +445,8 @@ namespace Office2007Rendering
 		protected override void OnRenderItemImage(ToolStripItemImageRenderEventArgs e)
 		{
 			// We only override the image drawing for context menus
-			if ((e.ToolStrip is ContextMenuStrip) ||
-					(e.ToolStrip is ToolStripDropDownMenu))
+			if ((e.ToolStrip is ContextMenuStrip)
+					|| (e.ToolStrip is ToolStripDropDownMenu))
 			{
 				if (e.Image != null)
 				{
@@ -465,9 +474,9 @@ namespace Office2007Rendering
 		/// <param name="e">An ToolStripItemRenderEventArgs containing the event data.</param>
 		protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
 		{
-			if ((e.ToolStrip is MenuStrip) ||
-					(e.ToolStrip is ContextMenuStrip) ||
-					(e.ToolStrip is ToolStripDropDownMenu))
+			if ((e.ToolStrip is MenuStrip)
+					|| (e.ToolStrip is ContextMenuStrip)
+					|| (e.ToolStrip is ToolStripDropDownMenu))
 			{
 				if ((e.Item.Pressed) && (e.ToolStrip is MenuStrip))
 				{
@@ -566,14 +575,14 @@ namespace Office2007Rendering
 				bool rtl = (e.ToolStrip.RightToLeft == RightToLeft.Yes);
 
 				// Find vertical position of the lowest grip line
-				int y = e.AffectedBounds.Bottom - _gripSize * 2 + 1;
+				int y = e.AffectedBounds.Bottom - (_gripSize * 2) + 1;
 
 				// Draw three lines of grips
 				for (int i = _gripLines; i >= 1; i--)
 				{
 					// Find the rightmost grip position on the line
 					int x = (rtl ? e.AffectedBounds.Left + 1 :
-												 e.AffectedBounds.Right - _gripSize * 2 + 1);
+												 e.AffectedBounds.Right - (_gripSize * 2) + 1);
 
 					// Draw grips from right to left on line
 					for (int j = 0; j < i; j++)
@@ -603,8 +612,8 @@ namespace Office2007Rendering
 			base.OnRenderToolStripContentPanelBackground(e);
 
 			// Cannot paint a zero sized area
-			if ((e.ToolStripContentPanel.Width > 0) &&
-					(e.ToolStripContentPanel.Height > 0))
+			if ((e.ToolStripContentPanel.Width > 0)
+					&& (e.ToolStripContentPanel.Height > 0))
 			{
 				using (LinearGradientBrush backBrush = new LinearGradientBrush(rect: e.ToolStripContentPanel.ClientRectangle,
 																																			 color1: ColorTable.ToolStripContentPanelGradientEnd,
@@ -624,8 +633,8 @@ namespace Office2007Rendering
 		/// <param name="e">An ToolStripSeparatorRenderEventArgs containing the event data.</param>
 		protected override void OnRenderSeparator(ToolStripSeparatorRenderEventArgs e)
 		{
-			if ((e.ToolStrip is ContextMenuStrip) ||
-					(e.ToolStrip is ToolStripDropDownMenu))
+			if ((e.ToolStrip is ContextMenuStrip)
+					|| (e.ToolStrip is ToolStripDropDownMenu))
 			{
 				// Create the light and dark line pens
 				using (Pen lightPen = new Pen(_separatorMenuLight),
@@ -633,7 +642,7 @@ namespace Office2007Rendering
 				{
 					DrawSeparator(g: e.Graphics, vertical: e.Vertical, rect: e.Item.Bounds,
 												lightPen: lightPen, darkPen: darkPen, horizontalInset: _separatorInset,
-												rtl: (e.ToolStrip.RightToLeft == RightToLeft.Yes));
+												rtl: e.ToolStrip.RightToLeft == RightToLeft.Yes);
 				}
 			}
 			else if (e.ToolStrip is StatusStrip)
@@ -660,8 +669,8 @@ namespace Office2007Rendering
 		/// <param name="e">An ToolStripRenderEventArgs containing the event data.</param>
 		protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
 		{
-			if ((e.ToolStrip is ContextMenuStrip) ||
-					(e.ToolStrip is ToolStripDropDownMenu))
+			if ((e.ToolStrip is ContextMenuStrip)
+					|| (e.ToolStrip is ToolStripDropDownMenu))
 			{
 				// Create border and clipping paths
 				using (GraphicsPath borderPath = CreateBorderPath(rect: e.AffectedBounds, cut: _cutContextMenu),
@@ -710,8 +719,8 @@ namespace Office2007Rendering
 		/// <param name="e">An ToolStripRenderEventArgs containing the event data.</param>
 		protected override void OnRenderImageMargin(ToolStripRenderEventArgs e)
 		{
-			if ((e.ToolStrip is ContextMenuStrip) ||
-					(e.ToolStrip is ToolStripDropDownMenu))
+			if ((e.ToolStrip is ContextMenuStrip)
+					|| (e.ToolStrip is ToolStripDropDownMenu))
 			{
 				// Start with the total margin area
 				Rectangle marginRect = e.AffectedBounds;
@@ -728,7 +737,7 @@ namespace Office2007Rendering
 				else
 					marginRect.X += _marginInset / 2;
 
-				// Draw the entire margine area in a solid color
+				// Draw the entire margin area in a solid color
 				using (SolidBrush backBrush = new SolidBrush(color: ColorTable.ImageMarginGradientBegin))
 				{
 					e.Graphics.FillRectangle(backBrush, marginRect);
@@ -766,8 +775,8 @@ namespace Office2007Rendering
 		/// <param name="e">An ToolStripRenderEventArgs containing the event data.</param>
 		protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
 		{
-			if ((e.ToolStrip is ContextMenuStrip) ||
-					(e.ToolStrip is ToolStripDropDownMenu))
+			if ((e.ToolStrip is ContextMenuStrip)
+					|| (e.ToolStrip is ToolStripDropDownMenu))
 			{
 				// If there is a connected area to be drawn
 				if (!e.ConnectedArea.IsEmpty)
@@ -917,7 +926,6 @@ namespace Office2007Rendering
 					}
 				}
 			}
-
 		}
 
 		/// <summary>
@@ -999,8 +1007,8 @@ namespace Office2007Rendering
 			Rectangle backRectDrop = splitButton.DropDownButtonBounds;
 
 			// Cannot paint zero sized areas
-			if ((backRect.Width > 0) && (backRectDrop.Width > 0) &&
-					(backRect.Height > 0) && (backRectDrop.Height > 0))
+			if ((backRect.Width > 0) && (backRectDrop.Width > 0)
+					&& (backRect.Height > 0) && (backRectDrop.Height > 0))
 			{
 				// Area that is the normal button starts as everything
 				Rectangle backRectButton = backRect;
@@ -1012,7 +1020,7 @@ namespace Office2007Rendering
 				if (backRectDrop.X > 0)
 				{
 					backRectButton.Width = backRectDrop.Left;
-					backRectDrop.X -= 1;
+					backRectDrop.X--;
 					backRectDrop.Width++;
 					splitOffset = backRectDrop.X;
 				}
@@ -1034,7 +1042,7 @@ namespace Office2007Rendering
 					DrawGradientBack(g: g, backRect: backRectDrop, colors: colorsDrop);
 
 					// Draw the split line between the areas
-					using (LinearGradientBrush splitBrush = new LinearGradientBrush(new Rectangle(x: backRect.X + splitOffset, y: backRect.Top, width: 1, height: backRect.Height + 1),
+					using (LinearGradientBrush splitBrush = new LinearGradientBrush(rect: new Rectangle(x: backRect.X + splitOffset, y: backRect.Top, width: 1, height: backRect.Height + 1),
 																																					color1: colorsSplit.Border1, color2: colorsSplit.Border2, angle: 90f))
 					{
 						// Sigma curve, so go from color1 to color2 and back to color1 again
@@ -1469,8 +1477,8 @@ namespace Office2007Rendering
 			int x, y;
 
 			// Find the correct starting position, which depends on direction
-			if ((direction == ArrowDirection.Left) ||
-					(direction == ArrowDirection.Right))
+			if ((direction == ArrowDirection.Left)
+					|| (direction == ArrowDirection.Right))
 			{
 				x = rect.Right - ((rect.Width - 4) / 2);
 				y = rect.Y + (rect.Height / 2);
@@ -1481,8 +1489,8 @@ namespace Office2007Rendering
 				y = rect.Bottom - ((rect.Height - 3) / 2);
 
 				// The drop down button is position 1 pixel incorrectly when in RTL
-				if ((item is ToolStripDropDownButton) &&
-						(item.RightToLeft == RightToLeft.Yes))
+				if ((item is ToolStripDropDownButton)
+						&& (item.RightToLeft == RightToLeft.Yes))
 				{
 					x++;
 				}

@@ -5,17 +5,17 @@ using System.Windows.Forms;
 
 namespace Black_n_White
 {
-	static class Program
+	internal static class Program
 	{
 		/// <summary>
 		/// Der Haupteinstiegspunkt für die Anwendung.
 		/// </summary>
 		[STAThread]
-		static void Main()
+		private static void Main()
 		{
 			Application.EnableVisualStyles();
-			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Black_n_WhiteForm());
+			Application.SetCompatibleTextRenderingDefault(defaultValue: false);
+			Application.Run(mainForm: new Black_n_WhiteForm());
 		}
 	}
 }

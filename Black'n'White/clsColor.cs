@@ -6,7 +6,7 @@ namespace VS2008StripRenderingLibrary
 	/// <summary>
 	/// 
 	/// </summary>
-	public class ClsColor
+	public static class ClsColor
 	{
 		/// <summary>
 		/// 
@@ -107,12 +107,12 @@ namespace VS2008StripRenderingLibrary
 		/// 
 		/// </summary>
 		public static Color clrToolstripBtn_Border = Color.FromArgb(alpha: 255, red: 41, green: 153, blue: 255);
-		
+
 		/// <summary>
 		/// 
 		/// </summary>
 		public static Color clrToolstripBtnGrad_Blue_Pressed = Color.FromArgb(alpha: 255, red: 124, green: 177, blue: 204);
-		
+
 		/// <summary>
 		/// 
 		/// </summary>

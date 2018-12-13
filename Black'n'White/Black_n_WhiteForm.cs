@@ -7,98 +7,108 @@ using Office2007Rendering;
 
 namespace Black_n_White
 {
+	/// <summary>
+	/// 
+	/// </summary>
 	public partial class Black_n_WhiteForm : Form
 	{
 		private bool isGameStarted = false;
+
 		private int
 			numberKlicks = 0,
 			numberTicks = 0,
 			numberBlacks = 0,
 			numberWhites = 0,
 			numberInvertedFields = 0;
+
 		private Random randomNumber = new Random();
+
 		private StringBuilder stringBuilder = new StringBuilder();
 
 		#region Assemblyattributaccessoren
 
-		public string AssemblyTitle
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <returns></returns>
+		public string GetAssemblyTitle()
 		{
-			get
+			object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(attributeType: typeof(AssemblyTitleAttribute), inherit: false);
+			if (attributes.Length > 0)
 			{
-				object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(attributeType: typeof(AssemblyTitleAttribute), inherit: false);
-				if (attributes.Length > 0)
+				AssemblyTitleAttribute titleAttribute = (AssemblyTitleAttribute)attributes[0];
+				if (titleAttribute.Title != "")
 				{
-					AssemblyTitleAttribute titleAttribute = (AssemblyTitleAttribute)attributes[0];
-					if (titleAttribute.Title != "")
-					{
-						return titleAttribute.Title;
-					}
+					return titleAttribute.Title;
 				}
-				return System.IO.Path.GetFileNameWithoutExtension(path: Assembly.GetExecutingAssembly().CodeBase);
 			}
+			return System.IO.Path.GetFileNameWithoutExtension(path: Assembly.GetExecutingAssembly().CodeBase);
 		}
 
-		public string AssemblyVersion
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <returns></returns>
+		public string GetAssemblyVersion() => Assembly.GetExecutingAssembly().GetName().Version.ToString();
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string GetAssemblyDescription()
 		{
-			get
+			object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(attributeType: typeof(AssemblyDescriptionAttribute), inherit: false);
+			if (attributes.Length == 0)
 			{
-				return Assembly.GetExecutingAssembly().GetName().Version.ToString();
+				return "";
 			}
+			return ((AssemblyDescriptionAttribute)attributes[0]).Description;
 		}
 
-		public string AssemblyDescription
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <returns></returns>
+		public string GetAssemblyProduct()
 		{
-			get
+			object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(attributeType: typeof(AssemblyProductAttribute), inherit: false);
+			if (attributes.Length == 0)
 			{
-				object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(attributeType: typeof(AssemblyDescriptionAttribute), inherit: false);
-				if (attributes.Length == 0)
-				{
-					return "";
-				}
-				return ((AssemblyDescriptionAttribute)attributes[0]).Description;
+				return "";
 			}
+			return ((AssemblyProductAttribute)attributes[0]).Product;
 		}
 
-		public string AssemblyProduct
+		/// <summary>
+		/// 
+		/// </summary>
+		public string GetAssemblyCopyright()
 		{
-			get
+			object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(attributeType: typeof(AssemblyCopyrightAttribute), inherit: false);
+			if (attributes.Length == 0)
 			{
-				object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(attributeType: typeof(AssemblyProductAttribute), inherit: false);
-				if (attributes.Length == 0)
-				{
-					return "";
-				}
-				return ((AssemblyProductAttribute)attributes[0]).Product;
+				return "";
 			}
+			return ((AssemblyCopyrightAttribute)attributes[0]).Copyright;
 		}
 
-		public string AssemblyCopyright
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <returns></returns>
+		public string GetAssemblyCompany()
 		{
-			get
+			object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(attributeType: typeof(AssemblyCompanyAttribute), inherit: false);
+			if (attributes.Length == 0)
 			{
-				object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(attributeType: typeof(AssemblyCopyrightAttribute), inherit: false);
-				if (attributes.Length == 0)
-				{
-					return "";
-				}
-				return ((AssemblyCopyrightAttribute)attributes[0]).Copyright;
+				return "";
 			}
-		}
-
-		public string AssemblyCompany
-		{
-			get
-			{
-				object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(attributeType: typeof(AssemblyCompanyAttribute), inherit: false);
-				if (attributes.Length == 0)
-				{
-					return "";
-				}
-				return ((AssemblyCompanyAttribute)attributes[0]).Company;
-			}
+			return ((AssemblyCompanyAttribute)attributes[0]).Company;
 		}
 		#endregion
 
+		/// <summary>
+		/// 
+		/// </summary>
 		public Black_n_WhiteForm() => InitializeComponent();
 
 		private void MainForm_Load(object sender, EventArgs e)
@@ -107,11 +117,11 @@ namespace Black_n_White
 			ClearStatusLabel(sender: sender, e: e);
 			tabControl.SelectedTab = tabPageGame3x3;
 			InitGameboard();
-			labelProduct.Text = AssemblyProduct;
-			labelVersion.Text = AssemblyVersion;
-			labelCompany.Text = AssemblyCompany;
-			labelCopyright.Text = AssemblyCopyright;
-			textBoxDescription.Text = AssemblyDescription;
+			labelProduct.Text = GetAssemblyProduct();
+			labelVersion.Text = GetAssemblyVersion();
+			labelCompany.Text = GetAssemblyCompany();
+			labelCopyright.Text = GetAssemblyCopyright();
+			textBoxDescription.Text = GetAssemblyDescription();
 		}
 
 		#region Statuslabel
@@ -166,10 +176,10 @@ namespace Black_n_White
 			}
 		}
 
-		private void InvertFields(ushort[] fieldIDArray)
+		private void InvertFields(ushort[] idField)
 		{
-			foreach (ushort i in fieldIDArray)
-			{ 
+			foreach (ushort i in idField)
+			{
 				switch (i)
 				{
 					case 311:
@@ -326,9 +336,9 @@ namespace Black_n_White
 			}
 		}
 
-		private void InvertFieldColor(ushort fieldID)
+		private void InvertFieldColor(ushort field)
 		{
-			switch (fieldID)
+			switch (field)
 			{
 				case 311:
 					buttonGame3Field11.BackColor = InvertFieldColor(color: buttonGame3Field11.BackColor);
@@ -818,19 +828,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				InvertFields(new ushort[] { 312, 321 });
+				InvertFields(idField: new ushort[] { 312, 321 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				InvertFields(new ushort[] { 322 });
+				InvertFields(idField: new ushort[] { 322 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				InvertFields(new ushort[] { 312, 321, 322 });
+				InvertFields(idField: new ushort[] { 312, 321, 322 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				InvertFields(new ushort[] { 311 });
+				InvertFields(idField: new ushort[] { 311 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard3x3();
@@ -841,19 +851,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				InvertFields(new ushort[] { 311, 313, 322 });
+				InvertFields(idField: new ushort[] { 311, 313, 322 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				InvertFields(new ushort[] { 321, 323 });
+				InvertFields(idField: new ushort[] { 321, 323 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				InvertFields(new ushort[] { 311, 313, 322, 321, 323 });
+				InvertFields(idField: new ushort[] { 311, 313, 322, 321, 323 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				InvertFields(new ushort[] { 312 });
+				InvertFields(idField: new ushort[] { 312 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard3x3();
@@ -864,19 +874,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				InvertFields(new ushort[] { 312, 323 });
+				InvertFields(idField: new ushort[] { 312, 323 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				InvertFields(new ushort[] { 322 });
+				InvertFields(idField: new ushort[] { 322 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				InvertFields(new ushort[] { 312, 323, 322 });
+				InvertFields(idField: new ushort[] { 312, 323, 322 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				InvertFields(new ushort[] { 313 });
+				InvertFields(idField: new ushort[] { 313 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard3x3();
@@ -887,19 +897,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				InvertFields(new ushort[] { 311, 322, 331 });
+				InvertFields(idField: new ushort[] { 311, 322, 331 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				InvertFields(new ushort[] { 312, 332 });
+				InvertFields(idField: new ushort[] { 312, 332 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				InvertFields(new ushort[] { 311, 322, 331, 312, 332 });
+				InvertFields(idField: new ushort[] { 311, 322, 331, 312, 332 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				InvertFields(new ushort[] { 321 });
+				InvertFields(idField: new ushort[] { 321 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard3x3();
@@ -910,19 +920,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				InvertFields(new ushort[] { 312, 321, 323, 332 });
+				InvertFields(idField: new ushort[] { 312, 321, 323, 332 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				InvertFields(new ushort[] { 311, 313, 331, 333 });
+				InvertFields(idField: new ushort[] { 311, 313, 331, 333 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				InvertFields(new ushort[] { 312, 321, 323, 332, 311, 313, 331, 333 });
+				InvertFields(idField: new ushort[] { 312, 321, 323, 332, 311, 313, 331, 333 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				InvertFields(new ushort[] { 322 });
+				InvertFields(idField: new ushort[] { 322 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard3x3();
@@ -933,19 +943,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				InvertFields(new ushort[] { 313, 322, 333 });
+				InvertFields(idField: new ushort[] { 313, 322, 333 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				InvertFields(new ushort[] { 312, 332 });
+				InvertFields(idField: new ushort[] { 312, 332 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				InvertFields(new ushort[] { 313, 322, 333, 312, 332 });
+				InvertFields(idField: new ushort[] { 313, 322, 333, 312, 332 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				InvertFields(new ushort[] { 323 });
+				InvertFields(idField: new ushort[] { 323 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard3x3();
@@ -956,19 +966,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				InvertFields(new ushort[] { 321, 332 });
+				InvertFields(idField: new ushort[] { 321, 332 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				InvertFields(new ushort[] { 322 });
+				InvertFields(idField: new ushort[] { 322 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				InvertFields(new ushort[] { 321, 332, 322 });
+				InvertFields(idField: new ushort[] { 321, 332, 322 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				InvertFields(new ushort[] { 331 });
+				InvertFields(idField: new ushort[] { 331 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard3x3();
@@ -979,19 +989,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				InvertFields(new ushort[] { 322, 331, 333 });
+				InvertFields(idField: new ushort[] { 322, 331, 333 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				InvertFields(new ushort[] { 321, 323 });
+				InvertFields(idField: new ushort[] { 321, 323 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				InvertFields(new ushort[] { 322, 331, 333, 321, 323 });
+				InvertFields(idField: new ushort[] { 322, 331, 333, 321, 323 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				InvertFields(new ushort[] { 332 });
+				InvertFields(idField: new ushort[] { 332 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard3x3();
@@ -1002,19 +1012,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				InvertFields(new ushort[] { 323, 332 });
+				InvertFields(idField: new ushort[] { 323, 332 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				InvertFields(new ushort[] { 322 });
+				InvertFields(idField: new ushort[] { 322 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				InvertFields(new ushort[] { 323, 332, 322 });
+				InvertFields(idField: new ushort[] { 323, 332, 322 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				InvertFields(new ushort[] { 333 });
+				InvertFields(idField: new ushort[] { 333 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard3x3();
@@ -1026,22 +1036,19 @@ namespace Black_n_White
 			if (!timer.Enabled) timer.Enabled = true;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field12.BackColor);
-				InvertFieldColor(color: buttonGame4Field21.BackColor);
+				InvertFields(idField: new ushort[] { 412, 421 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field22.BackColor);
+				InvertFields(idField: new ushort[] { 422 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field12.BackColor);
-				InvertFieldColor(color: buttonGame4Field21.BackColor);
-				InvertFieldColor(color: buttonGame4Field22.BackColor);
+				InvertFields(idField: new ushort[] { 412, 421, 422 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field11.BackColor);
+				InvertFields(idField: new ushort[] { 411 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard4x4();
@@ -1052,26 +1059,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field11.BackColor);
-				InvertFieldColor(color: buttonGame4Field13.BackColor);
-				InvertFieldColor(color: buttonGame4Field22.BackColor);
+				InvertFields(idField: new ushort[] { 411, 413, 422 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field21.BackColor);
-				InvertFieldColor(color: buttonGame4Field23.BackColor);
+				InvertFields(idField: new ushort[] { 421, 423 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field11.BackColor);
-				InvertFieldColor(color: buttonGame4Field13.BackColor);
-				InvertFieldColor(color: buttonGame4Field22.BackColor);
-				InvertFieldColor(color: buttonGame4Field21.BackColor);
-				InvertFieldColor(color: buttonGame4Field23.BackColor);
+				InvertFields(idField: new ushort[] { 411, 413, 422, 421, 423 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field12.BackColor);
+				InvertFields(idField: new ushort[] { 412 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard4x4();
@@ -1082,26 +1082,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field12.BackColor);
-				InvertFieldColor(color: buttonGame4Field14.BackColor);
-				InvertFieldColor(color: buttonGame4Field23.BackColor);
+				InvertFields(idField: new ushort[] { 412, 414, 423 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field22.BackColor);
-				InvertFieldColor(color: buttonGame4Field24.BackColor);
+				InvertFields(idField: new ushort[] { 422, 424 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field12.BackColor);
-				InvertFieldColor(color: buttonGame4Field14.BackColor);
-				InvertFieldColor(color: buttonGame4Field23.BackColor);
-				InvertFieldColor(color: buttonGame4Field22.BackColor);
-				InvertFieldColor(color: buttonGame4Field24.BackColor);
+				InvertFields(idField: new ushort[] { 412, 414, 423, 422, 424 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field13.BackColor);
+				InvertFields(idField: new ushort[] { 413 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard4x4();
@@ -1112,22 +1105,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field13.BackColor);
-				InvertFieldColor(color: buttonGame4Field24.BackColor);
+				InvertFields(idField: new ushort[] { 413, 424 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field23.BackColor);
+				InvertFields(idField: new ushort[] { 423 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field13.BackColor);
-				InvertFieldColor(color: buttonGame4Field24.BackColor);
-				InvertFieldColor(color: buttonGame4Field23.BackColor);
+				InvertFields(idField: new ushort[] { 413, 424, 423 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field14.BackColor);
+				InvertFields(idField: new ushort[] { 414 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard4x4();
@@ -1138,26 +1128,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field11.BackColor);
-				InvertFieldColor(color: buttonGame4Field22.BackColor);
-				InvertFieldColor(color: buttonGame4Field31.BackColor);
+				InvertFields(idField: new ushort[] { 411, 422, 431 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field12.BackColor);
-				InvertFieldColor(color: buttonGame4Field32.BackColor);
+				InvertFields(idField: new ushort[] { 412, 432 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field11.BackColor);
-				InvertFieldColor(color: buttonGame4Field22.BackColor);
-				InvertFieldColor(color: buttonGame4Field31.BackColor);
-				InvertFieldColor(color: buttonGame4Field12.BackColor);
-				InvertFieldColor(color: buttonGame4Field32.BackColor);
+				InvertFields(idField: new ushort[] { 411, 422, 431, 412, 432 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field21.BackColor);
+				InvertFields(idField: new ushort[] { 421 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard4x4();
@@ -1168,32 +1151,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field12.BackColor);
-				InvertFieldColor(color: buttonGame4Field21.BackColor);
-				InvertFieldColor(color: buttonGame4Field23.BackColor);
-				InvertFieldColor(color: buttonGame4Field32.BackColor);
+				InvertFields(idField: new ushort[] { 412, 421, 423, 432 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field11.BackColor);
-				InvertFieldColor(color: buttonGame4Field13.BackColor);
-				InvertFieldColor(color: buttonGame4Field31.BackColor);
-				InvertFieldColor(color: buttonGame4Field33.BackColor);
+				InvertFields(idField: new ushort[] { 411, 413, 431, 433 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field12.BackColor);
-				InvertFieldColor(color: buttonGame4Field21.BackColor);
-				InvertFieldColor(color: buttonGame4Field23.BackColor);
-				InvertFieldColor(color: buttonGame4Field32.BackColor);
-				InvertFieldColor(color: buttonGame4Field11.BackColor);
-				InvertFieldColor(color: buttonGame4Field13.BackColor);
-				InvertFieldColor(color: buttonGame4Field31.BackColor);
-				InvertFieldColor(color: buttonGame4Field33.BackColor);
+				InvertFields(idField: new ushort[] { 412, 421, 423, 432, 411, 413, 431, 433 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field22.BackColor);
+				InvertFields(idField: new ushort[] { 422 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard4x4();
@@ -1204,32 +1174,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field13.BackColor);
-				InvertFieldColor(color: buttonGame4Field22.BackColor);
-				InvertFieldColor(color: buttonGame4Field24.BackColor);
-				InvertFieldColor(color: buttonGame4Field33.BackColor);
+				InvertFields(idField: new ushort[] { 413, 422, 424, 433 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field12.BackColor);
-				InvertFieldColor(color: buttonGame4Field14.BackColor);
-				InvertFieldColor(color: buttonGame4Field32.BackColor);
-				InvertFieldColor(color: buttonGame4Field34.BackColor);
+				InvertFields(idField: new ushort[] { 412, 414, 432, 434 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field13.BackColor);
-				InvertFieldColor(color: buttonGame4Field22.BackColor);
-				InvertFieldColor(color: buttonGame4Field24.BackColor);
-				InvertFieldColor(color: buttonGame4Field33.BackColor);
-				InvertFieldColor(color: buttonGame4Field12.BackColor);
-				InvertFieldColor(color: buttonGame4Field14.BackColor);
-				InvertFieldColor(color: buttonGame4Field32.BackColor);
-				InvertFieldColor(color: buttonGame4Field34.BackColor);
+				InvertFields(idField: new ushort[] { 413, 422, 424, 433, 412, 414, 432, 434 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field23.BackColor);
+				InvertFields(idField: new ushort[] { 423 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard4x4();
@@ -1240,26 +1197,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field14.BackColor);
-				InvertFieldColor(color: buttonGame4Field23.BackColor);
-				InvertFieldColor(color: buttonGame4Field34.BackColor);
+				InvertFields(idField: new ushort[] { 414, 423, 434 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field13.BackColor);
-				InvertFieldColor(color: buttonGame4Field33.BackColor);
+				InvertFields(idField: new ushort[] { 413, 433 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field14.BackColor);
-				InvertFieldColor(color: buttonGame4Field23.BackColor);
-				InvertFieldColor(color: buttonGame4Field34.BackColor);
-				InvertFieldColor(color: buttonGame4Field13.BackColor);
-				InvertFieldColor(color: buttonGame4Field33.BackColor);
+				InvertFields(idField: new ushort[] { 414, 423, 434, 413, 433 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field24.BackColor);
+				InvertFields(idField: new ushort[] { 424 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard4x4();
@@ -1270,26 +1220,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field21.BackColor);
-				InvertFieldColor(color: buttonGame4Field32.BackColor);
-				InvertFieldColor(color: buttonGame4Field41.BackColor);
+				InvertFields(idField: new ushort[] { 421, 432, 441 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field22.BackColor);
-				InvertFieldColor(color: buttonGame4Field42.BackColor);
+				InvertFields(idField: new ushort[] { 422, 442 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field21.BackColor);
-				InvertFieldColor(color: buttonGame4Field32.BackColor);
-				InvertFieldColor(color: buttonGame4Field41.BackColor);
-				InvertFieldColor(color: buttonGame4Field22.BackColor);
-				InvertFieldColor(color: buttonGame4Field42.BackColor);
+				InvertFields(idField: new ushort[] { 421, 432, 441, 422, 442 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field31.BackColor);
+				InvertFields(idField: new ushort[] { 431 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard4x4();
@@ -1300,32 +1243,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field22.BackColor);
-				InvertFieldColor(color: buttonGame4Field31.BackColor);
-				InvertFieldColor(color: buttonGame4Field33.BackColor);
-				InvertFieldColor(color: buttonGame4Field42.BackColor);
+				InvertFields(idField: new ushort[] { 422, 431, 433, 442 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field21.BackColor);
-				InvertFieldColor(color: buttonGame4Field23.BackColor);
-				InvertFieldColor(color: buttonGame4Field41.BackColor);
-				InvertFieldColor(color: buttonGame4Field43.BackColor);
+				InvertFields(idField: new ushort[] { 421, 423, 441, 443 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field22.BackColor);
-				InvertFieldColor(color: buttonGame4Field31.BackColor);
-				InvertFieldColor(color: buttonGame4Field33.BackColor);
-				InvertFieldColor(color: buttonGame4Field42.BackColor);
-				InvertFieldColor(color: buttonGame4Field21.BackColor);
-				InvertFieldColor(color: buttonGame4Field23.BackColor);
-				InvertFieldColor(color: buttonGame4Field41.BackColor);
-				InvertFieldColor(color: buttonGame4Field43.BackColor);
+				InvertFields(idField: new ushort[] { 422, 431, 433, 442, 421, 423, 441, 443 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field32.BackColor);
+				InvertFields(idField: new ushort[] { 432 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard4x4();
@@ -1336,32 +1266,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field23.BackColor);
-				InvertFieldColor(color: buttonGame4Field32.BackColor);
-				InvertFieldColor(color: buttonGame4Field34.BackColor);
-				InvertFieldColor(color: buttonGame4Field43.BackColor);
+				InvertFields(idField: new ushort[] { 423, 432, 434, 443 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field22.BackColor);
-				InvertFieldColor(color: buttonGame4Field24.BackColor);
-				InvertFieldColor(color: buttonGame4Field42.BackColor);
-				InvertFieldColor(color: buttonGame4Field44.BackColor);
+				InvertFields(idField: new ushort[] { 422, 424, 442, 444 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field23.BackColor);
-				InvertFieldColor(color: buttonGame4Field32.BackColor);
-				InvertFieldColor(color: buttonGame4Field34.BackColor);
-				InvertFieldColor(color: buttonGame4Field43.BackColor);
-				InvertFieldColor(color: buttonGame4Field22.BackColor);
-				InvertFieldColor(color: buttonGame4Field24.BackColor);
-				InvertFieldColor(color: buttonGame4Field42.BackColor);
-				InvertFieldColor(color: buttonGame4Field44.BackColor);
+				InvertFields(idField: new ushort[] { 423, 432, 434, 443, 422, 424, 442, 444 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field33.BackColor);
+				InvertFields(idField: new ushort[] { 433 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard4x4();
@@ -1372,26 +1289,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field24.BackColor);
-				InvertFieldColor(color: buttonGame4Field33.BackColor);
-				InvertFieldColor(color: buttonGame4Field44.BackColor);
+				InvertFields(idField: new ushort[] { 424, 433, 444 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field23.BackColor);
-				InvertFieldColor(color: buttonGame4Field43.BackColor);
+				InvertFields(idField: new ushort[] { 423, 443 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field24.BackColor);
-				InvertFieldColor(color: buttonGame4Field33.BackColor);
-				InvertFieldColor(color: buttonGame4Field44.BackColor);
-				InvertFieldColor(color: buttonGame4Field23.BackColor);
-				InvertFieldColor(color: buttonGame4Field43.BackColor);
+				InvertFields(idField: new ushort[] { 424, 433, 444, 423, 443 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field34.BackColor);
+				InvertFields(idField: new ushort[] { 434 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard4x4();
@@ -1402,22 +1312,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field31.BackColor);
-				InvertFieldColor(color: buttonGame4Field42.BackColor);
+				InvertFields(idField: new ushort[] { 431, 442 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field32.BackColor);
+				InvertFields(idField: new ushort[] { 432 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field31.BackColor);
-				InvertFieldColor(color: buttonGame4Field42.BackColor);
-				InvertFieldColor(color: buttonGame4Field32.BackColor);
+				InvertFields(idField: new ushort[] { 431, 442, 432 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field41.BackColor);
+				InvertFields(idField: new ushort[] { 441 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard4x4();
@@ -1428,26 +1335,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field32.BackColor);
-				InvertFieldColor(color: buttonGame4Field41.BackColor);
-				InvertFieldColor(color: buttonGame4Field43.BackColor);
+				InvertFields(idField: new ushort[] { 432, 441, 443 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field31.BackColor);
-				InvertFieldColor(color: buttonGame4Field33.BackColor);
+				InvertFields(idField: new ushort[] { 431, 433 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field32.BackColor);
-				InvertFieldColor(color: buttonGame4Field41.BackColor);
-				InvertFieldColor(color: buttonGame4Field43.BackColor);
-				InvertFieldColor(color: buttonGame4Field31.BackColor);
-				InvertFieldColor(color: buttonGame4Field33.BackColor);
+				InvertFields(idField: new ushort[] { 432, 441, 443, 431, 433 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field42.BackColor);
+				InvertFields(idField: new ushort[] { 442 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard4x4();
@@ -1458,26 +1358,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field33.BackColor);
-				InvertFieldColor(color: buttonGame4Field42.BackColor);
-				InvertFieldColor(color: buttonGame4Field44.BackColor);
+				InvertFields(idField: new ushort[] { 433, 442, 444 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field32.BackColor);
-				InvertFieldColor(color: buttonGame4Field34.BackColor);
+				InvertFields(idField: new ushort[] { 432, 434 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field33.BackColor);
-				InvertFieldColor(color: buttonGame4Field42.BackColor);
-				InvertFieldColor(color: buttonGame4Field44.BackColor);
-				InvertFieldColor(color: buttonGame4Field32.BackColor);
-				InvertFieldColor(color: buttonGame4Field34.BackColor);
+				InvertFields(idField: new ushort[] { 433, 442, 444, 432, 434 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field43.BackColor);
+				InvertFields(idField: new ushort[] { 443 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard4x4();
@@ -1488,22 +1381,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field34.BackColor);
-				InvertFieldColor(color: buttonGame4Field43.BackColor);
+				InvertFields(idField: new ushort[] { 434, 443 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field33.BackColor);
+				InvertFields(idField: new ushort[] { 433 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field34.BackColor);
-				InvertFieldColor(color: buttonGame4Field43.BackColor);
-				InvertFieldColor(color: buttonGame4Field33.BackColor);
+				InvertFields(idField: new ushort[] { 434, 443, 433 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				InvertFieldColor(color: buttonGame4Field44.BackColor);
+				InvertFields(idField: new ushort[] { 444 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard4x4();
@@ -1514,22 +1404,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				buttonGame5Field12.BackColor = InvertFieldColor(color: buttonGame5Field12.BackColor);
-				buttonGame5Field21.BackColor = InvertFieldColor(color: buttonGame5Field21.BackColor);
+				InvertFields(idField: new ushort[] { 512, 521 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				buttonGame5Field22.BackColor = InvertFieldColor(color: buttonGame5Field22.BackColor);
+				InvertFields(idField: new ushort[] { 522 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				buttonGame5Field12.BackColor = InvertFieldColor(color: buttonGame5Field12.BackColor);
-				buttonGame5Field21.BackColor = InvertFieldColor(color: buttonGame5Field21.BackColor);
-				buttonGame5Field22.BackColor = InvertFieldColor(color: buttonGame5Field22.BackColor);
+				InvertFields(idField: new ushort[] { 512, 521, 522 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				buttonGame5Field11.BackColor = InvertFieldColor(color: buttonGame5Field11.BackColor);
+				InvertFields(idField: new ushort[] { 511 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard5x5();
@@ -1540,26 +1427,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				buttonGame5Field11.BackColor = InvertFieldColor(color: buttonGame5Field11.BackColor);
-				buttonGame5Field13.BackColor = InvertFieldColor(color: buttonGame5Field13.BackColor);
-				buttonGame5Field22.BackColor = InvertFieldColor(color: buttonGame5Field22.BackColor);
+				InvertFields(idField: new ushort[] { 511, 513, 522 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				buttonGame5Field21.BackColor = InvertFieldColor(color: buttonGame5Field21.BackColor);
-				buttonGame5Field23.BackColor = InvertFieldColor(color: buttonGame5Field23.BackColor);
+				InvertFields(idField: new ushort[] { 521, 523 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				buttonGame5Field11.BackColor = InvertFieldColor(color: buttonGame5Field11.BackColor);
-				buttonGame5Field13.BackColor = InvertFieldColor(color: buttonGame5Field13.BackColor);
-				buttonGame5Field22.BackColor = InvertFieldColor(color: buttonGame5Field22.BackColor);
-				buttonGame5Field21.BackColor = InvertFieldColor(color: buttonGame5Field21.BackColor);
-				buttonGame5Field23.BackColor = InvertFieldColor(color: buttonGame5Field23.BackColor);
+				InvertFields(idField: new ushort[] { 511, 513, 522, 521, 523 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				buttonGame5Field12.BackColor = InvertFieldColor(color: buttonGame5Field12.BackColor);
+				InvertFields(idField: new ushort[] { 512 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard5x5();
@@ -1570,26 +1450,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				buttonGame5Field12.BackColor = InvertFieldColor(color: buttonGame5Field12.BackColor);
-				buttonGame5Field14.BackColor = InvertFieldColor(color: buttonGame5Field14.BackColor);
-				buttonGame5Field23.BackColor = InvertFieldColor(color: buttonGame5Field23.BackColor);
+				InvertFields(idField: new ushort[] { 512, 514, 523 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				buttonGame5Field22.BackColor = InvertFieldColor(color: buttonGame5Field22.BackColor);
-				buttonGame5Field24.BackColor = InvertFieldColor(color: buttonGame5Field24.BackColor);
+				InvertFields(idField: new ushort[] { 522, 524 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				buttonGame5Field12.BackColor = InvertFieldColor(color: buttonGame5Field12.BackColor);
-				buttonGame5Field14.BackColor = InvertFieldColor(color: buttonGame5Field14.BackColor);
-				buttonGame5Field23.BackColor = InvertFieldColor(color: buttonGame5Field23.BackColor);
-				buttonGame5Field22.BackColor = InvertFieldColor(color: buttonGame5Field22.BackColor);
-				buttonGame5Field24.BackColor = InvertFieldColor(color: buttonGame5Field24.BackColor);
+				InvertFields(idField: new ushort[] { 512, 514, 523, 522, 524 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				buttonGame5Field13.BackColor = InvertFieldColor(color: buttonGame5Field13.BackColor);
+				InvertFields(idField: new ushort[] { 513 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard5x5();
@@ -1600,26 +1473,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				buttonGame5Field13.BackColor = InvertFieldColor(color: buttonGame5Field13.BackColor);
-				buttonGame5Field15.BackColor = InvertFieldColor(color: buttonGame5Field15.BackColor);
-				buttonGame5Field24.BackColor = InvertFieldColor(color: buttonGame5Field24.BackColor);
+				InvertFields(idField: new ushort[] { 513, 515, 524 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				buttonGame5Field23.BackColor = InvertFieldColor(color: buttonGame5Field23.BackColor);
-				buttonGame5Field25.BackColor = InvertFieldColor(color: buttonGame5Field25.BackColor);
+				InvertFields(idField: new ushort[] { 523, 525 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				buttonGame5Field13.BackColor = InvertFieldColor(color: buttonGame5Field13.BackColor);
-				buttonGame5Field15.BackColor = InvertFieldColor(color: buttonGame5Field15.BackColor);
-				buttonGame5Field24.BackColor = InvertFieldColor(color: buttonGame5Field24.BackColor);
-				buttonGame5Field23.BackColor = InvertFieldColor(color: buttonGame5Field23.BackColor);
-				buttonGame5Field25.BackColor = InvertFieldColor(color: buttonGame5Field25.BackColor);
+				InvertFields(idField: new ushort[] { 513, 515, 524, 523, 525 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				buttonGame5Field14.BackColor = InvertFieldColor(color: buttonGame5Field14.BackColor);
+				InvertFields(idField: new ushort[] { 514 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard5x5();
@@ -1630,22 +1496,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				buttonGame5Field14.BackColor = InvertFieldColor(color: buttonGame5Field14.BackColor);
-				buttonGame5Field25.BackColor = InvertFieldColor(color: buttonGame5Field25.BackColor);
+				InvertFields(idField: new ushort[] { 514, 525 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				buttonGame5Field24.BackColor = InvertFieldColor(color: buttonGame5Field24.BackColor);
+				InvertFields(idField: new ushort[] { 524 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				buttonGame5Field14.BackColor = InvertFieldColor(color: buttonGame5Field14.BackColor);
-				buttonGame5Field25.BackColor = InvertFieldColor(color: buttonGame5Field25.BackColor);
-				buttonGame5Field24.BackColor = InvertFieldColor(color: buttonGame5Field24.BackColor);
+				InvertFields(idField: new ushort[] { 514, 525, 524 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				buttonGame5Field15.BackColor = InvertFieldColor(color: buttonGame5Field15.BackColor);
+				InvertFields(idField: new ushort[] { 515 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard5x5();
@@ -1656,26 +1519,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				buttonGame5Field11.BackColor = InvertFieldColor(color: buttonGame5Field11.BackColor);
-				buttonGame5Field22.BackColor = InvertFieldColor(color: buttonGame5Field22.BackColor);
-				buttonGame5Field31.BackColor = InvertFieldColor(color: buttonGame5Field31.BackColor);
+				InvertFields(idField: new ushort[] { 511, 522, 531 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				buttonGame5Field12.BackColor = InvertFieldColor(color: buttonGame5Field12.BackColor);
-				buttonGame5Field32.BackColor = InvertFieldColor(color: buttonGame5Field32.BackColor);
+				InvertFields(idField: new ushort[] { 512, 532 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				buttonGame5Field11.BackColor = InvertFieldColor(color: buttonGame5Field11.BackColor);
-				buttonGame5Field22.BackColor = InvertFieldColor(color: buttonGame5Field22.BackColor);
-				buttonGame5Field31.BackColor = InvertFieldColor(color: buttonGame5Field31.BackColor);
-				buttonGame5Field12.BackColor = InvertFieldColor(color: buttonGame5Field12.BackColor);
-				buttonGame5Field32.BackColor = InvertFieldColor(color: buttonGame5Field32.BackColor);
+				InvertFields(idField: new ushort[] { 511, 522, 531, 512, 532 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				buttonGame5Field21.BackColor = InvertFieldColor(color: buttonGame5Field21.BackColor);
+				InvertFields(idField: new ushort[] { 521 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard5x5();
@@ -1686,32 +1542,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				buttonGame5Field12.BackColor = InvertFieldColor(color: buttonGame5Field12.BackColor);
-				buttonGame5Field21.BackColor = InvertFieldColor(color: buttonGame5Field21.BackColor);
-				buttonGame5Field23.BackColor = InvertFieldColor(color: buttonGame5Field23.BackColor);
-				buttonGame5Field32.BackColor = InvertFieldColor(color: buttonGame5Field32.BackColor);
+				InvertFields(idField: new ushort[] { 512, 521, 523, 532 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				buttonGame5Field11.BackColor = InvertFieldColor(color: buttonGame5Field11.BackColor);
-				buttonGame5Field13.BackColor = InvertFieldColor(color: buttonGame5Field13.BackColor);
-				buttonGame5Field31.BackColor = InvertFieldColor(color: buttonGame5Field31.BackColor);
-				buttonGame5Field33.BackColor = InvertFieldColor(color: buttonGame5Field33.BackColor);
+				InvertFields(idField: new ushort[] { 511, 513, 531, 533 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				buttonGame5Field12.BackColor = InvertFieldColor(color: buttonGame5Field12.BackColor);
-				buttonGame5Field21.BackColor = InvertFieldColor(color: buttonGame5Field21.BackColor);
-				buttonGame5Field23.BackColor = InvertFieldColor(color: buttonGame5Field23.BackColor);
-				buttonGame5Field32.BackColor = InvertFieldColor(color: buttonGame5Field32.BackColor);
-				buttonGame5Field11.BackColor = InvertFieldColor(color: buttonGame5Field11.BackColor);
-				buttonGame5Field13.BackColor = InvertFieldColor(color: buttonGame5Field13.BackColor);
-				buttonGame5Field31.BackColor = InvertFieldColor(color: buttonGame5Field31.BackColor);
-				buttonGame5Field33.BackColor = InvertFieldColor(color: buttonGame5Field33.BackColor);
+				InvertFields(idField: new ushort[] { 512, 521, 523, 532, 511, 513, 531, 533 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				buttonGame5Field22.BackColor = InvertFieldColor(color: buttonGame5Field22.BackColor);
+				InvertFields(idField: new ushort[] { 522 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard5x5();
@@ -1722,32 +1565,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				buttonGame5Field13.BackColor = InvertFieldColor(color: buttonGame5Field13.BackColor);
-				buttonGame5Field22.BackColor = InvertFieldColor(color: buttonGame5Field22.BackColor);
-				buttonGame5Field24.BackColor = InvertFieldColor(color: buttonGame5Field24.BackColor);
-				buttonGame5Field33.BackColor = InvertFieldColor(color: buttonGame5Field33.BackColor);
+				InvertFields(idField: new ushort[] { 513, 522, 524, 533 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				buttonGame5Field12.BackColor = InvertFieldColor(color: buttonGame5Field12.BackColor);
-				buttonGame5Field14.BackColor = InvertFieldColor(color: buttonGame5Field14.BackColor);
-				buttonGame5Field32.BackColor = InvertFieldColor(color: buttonGame5Field32.BackColor);
-				buttonGame5Field34.BackColor = InvertFieldColor(color: buttonGame5Field34.BackColor);
+				InvertFields(idField: new ushort[] { 512, 514, 532, 534 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				buttonGame5Field13.BackColor = InvertFieldColor(color: buttonGame5Field13.BackColor);
-				buttonGame5Field22.BackColor = InvertFieldColor(color: buttonGame5Field22.BackColor);
-				buttonGame5Field24.BackColor = InvertFieldColor(color: buttonGame5Field24.BackColor);
-				buttonGame5Field33.BackColor = InvertFieldColor(color: buttonGame5Field33.BackColor);
-				buttonGame5Field12.BackColor = InvertFieldColor(color: buttonGame5Field12.BackColor);
-				buttonGame5Field14.BackColor = InvertFieldColor(color: buttonGame5Field14.BackColor);
-				buttonGame5Field32.BackColor = InvertFieldColor(color: buttonGame5Field32.BackColor);
-				buttonGame5Field34.BackColor = InvertFieldColor(color: buttonGame5Field34.BackColor);
+				InvertFields(idField: new ushort[] { 513, 522, 524, 533, 512, 514, 532, 534 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				buttonGame5Field23.BackColor = InvertFieldColor(color: buttonGame5Field23.BackColor);
+				InvertFields(idField: new ushort[] { 523 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard5x5();
@@ -1758,32 +1588,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				buttonGame5Field14.BackColor = InvertFieldColor(color: buttonGame5Field14.BackColor);
-				buttonGame5Field23.BackColor = InvertFieldColor(color: buttonGame5Field23.BackColor);
-				buttonGame5Field25.BackColor = InvertFieldColor(color: buttonGame5Field25.BackColor);
-				buttonGame5Field34.BackColor = InvertFieldColor(color: buttonGame5Field34.BackColor);
+				InvertFields(idField: new ushort[] { 514, 523, 525, 534 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				buttonGame5Field13.BackColor = InvertFieldColor(color: buttonGame5Field13.BackColor);
-				buttonGame5Field15.BackColor = InvertFieldColor(color: buttonGame5Field15.BackColor);
-				buttonGame5Field33.BackColor = InvertFieldColor(color: buttonGame5Field33.BackColor);
-				buttonGame5Field35.BackColor = InvertFieldColor(color: buttonGame5Field35.BackColor);
+				InvertFields(idField: new ushort[] { 513, 515, 533, 535 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				buttonGame5Field14.BackColor = InvertFieldColor(color: buttonGame5Field14.BackColor);
-				buttonGame5Field23.BackColor = InvertFieldColor(color: buttonGame5Field23.BackColor);
-				buttonGame5Field25.BackColor = InvertFieldColor(color: buttonGame5Field25.BackColor);
-				buttonGame5Field34.BackColor = InvertFieldColor(color: buttonGame5Field34.BackColor);
-				buttonGame5Field13.BackColor = InvertFieldColor(color: buttonGame5Field13.BackColor);
-				buttonGame5Field15.BackColor = InvertFieldColor(color: buttonGame5Field15.BackColor);
-				buttonGame5Field33.BackColor = InvertFieldColor(color: buttonGame5Field33.BackColor);
-				buttonGame5Field35.BackColor = InvertFieldColor(color: buttonGame5Field35.BackColor);
+				InvertFields(idField: new ushort[] { 514, 523, 525, 534, 513, 515, 533, 535 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				buttonGame5Field24.BackColor = InvertFieldColor(color: buttonGame5Field24.BackColor);
+				InvertFields(idField: new ushort[] { 524 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard5x5();
@@ -1794,26 +1611,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				buttonGame5Field15.BackColor = InvertFieldColor(color: buttonGame5Field15.BackColor);
-				buttonGame5Field24.BackColor = InvertFieldColor(color: buttonGame5Field24.BackColor);
-				buttonGame5Field35.BackColor = InvertFieldColor(color: buttonGame5Field35.BackColor);
+				InvertFields(idField: new ushort[] { 515, 524, 535 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				buttonGame5Field14.BackColor = InvertFieldColor(color: buttonGame5Field14.BackColor);
-				buttonGame5Field34.BackColor = InvertFieldColor(color: buttonGame5Field34.BackColor);
+				InvertFields(idField: new ushort[] { 514, 534 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				buttonGame5Field15.BackColor = InvertFieldColor(color: buttonGame5Field15.BackColor);
-				buttonGame5Field24.BackColor = InvertFieldColor(color: buttonGame5Field24.BackColor);
-				buttonGame5Field35.BackColor = InvertFieldColor(color: buttonGame5Field35.BackColor);
-				buttonGame5Field14.BackColor = InvertFieldColor(color: buttonGame5Field14.BackColor);
-				buttonGame5Field34.BackColor = InvertFieldColor(color: buttonGame5Field34.BackColor);
+				InvertFields(idField: new ushort[] { 515, 524, 535, 514, 534 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				buttonGame5Field25.BackColor = InvertFieldColor(color: buttonGame5Field25.BackColor);
+				InvertFields(idField: new ushort[] { 525 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard5x5();
@@ -1825,26 +1635,19 @@ namespace Black_n_White
 			if (!timer.Enabled) timer.Enabled = true;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				buttonGame5Field21.BackColor = InvertFieldColor(color: buttonGame5Field21.BackColor);
-				buttonGame5Field32.BackColor = InvertFieldColor(color: buttonGame5Field32.BackColor);
-				buttonGame5Field41.BackColor = InvertFieldColor(color: buttonGame5Field41.BackColor);
+				InvertFields(idField: new ushort[] { 521, 532, 541 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				buttonGame5Field22.BackColor = InvertFieldColor(color: buttonGame5Field22.BackColor);
-				buttonGame5Field42.BackColor = InvertFieldColor(color: buttonGame5Field42.BackColor);
+				InvertFields(idField: new ushort[] { 522, 542 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				buttonGame5Field21.BackColor = InvertFieldColor(color: buttonGame5Field21.BackColor);
-				buttonGame5Field32.BackColor = InvertFieldColor(color: buttonGame5Field32.BackColor);
-				buttonGame5Field41.BackColor = InvertFieldColor(color: buttonGame5Field41.BackColor);
-				buttonGame5Field22.BackColor = InvertFieldColor(color: buttonGame5Field22.BackColor);
-				buttonGame5Field42.BackColor = InvertFieldColor(color: buttonGame5Field42.BackColor);
+				InvertFields(idField: new ushort[] { 521, 532, 541, 522, 542 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				buttonGame5Field31.BackColor = InvertFieldColor(color: buttonGame5Field31.BackColor);
+				InvertFields(idField: new ushort[] { 531 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard5x5();
@@ -1855,32 +1658,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				buttonGame5Field22.BackColor = InvertFieldColor(color: buttonGame5Field22.BackColor);
-				buttonGame5Field31.BackColor = InvertFieldColor(color: buttonGame5Field31.BackColor);
-				buttonGame5Field33.BackColor = InvertFieldColor(color: buttonGame5Field33.BackColor);
-				buttonGame5Field42.BackColor = InvertFieldColor(color: buttonGame5Field42.BackColor);
+				InvertFields(idField: new ushort[] { 522, 531, 533, 542 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				buttonGame5Field21.BackColor = InvertFieldColor(color: buttonGame5Field21.BackColor);
-				buttonGame5Field23.BackColor = InvertFieldColor(color: buttonGame5Field23.BackColor);
-				buttonGame5Field41.BackColor = InvertFieldColor(color: buttonGame5Field41.BackColor);
-				buttonGame5Field43.BackColor = InvertFieldColor(color: buttonGame5Field43.BackColor);
+				InvertFields(idField: new ushort[] { 521, 523, 541, 543 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				buttonGame5Field22.BackColor = InvertFieldColor(color: buttonGame5Field22.BackColor);
-				buttonGame5Field31.BackColor = InvertFieldColor(color: buttonGame5Field31.BackColor);
-				buttonGame5Field33.BackColor = InvertFieldColor(color: buttonGame5Field33.BackColor);
-				buttonGame5Field42.BackColor = InvertFieldColor(color: buttonGame5Field42.BackColor);
-				buttonGame5Field21.BackColor = InvertFieldColor(color: buttonGame5Field21.BackColor);
-				buttonGame5Field23.BackColor = InvertFieldColor(color: buttonGame5Field23.BackColor);
-				buttonGame5Field41.BackColor = InvertFieldColor(color: buttonGame5Field41.BackColor);
-				buttonGame5Field43.BackColor = InvertFieldColor(color: buttonGame5Field43.BackColor);
+				InvertFields(idField: new ushort[] { 522, 531, 533, 542, 521, 523, 541, 543 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				buttonGame5Field32.BackColor = InvertFieldColor(color: buttonGame5Field32.BackColor);
+				InvertFields(idField: new ushort[] { 532 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard5x5();
@@ -1891,32 +1681,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				buttonGame5Field23.BackColor = InvertFieldColor(color: buttonGame5Field23.BackColor);
-				buttonGame5Field32.BackColor = InvertFieldColor(color: buttonGame5Field32.BackColor);
-				buttonGame5Field34.BackColor = InvertFieldColor(color: buttonGame5Field34.BackColor);
-				buttonGame5Field43.BackColor = InvertFieldColor(color: buttonGame5Field43.BackColor);
+				InvertFields(idField: new ushort[] { 523, 532, 534, 543 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				buttonGame5Field22.BackColor = InvertFieldColor(color: buttonGame5Field22.BackColor);
-				buttonGame5Field24.BackColor = InvertFieldColor(color: buttonGame5Field24.BackColor);
-				buttonGame5Field42.BackColor = InvertFieldColor(color: buttonGame5Field42.BackColor);
-				buttonGame5Field44.BackColor = InvertFieldColor(color: buttonGame5Field44.BackColor);
+				InvertFields(idField: new ushort[] { 522, 524, 542, 544 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				buttonGame5Field23.BackColor = InvertFieldColor(color: buttonGame5Field23.BackColor);
-				buttonGame5Field32.BackColor = InvertFieldColor(color: buttonGame5Field32.BackColor);
-				buttonGame5Field34.BackColor = InvertFieldColor(color: buttonGame5Field34.BackColor);
-				buttonGame5Field43.BackColor = InvertFieldColor(color: buttonGame5Field43.BackColor);
-				buttonGame5Field22.BackColor = InvertFieldColor(color: buttonGame5Field22.BackColor);
-				buttonGame5Field24.BackColor = InvertFieldColor(color: buttonGame5Field24.BackColor);
-				buttonGame5Field42.BackColor = InvertFieldColor(color: buttonGame5Field42.BackColor);
-				buttonGame5Field44.BackColor = InvertFieldColor(color: buttonGame5Field44.BackColor);
+				InvertFields(idField: new ushort[] { 523, 532, 534, 543, 522, 524, 542, 544 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				buttonGame5Field33.BackColor = InvertFieldColor(color: buttonGame5Field33.BackColor);
+				InvertFields(idField: new ushort[] { 533 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard5x5();
@@ -1927,32 +1704,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				buttonGame5Field24.BackColor = InvertFieldColor(color: buttonGame5Field24.BackColor);
-				buttonGame5Field33.BackColor = InvertFieldColor(color: buttonGame5Field33.BackColor);
-				buttonGame5Field35.BackColor = InvertFieldColor(color: buttonGame5Field35.BackColor);
-				buttonGame5Field44.BackColor = InvertFieldColor(color: buttonGame5Field44.BackColor);
+				InvertFields(idField: new ushort[] { 524, 533, 535, 544 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				buttonGame5Field23.BackColor = InvertFieldColor(color: buttonGame5Field23.BackColor);
-				buttonGame5Field25.BackColor = InvertFieldColor(color: buttonGame5Field25.BackColor);
-				buttonGame5Field43.BackColor = InvertFieldColor(color: buttonGame5Field43.BackColor);
-				buttonGame5Field45.BackColor = InvertFieldColor(color: buttonGame5Field45.BackColor);
+				InvertFields(idField: new ushort[] { 523, 525, 543, 545 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				buttonGame5Field24.BackColor = InvertFieldColor(color: buttonGame5Field24.BackColor);
-				buttonGame5Field33.BackColor = InvertFieldColor(color: buttonGame5Field33.BackColor);
-				buttonGame5Field35.BackColor = InvertFieldColor(color: buttonGame5Field35.BackColor);
-				buttonGame5Field44.BackColor = InvertFieldColor(color: buttonGame5Field44.BackColor);
-				buttonGame5Field23.BackColor = InvertFieldColor(color: buttonGame5Field23.BackColor);
-				buttonGame5Field25.BackColor = InvertFieldColor(color: buttonGame5Field25.BackColor);
-				buttonGame5Field43.BackColor = InvertFieldColor(color: buttonGame5Field43.BackColor);
-				buttonGame5Field45.BackColor = InvertFieldColor(color: buttonGame5Field45.BackColor);
+				InvertFields(idField: new ushort[] { 524, 533, 535, 544, 523, 525, 543, 545 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				buttonGame5Field34.BackColor = InvertFieldColor(color: buttonGame5Field34.BackColor);
+				InvertFields(idField: new ushort[] { 534 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard5x5();
@@ -1963,26 +1727,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				buttonGame5Field25.BackColor = InvertFieldColor(color: buttonGame5Field25.BackColor);
-				buttonGame5Field34.BackColor = InvertFieldColor(color: buttonGame5Field34.BackColor);
-				buttonGame5Field45.BackColor = InvertFieldColor(color: buttonGame5Field45.BackColor);
+				InvertFields(idField: new ushort[] { 525, 534, 545 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				buttonGame5Field24.BackColor = InvertFieldColor(color: buttonGame5Field24.BackColor);
-				buttonGame5Field44.BackColor = InvertFieldColor(color: buttonGame5Field44.BackColor);
+				InvertFields(idField: new ushort[] { 524, 544 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				buttonGame5Field25.BackColor = InvertFieldColor(color: buttonGame5Field25.BackColor);
-				buttonGame5Field34.BackColor = InvertFieldColor(color: buttonGame5Field34.BackColor);
-				buttonGame5Field45.BackColor = InvertFieldColor(color: buttonGame5Field45.BackColor);
-				buttonGame5Field24.BackColor = InvertFieldColor(color: buttonGame5Field24.BackColor);
-				buttonGame5Field44.BackColor = InvertFieldColor(color: buttonGame5Field44.BackColor);
+				InvertFields(idField: new ushort[] { 525, 534, 545, 524, 544 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				buttonGame5Field35.BackColor = InvertFieldColor(color: buttonGame5Field35.BackColor);
+				InvertFields(idField: new ushort[] { 535 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard5x5();
@@ -1993,26 +1750,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				buttonGame5Field31.BackColor = InvertFieldColor(color: buttonGame5Field31.BackColor);
-				buttonGame5Field42.BackColor = InvertFieldColor(color: buttonGame5Field42.BackColor);
-				buttonGame5Field51.BackColor = InvertFieldColor(color: buttonGame5Field51.BackColor);
+				InvertFields(idField: new ushort[] { 531, 542, 551 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				buttonGame5Field32.BackColor = InvertFieldColor(color: buttonGame5Field32.BackColor);
-				buttonGame5Field52.BackColor = InvertFieldColor(color: buttonGame5Field52.BackColor);
+				InvertFields(idField: new ushort[] { 532, 552 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				buttonGame5Field31.BackColor = InvertFieldColor(color: buttonGame5Field31.BackColor);
-				buttonGame5Field42.BackColor = InvertFieldColor(color: buttonGame5Field42.BackColor);
-				buttonGame5Field51.BackColor = InvertFieldColor(color: buttonGame5Field51.BackColor);
-				buttonGame5Field32.BackColor = InvertFieldColor(color: buttonGame5Field32.BackColor);
-				buttonGame5Field52.BackColor = InvertFieldColor(color: buttonGame5Field52.BackColor);
+				InvertFields(idField: new ushort[] { 531, 542, 551, 532, 552 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				buttonGame5Field41.BackColor = InvertFieldColor(color: buttonGame5Field41.BackColor);
+				InvertFields(idField: new ushort[] { 541 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard5x5();
@@ -2023,32 +1773,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				buttonGame5Field32.BackColor = InvertFieldColor(color: buttonGame5Field32.BackColor);
-				buttonGame5Field41.BackColor = InvertFieldColor(color: buttonGame5Field41.BackColor);
-				buttonGame5Field43.BackColor = InvertFieldColor(color: buttonGame5Field43.BackColor);
-				buttonGame5Field52.BackColor = InvertFieldColor(color: buttonGame5Field52.BackColor);
+				InvertFields(idField: new ushort[] { 532, 541, 543, 552 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				buttonGame5Field31.BackColor = InvertFieldColor(color: buttonGame5Field31.BackColor);
-				buttonGame5Field33.BackColor = InvertFieldColor(color: buttonGame5Field33.BackColor);
-				buttonGame5Field51.BackColor = InvertFieldColor(color: buttonGame5Field51.BackColor);
-				buttonGame5Field53.BackColor = InvertFieldColor(color: buttonGame5Field53.BackColor);
+				InvertFields(idField: new ushort[] { 531, 533, 551, 553 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				buttonGame5Field32.BackColor = InvertFieldColor(color: buttonGame5Field32.BackColor);
-				buttonGame5Field41.BackColor = InvertFieldColor(color: buttonGame5Field41.BackColor);
-				buttonGame5Field43.BackColor = InvertFieldColor(color: buttonGame5Field43.BackColor);
-				buttonGame5Field52.BackColor = InvertFieldColor(color: buttonGame5Field52.BackColor);
-				buttonGame5Field31.BackColor = InvertFieldColor(color: buttonGame5Field31.BackColor);
-				buttonGame5Field33.BackColor = InvertFieldColor(color: buttonGame5Field33.BackColor);
-				buttonGame5Field51.BackColor = InvertFieldColor(color: buttonGame5Field51.BackColor);
-				buttonGame5Field53.BackColor = InvertFieldColor(color: buttonGame5Field53.BackColor);
+				InvertFields(idField: new ushort[] { 532, 541, 543, 552, 531, 533, 551, 553 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				buttonGame5Field42.BackColor = InvertFieldColor(color: buttonGame5Field42.BackColor);
+				InvertFields(idField: new ushort[] { 542 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard5x5();
@@ -2059,32 +1796,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				buttonGame5Field33.BackColor = InvertFieldColor(color: buttonGame5Field33.BackColor);
-				buttonGame5Field42.BackColor = InvertFieldColor(color: buttonGame5Field42.BackColor);
-				buttonGame5Field44.BackColor = InvertFieldColor(color: buttonGame5Field44.BackColor);
-				buttonGame5Field53.BackColor = InvertFieldColor(color: buttonGame5Field53.BackColor);
+				InvertFields(idField: new ushort[] { 533, 542, 544, 553 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				buttonGame5Field32.BackColor = InvertFieldColor(color: buttonGame5Field32.BackColor);
-				buttonGame5Field34.BackColor = InvertFieldColor(color: buttonGame5Field34.BackColor);
-				buttonGame5Field52.BackColor = InvertFieldColor(color: buttonGame5Field52.BackColor);
-				buttonGame5Field54.BackColor = InvertFieldColor(color: buttonGame5Field54.BackColor);
+				InvertFields(idField: new ushort[] { 532, 534, 552, 554 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				buttonGame5Field33.BackColor = InvertFieldColor(color: buttonGame5Field33.BackColor);
-				buttonGame5Field42.BackColor = InvertFieldColor(color: buttonGame5Field42.BackColor);
-				buttonGame5Field44.BackColor = InvertFieldColor(color: buttonGame5Field44.BackColor);
-				buttonGame5Field53.BackColor = InvertFieldColor(color: buttonGame5Field53.BackColor);
-				buttonGame5Field32.BackColor = InvertFieldColor(color: buttonGame5Field32.BackColor);
-				buttonGame5Field34.BackColor = InvertFieldColor(color: buttonGame5Field34.BackColor);
-				buttonGame5Field52.BackColor = InvertFieldColor(color: buttonGame5Field52.BackColor);
-				buttonGame5Field54.BackColor = InvertFieldColor(color: buttonGame5Field54.BackColor);
+				InvertFields(idField: new ushort[] { 533, 542, 544, 553, 532, 534, 552, 554 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				buttonGame5Field43.BackColor = InvertFieldColor(color: buttonGame5Field43.BackColor);
+				InvertFields(idField: new ushort[] { 543 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard5x5();
@@ -2095,32 +1819,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				buttonGame5Field34.BackColor = InvertFieldColor(color: buttonGame5Field34.BackColor);
-				buttonGame5Field43.BackColor = InvertFieldColor(color: buttonGame5Field43.BackColor);
-				buttonGame5Field45.BackColor = InvertFieldColor(color: buttonGame5Field45.BackColor);
-				buttonGame5Field54.BackColor = InvertFieldColor(color: buttonGame5Field54.BackColor);
+				InvertFields(idField: new ushort[] { 534, 543, 545, 554 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				buttonGame5Field33.BackColor = InvertFieldColor(color: buttonGame5Field33.BackColor);
-				buttonGame5Field35.BackColor = InvertFieldColor(color: buttonGame5Field35.BackColor);
-				buttonGame5Field53.BackColor = InvertFieldColor(color: buttonGame5Field53.BackColor);
-				buttonGame5Field55.BackColor = InvertFieldColor(color: buttonGame5Field55.BackColor);
+				InvertFields(idField: new ushort[] { 533, 535, 553, 555 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				buttonGame5Field34.BackColor = InvertFieldColor(color: buttonGame5Field34.BackColor);
-				buttonGame5Field43.BackColor = InvertFieldColor(color: buttonGame5Field43.BackColor);
-				buttonGame5Field45.BackColor = InvertFieldColor(color: buttonGame5Field45.BackColor);
-				buttonGame5Field54.BackColor = InvertFieldColor(color: buttonGame5Field54.BackColor);
-				buttonGame5Field33.BackColor = InvertFieldColor(color: buttonGame5Field33.BackColor);
-				buttonGame5Field35.BackColor = InvertFieldColor(color: buttonGame5Field35.BackColor);
-				buttonGame5Field53.BackColor = InvertFieldColor(color: buttonGame5Field53.BackColor);
-				buttonGame5Field55.BackColor = InvertFieldColor(color: buttonGame5Field55.BackColor);
+				InvertFields(idField: new ushort[] { 534, 543, 545, 554, 533, 535, 553, 555 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				buttonGame5Field44.BackColor = InvertFieldColor(color: buttonGame5Field44.BackColor);
+				InvertFields(idField: new ushort[] { 544 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard5x5();
@@ -2131,26 +1842,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				buttonGame5Field35.BackColor = InvertFieldColor(color: buttonGame5Field35.BackColor);
-				buttonGame5Field44.BackColor = InvertFieldColor(color: buttonGame5Field44.BackColor);
-				buttonGame5Field55.BackColor = InvertFieldColor(color: buttonGame5Field55.BackColor);
+				InvertFields(idField: new ushort[] { 535, 544, 555 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				buttonGame5Field34.BackColor = InvertFieldColor(color: buttonGame5Field34.BackColor);
-				buttonGame5Field54.BackColor = InvertFieldColor(color: buttonGame5Field54.BackColor);
+				InvertFields(idField: new ushort[] { 534, 554 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				buttonGame5Field35.BackColor = InvertFieldColor(color: buttonGame5Field35.BackColor);
-				buttonGame5Field44.BackColor = InvertFieldColor(color: buttonGame5Field44.BackColor);
-				buttonGame5Field55.BackColor = InvertFieldColor(color: buttonGame5Field55.BackColor);
-				buttonGame5Field34.BackColor = InvertFieldColor(color: buttonGame5Field34.BackColor);
-				buttonGame5Field54.BackColor = InvertFieldColor(color: buttonGame5Field54.BackColor);
+				InvertFields(idField: new ushort[] { 535, 544, 555, 534, 554 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				buttonGame5Field45.BackColor = InvertFieldColor(color: buttonGame5Field45.BackColor);
+				InvertFields(idField: new ushort[] { 545 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard5x5();
@@ -2161,22 +1865,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				buttonGame5Field41.BackColor = InvertFieldColor(color: buttonGame5Field41.BackColor);
-				buttonGame5Field52.BackColor = InvertFieldColor(color: buttonGame5Field52.BackColor);
+				InvertFields(idField: new ushort[] { 541, 552 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				buttonGame5Field42.BackColor = InvertFieldColor(color: buttonGame5Field42.BackColor);
+				InvertFields(idField: new ushort[] { 542 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				buttonGame5Field41.BackColor = InvertFieldColor(color: buttonGame5Field41.BackColor);
-				buttonGame5Field52.BackColor = InvertFieldColor(color: buttonGame5Field52.BackColor);
-				buttonGame5Field42.BackColor = InvertFieldColor(color: buttonGame5Field42.BackColor);
+				InvertFields(idField: new ushort[] { 541, 552, 542 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				buttonGame5Field51.BackColor = InvertFieldColor(color: buttonGame5Field51.BackColor);
+				InvertFields(idField: new ushort[] { 551 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard5x5();
@@ -2187,26 +1888,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				buttonGame5Field42.BackColor = InvertFieldColor(color: buttonGame5Field42.BackColor);
-				buttonGame5Field51.BackColor = InvertFieldColor(color: buttonGame5Field51.BackColor);
-				buttonGame5Field53.BackColor = InvertFieldColor(color: buttonGame5Field53.BackColor);
+				InvertFields(idField: new ushort[] { 542, 551, 553 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				buttonGame5Field41.BackColor = InvertFieldColor(color: buttonGame5Field41.BackColor);
-				buttonGame5Field43.BackColor = InvertFieldColor(color: buttonGame5Field43.BackColor);
+				InvertFields(idField: new ushort[] { 541, 543 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				buttonGame5Field42.BackColor = InvertFieldColor(color: buttonGame5Field42.BackColor);
-				buttonGame5Field51.BackColor = InvertFieldColor(color: buttonGame5Field51.BackColor);
-				buttonGame5Field53.BackColor = InvertFieldColor(color: buttonGame5Field53.BackColor);
-				buttonGame5Field41.BackColor = InvertFieldColor(color: buttonGame5Field41.BackColor);
-				buttonGame5Field43.BackColor = InvertFieldColor(color: buttonGame5Field43.BackColor);
+				InvertFields(idField: new ushort[] { 542, 551, 553 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				buttonGame5Field52.BackColor = InvertFieldColor(color: buttonGame5Field52.BackColor);
+				InvertFields(idField: new ushort[] { 552 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard5x5();
@@ -2217,26 +1911,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				buttonGame5Field43.BackColor = InvertFieldColor(color: buttonGame5Field43.BackColor);
-				buttonGame5Field52.BackColor = InvertFieldColor(color: buttonGame5Field52.BackColor);
-				buttonGame5Field54.BackColor = InvertFieldColor(color: buttonGame5Field54.BackColor);
+				InvertFields(idField: new ushort[] { 543, 552, 554 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				buttonGame5Field42.BackColor = InvertFieldColor(color: buttonGame5Field42.BackColor);
-				buttonGame5Field44.BackColor = InvertFieldColor(color: buttonGame5Field44.BackColor);
+				InvertFields(idField: new ushort[] { 542, 544 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				buttonGame5Field43.BackColor = InvertFieldColor(color: buttonGame5Field43.BackColor);
-				buttonGame5Field52.BackColor = InvertFieldColor(color: buttonGame5Field52.BackColor);
-				buttonGame5Field54.BackColor = InvertFieldColor(color: buttonGame5Field54.BackColor);
-				buttonGame5Field42.BackColor = InvertFieldColor(color: buttonGame5Field42.BackColor);
-				buttonGame5Field44.BackColor = InvertFieldColor(color: buttonGame5Field44.BackColor);
+				InvertFields(idField: new ushort[] { 543, 552, 554, 542, 544 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				buttonGame5Field53.BackColor = InvertFieldColor(color: buttonGame5Field53.BackColor);
+				InvertFields(idField: new ushort[] { 553 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard5x5();
@@ -2247,26 +1934,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				buttonGame5Field44.BackColor = InvertFieldColor(color: buttonGame5Field44.BackColor);
-				buttonGame5Field53.BackColor = InvertFieldColor(color: buttonGame5Field53.BackColor);
-				buttonGame5Field55.BackColor = InvertFieldColor(color: buttonGame5Field55.BackColor);
+				InvertFields(idField: new ushort[] { 544, 553, 555 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				buttonGame5Field43.BackColor = InvertFieldColor(color: buttonGame5Field43.BackColor);
-				buttonGame5Field45.BackColor = InvertFieldColor(color: buttonGame5Field45.BackColor);
+				InvertFields(idField: new ushort[] { 543, 545 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				buttonGame5Field44.BackColor = InvertFieldColor(color: buttonGame5Field44.BackColor);
-				buttonGame5Field53.BackColor = InvertFieldColor(color: buttonGame5Field53.BackColor);
-				buttonGame5Field55.BackColor = InvertFieldColor(color: buttonGame5Field55.BackColor);
-				buttonGame5Field43.BackColor = InvertFieldColor(color: buttonGame5Field43.BackColor);
-				buttonGame5Field45.BackColor = InvertFieldColor(color: buttonGame5Field45.BackColor);
+				InvertFields(idField: new ushort[] { 544, 553, 555, 543, 545 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				buttonGame5Field54.BackColor = InvertFieldColor(color: buttonGame5Field54.BackColor);
+				InvertFields(idField: new ushort[] { 554 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard5x5();
@@ -2277,22 +1957,19 @@ namespace Black_n_White
 			numberKlicks++;
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
-				buttonGame5Field45.BackColor = InvertFieldColor(color: buttonGame5Field45.BackColor);
-				buttonGame5Field54.BackColor = InvertFieldColor(color: buttonGame5Field54.BackColor);
+				InvertFields(idField: new ushort[] { 545, 554 });
 			}
 			else if (toolStripMenuItemOptionDiagonal.Checked)
 			{
-				buttonGame5Field44.BackColor = InvertFieldColor(color: buttonGame5Field44.BackColor);
+				InvertFields(idField: new ushort[] { 544 });
 			}
 			else if (toolStripMenuItemOptionCombined.Checked)
 			{
-				buttonGame5Field45.BackColor = InvertFieldColor(color: buttonGame5Field45.BackColor);
-				buttonGame5Field54.BackColor = InvertFieldColor(color: buttonGame5Field54.BackColor);
-				buttonGame5Field44.BackColor = InvertFieldColor(color: buttonGame5Field44.BackColor);
+				InvertFields(idField: new ushort[] { 545, 554, 544 });
 			}
 			if (toolStripMenuItemOptionCentered.Checked)
 			{
-				buttonGame5Field55.BackColor = InvertFieldColor(color: buttonGame5Field55.BackColor);
+				InvertFields(idField: new ushort[] { 555 });
 				SetStatusLabelField(sender: sender, e: e);
 			}
 			CountColorsAndCheckForWinInGameboard5x5();

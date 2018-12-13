@@ -234,7 +234,6 @@
 			this.tabPageGame3x3.ImageKey = "checkerboard.png";
 			this.tabPageGame3x3.Location = new System.Drawing.Point(4, 23);
 			this.tabPageGame3x3.Name = "tabPageGame3x3";
-			this.tabPageGame3x3.Padding = new System.Windows.Forms.Padding(3);
 			this.tabPageGame3x3.Size = new System.Drawing.Size(232, 221);
 			this.tabPageGame3x3.TabIndex = 0;
 			this.tabPageGame3x3.Text = "Game 3x3";
@@ -257,13 +256,14 @@
 			this.tableLayoutPanelGame3x3.Controls.Add(this.buttonGame3Field12, 1, 0);
 			this.tableLayoutPanelGame3x3.Controls.Add(this.buttonGame3Field11, 0, 0);
 			this.tableLayoutPanelGame3x3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tableLayoutPanelGame3x3.Location = new System.Drawing.Point(3, 3);
+			this.tableLayoutPanelGame3x3.Location = new System.Drawing.Point(0, 0);
+			this.tableLayoutPanelGame3x3.Margin = new System.Windows.Forms.Padding(0);
 			this.tableLayoutPanelGame3x3.Name = "tableLayoutPanelGame3x3";
 			this.tableLayoutPanelGame3x3.RowCount = 3;
 			this.tableLayoutPanelGame3x3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
 			this.tableLayoutPanelGame3x3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
 			this.tableLayoutPanelGame3x3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-			this.tableLayoutPanelGame3x3.Size = new System.Drawing.Size(226, 215);
+			this.tableLayoutPanelGame3x3.Size = new System.Drawing.Size(232, 221);
 			this.tableLayoutPanelGame3x3.TabIndex = 0;
 			// 
 			// buttonGame3Field33
@@ -272,10 +272,10 @@
 			this.buttonGame3Field33.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
 			this.buttonGame3Field33.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.buttonGame3Field33.FlatAppearance.BorderSize = 0;
-			this.buttonGame3Field33.Location = new System.Drawing.Point(150, 142);
+			this.buttonGame3Field33.Location = new System.Drawing.Point(154, 146);
 			this.buttonGame3Field33.Margin = new System.Windows.Forms.Padding(0);
 			this.buttonGame3Field33.Name = "buttonGame3Field33";
-			this.buttonGame3Field33.Size = new System.Drawing.Size(76, 73);
+			this.buttonGame3Field33.Size = new System.Drawing.Size(78, 75);
 			this.buttonGame3Field33.TabIndex = 8;
 			this.buttonGame3Field33.UseVisualStyleBackColor = true;
 			this.buttonGame3Field33.Click += new System.EventHandler(this.ButtonGame3Field33_Click);
@@ -290,10 +290,10 @@
 			this.buttonGame3Field32.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
 			this.buttonGame3Field32.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.buttonGame3Field32.FlatAppearance.BorderSize = 0;
-			this.buttonGame3Field32.Location = new System.Drawing.Point(75, 142);
+			this.buttonGame3Field32.Location = new System.Drawing.Point(77, 146);
 			this.buttonGame3Field32.Margin = new System.Windows.Forms.Padding(0);
 			this.buttonGame3Field32.Name = "buttonGame3Field32";
-			this.buttonGame3Field32.Size = new System.Drawing.Size(75, 73);
+			this.buttonGame3Field32.Size = new System.Drawing.Size(77, 75);
 			this.buttonGame3Field32.TabIndex = 7;
 			this.buttonGame3Field32.UseVisualStyleBackColor = true;
 			this.buttonGame3Field32.Click += new System.EventHandler(this.ButtonGame3Field32_Click);
@@ -308,10 +308,10 @@
 			this.buttonGame3Field31.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
 			this.buttonGame3Field31.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.buttonGame3Field31.FlatAppearance.BorderSize = 0;
-			this.buttonGame3Field31.Location = new System.Drawing.Point(0, 142);
+			this.buttonGame3Field31.Location = new System.Drawing.Point(0, 146);
 			this.buttonGame3Field31.Margin = new System.Windows.Forms.Padding(0);
 			this.buttonGame3Field31.Name = "buttonGame3Field31";
-			this.buttonGame3Field31.Size = new System.Drawing.Size(75, 73);
+			this.buttonGame3Field31.Size = new System.Drawing.Size(77, 75);
 			this.buttonGame3Field31.TabIndex = 6;
 			this.buttonGame3Field31.UseVisualStyleBackColor = true;
 			this.buttonGame3Field31.Click += new System.EventHandler(this.ButtonGame3Field31_Click);
@@ -326,10 +326,10 @@
 			this.buttonGame3Field23.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
 			this.buttonGame3Field23.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.buttonGame3Field23.FlatAppearance.BorderSize = 0;
-			this.buttonGame3Field23.Location = new System.Drawing.Point(150, 71);
+			this.buttonGame3Field23.Location = new System.Drawing.Point(154, 73);
 			this.buttonGame3Field23.Margin = new System.Windows.Forms.Padding(0);
 			this.buttonGame3Field23.Name = "buttonGame3Field23";
-			this.buttonGame3Field23.Size = new System.Drawing.Size(76, 71);
+			this.buttonGame3Field23.Size = new System.Drawing.Size(78, 73);
 			this.buttonGame3Field23.TabIndex = 5;
 			this.buttonGame3Field23.UseVisualStyleBackColor = true;
 			this.buttonGame3Field23.Click += new System.EventHandler(this.ButtonGame3Field23_Click);
@@ -344,10 +344,10 @@
 			this.buttonGame3Field22.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
 			this.buttonGame3Field22.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.buttonGame3Field22.FlatAppearance.BorderSize = 0;
-			this.buttonGame3Field22.Location = new System.Drawing.Point(75, 71);
+			this.buttonGame3Field22.Location = new System.Drawing.Point(77, 73);
 			this.buttonGame3Field22.Margin = new System.Windows.Forms.Padding(0);
 			this.buttonGame3Field22.Name = "buttonGame3Field22";
-			this.buttonGame3Field22.Size = new System.Drawing.Size(75, 71);
+			this.buttonGame3Field22.Size = new System.Drawing.Size(77, 73);
 			this.buttonGame3Field22.TabIndex = 4;
 			this.buttonGame3Field22.UseVisualStyleBackColor = true;
 			this.buttonGame3Field22.Click += new System.EventHandler(this.ButtonGame3Field22_Click);
@@ -362,10 +362,10 @@
 			this.buttonGame3Field21.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
 			this.buttonGame3Field21.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.buttonGame3Field21.FlatAppearance.BorderSize = 0;
-			this.buttonGame3Field21.Location = new System.Drawing.Point(0, 71);
+			this.buttonGame3Field21.Location = new System.Drawing.Point(0, 73);
 			this.buttonGame3Field21.Margin = new System.Windows.Forms.Padding(0);
 			this.buttonGame3Field21.Name = "buttonGame3Field21";
-			this.buttonGame3Field21.Size = new System.Drawing.Size(75, 71);
+			this.buttonGame3Field21.Size = new System.Drawing.Size(77, 73);
 			this.buttonGame3Field21.TabIndex = 3;
 			this.buttonGame3Field21.UseVisualStyleBackColor = true;
 			this.buttonGame3Field21.Click += new System.EventHandler(this.ButtonGame3Field21_Click);
@@ -380,10 +380,10 @@
 			this.buttonGame3Field13.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
 			this.buttonGame3Field13.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.buttonGame3Field13.FlatAppearance.BorderSize = 0;
-			this.buttonGame3Field13.Location = new System.Drawing.Point(150, 0);
+			this.buttonGame3Field13.Location = new System.Drawing.Point(154, 0);
 			this.buttonGame3Field13.Margin = new System.Windows.Forms.Padding(0);
 			this.buttonGame3Field13.Name = "buttonGame3Field13";
-			this.buttonGame3Field13.Size = new System.Drawing.Size(76, 71);
+			this.buttonGame3Field13.Size = new System.Drawing.Size(78, 73);
 			this.buttonGame3Field13.TabIndex = 2;
 			this.buttonGame3Field13.UseVisualStyleBackColor = true;
 			this.buttonGame3Field13.Click += new System.EventHandler(this.ButtonGame3Field13_Click);
@@ -398,10 +398,10 @@
 			this.buttonGame3Field12.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
 			this.buttonGame3Field12.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.buttonGame3Field12.FlatAppearance.BorderSize = 0;
-			this.buttonGame3Field12.Location = new System.Drawing.Point(75, 0);
+			this.buttonGame3Field12.Location = new System.Drawing.Point(77, 0);
 			this.buttonGame3Field12.Margin = new System.Windows.Forms.Padding(0);
 			this.buttonGame3Field12.Name = "buttonGame3Field12";
-			this.buttonGame3Field12.Size = new System.Drawing.Size(75, 71);
+			this.buttonGame3Field12.Size = new System.Drawing.Size(77, 73);
 			this.buttonGame3Field12.TabIndex = 1;
 			this.buttonGame3Field12.UseVisualStyleBackColor = true;
 			this.buttonGame3Field12.Click += new System.EventHandler(this.ButtonGame3Field12_Click);
@@ -419,7 +419,7 @@
 			this.buttonGame3Field11.Location = new System.Drawing.Point(0, 0);
 			this.buttonGame3Field11.Margin = new System.Windows.Forms.Padding(0);
 			this.buttonGame3Field11.Name = "buttonGame3Field11";
-			this.buttonGame3Field11.Size = new System.Drawing.Size(75, 71);
+			this.buttonGame3Field11.Size = new System.Drawing.Size(77, 73);
 			this.buttonGame3Field11.TabIndex = 0;
 			this.buttonGame3Field11.UseVisualStyleBackColor = true;
 			this.buttonGame3Field11.Click += new System.EventHandler(this.ButtonGame3Field11_Click);
@@ -466,6 +466,7 @@
 			this.tableLayoutPanelGame4x4.Controls.Add(this.buttonGame4Field11, 0, 0);
 			this.tableLayoutPanelGame4x4.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanelGame4x4.Location = new System.Drawing.Point(3, 3);
+			this.tableLayoutPanelGame4x4.Margin = new System.Windows.Forms.Padding(0);
 			this.tableLayoutPanelGame4x4.Name = "tableLayoutPanelGame4x4";
 			this.tableLayoutPanelGame4x4.RowCount = 4;
 			this.tableLayoutPanelGame4x4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -795,6 +796,7 @@
 			this.tableLayoutPanelGame5x5.Controls.Add(this.buttonGame5Field12, 1, 0);
 			this.tableLayoutPanelGame5x5.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanelGame5x5.Location = new System.Drawing.Point(3, 3);
+			this.tableLayoutPanelGame5x5.Margin = new System.Windows.Forms.Padding(0);
 			this.tableLayoutPanelGame5x5.Name = "tableLayoutPanelGame5x5";
 			this.tableLayoutPanelGame5x5.RowCount = 5;
 			this.tableLayoutPanelGame5x5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
