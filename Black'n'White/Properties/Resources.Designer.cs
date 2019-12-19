@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Black_n_White.Properties {
+namespace BlackAndWhite.Properties {
     using System;
     
     

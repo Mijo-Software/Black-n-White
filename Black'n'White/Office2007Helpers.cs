@@ -24,7 +24,7 @@ namespace Office2007Rendering
 	public class UseAntiAlias : IDisposable
 	{
 		#region Instance Fields
-		private Graphics _g;
+		private readonly Graphics _g;
 		private readonly SmoothingMode _old;
 		#endregion
 
@@ -56,7 +56,7 @@ namespace Office2007Rendering
 	public class UseClearTypeGridFit : IDisposable
 	{
 		#region Instance Fields
-		private Graphics _g;
+		private readonly Graphics _g;
 		private readonly TextRenderingHint _old;
 		#endregion
 
@@ -88,8 +88,8 @@ namespace Office2007Rendering
 	public class UseClipping : IDisposable
 	{
 		#region Instance Fields
-		private Graphics _g;
-		private Region _old;
+		private readonly Graphics _g;
+		private readonly Region _old;
 		#endregion
 
 		#region Identity

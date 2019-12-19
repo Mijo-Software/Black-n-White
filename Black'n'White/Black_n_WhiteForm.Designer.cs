@@ -1,6 +1,6 @@
-﻿namespace Black_n_White
+﻿namespace BlackAndWhite
 {
-	partial class Black_n_WhiteForm
+	partial class BlackAndWhiteForm
 	{
 		/// <summary>
 		/// Erforderliche Designervariable.
@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Black_n_WhiteForm));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BlackAndWhiteForm));
 			this.tabControl = new System.Windows.Forms.TabControl();
 			this.tabPageInfo = new System.Windows.Forms.TabPage();
 			this.textBoxDescription = new System.Windows.Forms.TextBox();
@@ -220,7 +220,7 @@
 			// 
 			// pictureBox
 			// 
-			this.pictureBox.Image = global::Black_n_White.Properties.Resources.Black_n_White_logo_48;
+			this.pictureBox.Image = global::BlackAndWhite.Properties.Resources.Black_n_White_logo_48;
 			this.pictureBox.Location = new System.Drawing.Point(8, 6);
 			this.pictureBox.Name = "pictureBox";
 			this.pictureBox.Size = new System.Drawing.Size(48, 48);
@@ -1266,7 +1266,7 @@
             this.spielfeldgrößeToolStripMenuItem,
             this.toolStripMenuItemGameOptions});
 			this.toolStripSplitButtonNewGame.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.toolStripSplitButtonNewGame.Image = global::Black_n_White.Properties.Resources.asterisk_yellow;
+			this.toolStripSplitButtonNewGame.Image = global::BlackAndWhite.Properties.Resources.asterisk_yellow;
 			this.toolStripSplitButtonNewGame.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolStripSplitButtonNewGame.Name = "toolStripSplitButtonNewGame";
 			this.toolStripSplitButtonNewGame.Size = new System.Drawing.Size(100, 20);
@@ -1283,7 +1283,7 @@
             this.toolStripMenuItemNewGame4x4,
             this.toolStripMenuItemNewGame5x5});
 			this.spielfeldgrößeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
-			this.spielfeldgrößeToolStripMenuItem.Image = global::Black_n_White.Properties.Resources.checkerboard;
+			this.spielfeldgrößeToolStripMenuItem.Image = global::BlackAndWhite.Properties.Resources.checkerboard;
 			this.spielfeldgrößeToolStripMenuItem.Name = "spielfeldgrößeToolStripMenuItem";
 			this.spielfeldgrößeToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
 			this.spielfeldgrößeToolStripMenuItem.Text = "Spielfeldgröße";
@@ -1336,7 +1336,7 @@
             this.toolStripSeparator3,
             this.toolStripMenuItemOptionCentered});
 			this.toolStripMenuItemGameOptions.Font = new System.Drawing.Font("Segoe UI", 9F);
-			this.toolStripMenuItemGameOptions.Image = global::Black_n_White.Properties.Resources.cog;
+			this.toolStripMenuItemGameOptions.Image = global::BlackAndWhite.Properties.Resources.cog;
 			this.toolStripMenuItemGameOptions.Name = "toolStripMenuItemGameOptions";
 			this.toolStripMenuItemGameOptions.Overflow = System.Windows.Forms.ToolStripItemOverflow.Always;
 			this.toolStripMenuItemGameOptions.Size = new System.Drawing.Size(170, 22);
@@ -1401,7 +1401,7 @@
 			// toolStripButtonPause
 			// 
 			this.toolStripButtonPause.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.toolStripButtonPause.Image = global::Black_n_White.Properties.Resources.control_pause_blue;
+			this.toolStripButtonPause.Image = global::BlackAndWhite.Properties.Resources.control_pause_blue;
 			this.toolStripButtonPause.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolStripButtonPause.Name = "toolStripButtonPause";
 			this.toolStripButtonPause.Size = new System.Drawing.Size(58, 20);

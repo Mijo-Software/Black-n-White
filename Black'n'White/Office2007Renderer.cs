@@ -733,9 +733,13 @@ namespace Office2007Rendering
 
 				// Reduce so it is inside the border
 				if (!rtl)
+				{
 					marginRect.X += _marginInset;
+				}
 				else
+				{
 					marginRect.X += _marginInset / 2;
+				}
 
 				// Draw the entire margin area in a solid color
 				using (SolidBrush backBrush = new SolidBrush(color: ColorTable.ImageMarginGradientBegin))
