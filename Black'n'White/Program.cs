@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
-namespace Black_n_White
+namespace BlackAndWhite
 {
 	internal static class Program
 	{
@@ -15,7 +13,7 @@ namespace Black_n_White
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(defaultValue: false);
-			Application.Run(mainForm: new Black_n_WhiteForm());
+			Application.Run(mainForm: new BlackAndWhiteForm());
 		}
 	}
 }

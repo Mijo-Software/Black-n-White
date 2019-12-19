@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Black_n_White {
+namespace BlackAndWhite {
     using System;
     
     

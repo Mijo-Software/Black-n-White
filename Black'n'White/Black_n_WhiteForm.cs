@@ -1,18 +1,19 @@
-﻿using System;
+﻿using Office2007Rendering;
+
+using System;
 using System.Drawing;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
-using Office2007Rendering;
 
-namespace Black_n_White
+namespace BlackAndWhite
 {
 	/// <summary>
 	/// 
 	/// </summary>
-	public partial class Black_n_WhiteForm : Form
+	public partial class BlackAndWhiteForm : Form
 	{
-		private bool isGameStarted = false;
+		private bool isGameStarted;
 
 		private int
 			numberKlicks = 0,
@@ -21,9 +22,9 @@ namespace Black_n_White
 			numberWhites = 0,
 			numberInvertedFields = 0;
 
-		private Random randomNumber = new Random();
+		private readonly Random randomNumber = new Random();
 
-		private StringBuilder stringBuilder = new StringBuilder();
+		private readonly StringBuilder stringBuilder = new StringBuilder();
 
 		#region Assemblyattributaccessoren
 
@@ -109,7 +110,7 @@ namespace Black_n_White
 		/// <summary>
 		/// 
 		/// </summary>
-		public Black_n_WhiteForm() => InitializeComponent();
+		public BlackAndWhiteForm() => InitializeComponent();
 
 		private void MainForm_Load(object sender, EventArgs e)
 		{
@@ -159,7 +160,7 @@ namespace Black_n_White
 			}
 		}
 
-		private void ClearStatusLabel(object sender, EventArgs e) => toolStripStatusLabel.Text = String.Empty;
+		private void ClearStatusLabel(object sender, EventArgs e) => toolStripStatusLabel.Text = string.Empty;
 
 		#endregion
 
@@ -495,8 +496,16 @@ namespace Black_n_White
 
 		private Color InvertFieldColor(Color color)
 		{
-			if (!toolStripButtonPause.Enabled) toolStripButtonPause.Enabled = true;
-			if (!timer.Enabled) timer.Enabled = true;
+			if (!toolStripButtonPause.Enabled)
+			{
+				toolStripButtonPause.Enabled = true;
+			}
+
+			if (!timer.Enabled)
+			{
+				timer.Enabled = true;
+			}
+
 			numberInvertedFields++;
 			switch (color.Name)
 			{
@@ -649,7 +658,11 @@ namespace Black_n_White
 					numbUndefinedColor++;
 				}
 			}
-			if ((numbWhiteColor == (3 * 3)) || (numbBlackColor == (3 * 3))) isSameColor = true;
+			if ((numbWhiteColor == (3 * 3)) || (numbBlackColor == (3 * 3)))
+			{
+				isSameColor = true;
+			}
+
 			return isSameColor;
 		}
 
@@ -675,7 +688,11 @@ namespace Black_n_White
 					numbUndefinedColor++;
 				}
 			}
-			if ((numbWhiteColor == (4 * 4)) || (numbBlackColor == (4 * 4))) isSameColor = true;
+			if ((numbWhiteColor == (4 * 4)) || (numbBlackColor == (4 * 4)))
+			{
+				isSameColor = true;
+			}
+
 			return isSameColor;
 		}
 
@@ -701,7 +718,11 @@ namespace Black_n_White
 					numbUndefinedColor++;
 				}
 			}
-			if ((numbWhiteColor == (5 * 5)) || (numbBlackColor == (5 * 5))) isSameColor = true;
+			if ((numbWhiteColor == (5 * 5)) || (numbBlackColor == (5 * 5)))
+			{
+				isSameColor = true;
+			}
+
 			return isSameColor;
 		}
 
@@ -1033,7 +1054,11 @@ namespace Black_n_White
 		private void ButtonGame4Field11_Click(object sender, EventArgs e)
 		{
 			numberKlicks++;
-			if (!timer.Enabled) timer.Enabled = true;
+			if (!timer.Enabled)
+			{
+				timer.Enabled = true;
+			}
+
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
 				InvertFields(idField: new ushort[] { 412, 421 });
@@ -1632,7 +1657,11 @@ namespace Black_n_White
 		private void ButtonGame5Field31_Click(object sender, EventArgs e)
 		{
 			numberKlicks++;
-			if (!timer.Enabled) timer.Enabled = true;
+			if (!timer.Enabled)
+			{
+				timer.Enabled = true;
+			}
+
 			if (toolStripMenuItemOptionLinear.Checked)
 			{
 				InvertFields(idField: new ushort[] { 521, 532, 541 });
