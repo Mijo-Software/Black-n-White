@@ -146,7 +146,7 @@
 			this.tabControl.Name = "tabControl";
 			this.tabControl.SelectedIndex = 0;
 			this.tabControl.ShowToolTips = true;
-			this.tabControl.Size = new System.Drawing.Size(240, 248);
+			this.tabControl.Size = new System.Drawing.Size(240, 244);
 			this.tabControl.TabIndex = 0;
 			this.tabControl.Enter += new System.EventHandler(this.SetStatusLabelField);
 			this.tabControl.Leave += new System.EventHandler(this.ClearStatusLabel);
@@ -168,7 +168,7 @@
 			this.tabPageInfo.Location = new System.Drawing.Point(4, 23);
 			this.tabPageInfo.Name = "tabPageInfo";
 			this.tabPageInfo.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPageInfo.Size = new System.Drawing.Size(232, 221);
+			this.tabPageInfo.Size = new System.Drawing.Size(232, 217);
 			this.tabPageInfo.TabIndex = 3;
 			this.tabPageInfo.Text = "Info";
 			this.toolTip.SetToolTip(this.tabPageInfo, "Info");
@@ -190,7 +190,7 @@
 			this.textBoxDescription.Name = "textBoxDescription";
 			this.textBoxDescription.ReadOnly = true;
 			this.textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.textBoxDescription.Size = new System.Drawing.Size(216, 157);
+			this.textBoxDescription.Size = new System.Drawing.Size(216, 153);
 			this.textBoxDescription.TabIndex = 4;
 			this.textBoxDescription.Enter += new System.EventHandler(this.SetStatusLabel);
 			this.textBoxDescription.Leave += new System.EventHandler(this.ClearStatusLabel);
@@ -1482,7 +1482,7 @@
 			this.toolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
 			this.toolStrip.Location = new System.Drawing.Point(0, 0);
 			this.toolStrip.Name = "toolStrip";
-			this.toolStrip.Size = new System.Drawing.Size(240, 38);
+			this.toolStrip.Size = new System.Drawing.Size(240, 42);
 			this.toolStrip.Stretch = true;
 			this.toolStrip.TabIndex = 0;
 			this.toolStrip.Text = "toolStrip";
@@ -1518,7 +1518,7 @@
 			this.toolStripMenuItemGameSize.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.toolStripMenuItemGameSize.Image = global::BlackAndWhite.Properties.Resources.checkerboard;
 			this.toolStripMenuItemGameSize.Name = "toolStripMenuItemGameSize";
-			this.toolStripMenuItemGameSize.Size = new System.Drawing.Size(170, 22);
+			this.toolStripMenuItemGameSize.Size = new System.Drawing.Size(180, 22);
 			this.toolStripMenuItemGameSize.Text = "Spielfeldgröße";
 			this.toolStripMenuItemGameSize.MouseEnter += new System.EventHandler(this.SetStatusLabel);
 			this.toolStripMenuItemGameSize.MouseLeave += new System.EventHandler(this.ClearStatusLabel);
@@ -1534,7 +1534,7 @@
 			this.toolStripMenuItemNewGame3x3.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.toolStripMenuItemNewGame3x3.DoubleClickEnabled = true;
 			this.toolStripMenuItemNewGame3x3.Name = "toolStripMenuItemNewGame3x3";
-			this.toolStripMenuItemNewGame3x3.Size = new System.Drawing.Size(178, 22);
+			this.toolStripMenuItemNewGame3x3.Size = new System.Drawing.Size(180, 22);
 			this.toolStripMenuItemNewGame3x3.Text = "Größe 3x3 = leicht";
 			this.toolStripMenuItemNewGame3x3.Click += new System.EventHandler(this.ToolStripMenuItemNewGame3x3_Click);
 			this.toolStripMenuItemNewGame3x3.MouseEnter += new System.EventHandler(this.SetStatusLabel);
@@ -1549,7 +1549,7 @@
 			this.toolStripMenuItemNewGame4x4.CheckOnClick = true;
 			this.toolStripMenuItemNewGame4x4.DoubleClickEnabled = true;
 			this.toolStripMenuItemNewGame4x4.Name = "toolStripMenuItemNewGame4x4";
-			this.toolStripMenuItemNewGame4x4.Size = new System.Drawing.Size(178, 22);
+			this.toolStripMenuItemNewGame4x4.Size = new System.Drawing.Size(180, 22);
 			this.toolStripMenuItemNewGame4x4.Text = "Größe 4x4 = mittel";
 			this.toolStripMenuItemNewGame4x4.Click += new System.EventHandler(this.ToolStripMenuItemNewGame4x4_Click);
 			this.toolStripMenuItemNewGame4x4.MouseEnter += new System.EventHandler(this.SetStatusLabel);
@@ -1564,7 +1564,7 @@
 			this.toolStripMenuItemNewGame5x5.CheckOnClick = true;
 			this.toolStripMenuItemNewGame5x5.DoubleClickEnabled = true;
 			this.toolStripMenuItemNewGame5x5.Name = "toolStripMenuItemNewGame5x5";
-			this.toolStripMenuItemNewGame5x5.Size = new System.Drawing.Size(178, 22);
+			this.toolStripMenuItemNewGame5x5.Size = new System.Drawing.Size(180, 22);
 			this.toolStripMenuItemNewGame5x5.Text = "Größe 5x5 = schwer";
 			this.toolStripMenuItemNewGame5x5.Click += new System.EventHandler(this.ToolStripMenuItemNewGame5x5_Click);
 			this.toolStripMenuItemNewGame5x5.MouseEnter += new System.EventHandler(this.SetStatusLabel);
@@ -1586,7 +1586,7 @@
 			this.toolStripMenuItemGameOptions.Image = global::BlackAndWhite.Properties.Resources.cog;
 			this.toolStripMenuItemGameOptions.Name = "toolStripMenuItemGameOptions";
 			this.toolStripMenuItemGameOptions.Overflow = System.Windows.Forms.ToolStripItemOverflow.Always;
-			this.toolStripMenuItemGameOptions.Size = new System.Drawing.Size(170, 22);
+			this.toolStripMenuItemGameOptions.Size = new System.Drawing.Size(180, 22);
 			this.toolStripMenuItemGameOptions.Text = "Spieleinstellungen";
 			this.toolStripMenuItemGameOptions.MouseEnter += new System.EventHandler(this.SetStatusLabel);
 			this.toolStripMenuItemGameOptions.MouseLeave += new System.EventHandler(this.ClearStatusLabel);
@@ -1732,7 +1732,7 @@
 			this.toolStripContainer.ContentPanel.AccessibleName = "Zentraler Inhalt des Container";
 			this.toolStripContainer.ContentPanel.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
 			this.toolStripContainer.ContentPanel.Controls.Add(this.tabControl);
-			this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size(240, 248);
+			this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size(240, 244);
 			this.toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
 			// 
 			// toolStripContainer.LeftToolStripPanel
