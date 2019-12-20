@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
 [assembly: AssemblyTitle("Black'n'White")]
-[assembly: AssemblyDescription("Black'n'White ist ein kleines Logikspiel, bei dem alle Felder in eine einheitlich Farbe gebracht werden soll - entweder schwarz oder weiß.\r\n\r\nWenn man auf ein Feld klickt, so verändert sich die Farbe des Feldes in die entgegen gesetzte Farbe. Das geschieht zugleich auch bei den Nachbarfeldern. Je nach Einstellung werden dabei die linearen Nachbarfelder oder die diagonalen Nachbarfelder geändert.\r\n\r\nZiel ist es dabei, mit möglichst wenig Klicks & Ticks, das Spiel zu lösen.")]
+[assembly: AssemblyDescription("Black'n'White ist ein kleines Logikspiel, bei dem alle Felder in eine einheitlich Farbe gebracht werden soll - entweder schwarz oder weiß.\r\n\r\nWenn man auf ein Feld klickt, so verändert sich die Farbe des Feldes in die entgegen gesetzte Farbe. Das geschieht zugleich auch bei den Nachbarfeldern. Je nach Einstellung werden dabei die linearen Nachbarfelder oder die diagonalen Nachbarfelder geändert. Aber auch beides ist möglich. Je größer das Spielfeld ist, desto schwieriger ist das Lösen und desto länger dauert auch das Spiel.\r\n\r\nZiel ist es dabei, mit möglichst wenig Klicks & Ticks, das Spiel zu lösen.\r\n\r\nDas Spiel basiert auf einer Idee von Sascha Seidel: http://www.saschaseidel.de/html/eigeneprogramme/eigeneprogramme.php#Black_and_White")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Mijo Software")]
 [assembly: AssemblyProduct("Black'n'White")]

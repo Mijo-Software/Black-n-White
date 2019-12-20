@@ -11,7 +11,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{FEA86F62-95B7-4735-9EFF-93575207D4E2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Black_n_White</RootNamespace>
+    <RootNamespace>BlackAndWhite</RootNamespace>
     <AssemblyName>Black%27n%27White</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -101,29 +101,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsColor.cs" />
-    <Compile Include="I10n.Designer.cs">
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Localization.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>I10n.resx</DependentUpon>
+      <DependentUpon>Localization.resx</DependentUpon>
     </Compile>
-    <Compile Include="Black_n_WhiteForm.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Black_n_WhiteForm.Designer.cs">
-      <DependentUpon>Black_n_WhiteForm.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Office2007ColorTable.cs" />
     <Compile Include="Office2007Helpers.cs" />
     <Compile Include="Office2007Renderer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="I10n.resx">
+    <EmbeddedResource Include="Localization.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>I10n.Designer.cs</LastGenOutput>
+      <LastGenOutput>Localization.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Black_n_WhiteForm.resx">
-      <DependentUpon>Black_n_WhiteForm.cs</DependentUpon>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

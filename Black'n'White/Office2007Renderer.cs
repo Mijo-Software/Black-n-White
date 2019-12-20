@@ -205,15 +205,13 @@ namespace Office2007Rendering
 		/// <summary>
 		/// 
 		/// </summary>
-		static Office2007Renderer()
-		{
+		static Office2007Renderer() =>
 			// One time creation of the blend for the status strip gradient brush
 			_statusStripBlend = new Blend
 			{
 				Positions = new float[] { 0.0f, 0.25f, 0.25f, 0.57f, 0.86f, 1.0f },
 				Factors = new float[] { 0.1f, 0.6f, 1.0f, 0.4f, 0.0f, 0.95f }
 			};
-		}
 
 		/// <summary>
 		/// Initialize a new instance of the Office2007Renderer class.
@@ -1142,7 +1140,7 @@ namespace Office2007Rendering
 		/// <param name="g"></param>
 		/// <param name="backRect"></param>
 		/// <param name="colors"></param>
-		private void DrawGradientBack(Graphics g,
+		private static void DrawGradientBack(Graphics g,
 																	Rectangle backRect,
 																	GradientItemColors colors)
 		{
@@ -1380,7 +1378,7 @@ namespace Office2007Rendering
 		/// <param name="rect"></param>
 		/// <param name="cut"></param>
 		/// <returns></returns>
-		private GraphicsPath CreateBorderPath(Rectangle rect, float cut)
+		private static GraphicsPath CreateBorderPath(Rectangle rect, float cut)
 		{
 			// Drawing lines requires we draw inside the area we want
 			rect.Width--;

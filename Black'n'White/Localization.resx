@@ -117,29 +117,36 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="information" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\information.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="colorNameBlack" xml:space="preserve">
+    <value>schwarz</value>
+    <comment>black</comment>
   </data>
-  <data name="cog" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cog.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="colorNameWhite" xml:space="preserve">
+    <value>weiß</value>
+    <comment>white</comment>
   </data>
-  <data name="asterisk_yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\asterisk_yellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="gamePaused" xml:space="preserve">
+    <value>Das Spiel ist pausiert. Klicke auf OK, um die Pause zu beenden!</value>
+    <comment>The game was paused. Click OK to go on!</comment>
   </data>
-  <data name="checkerboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\checkerboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="paused" xml:space="preserve">
+    <value>Pause</value>
+    <comment>Pause</comment>
   </data>
-  <data name="control_pause_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\control_pause_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="statisticDefault" xml:space="preserve">
+    <value>Klicks: 0 - Ticks: 0 - Blacks: 0 - Whites: 0 - Inverts: 0</value>
+    <comment>Klicks: 0 - Ticks: 0 - Blacks: 0 - Whites: 0 - Inverts: 0</comment>
   </data>
-  <data name="Black'n'White-logo-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Black'n'White-logo-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="statistics" xml:space="preserve">
+    <value>Klicks: {sumKlicks} - Ticks: {sumTicks} - Blacks: {numberBlacks} - Whites: {numberWhites} - Inverts: {sumInverts}</value>
+    <comment>clicks: {sumKlicks} - ticks: {sumTicks} - blacks: {numberBlacks} - whites: {numberWhites} - inverts: {sumInverts}</comment>
   </data>
-  <data name="black" xml:space="preserve">
-    <value>Black</value>
+  <data name="won" xml:space="preserve">
+    <value>Gewonnen</value>
+    <comment>Won</comment>
   </data>
-  <data name="white" xml:space="preserve">
-    <value>White</value>
+  <data name="wonMessage" xml:space="preserve">
+    <value>Du hast mit {sumKlicks} Klicks in {sumTicks} Ticks gewonnen.</value>
+    <comment>You have won with {sumKlicks} clicks in {sumTicks} ticks.</comment>
   </data>
 </root>

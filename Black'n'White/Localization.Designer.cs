@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BlackAndWhite.Properties {
+namespace BlackAndWhite {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace BlackAndWhite.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    internal class Localization {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        internal Localization() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace BlackAndWhite.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BlackAndWhite.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BlackAndWhite.Localization", typeof(Localization).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,80 +61,74 @@ namespace BlackAndWhite.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        ///   Sucht eine lokalisierte Zeichenfolge, die schwarz ähnelt.
         /// </summary>
-        internal static System.Drawing.Bitmap asterisk_yellow {
+        internal static string colorNameBlack {
             get {
-                object obj = ResourceManager.GetObject("asterisk_yellow", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("colorNameBlack", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Black ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die weiß ähnelt.
         /// </summary>
-        internal static string black {
+        internal static string colorNameWhite {
             get {
-                return ResourceManager.GetString("black", resourceCulture);
+                return ResourceManager.GetString("colorNameWhite", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Das Spiel ist pausiert. Klicke auf OK, um die Pause zu beenden! ähnelt.
         /// </summary>
-        internal static System.Drawing.Bitmap Black_n_White_logo_48 {
+        internal static string gamePaused {
             get {
-                object obj = ResourceManager.GetObject("Black\'n\'White-logo-48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("gamePaused", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Pause ähnelt.
         /// </summary>
-        internal static System.Drawing.Bitmap checkerboard {
+        internal static string paused {
             get {
-                object obj = ResourceManager.GetObject("checkerboard", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("paused", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Klicks: 0 - Ticks: 0 - Blacks: 0 - Whites: 0 - Inverts: 0 ähnelt.
         /// </summary>
-        internal static System.Drawing.Bitmap cog {
+        internal static string statisticDefault {
             get {
-                object obj = ResourceManager.GetObject("cog", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("statisticDefault", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Klicks: {sumKlicks} - Ticks: {sumTicks} - Blacks: {numberBlacks} - Whites: {numberWhites} - Inverts: {sumInverts} ähnelt.
         /// </summary>
-        internal static System.Drawing.Bitmap control_pause_blue {
+        internal static string statistics {
             get {
-                object obj = ResourceManager.GetObject("control_pause_blue", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("statistics", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Gewonnen ähnelt.
         /// </summary>
-        internal static System.Drawing.Bitmap information {
+        internal static string won {
             get {
-                object obj = ResourceManager.GetObject("information", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("won", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die White ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Du hast mit {sumKlicks} Klicks in {sumTicks} Ticks gewonnen. ähnelt.
         /// </summary>
-        internal static string white {
+        internal static string wonMessage {
             get {
-                return ResourceManager.GetString("white", resourceCulture);
+                return ResourceManager.GetString("wonMessage", resourceCulture);
             }
         }
     }
