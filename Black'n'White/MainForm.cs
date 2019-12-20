@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using MijoSoftware.AssemblyInformation;
@@ -217,6 +218,7 @@ namespace BlackAndWhite
 			}
 		}
 
+		/*
 		/// <summary>
 		/// Invert the background color of a field
 		/// </summary>
@@ -277,12 +279,13 @@ namespace BlackAndWhite
 				case 555: buttonGame5Field55.BackColor = InvertFieldColor(color: buttonGame5Field55.BackColor); break;
 			}
 		}
+		*/
 
 		/// <summary>
 		/// Invert the background color of a field
 		/// </summary>
 		/// <param name="color">color</param>
-		/// <returns></returns>
+		/// <returns>inverted color</returns>
 		private Color InvertFieldColor(Color color)
 		{
 			if (!toolStripButtonPause.Enabled)
@@ -382,13 +385,27 @@ namespace BlackAndWhite
 		}
 
 		/// <summary>
-		/// Count the colors in the gameboard 3x3
+		/// Count the colors of the gameboard 
 		/// </summary>
-		private void CountColorsInGameboard3x3()
+		private void CountColorsInGameboard()
 		{
+			TableLayoutPanel tableLayoutPanel = null;
+			if (toolStripMenuItemNewGame3x3.Checked)
+			{
+				tableLayoutPanel = tableLayoutPanelGame3x3;
+			}
+			else if (toolStripMenuItemNewGame4x4.Checked)
+			{
+				tableLayoutPanel = tableLayoutPanelGame4x4;
+			}
+			else if (toolStripMenuItemNewGame5x5.Checked)
+			{
+				tableLayoutPanel = tableLayoutPanelGame5x5;
+			}
+
 			numberBlacks = 0;
 			numberWhites = 0;
-			foreach (Control button in tableLayoutPanelGame3x3.Controls)
+			foreach (Control button in tableLayoutPanel.Controls)
 			{
 				if (button.BackColor == Color.Black)
 				{
@@ -402,57 +419,35 @@ namespace BlackAndWhite
 		}
 
 		/// <summary>
-		/// Count the colors in the gameboard 4x4
-		/// </summary>
-		private void CountColorsInGameboard4x4()
-		{
-			numberBlacks = 0;
-			numberWhites = 0;
-			foreach (Control button in tableLayoutPanelGame4x4.Controls)
-			{
-				if (button.BackColor == Color.Black)
-				{
-					numberBlacks++;
-				}
-				else if (button.BackColor == Color.White)
-				{
-					numberWhites++;
-				}
-			}
-		}
-
-		/// <summary>
-		/// Count the colors in the gameboard 5x5
-		/// </summary>
-		private void CountColorsInGameboard5x5()
-		{
-			numberBlacks = 0;
-			numberWhites = 0;
-			foreach (Control button in tableLayoutPanelGame5x5.Controls)
-			{
-				if (button.BackColor == Color.Black)
-				{
-					numberBlacks++;
-				}
-				else if (button.BackColor == Color.White)
-				{
-					numberWhites++;
-				}
-			}
-		}
-
-		/// <summary>
-		/// Check if it is the same color in gameboard 3x3
+		/// Check if it is the same color in the gameboard
 		/// </summary>
 		/// <returns>true if same</returns>
-		private bool IsSameColorsInGameboard3x3()
+		private bool IsSameColorsInGameboard()
 		{
 			bool isSameColor = false;
 			int
+				gameSize = 0,
 				numbUndefinedColor = 0,
 				numbWhiteColor = 0,
 				numbBlackColor = 0;
-			foreach (Control button in tableLayoutPanelGame3x3.Controls)
+			TableLayoutPanel tableLayoutPanel = null;
+			if (toolStripMenuItemNewGame3x3.Checked)
+			{
+				gameSize = 3;
+				tableLayoutPanel = tableLayoutPanelGame3x3;
+			}
+			else if (toolStripMenuItemNewGame4x4.Checked)
+			{
+				gameSize = 4;
+				tableLayoutPanel = tableLayoutPanelGame4x4;
+			}
+			else if (toolStripMenuItemNewGame5x5.Checked)
+			{
+				gameSize = 5;
+				tableLayoutPanel = tableLayoutPanelGame5x5;
+			}
+
+			foreach (Control button in tableLayoutPanel.Controls)
 			{
 				if (button.BackColor == Color.White)
 				{
@@ -467,7 +462,7 @@ namespace BlackAndWhite
 					numbUndefinedColor++;
 				}
 			}
-			if (numbWhiteColor == (3 * 3) || numbBlackColor == (3 * 3))
+			if (numbWhiteColor == Math.Pow(x: gameSize, y: 2) || numbBlackColor == Math.Pow(x: gameSize, y: 2))
 			{
 				isSameColor = true;
 			}
@@ -475,145 +470,28 @@ namespace BlackAndWhite
 		}
 
 		/// <summary>
-		/// Check if it is the same color in gameboard 4x4
+		/// Check for win in the gameboard
 		/// </summary>
-		/// <returns>true if same</returns>
-		private bool IsSameColorsInGameboard4x4()
-		{
-			bool isSameColor = false;
-			int
-				numbUndefinedColor = 0,
-				numbWhiteColor = 0,
-				numbBlackColor = 0;
-			foreach (Control button in tableLayoutPanelGame4x4.Controls)
-			{
-				if (button.BackColor == Color.White)
-				{
-					numbWhiteColor++;
-				}
-				else if (button.BackColor == Color.Black)
-				{
-					numbBlackColor++;
-				}
-				else
-				{
-					numbUndefinedColor++;
-				}
-			}
-			if (numbWhiteColor == (4 * 4) || (numbBlackColor == 4 * 4))
-			{
-				isSameColor = true;
-			}
-			return isSameColor;
-		}
-
-		/// <summary>
-		/// Check if it is the same color in gameboard 5x5
-		/// </summary>
-		/// <returns>true if same</returns>
-		private bool IsSameColorsInGameboard5x5()
-		{
-			bool isSameColor = false;
-			int
-				numbUndefinedColor = 0,
-				numbWhiteColor = 0,
-				numbBlackColor = 0;
-			foreach (Control button in tableLayoutPanelGame5x5.Controls)
-			{
-				if (button.BackColor == Color.White)
-				{
-					numbWhiteColor++;
-				}
-				else if (button.BackColor == Color.Black)
-				{
-					numbBlackColor++;
-				}
-				else
-				{
-					numbUndefinedColor++;
-				}
-			}
-			if (numbWhiteColor == (5 * 5) || numbBlackColor == (5 * 5))
-			{
-				isSameColor = true;
-			}
-
-			return isSameColor;
-		}
-
-		/// <summary>
-		/// Check for win in gameboard 3x3
-		/// </summary>
-		private void CheckForWinInGameboard3x3()
+		private void CheckForWinInGameboard()
 		{
 			if (!isGameStarted)
 			{
 				isGameStarted = true;
 				toolStripMenuItemGameOptions.Enabled = false;
 			}
-			if (IsSameColorsInGameboard3x3())
+			if (IsSameColorsInGameboard())
 			{
 				FinishGame();
 			}
 		}
 
 		/// <summary>
-		/// Check for win in gameboard 4x4
+		/// Count the colors and check for win in the gameboard
 		/// </summary>
-		private void CheckForWinInGameboard4x4()
+		private void CountColorsAndCheckForWinInGameboard()
 		{
-			if (!isGameStarted)
-			{
-				isGameStarted = true;
-				toolStripMenuItemGameOptions.Enabled = false;
-			}
-			if (IsSameColorsInGameboard4x4())
-			{
-				FinishGame();
-			}
-		}
-
-		/// <summary>
-		/// Check for win in gameboard 4x4
-		/// </summary>
-		private void CheckForWinInGameboard5x5()
-		{
-			if (!isGameStarted)
-			{
-				isGameStarted = true;
-				toolStripMenuItemGameOptions.Enabled = false;
-			}
-			if (IsSameColorsInGameboard5x5())
-			{
-				FinishGame();
-			}
-		}
-
-		/// <summary>
-		/// Count the colors and check for win in gameboard 3x3
-		/// </summary>
-		private void CountColorsAndCheckForWinInGameboard3x3()
-		{
-			CountColorsInGameboard3x3();
-			CheckForWinInGameboard3x3();
-		}
-
-		/// <summary>
-		/// Count the colors and check for win in gameboard 4x4
-		/// </summary>
-		private void CountColorsAndCheckForWinInGameboard4x4()
-		{
-			CountColorsInGameboard4x4();
-			CheckForWinInGameboard4x4();
-		}
-
-		/// <summary>
-		/// Count the colors and check for win in gameboard 5x5
-		/// </summary>
-		private void CountColorsAndCheckForWinInGameboard5x5()
-		{
-			CountColorsInGameboard5x5();
-			CheckForWinInGameboard5x5();
+			CountColorsInGameboard();
+			CheckForWinInGameboard();
 		}
 
 		/// <summary>
@@ -722,6 +600,30 @@ namespace BlackAndWhite
 			toolStripMenuItemOptionCombined.Checked = true;
 		}
 
+		private void InvertNeighbourFields(object sender, EventArgs e, ushort[] linearNeightbourFields, ushort[] diagonalNeightbourFields, ushort[] centeredField)
+		{
+			sumKlicks++;
+			if (toolStripMenuItemOptionLinear.Checked)
+			{
+				InvertFields(fieldId: linearNeightbourFields);
+			}
+			else if (toolStripMenuItemOptionDiagonal.Checked)
+			{
+				InvertFields(fieldId: diagonalNeightbourFields);
+			}
+			else if (toolStripMenuItemOptionCombined.Checked)
+			{
+				ushort[] combinedNeightbourFields = linearNeightbourFields.Union(second: diagonalNeightbourFields).ToArray();
+				InvertFields(fieldId: combinedNeightbourFields);
+			}
+			if (toolStripMenuItemOptionCentered.Checked)
+			{
+				InvertFields(fieldId: centeredField);
+				SetStatusLabelField(sender: sender, e: e);
+			}
+			CountColorsAndCheckForWinInGameboard();
+		}
+
 		/// <summary>
 		/// Invert the neighbour fields of the field 1x1 in the game 3x3
 		/// </summary>
@@ -730,25 +632,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame3Field11_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 312, 321 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 322 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 312, 321, 322 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 311 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard3x3();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 312, 321 },
+				diagonalNeightbourFields: new ushort[] { 322 },
+				centeredField: new ushort[] { 311 });
 		}
 
 		/// <summary>
@@ -759,25 +646,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame3Field12_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 311, 313, 322 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 321, 323 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 311, 313, 322, 321, 323 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 312 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard3x3();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 311, 313, 322 },
+				diagonalNeightbourFields: new ushort[] { 321, 323 },
+				centeredField: new ushort[] { 312 });
 		}
 
 		/// <summary>
@@ -788,25 +660,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame3Field13_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 312, 323 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 322 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 312, 323, 322 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 313 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard3x3();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 312, 323 },
+				diagonalNeightbourFields: new ushort[] { 322 },
+				centeredField: new ushort[] { 313 });
 		}
 
 		/// <summary>
@@ -817,25 +674,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame3Field21_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 311, 322, 331 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 312, 332 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 311, 322, 331, 312, 332 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 321 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard3x3();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 311, 322, 331 },
+				diagonalNeightbourFields: new ushort[] { 312, 332 },
+				centeredField: new ushort[] { 321 });
 		}
 
 		/// <summary>
@@ -846,25 +688,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame3Field22_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 312, 321, 323, 332 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 311, 313, 331, 333 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 312, 321, 323, 332, 311, 313, 331, 333 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 322 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard3x3();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 312, 321, 323, 332 },
+				diagonalNeightbourFields: new ushort[] { 311, 313, 331, 333 },
+				centeredField: new ushort[] { 322 });
 		}
 
 		/// <summary>
@@ -875,25 +702,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame3Field23_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 313, 322, 333 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 312, 332 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 313, 322, 333, 312, 332 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 323 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard3x3();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 313, 322, 333 },
+				diagonalNeightbourFields: new ushort[] { 312, 332 },
+				centeredField: new ushort[] { 323 });
 		}
 
 		/// <summary>
@@ -904,25 +716,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame3Field31_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 321, 332 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 322 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 321, 332, 322 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 331 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard3x3();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 321, 332 },
+				diagonalNeightbourFields: new ushort[] { 322 },
+				centeredField: new ushort[] { 331 });
 		}
 
 		/// <summary>
@@ -933,25 +730,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame3Field32_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 322, 331, 333 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 321, 323 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 322, 331, 333, 321, 323 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 332 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard3x3();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 322, 331, 333 },
+				diagonalNeightbourFields: new ushort[] { 321, 323 },
+				centeredField: new ushort[] { 332 });
 		}
 
 		/// <summary>
@@ -962,25 +744,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame3Field33_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 323, 332 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 322 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 323, 332, 322 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 333 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard3x3();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 323, 332 },
+				diagonalNeightbourFields: new ushort[] { 322 },
+				centeredField: new ushort[] { 333 });
 		}
 
 		/// <summary>
@@ -991,29 +758,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame4Field11_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (!timer.Enabled)
-			{
-				timer.Enabled = true;
-			}
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 412, 421 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 422 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 412, 421, 422 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 411 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard4x4();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 412, 421 },
+				diagonalNeightbourFields: new ushort[] { 422 },
+				centeredField: new ushort[] { 411 });
 		}
 
 		/// <summary>
@@ -1024,25 +772,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame4Field12_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 411, 413, 422 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 421, 423 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 411, 413, 422, 421, 423 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 412 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard4x4();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 411, 413, 422 },
+				diagonalNeightbourFields: new ushort[] { 421, 423 },
+				centeredField: new ushort[] { 412 });
 		}
 
 		/// <summary>
@@ -1053,25 +786,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame4Field13_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 412, 414, 423 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 422, 424 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 412, 414, 423, 422, 424 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 413 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard4x4();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 412, 414, 423 },
+				diagonalNeightbourFields: new ushort[] { 422, 424 },
+				centeredField: new ushort[] { 413 });
 		}
 
 		/// <summary>
@@ -1082,25 +800,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame4Field14_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 413, 424 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 423 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 413, 424, 423 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 414 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard4x4();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 413, 424 },
+				diagonalNeightbourFields: new ushort[] { 423 },
+				centeredField: new ushort[] { 414 });
 		}
 
 		/// <summary>
@@ -1111,25 +814,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame4Field21_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 411, 422, 431 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 412, 432 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 411, 422, 431, 412, 432 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 421 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard4x4();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 411, 422, 431 },
+				diagonalNeightbourFields: new ushort[] { 412, 432 },
+				centeredField: new ushort[] { 421 });
 		}
 
 		/// <summary>
@@ -1140,25 +828,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame4Field22_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 412, 421, 423, 432 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 411, 413, 431, 433 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 412, 421, 423, 432, 411, 413, 431, 433 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 422 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard4x4();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 412, 421, 423, 432 },
+				diagonalNeightbourFields: new ushort[] { 411, 413, 431, 433 },
+				centeredField: new ushort[] { 422 });
 		}
 
 		/// <summary>
@@ -1169,25 +842,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame4Field23_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 413, 422, 424, 433 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 412, 414, 432, 434 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 413, 422, 424, 433, 412, 414, 432, 434 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 423 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard4x4();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 413, 422, 424, 433 },
+				diagonalNeightbourFields: new ushort[] { 412, 414, 432, 434 },
+				centeredField: new ushort[] { 423 });
 		}
 
 		/// <summary>
@@ -1198,25 +856,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame4Field24_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 414, 423, 434 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 413, 433 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 414, 423, 434, 413, 433 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 424 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard4x4();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 414, 423, 434 },
+				diagonalNeightbourFields: new ushort[] { 413, 433 },
+				centeredField: new ushort[] { 424 });
 		}
 
 		/// <summary>
@@ -1227,25 +870,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame4Field31_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 421, 432, 441 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 422, 442 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 421, 432, 441, 422, 442 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 431 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard4x4();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 421, 432, 441 },
+				diagonalNeightbourFields: new ushort[] { 422, 442 },
+				centeredField: new ushort[] { 431 });
 		}
 
 		/// <summary>
@@ -1256,25 +884,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame4Field32_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 422, 431, 433, 442 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 421, 423, 441, 443 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 422, 431, 433, 442, 421, 423, 441, 443 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 432 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard4x4();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 422, 431, 433, 442 },
+				diagonalNeightbourFields: new ushort[] { 421, 423, 441, 443 },
+				centeredField: new ushort[] { 432 });
 		}
 
 		/// <summary>
@@ -1285,25 +898,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame4Field33_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 423, 432, 434, 443 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 422, 424, 442, 444 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 423, 432, 434, 443, 422, 424, 442, 444 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 433 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard4x4();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 423, 432, 434, 443 },
+				diagonalNeightbourFields: new ushort[] { 422, 424, 442, 444 },
+				centeredField: new ushort[] { 433 });
 		}
 
 		/// <summary>
@@ -1314,25 +912,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame4Field34_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 424, 433, 444 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 423, 443 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 424, 433, 444, 423, 443 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 434 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard4x4();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 424, 433, 444 },
+				diagonalNeightbourFields: new ushort[] { 423, 443 },
+				centeredField: new ushort[] { 434 });
 		}
 
 		/// <summary>
@@ -1343,25 +926,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame4Field41_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 431, 442 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 432 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 431, 442, 432 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 441 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard4x4();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 431, 442 },
+				diagonalNeightbourFields: new ushort[] { 432 },
+				centeredField: new ushort[] { 441 });
 		}
 
 		/// <summary>
@@ -1372,25 +940,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame4Field42_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 432, 441, 443 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 431, 433 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 432, 441, 443, 431, 433 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 442 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard4x4();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 432, 441, 443 },
+				diagonalNeightbourFields: new ushort[] { 431, 433 },
+				centeredField: new ushort[] { 442 });
 		}
 
 		/// <summary>
@@ -1401,25 +954,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame4Field43_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 433, 442, 444 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 432, 434 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 433, 442, 444, 432, 434 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 443 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard4x4();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 433, 442, 444 },
+				diagonalNeightbourFields: new ushort[] { 432, 434 },
+				centeredField: new ushort[] { 443 });
 		}
 
 		/// <summary>
@@ -1430,25 +968,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame4Field44_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 434, 443 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 433 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 434, 443, 433 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 444 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard4x4();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 434, 443 },
+				diagonalNeightbourFields: new ushort[] { 433 },
+				centeredField: new ushort[] { 444 });
 		}
 
 		/// <summary>
@@ -1459,25 +982,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame5Field11_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 512, 521 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 522 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 512, 521, 522 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 511 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard5x5();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 512, 521 },
+				diagonalNeightbourFields: new ushort[] { 522 },
+				centeredField: new ushort[] { 511 });
 		}
 
 		/// <summary>
@@ -1488,25 +996,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame5Field12_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 511, 513, 522 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 521, 523 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 511, 513, 522, 521, 523 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 512 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard5x5();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 511, 513, 522 },
+				diagonalNeightbourFields: new ushort[] { 521, 523 },
+				centeredField: new ushort[] { 512 });
 		}
 
 		/// <summary>
@@ -1517,25 +1010,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame5Field13_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 512, 514, 523 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 522, 524 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 512, 514, 523, 522, 524 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 513 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard5x5();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 512, 514, 523 },
+				diagonalNeightbourFields: new ushort[] { 522, 524 },
+				centeredField: new ushort[] { 513 });
 		}
 
 		/// <summary>
@@ -1546,25 +1024,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame5Field14_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 513, 515, 524 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 523, 525 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 513, 515, 524, 523, 525 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 514 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard5x5();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 513, 515, 524 },
+				diagonalNeightbourFields: new ushort[] { 523, 525 },
+				centeredField: new ushort[] { 514 });
 		}
 
 		/// <summary>
@@ -1575,25 +1038,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame5Field15_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 514, 525 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 524 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 514, 525, 524 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 515 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard5x5();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 514, 525 },
+				diagonalNeightbourFields: new ushort[] { 524 },
+				centeredField: new ushort[] { 515 });
 		}
 
 		/// <summary>
@@ -1604,25 +1052,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame5Field21_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 511, 522, 531 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 512, 532 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 511, 522, 531, 512, 532 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 521 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard5x5();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 511, 522, 531 },
+				diagonalNeightbourFields: new ushort[] { 512, 532 },
+				centeredField: new ushort[] { 521 });
 		}
 
 		/// <summary>
@@ -1633,25 +1066,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame5Field22_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 512, 521, 523, 532 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 511, 513, 531, 533 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 512, 521, 523, 532, 511, 513, 531, 533 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 522 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard5x5();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 512, 521, 523, 532 },
+				diagonalNeightbourFields: new ushort[] { 511, 513, 531, 533 },
+				centeredField: new ushort[] { 522 });
 		}
 
 		/// <summary>
@@ -1662,25 +1080,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame5Field23_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 513, 522, 524, 533 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 512, 514, 532, 534 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 513, 522, 524, 533, 512, 514, 532, 534 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 523 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard5x5();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 513, 522, 524, 533 },
+				diagonalNeightbourFields: new ushort[] { 512, 514, 532, 534 },
+				centeredField: new ushort[] { 523 });
 		}
 
 		/// <summary>
@@ -1691,25 +1094,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame5Field24_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 514, 523, 525, 534 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 513, 515, 533, 535 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 514, 523, 525, 534, 513, 515, 533, 535 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 524 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard5x5();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 514, 523, 525, 534 },
+				diagonalNeightbourFields: new ushort[] { 513, 515, 533, 535 },
+				centeredField: new ushort[] { 524 });
 		}
 
 		/// <summary>
@@ -1720,25 +1108,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame5Field25_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 515, 524, 535 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 514, 534 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 515, 524, 535, 514, 534 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 525 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard5x5();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 515, 524, 535 },
+				diagonalNeightbourFields: new ushort[] { 514, 534 },
+				centeredField: new ushort[] { 525 });
 		}
 
 		/// <summary>
@@ -1749,29 +1122,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame5Field31_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (!timer.Enabled)
-			{
-				timer.Enabled = true;
-			}
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 521, 532, 541 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 522, 542 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 521, 532, 541, 522, 542 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 531 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard5x5();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 521, 532, 541 },
+				diagonalNeightbourFields: new ushort[] { 522, 542 },
+				centeredField: new ushort[] { 531 });
 		}
 
 		/// <summary>
@@ -1782,25 +1136,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame5Field32_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 522, 531, 533, 542 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 521, 523, 541, 543 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 522, 531, 533, 542, 521, 523, 541, 543 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 532 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard5x5();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 522, 531, 533, 542 },
+				diagonalNeightbourFields: new ushort[] { 521, 523, 541, 543 },
+				centeredField: new ushort[] { 532 });
 		}
 
 		/// <summary>
@@ -1811,25 +1150,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame5Field33_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 523, 532, 534, 543 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 522, 524, 542, 544 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 523, 532, 534, 543, 522, 524, 542, 544 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 533 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard5x5();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 523, 532, 534, 543 },
+				diagonalNeightbourFields: new ushort[] { 522, 524, 542, 544 },
+				centeredField: new ushort[] { 533 });
 		}
 
 		/// <summary>
@@ -1840,25 +1164,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame5Field34_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 524, 533, 535, 544 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 523, 525, 543, 545 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 524, 533, 535, 544, 523, 525, 543, 545 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 534 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard5x5();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 524, 533, 535, 544 },
+				diagonalNeightbourFields: new ushort[] { 523, 525, 543, 545 },
+				centeredField: new ushort[] { 534 });
 		}
 
 		/// <summary>
@@ -1869,25 +1178,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame5Field35_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 525, 534, 545 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 524, 544 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 525, 534, 545, 524, 544 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 535 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard5x5();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 525, 534, 545 },
+				diagonalNeightbourFields: new ushort[] { 524, 544 },
+				centeredField: new ushort[] { 535 });
 		}
 
 		/// <summary>
@@ -1898,25 +1192,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame5Field41_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 531, 542, 551 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 532, 552 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 531, 542, 551, 532, 552 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 541 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard5x5();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 531, 542, 551 },
+				diagonalNeightbourFields: new ushort[] { 532, 552 },
+				centeredField: new ushort[] { 541 });
 		}
 
 		/// <summary>
@@ -1927,25 +1206,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame5Field42_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 532, 541, 543, 552 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 531, 533, 551, 553 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 532, 541, 543, 552, 531, 533, 551, 553 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 542 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard5x5();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 532, 541, 543, 552 },
+				diagonalNeightbourFields: new ushort[] { 531, 533, 551, 553 },
+				centeredField: new ushort[] { 542 });
 		}
 
 		/// <summary>
@@ -1956,25 +1220,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame5Field43_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 533, 542, 544, 553 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 532, 534, 552, 554 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 533, 542, 544, 553, 532, 534, 552, 554 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 543 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard5x5();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 533, 542, 544, 553 },
+				diagonalNeightbourFields: new ushort[] { 532, 534, 552, 554 },
+				centeredField: new ushort[] { 543 });
 		}
 
 		/// <summary>
@@ -1985,25 +1234,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame5Field44_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 534, 543, 545, 554 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 533, 535, 553, 555 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 534, 543, 545, 554, 533, 535, 553, 555 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 544 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard5x5();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 534, 543, 545, 554 },
+				diagonalNeightbourFields: new ushort[] { 533, 535, 553, 555 },
+				centeredField: new ushort[] { 544 });
 		}
 
 		/// <summary>
@@ -2014,25 +1248,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame5Field45_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 535, 544, 555 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 534, 554 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 535, 544, 555, 534, 554 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 545 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard5x5();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 535, 544, 555 },
+				diagonalNeightbourFields: new ushort[] { 534, 554 },
+				centeredField: new ushort[] { 545 });
 		}
 
 		/// <summary>
@@ -2043,25 +1262,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame5Field51_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 541, 552 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 542 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 541, 552, 542 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 551 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard5x5();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 541, 552 },
+				diagonalNeightbourFields: new ushort[] { 542 },
+				centeredField: new ushort[] { 551 });
 		}
 
 		/// <summary>
@@ -2072,25 +1276,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame5Field52_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 542, 551, 553 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 541, 543 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 542, 551, 553 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 552 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard5x5();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 542, 551, 553 },
+				diagonalNeightbourFields: new ushort[] { 541, 543 },
+				centeredField: new ushort[] { 552 });
 		}
 
 		/// <summary>
@@ -2101,25 +1290,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame5Field53_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 543, 552, 554 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 542, 544 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 543, 552, 554, 542, 544 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 553 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard5x5();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 543, 552, 554 },
+				diagonalNeightbourFields: new ushort[] { 542, 544 },
+				centeredField: new ushort[] { 553 });
 		}
 
 		/// <summary>
@@ -2130,25 +1304,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame5Field54_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 544, 553, 555 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 543, 545 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 544, 553, 555, 543, 545 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 554 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard5x5();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 544, 553, 555 },
+				diagonalNeightbourFields: new ushort[] { 543, 545 },
+				centeredField: new ushort[] { 554 });
 		}
 
 		/// <summary>
@@ -2159,25 +1318,10 @@ namespace BlackAndWhite
 		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
 		private void ButtonGame5Field55_Click(object sender, EventArgs e)
 		{
-			sumKlicks++;
-			if (toolStripMenuItemOptionLinear.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 545, 554 });
-			}
-			else if (toolStripMenuItemOptionDiagonal.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 544 });
-			}
-			else if (toolStripMenuItemOptionCombined.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 545, 554, 544 });
-			}
-			if (toolStripMenuItemOptionCentered.Checked)
-			{
-				InvertFields(fieldId: new ushort[] { 555 });
-				SetStatusLabelField(sender: sender, e: e);
-			}
-			CountColorsAndCheckForWinInGameboard5x5();
+			InvertNeighbourFields(sender: sender, e: e,
+				linearNeightbourFields: new ushort[] { 545, 554 },
+				diagonalNeightbourFields: new ushort[] { 544 },
+				centeredField: new ushort[] { 555 });
 		}
 
 		/// <summary>
