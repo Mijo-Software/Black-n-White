@@ -63,7 +63,7 @@ namespace BlackAndWhite
 		/// </summary>
 		/// <param name="sender">object sender</param>
 		/// <param name="e">event arguments</param>
-		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		/// <remarks>The parameters <paramref name="sender"/> and <paramref name="e"/> are not needed, but must be indicated.</remarks>
 		private void MainForm_Load(object sender, EventArgs e)
 		{
 			ToolStripManager.Renderer = new Office2007Renderer();
@@ -135,7 +135,7 @@ namespace BlackAndWhite
 		/// </summary>
 		/// <param name="sender">object sender</param>
 		/// <param name="e">event arguments</param>
-		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		/// <remarks>The parameters <paramref name="sender"/> and <paramref name="e"/> are not needed, but must be indicated.</remarks>
 		private void ClearStatusLabel(object sender, EventArgs e) => toolStripStatusLabel.Text = string.Empty;
 
 		#endregion
@@ -521,7 +521,7 @@ namespace BlackAndWhite
 		/// </summary>
 		/// <param name="sender">object sender</param>
 		/// <param name="e">event arguments</param>
-		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		/// <remarks>The parameters <paramref name="sender"/> and <paramref name="e"/> are not needed, but must be indicated.</remarks>
 		private void ToolStripMenuItemNewGame3x3_Click(object sender, EventArgs e)
 		{
 			toolStripMenuItemNewGame3x3.Checked = true;
@@ -536,7 +536,7 @@ namespace BlackAndWhite
 		/// </summary>
 		/// <param name="sender">object sender</param>
 		/// <param name="e">event arguments</param>
-		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		/// <remarks>The parameters <paramref name="sender"/> and <paramref name="e"/> are not needed, but must be indicated.</remarks>
 		private void ToolStripMenuItemNewGame4x4_Click(object sender, EventArgs e)
 		{
 			toolStripMenuItemNewGame3x3.Checked = false;
@@ -551,7 +551,7 @@ namespace BlackAndWhite
 		/// </summary>
 		/// <param name="sender">object sender</param>
 		/// <param name="e">event arguments</param>
-		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		/// <remarks>The parameters <paramref name="sender"/> and <paramref name="e"/> are not needed, but must be indicated.</remarks>
 		private void ToolStripMenuItemNewGame5x5_Click(object sender, EventArgs e)
 		{
 			toolStripMenuItemNewGame3x3.Checked = false;
@@ -566,7 +566,7 @@ namespace BlackAndWhite
 		/// </summary>
 		/// <param name="sender">object sender</param>
 		/// <param name="e">event arguments</param>
-		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		/// <remarks>The parameters <paramref name="sender"/> and <paramref name="e"/> are not needed, but must be indicated.</remarks>
 		private void ToolStripMenuItemOptionLinear_Click(object sender, EventArgs e)
 		{
 			toolStripMenuItemOptionLinear.Checked = true;
@@ -579,7 +579,7 @@ namespace BlackAndWhite
 		/// </summary>
 		/// <param name="sender">object sender</param>
 		/// <param name="e">event arguments</param>
-		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		/// <remarks>The parameters <paramref name="sender"/> and <paramref name="e"/> are not needed, but must be indicated.</remarks>
 		private void ToolStripMenuItemOptionDiagonal_Click(object sender, EventArgs e)
 		{
 			toolStripMenuItemOptionLinear.Checked = false;
@@ -592,7 +592,7 @@ namespace BlackAndWhite
 		/// </summary>
 		/// <param name="sender">object sender</param>
 		/// <param name="e">event arguments</param>
-		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		/// <remarks>The parameters <paramref name="sender"/> and <paramref name="e"/> are not needed, but must be indicated.</remarks>
 		private void ToolStripMenuItemOptionCombined_Click(object sender, EventArgs e)
 		{
 			toolStripMenuItemOptionLinear.Checked = false;
@@ -600,6 +600,15 @@ namespace BlackAndWhite
 			toolStripMenuItemOptionCombined.Checked = true;
 		}
 
+		/// <summary>
+		/// Invert the neightbour fields
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <param name="linearNeightbourFields">array with ids of the linear neightbour fields</param>
+		/// <param name="diagonalNeightbourFields">array with ids of the diagonal neightbour fields</param>
+		/// <param name="centeredField">array with id of the own field</param>
+		/// <remarks>The parameter <paramref name="e"/> ist not needed, but must be indicated.</remarks>
 		private void InvertNeighbourFields(object sender, EventArgs e, ushort[] linearNeightbourFields, ushort[] diagonalNeightbourFields, ushort[] centeredField)
 		{
 			sumKlicks++;
@@ -625,703 +634,71 @@ namespace BlackAndWhite
 		}
 
 		/// <summary>
-		/// Invert the neighbour fields of the field 1x1 in the game 3x3
+		/// Invert the neightbour fields while clicking on the button
 		/// </summary>
 		/// <param name="sender">object sender</param>
 		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame3Field11_Click(object sender, EventArgs e)
+		/// <remarks>The parameter <paramref name="e"/> ist not needed, but must be indicated.</remarks>
+		private void ButtonField_Click(object sender, EventArgs e)
 		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 312, 321 },
-				diagonalNeightbourFields: new ushort[] { 322 },
-				centeredField: new ushort[] { 311 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 1x2 in the game 3x3
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame3Field12_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 311, 313, 322 },
-				diagonalNeightbourFields: new ushort[] { 321, 323 },
-				centeredField: new ushort[] { 312 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 1x3 in the game 3x3
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame3Field13_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 312, 323 },
-				diagonalNeightbourFields: new ushort[] { 322 },
-				centeredField: new ushort[] { 313 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 2x1 in the game 3x3
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame3Field21_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 311, 322, 331 },
-				diagonalNeightbourFields: new ushort[] { 312, 332 },
-				centeredField: new ushort[] { 321 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 2x2 in the game 3x3
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame3Field22_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 312, 321, 323, 332 },
-				diagonalNeightbourFields: new ushort[] { 311, 313, 331, 333 },
-				centeredField: new ushort[] { 322 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 2x3 in the game 3x3
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame3Field23_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 313, 322, 333 },
-				diagonalNeightbourFields: new ushort[] { 312, 332 },
-				centeredField: new ushort[] { 323 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 3x1 in the game 3x3
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame3Field31_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 321, 332 },
-				diagonalNeightbourFields: new ushort[] { 322 },
-				centeredField: new ushort[] { 331 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 3x2 in the game 3x3
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame3Field32_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 322, 331, 333 },
-				diagonalNeightbourFields: new ushort[] { 321, 323 },
-				centeredField: new ushort[] { 332 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 3x3 in the game 3x3
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame3Field33_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 323, 332 },
-				diagonalNeightbourFields: new ushort[] { 322 },
-				centeredField: new ushort[] { 333 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 1x1 in the game 4x4
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame4Field11_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 412, 421 },
-				diagonalNeightbourFields: new ushort[] { 422 },
-				centeredField: new ushort[] { 411 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 1x2 in the game 4x4
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame4Field12_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 411, 413, 422 },
-				diagonalNeightbourFields: new ushort[] { 421, 423 },
-				centeredField: new ushort[] { 412 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 1x3 in the game 4x4
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame4Field13_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 412, 414, 423 },
-				diagonalNeightbourFields: new ushort[] { 422, 424 },
-				centeredField: new ushort[] { 413 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 1x4 in the game 4x4
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame4Field14_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 413, 424 },
-				diagonalNeightbourFields: new ushort[] { 423 },
-				centeredField: new ushort[] { 414 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 2x1 in the game 4x4
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame4Field21_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 411, 422, 431 },
-				diagonalNeightbourFields: new ushort[] { 412, 432 },
-				centeredField: new ushort[] { 421 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 2x2 in the game 4x4
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame4Field22_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 412, 421, 423, 432 },
-				diagonalNeightbourFields: new ushort[] { 411, 413, 431, 433 },
-				centeredField: new ushort[] { 422 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 2x3 in the game 4x4
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame4Field23_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 413, 422, 424, 433 },
-				diagonalNeightbourFields: new ushort[] { 412, 414, 432, 434 },
-				centeredField: new ushort[] { 423 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 2x4 in the game 4x4
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame4Field24_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 414, 423, 434 },
-				diagonalNeightbourFields: new ushort[] { 413, 433 },
-				centeredField: new ushort[] { 424 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 3x1 in the game 4x4
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame4Field31_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 421, 432, 441 },
-				diagonalNeightbourFields: new ushort[] { 422, 442 },
-				centeredField: new ushort[] { 431 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 3x2 in the game 4x4
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame4Field32_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 422, 431, 433, 442 },
-				diagonalNeightbourFields: new ushort[] { 421, 423, 441, 443 },
-				centeredField: new ushort[] { 432 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 3x3 in the game 4x4
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame4Field33_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 423, 432, 434, 443 },
-				diagonalNeightbourFields: new ushort[] { 422, 424, 442, 444 },
-				centeredField: new ushort[] { 433 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 3x4 in the game 4x4
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame4Field34_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 424, 433, 444 },
-				diagonalNeightbourFields: new ushort[] { 423, 443 },
-				centeredField: new ushort[] { 434 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 4x1 in the game 4x4
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame4Field41_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 431, 442 },
-				diagonalNeightbourFields: new ushort[] { 432 },
-				centeredField: new ushort[] { 441 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 4x2 in the game 4x4
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame4Field42_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 432, 441, 443 },
-				diagonalNeightbourFields: new ushort[] { 431, 433 },
-				centeredField: new ushort[] { 442 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 4x3 in the game 4x4
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame4Field43_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 433, 442, 444 },
-				diagonalNeightbourFields: new ushort[] { 432, 434 },
-				centeredField: new ushort[] { 443 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 4x4 in the game 4x4
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame4Field44_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 434, 443 },
-				diagonalNeightbourFields: new ushort[] { 433 },
-				centeredField: new ushort[] { 444 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 1x1 in the game 5x5
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame5Field11_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 512, 521 },
-				diagonalNeightbourFields: new ushort[] { 522 },
-				centeredField: new ushort[] { 511 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 1x2 in the game 5x5
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame5Field12_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 511, 513, 522 },
-				diagonalNeightbourFields: new ushort[] { 521, 523 },
-				centeredField: new ushort[] { 512 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 1x3 in the game 5x5
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame5Field13_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 512, 514, 523 },
-				diagonalNeightbourFields: new ushort[] { 522, 524 },
-				centeredField: new ushort[] { 513 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 1x4 in the game 5x5
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame5Field14_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 513, 515, 524 },
-				diagonalNeightbourFields: new ushort[] { 523, 525 },
-				centeredField: new ushort[] { 514 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 1x5 in the game 5x5
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame5Field15_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 514, 525 },
-				diagonalNeightbourFields: new ushort[] { 524 },
-				centeredField: new ushort[] { 515 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 2x1 in the game 5x5
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame5Field21_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 511, 522, 531 },
-				diagonalNeightbourFields: new ushort[] { 512, 532 },
-				centeredField: new ushort[] { 521 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 2x2 in the game 5x5
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame5Field22_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 512, 521, 523, 532 },
-				diagonalNeightbourFields: new ushort[] { 511, 513, 531, 533 },
-				centeredField: new ushort[] { 522 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 2x3 in the game 5x5
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame5Field23_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 513, 522, 524, 533 },
-				diagonalNeightbourFields: new ushort[] { 512, 514, 532, 534 },
-				centeredField: new ushort[] { 523 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 2x4 in the game 5x5
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame5Field24_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 514, 523, 525, 534 },
-				diagonalNeightbourFields: new ushort[] { 513, 515, 533, 535 },
-				centeredField: new ushort[] { 524 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 2x5 in the game 5x5
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame5Field25_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 515, 524, 535 },
-				diagonalNeightbourFields: new ushort[] { 514, 534 },
-				centeredField: new ushort[] { 525 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 3x1 in the game 5x5
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame5Field31_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 521, 532, 541 },
-				diagonalNeightbourFields: new ushort[] { 522, 542 },
-				centeredField: new ushort[] { 531 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 3x2 in the game 5x5
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame5Field32_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 522, 531, 533, 542 },
-				diagonalNeightbourFields: new ushort[] { 521, 523, 541, 543 },
-				centeredField: new ushort[] { 532 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 3x3 in the game 5x5
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame5Field33_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 523, 532, 534, 543 },
-				diagonalNeightbourFields: new ushort[] { 522, 524, 542, 544 },
-				centeredField: new ushort[] { 533 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 3x4 in the game 5x5
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame5Field34_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 524, 533, 535, 544 },
-				diagonalNeightbourFields: new ushort[] { 523, 525, 543, 545 },
-				centeredField: new ushort[] { 534 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 3x5 in the game 5x5
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame5Field35_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 525, 534, 545 },
-				diagonalNeightbourFields: new ushort[] { 524, 544 },
-				centeredField: new ushort[] { 535 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 4x1 in the game 5x5
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame5Field41_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 531, 542, 551 },
-				diagonalNeightbourFields: new ushort[] { 532, 552 },
-				centeredField: new ushort[] { 541 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 4x2 in the game 5x5
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame5Field42_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 532, 541, 543, 552 },
-				diagonalNeightbourFields: new ushort[] { 531, 533, 551, 553 },
-				centeredField: new ushort[] { 542 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 4x3 in the game 5x5
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame5Field43_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 533, 542, 544, 553 },
-				diagonalNeightbourFields: new ushort[] { 532, 534, 552, 554 },
-				centeredField: new ushort[] { 543 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 4x4 in the game 5x5
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame5Field44_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 534, 543, 545, 554 },
-				diagonalNeightbourFields: new ushort[] { 533, 535, 553, 555 },
-				centeredField: new ushort[] { 544 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 4x5 in the game 5x5
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame5Field45_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 535, 544, 555 },
-				diagonalNeightbourFields: new ushort[] { 534, 554 },
-				centeredField: new ushort[] { 545 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 5x1 in the game 5x5
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame5Field51_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 541, 552 },
-				diagonalNeightbourFields: new ushort[] { 542 },
-				centeredField: new ushort[] { 551 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 5x2 in the game 5x5
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame5Field52_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 542, 551, 553 },
-				diagonalNeightbourFields: new ushort[] { 541, 543 },
-				centeredField: new ushort[] { 552 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 5x3 in the game 5x5
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame5Field53_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 543, 552, 554 },
-				diagonalNeightbourFields: new ushort[] { 542, 544 },
-				centeredField: new ushort[] { 553 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 5x4 in the game 5x5
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame5Field54_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 544, 553, 555 },
-				diagonalNeightbourFields: new ushort[] { 543, 545 },
-				centeredField: new ushort[] { 554 });
-		}
-
-		/// <summary>
-		/// Invert the neighbour fields of the field 5x5 in the game 5x5
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void ButtonGame5Field55_Click(object sender, EventArgs e)
-		{
-			InvertNeighbourFields(sender: sender, e: e,
-				linearNeightbourFields: new ushort[] { 545, 554 },
-				diagonalNeightbourFields: new ushort[] { 544 },
-				centeredField: new ushort[] { 555 });
+			var control = sender as Control;
+			ushort[] linearNeightbourFields = { 0 };
+			ushort[] diagonalNeightbourFields = { 0 };
+			ushort[] centeredField = { 0 };
+			switch (control.Tag.ToString())
+			{
+				case "311": linearNeightbourFields = new ushort[] { 312, 321 }; diagonalNeightbourFields = new ushort[] { 322 }; centeredField = new ushort[] { 311 }; break;
+				case "312": linearNeightbourFields = new ushort[] { 311, 313, 322 }; diagonalNeightbourFields = new ushort[] { 321, 323 }; centeredField = new ushort[] { 312 }; break;
+				case "313": linearNeightbourFields = new ushort[] { 312, 323 }; diagonalNeightbourFields = new ushort[] { 322 }; centeredField = new ushort[] { 313 }; break;
+				case "321": linearNeightbourFields = new ushort[] { 311, 322, 331 }; diagonalNeightbourFields = new ushort[] { 312, 332 }; centeredField = new ushort[] { 321 }; break;
+				case "322": linearNeightbourFields = new ushort[] { 312, 321, 323, 332 }; diagonalNeightbourFields = new ushort[] { 311, 313, 331, 333 }; centeredField = new ushort[] { 322 }; break;
+				case "323": linearNeightbourFields = new ushort[] { 313, 322, 333 }; diagonalNeightbourFields = new ushort[] { 312, 332 }; centeredField = new ushort[] { 323 }; break;
+				case "331": linearNeightbourFields = new ushort[] { 321, 332 }; diagonalNeightbourFields = new ushort[] { 322 }; centeredField = new ushort[] { 331 }; break;
+				case "332": linearNeightbourFields = new ushort[] { 322, 331, 333 }; diagonalNeightbourFields = new ushort[] { 321, 323 }; centeredField = new ushort[] { 332 }; break;
+				case "333": linearNeightbourFields = new ushort[] { 323, 332 }; diagonalNeightbourFields = new ushort[] { 322 }; centeredField = new ushort[] { 333 }; break;
+				case "411": linearNeightbourFields = new ushort[] { 412, 421 }; diagonalNeightbourFields = new ushort[] { 422 }; centeredField = new ushort[] { 411 }; break;
+				case "412": linearNeightbourFields = new ushort[] { 411, 413, 422 }; diagonalNeightbourFields = new ushort[] { 421, 423 }; centeredField = new ushort[] { 412 }; break;
+				case "413": linearNeightbourFields = new ushort[] { 412, 414, 423 }; diagonalNeightbourFields = new ushort[] { 422, 424 }; centeredField = new ushort[] { 413 }; break;
+				case "414": linearNeightbourFields = new ushort[] { 413, 424 }; diagonalNeightbourFields = new ushort[] { 423 }; centeredField = new ushort[] { 414 }; break;
+				case "421": linearNeightbourFields = new ushort[] { 411, 422, 431 }; diagonalNeightbourFields = new ushort[] { 412, 432 }; centeredField = new ushort[] { 421 }; break;
+				case "422": linearNeightbourFields = new ushort[] { 412, 421, 423, 432 }; diagonalNeightbourFields = new ushort[] { 411, 413, 431, 433 }; centeredField = new ushort[] { 422 }; break;
+				case "423": linearNeightbourFields = new ushort[] { 413, 422, 424, 433 }; diagonalNeightbourFields = new ushort[] { 412, 414, 432, 434 }; centeredField = new ushort[] { 423 }; break;
+				case "424": linearNeightbourFields = new ushort[] { 414, 423, 434 }; diagonalNeightbourFields = new ushort[] { 413, 433 }; centeredField = new ushort[] { 424 }; break;
+				case "431": linearNeightbourFields = new ushort[] { 421, 432, 441 }; diagonalNeightbourFields = new ushort[] { 422, 442 }; centeredField = new ushort[] { 431 }; break;
+				case "432": linearNeightbourFields = new ushort[] { 422, 431, 433, 442 }; diagonalNeightbourFields = new ushort[] { 421, 423, 441, 443 }; centeredField = new ushort[] { 432 }; break;
+				case "433": linearNeightbourFields = new ushort[] { 423, 432, 434, 443 }; diagonalNeightbourFields = new ushort[] { 422, 424, 442, 444 }; centeredField = new ushort[] { 433 }; break;
+				case "434": linearNeightbourFields = new ushort[] { 424, 433, 444 }; diagonalNeightbourFields = new ushort[] { 423, 443 }; centeredField = new ushort[] { 434 }; break;
+				case "441": linearNeightbourFields = new ushort[] { 431, 442 }; diagonalNeightbourFields = new ushort[] { 432 }; centeredField = new ushort[] { 441 }; break;
+				case "442": linearNeightbourFields = new ushort[] { 432, 441, 443 }; diagonalNeightbourFields = new ushort[] { 431, 433 }; centeredField = new ushort[] { 442 }; break;
+				case "443": linearNeightbourFields = new ushort[] { 433, 442, 444 }; diagonalNeightbourFields = new ushort[] { 432, 434 }; centeredField = new ushort[] { 443 }; break;
+				case "444": linearNeightbourFields = new ushort[] { 434, 443 }; diagonalNeightbourFields = new ushort[] { 433 }; centeredField = new ushort[] { 444 }; break;
+				case "511": linearNeightbourFields = new ushort[] { 512, 521 }; diagonalNeightbourFields = new ushort[] { 522 }; centeredField = new ushort[] { 511 }; break;
+				case "512": linearNeightbourFields = new ushort[] { 511, 513, 522 }; diagonalNeightbourFields = new ushort[] { 521, 523 }; centeredField = new ushort[] { 512 }; break;
+				case "513": linearNeightbourFields = new ushort[] { 512, 514, 523 }; diagonalNeightbourFields = new ushort[] { 522, 524 }; centeredField = new ushort[] { 513 }; break;
+				case "514": linearNeightbourFields = new ushort[] { 513, 515, 524 }; diagonalNeightbourFields = new ushort[] { 523, 525 }; centeredField = new ushort[] { 514 }; break;
+				case "515": linearNeightbourFields = new ushort[] { 514, 525 }; diagonalNeightbourFields = new ushort[] { 524 }; centeredField = new ushort[] { 515 }; break;
+				case "521": linearNeightbourFields = new ushort[] { 511, 522, 531 }; diagonalNeightbourFields = new ushort[] { 512, 532 }; centeredField = new ushort[] { 521 }; break;
+				case "522": linearNeightbourFields = new ushort[] { 512, 521, 523, 532 }; diagonalNeightbourFields = new ushort[] { 511, 513, 531, 533 }; centeredField = new ushort[] { 522 }; break;
+				case "523": linearNeightbourFields = new ushort[] { 513, 522, 524, 533 }; diagonalNeightbourFields = new ushort[] { 512, 514, 532, 534 }; centeredField = new ushort[] { 523 }; break;
+				case "524": linearNeightbourFields = new ushort[] { 514, 523, 525, 534 }; diagonalNeightbourFields = new ushort[] { 513, 515, 533, 535 }; centeredField = new ushort[] { 524 }; break;
+				case "525": linearNeightbourFields = new ushort[] { 515, 524, 535 }; diagonalNeightbourFields = new ushort[] { 514, 534 }; centeredField = new ushort[] { 525 }; break;
+				case "531": linearNeightbourFields = new ushort[] { 521, 532, 541 }; diagonalNeightbourFields = new ushort[] { 522, 542 }; centeredField = new ushort[] { 531 }; break;
+				case "532": linearNeightbourFields = new ushort[] { 522, 531, 533, 542 }; diagonalNeightbourFields = new ushort[] { 521, 523, 541, 543 }; centeredField = new ushort[] { 532 }; break;
+				case "533": linearNeightbourFields = new ushort[] { 523, 532, 534, 543 }; diagonalNeightbourFields = new ushort[] { 522, 524, 542, 544 }; centeredField = new ushort[] { 533 }; break;
+				case "534": linearNeightbourFields = new ushort[] { 524, 533, 535, 544 }; diagonalNeightbourFields = new ushort[] { 523, 525, 543, 545 }; centeredField = new ushort[] { 534 }; break;
+				case "535": linearNeightbourFields = new ushort[] { 525, 534, 545 }; diagonalNeightbourFields = new ushort[] { 524, 544 }; centeredField = new ushort[] { 535 }; break;
+				case "541": linearNeightbourFields = new ushort[] { 531, 542, 551 }; diagonalNeightbourFields = new ushort[] { 532, 552 }; centeredField = new ushort[] { 541 }; break;
+				case "542": linearNeightbourFields = new ushort[] { 532, 541, 543, 552 }; diagonalNeightbourFields = new ushort[] { 531, 533, 551, 553 }; centeredField = new ushort[] { 542 }; break;
+				case "543": linearNeightbourFields = new ushort[] { 533, 542, 544, 553 }; diagonalNeightbourFields = new ushort[] { 532, 534, 552, 554 }; centeredField = new ushort[] { 543 }; break;
+				case "544": linearNeightbourFields = new ushort[] { 534, 543, 545, 554 }; diagonalNeightbourFields = new ushort[] { 533, 535, 553, 555 }; centeredField = new ushort[] { 544 }; break;
+				case "545": linearNeightbourFields = new ushort[] { 535, 544, 555 }; diagonalNeightbourFields = new ushort[] { 534, 554 }; centeredField = new ushort[] { 545 }; break;
+				case "551": linearNeightbourFields = new ushort[] { 541, 552 }; diagonalNeightbourFields = new ushort[] { 542 }; centeredField = new ushort[] { 551 }; break;
+				case "552": linearNeightbourFields = new ushort[] { 542, 551, 553 }; diagonalNeightbourFields = new ushort[] { 541, 543 }; centeredField = new ushort[] { 552 }; break;
+				case "553": linearNeightbourFields = new ushort[] { 543, 552, 554 }; diagonalNeightbourFields = new ushort[] { 542, 544 }; centeredField = new ushort[] { 553 }; break;
+				case "554": linearNeightbourFields = new ushort[] { 544, 553, 555 }; diagonalNeightbourFields = new ushort[] { 543, 545 }; centeredField = new ushort[] { 554 }; break;
+				case "555": linearNeightbourFields = new ushort[] { 545, 554 }; diagonalNeightbourFields = new ushort[] { 544 }; centeredField = new ushort[] { 555 }; break;
+			}
+			InvertNeighbourFields(sender: sender, e: e, linearNeightbourFields: linearNeightbourFields, diagonalNeightbourFields: diagonalNeightbourFields, centeredField: centeredField);
 		}
 
 		/// <summary>
@@ -1329,7 +706,7 @@ namespace BlackAndWhite
 		/// </summary>
 		/// <param name="sender">object sender</param>
 		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> and <paramref name="e"/> are not needed, but must be indicated.</remarks>
+		/// <remarks>The parameter <paramref name="sender"/> and <paramref name="e"/> are not needed, but must be indicated.</remarks>
 		private void ToolStripSplitButtonNewGame_Click(object sender, EventArgs e)
 		{
 			isGameStarted = false;
@@ -1342,7 +719,7 @@ namespace BlackAndWhite
 		/// </summary>
 		/// <param name="sender">object sender</param>
 		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> and <paramref name="e"/> are not needed, but must be indicated.</remarks>
+		/// <remarks>The parameter <paramref name="sender"/> and <paramref name="e"/> are not needed, but must be indicated.</remarks>
 		private void ToolStripButtonPause_Click(object sender, EventArgs e)
 		{
 			timer.Enabled = false;
@@ -1361,7 +738,7 @@ namespace BlackAndWhite
 		/// </summary>
 		/// <param name="sender">object sender</param>
 		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> and <paramref name="e"/> are not needed, but must be indicated.</remarks>
+		/// <remarks>The parameter <paramref name="sender"/> and <paramref name="e"/> are not needed, but must be indicated.</remarks>
 		private void Timer_Tick(object sender, EventArgs e)
 		{
 			sumTicks++;
