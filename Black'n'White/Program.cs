@@ -24,8 +24,8 @@ namespace BlackAndWhite
 	}
 }
 
-//todo: rightclick on field for inverting
-//todo: optimize code
 //todo: highscore
 //todo: iconset, language, settings
-//gameboard 6x6
+//todo: rightclick on field for inverting
+//todo: gameboard 6x6
+//todo: sound?
