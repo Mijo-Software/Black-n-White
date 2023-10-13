@@ -117,9 +117,2355 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="toolStripContainer.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt den Container für das Spiel an</value>
+  </data>
+  <data name="toolStripContainer.AccessibleName" xml:space="preserve">
+    <value>Container</value>
+  </data>
+  <data name="toolStripContainer.BottomToolStripPanel.AccessibleDescription" xml:space="preserve">
+    <value>Unterer Inhalt des Containers</value>
+  </data>
+  <data name="toolStripContainer.BottomToolStripPanel.AccessibleName" xml:space="preserve">
+    <value>Unterer Inhalt des Containers</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer.BottomToolStripPanel.Name" xml:space="preserve">
+    <value>toolStripContainer.BottomToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer.BottomToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer.BottomToolStripPanel.Parent" xml:space="preserve">
+    <value>toolStripContainer</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer.BottomToolStripPanel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="toolStripContainer.ContentPanel.AccessibleDescription" xml:space="preserve">
+    <value>Zentraler Inhalt des Container</value>
+  </data>
+  <data name="toolStripContainer.ContentPanel.AccessibleName" xml:space="preserve">
+    <value>Zentraler Inhalt des Container</value>
+  </data>
+  <data name="tabControl.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt wichtige Tabs an</value>
+  </data>
+  <data name="tabControl.AccessibleName" xml:space="preserve">
+    <value>Tabs</value>
+  </data>
+  <data name="tabPageInfo.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt die Tabseite mit Programminformationen an</value>
+  </data>
+  <data name="tabPageInfo.AccessibleName" xml:space="preserve">
+    <value>Tabseite mit Programminformationen</value>
+  </data>
+  <data name="textBoxDescription.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt die Programmbeschreibung an</value>
+  </data>
+  <data name="textBoxDescription.AccessibleName" xml:space="preserve">
+    <value>Programmbeschreibung</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="textBoxDescription.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="textBoxDescription.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 61</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="textBoxDescription.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBoxDescription.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="textBoxDescription.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 161</value>
+  </data>
+  <data name="textBoxDescription.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;textBoxDescription.Name" xml:space="preserve">
+    <value>textBoxDescription</value>
+  </data>
+  <data name="&gt;&gt;textBoxDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxDescription.Parent" xml:space="preserve">
+    <value>tabPageInfo</value>
+  </data>
+  <data name="&gt;&gt;textBoxDescription.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="labelCopyright.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt den Copyrightvermerk an</value>
+  </data>
+  <data name="labelCopyright.AccessibleName" xml:space="preserve">
+    <value>Copyright</value>
+  </data>
+  <data name="labelCopyright.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelCopyright.Location" type="System.Drawing.Point, System.Drawing">
+    <value>62, 46</value>
+  </data>
+  <data name="labelCopyright.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 13</value>
+  </data>
+  <data name="labelCopyright.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="labelCopyright.Text" xml:space="preserve">
+    <value>Copyright</value>
+  </data>
   <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>435, 19</value>
   </metadata>
+  <data name="labelCopyright.ToolTip" xml:space="preserve">
+    <value>Copyright</value>
+  </data>
+  <data name="&gt;&gt;labelCopyright.Name" xml:space="preserve">
+    <value>labelCopyright</value>
+  </data>
+  <data name="&gt;&gt;labelCopyright.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelCopyright.Parent" xml:space="preserve">
+    <value>tabPageInfo</value>
+  </data>
+  <data name="&gt;&gt;labelCopyright.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="labelCompany.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt den Herstellernamen an</value>
+  </data>
+  <data name="labelCompany.AccessibleName" xml:space="preserve">
+    <value>Hersteller</value>
+  </data>
+  <data name="labelCompany.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelCompany.Location" type="System.Drawing.Point, System.Drawing">
+    <value>62, 33</value>
+  </data>
+  <data name="labelCompany.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 13</value>
+  </data>
+  <data name="labelCompany.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="labelCompany.Text" xml:space="preserve">
+    <value>Hersteller</value>
+  </data>
+  <data name="labelCompany.ToolTip" xml:space="preserve">
+    <value>Hersteller</value>
+  </data>
+  <data name="&gt;&gt;labelCompany.Name" xml:space="preserve">
+    <value>labelCompany</value>
+  </data>
+  <data name="&gt;&gt;labelCompany.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelCompany.Parent" xml:space="preserve">
+    <value>tabPageInfo</value>
+  </data>
+  <data name="&gt;&gt;labelCompany.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="labelVersion.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt die Programversion an</value>
+  </data>
+  <data name="labelVersion.AccessibleName" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="labelVersion.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>62, 20</value>
+  </data>
+  <data name="labelVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 13</value>
+  </data>
+  <data name="labelVersion.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="labelVersion.Text" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="labelVersion.ToolTip" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="&gt;&gt;labelVersion.Name" xml:space="preserve">
+    <value>labelVersion</value>
+  </data>
+  <data name="&gt;&gt;labelVersion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelVersion.Parent" xml:space="preserve">
+    <value>tabPageInfo</value>
+  </data>
+  <data name="&gt;&gt;labelVersion.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="labelProduct.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt den Namen des Programms an</value>
+  </data>
+  <data name="labelProduct.AccessibleName" xml:space="preserve">
+    <value>Programmname</value>
+  </data>
+  <data name="labelProduct.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelProduct.Location" type="System.Drawing.Point, System.Drawing">
+    <value>62, 7</value>
+  </data>
+  <data name="labelProduct.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 13</value>
+  </data>
+  <data name="labelProduct.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelProduct.Text" xml:space="preserve">
+    <value>Programmname</value>
+  </data>
+  <data name="labelProduct.ToolTip" xml:space="preserve">
+    <value>Programmname</value>
+  </data>
+  <data name="&gt;&gt;labelProduct.Name" xml:space="preserve">
+    <value>labelProduct</value>
+  </data>
+  <data name="&gt;&gt;labelProduct.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelProduct.Parent" xml:space="preserve">
+    <value>tabPageInfo</value>
+  </data>
+  <data name="&gt;&gt;labelProduct.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="pictureBox.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Logo des Programms an</value>
+  </data>
+  <data name="pictureBox.AccessibleName" xml:space="preserve">
+    <value>Programmlogo</value>
+  </data>
+  <data name="pictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 7</value>
+  </data>
+  <data name="pictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 48</value>
+  </data>
+  <data name="pictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="pictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="pictureBox.ToolTip" xml:space="preserve">
+    <value>Programmlogo</value>
+  </data>
+  <data name="&gt;&gt;pictureBox.Name" xml:space="preserve">
+    <value>pictureBox</value>
+  </data>
+  <data name="&gt;&gt;pictureBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox.Parent" xml:space="preserve">
+    <value>tabPageInfo</value>
+  </data>
+  <data name="&gt;&gt;pictureBox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="tabPageInfo.ImageKey" xml:space="preserve">
+    <value>information.png</value>
+  </data>
+  <data name="tabPageInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="tabPageInfo.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPageInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 228</value>
+  </data>
+  <data name="tabPageInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tabPageInfo.Text" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="tabPageInfo.ToolTip" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="tabPageInfo.ToolTipText" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="&gt;&gt;tabPageInfo.Name" xml:space="preserve">
+    <value>tabPageInfo</value>
+  </data>
+  <data name="&gt;&gt;tabPageInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageInfo.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabPageInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabPageGame3x3.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt die Tabseite mit Spielfeld in der Größe 3x3 an</value>
+  </data>
+  <data name="tabPageGame3x3.AccessibleName" xml:space="preserve">
+    <value>Tabseite mit Spielfeld in der Größe 3x3</value>
+  </data>
+  <data name="tableLayoutPanelGame3x3.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt Spielfläche in der Größe 3x3 an</value>
+  </data>
+  <data name="tableLayoutPanelGame3x3.AccessibleName" xml:space="preserve">
+    <value>Spielfläche in der Größe 3x3</value>
+  </data>
+  <data name="tableLayoutPanelGame3x3.ColumnCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="buttonGame3Field33.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 3x3 an</value>
+  </data>
+  <data name="buttonGame3Field33.AccessibleName" xml:space="preserve">
+    <value>Feld 3x3</value>
+  </data>
+  <data name="buttonGame3Field33.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame3Field33.Location" type="System.Drawing.Point, System.Drawing">
+    <value>154, 152</value>
+  </data>
+  <data name="buttonGame3Field33.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame3Field33.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 76</value>
+  </data>
+  <data name="buttonGame3Field33.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="buttonGame3Field33.ToolTip" xml:space="preserve">
+    <value>Feld 3x3</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field33.Name" xml:space="preserve">
+    <value>buttonGame3Field33</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field33.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field33.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame3x3</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field33.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonGame3Field32.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 3x2 an</value>
+  </data>
+  <data name="buttonGame3Field32.AccessibleName" xml:space="preserve">
+    <value>Feld 3x2</value>
+  </data>
+  <data name="buttonGame3Field32.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame3Field32.Location" type="System.Drawing.Point, System.Drawing">
+    <value>77, 152</value>
+  </data>
+  <data name="buttonGame3Field32.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame3Field32.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 76</value>
+  </data>
+  <data name="buttonGame3Field32.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="buttonGame3Field32.ToolTip" xml:space="preserve">
+    <value>Feld 3x2</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field32.Name" xml:space="preserve">
+    <value>buttonGame3Field32</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field32.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field32.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame3x3</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field32.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="buttonGame3Field31.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 3x1 an</value>
+  </data>
+  <data name="buttonGame3Field31.AccessibleName" xml:space="preserve">
+    <value>Feld 3x1</value>
+  </data>
+  <data name="buttonGame3Field31.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame3Field31.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 152</value>
+  </data>
+  <data name="buttonGame3Field31.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame3Field31.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 76</value>
+  </data>
+  <data name="buttonGame3Field31.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="buttonGame3Field31.ToolTip" xml:space="preserve">
+    <value>Feld 3x1</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field31.Name" xml:space="preserve">
+    <value>buttonGame3Field31</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field31.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field31.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame3x3</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field31.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="buttonGame3Field23.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 2x3</value>
+  </data>
+  <data name="buttonGame3Field23.AccessibleName" xml:space="preserve">
+    <value>Feld 2x3</value>
+  </data>
+  <data name="buttonGame3Field23.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame3Field23.Location" type="System.Drawing.Point, System.Drawing">
+    <value>154, 76</value>
+  </data>
+  <data name="buttonGame3Field23.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame3Field23.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 76</value>
+  </data>
+  <data name="buttonGame3Field23.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="buttonGame3Field23.ToolTip" xml:space="preserve">
+    <value>Feld 2x3</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field23.Name" xml:space="preserve">
+    <value>buttonGame3Field23</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field23.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field23.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame3x3</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field23.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="buttonGame3Field22.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 2x2 an</value>
+  </data>
+  <data name="buttonGame3Field22.AccessibleName" xml:space="preserve">
+    <value>Feld 2x2</value>
+  </data>
+  <data name="buttonGame3Field22.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame3Field22.Location" type="System.Drawing.Point, System.Drawing">
+    <value>77, 76</value>
+  </data>
+  <data name="buttonGame3Field22.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame3Field22.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 76</value>
+  </data>
+  <data name="buttonGame3Field22.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="buttonGame3Field22.ToolTip" xml:space="preserve">
+    <value>Feld 2x2</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field22.Name" xml:space="preserve">
+    <value>buttonGame3Field22</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field22.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field22.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame3x3</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field22.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="buttonGame3Field21.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 2x1 an</value>
+  </data>
+  <data name="buttonGame3Field21.AccessibleName" xml:space="preserve">
+    <value>Feld 2x1</value>
+  </data>
+  <data name="buttonGame3Field21.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame3Field21.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 76</value>
+  </data>
+  <data name="buttonGame3Field21.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame3Field21.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 76</value>
+  </data>
+  <data name="buttonGame3Field21.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="buttonGame3Field21.ToolTip" xml:space="preserve">
+    <value>Feld 2x1</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field21.Name" xml:space="preserve">
+    <value>buttonGame3Field21</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field21.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field21.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame3x3</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field21.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="buttonGame3Field13.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 1x3 an</value>
+  </data>
+  <data name="buttonGame3Field13.AccessibleName" xml:space="preserve">
+    <value>Feld 1x3</value>
+  </data>
+  <data name="buttonGame3Field13.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame3Field13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>154, 0</value>
+  </data>
+  <data name="buttonGame3Field13.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame3Field13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 76</value>
+  </data>
+  <data name="buttonGame3Field13.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="buttonGame3Field13.ToolTip" xml:space="preserve">
+    <value>Feld 1x3</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field13.Name" xml:space="preserve">
+    <value>buttonGame3Field13</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field13.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame3x3</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field13.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="buttonGame3Field12.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 1x2 an</value>
+  </data>
+  <data name="buttonGame3Field12.AccessibleName" xml:space="preserve">
+    <value>Feld 1x2</value>
+  </data>
+  <data name="buttonGame3Field12.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame3Field12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>77, 0</value>
+  </data>
+  <data name="buttonGame3Field12.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame3Field12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 76</value>
+  </data>
+  <data name="buttonGame3Field12.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="buttonGame3Field12.ToolTip" xml:space="preserve">
+    <value>Feld 1x2</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field12.Name" xml:space="preserve">
+    <value>buttonGame3Field12</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field12.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame3x3</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field12.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="buttonGame3Field11.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 1x1 an</value>
+  </data>
+  <data name="buttonGame3Field11.AccessibleName" xml:space="preserve">
+    <value>Feld 1x1</value>
+  </data>
+  <data name="buttonGame3Field11.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame3Field11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="buttonGame3Field11.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame3Field11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 76</value>
+  </data>
+  <data name="buttonGame3Field11.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="buttonGame3Field11.ToolTip" xml:space="preserve">
+    <value>Feld 1x1</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field11.Name" xml:space="preserve">
+    <value>buttonGame3Field11</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field11.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame3x3</value>
+  </data>
+  <data name="&gt;&gt;buttonGame3Field11.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="tableLayoutPanelGame3x3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tableLayoutPanelGame3x3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tableLayoutPanelGame3x3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="tableLayoutPanelGame3x3.RowCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tableLayoutPanelGame3x3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 228</value>
+  </data>
+  <data name="tableLayoutPanelGame3x3.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanelGame3x3.Name" xml:space="preserve">
+    <value>tableLayoutPanelGame3x3</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanelGame3x3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanelGame3x3.Parent" xml:space="preserve">
+    <value>tabPageGame3x3</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanelGame3x3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanelGame3x3.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="buttonGame3Field33" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame3Field32" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame3Field31" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame3Field23" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame3Field22" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame3Field21" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame3Field13" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame3Field12" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame3Field11" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33,33333,Percent,33,33333,Percent,33,33333" /&gt;&lt;Rows Styles="Percent,33,33333,Percent,33,33333,Percent,33,33333" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tabPageGame3x3.ImageKey" xml:space="preserve">
+    <value>checkerboard.png</value>
+  </data>
+  <data name="tabPageGame3x3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="tabPageGame3x3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 228</value>
+  </data>
+  <data name="tabPageGame3x3.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabPageGame3x3.Text" xml:space="preserve">
+    <value>Game 3x3</value>
+  </data>
+  <data name="tabPageGame3x3.ToolTip" xml:space="preserve">
+    <value>Game 3x3</value>
+  </data>
+  <data name="tabPageGame3x3.ToolTipText" xml:space="preserve">
+    <value>Game 3x3</value>
+  </data>
+  <data name="&gt;&gt;tabPageGame3x3.Name" xml:space="preserve">
+    <value>tabPageGame3x3</value>
+  </data>
+  <data name="&gt;&gt;tabPageGame3x3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageGame3x3.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabPageGame3x3.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabPageGame4x4.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt die Tabseite mit Spielfeld in der Größe 4x4 an</value>
+  </data>
+  <data name="tabPageGame4x4.AccessibleName" xml:space="preserve">
+    <value>Tabseite mit Spielfeld in der Größe 4x4</value>
+  </data>
+  <data name="tableLayoutPanelGame4x4.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt die Spielfläche in der Größe 4x4 an</value>
+  </data>
+  <data name="tableLayoutPanelGame4x4.AccessibleName" xml:space="preserve">
+    <value>Spielfläche in der Größe 4x4</value>
+  </data>
+  <data name="tableLayoutPanelGame4x4.ColumnCount" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="buttonGame4Field44.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 4x4 an</value>
+  </data>
+  <data name="buttonGame4Field44.AccessibleName" xml:space="preserve">
+    <value>Feld 4x4</value>
+  </data>
+  <data name="buttonGame4Field44.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame4Field44.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 153</value>
+  </data>
+  <data name="buttonGame4Field44.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame4Field44.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 52</value>
+  </data>
+  <data name="buttonGame4Field44.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="buttonGame4Field44.ToolTip" xml:space="preserve">
+    <value>Feld 4x4</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field44.Name" xml:space="preserve">
+    <value>buttonGame4Field44</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field44.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field44.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame4x4</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field44.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonGame4Field43.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 4x3 an</value>
+  </data>
+  <data name="buttonGame4Field43.AccessibleName" xml:space="preserve">
+    <value>Feld 4x3</value>
+  </data>
+  <data name="buttonGame4Field43.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame4Field43.Location" type="System.Drawing.Point, System.Drawing">
+    <value>112, 153</value>
+  </data>
+  <data name="buttonGame4Field43.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame4Field43.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 52</value>
+  </data>
+  <data name="buttonGame4Field43.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="buttonGame4Field43.ToolTip" xml:space="preserve">
+    <value>Feld 4x3</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field43.Name" xml:space="preserve">
+    <value>buttonGame4Field43</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field43.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field43.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame4x4</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field43.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="buttonGame4Field42.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 4x2 an</value>
+  </data>
+  <data name="buttonGame4Field42.AccessibleName" xml:space="preserve">
+    <value>Feld 4x2</value>
+  </data>
+  <data name="buttonGame4Field42.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame4Field42.Location" type="System.Drawing.Point, System.Drawing">
+    <value>56, 153</value>
+  </data>
+  <data name="buttonGame4Field42.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame4Field42.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 52</value>
+  </data>
+  <data name="buttonGame4Field42.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="buttonGame4Field42.ToolTip" xml:space="preserve">
+    <value>Feld 4x2</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field42.Name" xml:space="preserve">
+    <value>buttonGame4Field42</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field42.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field42.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame4x4</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field42.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="buttonGame4Field41.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 4x1 an</value>
+  </data>
+  <data name="buttonGame4Field41.AccessibleName" xml:space="preserve">
+    <value>Feld 4x1</value>
+  </data>
+  <data name="buttonGame4Field41.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame4Field41.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 153</value>
+  </data>
+  <data name="buttonGame4Field41.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame4Field41.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 52</value>
+  </data>
+  <data name="buttonGame4Field41.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="buttonGame4Field41.ToolTip" xml:space="preserve">
+    <value>Feld 4x1</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field41.Name" xml:space="preserve">
+    <value>buttonGame4Field41</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field41.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field41.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame4x4</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field41.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="buttonGame4Field34.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 3x4 an</value>
+  </data>
+  <data name="buttonGame4Field34.AccessibleName" xml:space="preserve">
+    <value>Feld 3x4</value>
+  </data>
+  <data name="buttonGame4Field34.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame4Field34.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 102</value>
+  </data>
+  <data name="buttonGame4Field34.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame4Field34.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 51</value>
+  </data>
+  <data name="buttonGame4Field34.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="buttonGame4Field34.ToolTip" xml:space="preserve">
+    <value>Feld 3x4</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field34.Name" xml:space="preserve">
+    <value>buttonGame4Field34</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field34.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field34.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame4x4</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field34.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="buttonGame4Field33.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 3x3 an</value>
+  </data>
+  <data name="buttonGame4Field33.AccessibleName" xml:space="preserve">
+    <value>Feld 3x3</value>
+  </data>
+  <data name="buttonGame4Field33.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame4Field33.Location" type="System.Drawing.Point, System.Drawing">
+    <value>112, 102</value>
+  </data>
+  <data name="buttonGame4Field33.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame4Field33.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 51</value>
+  </data>
+  <data name="buttonGame4Field33.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="buttonGame4Field33.ToolTip" xml:space="preserve">
+    <value>Feld 3x3</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field33.Name" xml:space="preserve">
+    <value>buttonGame4Field33</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field33.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field33.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame4x4</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field33.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="buttonGame4Field32.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 3x2 an</value>
+  </data>
+  <data name="buttonGame4Field32.AccessibleName" xml:space="preserve">
+    <value>Feld 3x2</value>
+  </data>
+  <data name="buttonGame4Field32.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame4Field32.Location" type="System.Drawing.Point, System.Drawing">
+    <value>56, 102</value>
+  </data>
+  <data name="buttonGame4Field32.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame4Field32.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 51</value>
+  </data>
+  <data name="buttonGame4Field32.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="buttonGame4Field32.ToolTip" xml:space="preserve">
+    <value>Feld 3x2</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field32.Name" xml:space="preserve">
+    <value>buttonGame4Field32</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field32.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field32.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame4x4</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field32.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="buttonGame4Field31.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 3x1 an</value>
+  </data>
+  <data name="buttonGame4Field31.AccessibleName" xml:space="preserve">
+    <value>Feld 3x1</value>
+  </data>
+  <data name="buttonGame4Field31.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame4Field31.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 102</value>
+  </data>
+  <data name="buttonGame4Field31.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame4Field31.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 51</value>
+  </data>
+  <data name="buttonGame4Field31.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="buttonGame4Field31.ToolTip" xml:space="preserve">
+    <value>Feld 3x1</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field31.Name" xml:space="preserve">
+    <value>buttonGame4Field31</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field31.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field31.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame4x4</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field31.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="buttonGame4Field24.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 2x4 an</value>
+  </data>
+  <data name="buttonGame4Field24.AccessibleName" xml:space="preserve">
+    <value>Feld 2x4</value>
+  </data>
+  <data name="buttonGame4Field24.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame4Field24.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 51</value>
+  </data>
+  <data name="buttonGame4Field24.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame4Field24.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 51</value>
+  </data>
+  <data name="buttonGame4Field24.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="buttonGame4Field24.ToolTip" xml:space="preserve">
+    <value>Feld 2x4</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field24.Name" xml:space="preserve">
+    <value>buttonGame4Field24</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field24.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field24.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame4x4</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field24.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="buttonGame4Field23.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 2x3 an</value>
+  </data>
+  <data name="buttonGame4Field23.AccessibleName" xml:space="preserve">
+    <value>Feld 2x3</value>
+  </data>
+  <data name="buttonGame4Field23.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame4Field23.Location" type="System.Drawing.Point, System.Drawing">
+    <value>112, 51</value>
+  </data>
+  <data name="buttonGame4Field23.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame4Field23.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 51</value>
+  </data>
+  <data name="buttonGame4Field23.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="buttonGame4Field23.ToolTip" xml:space="preserve">
+    <value>Feld 2x3</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field23.Name" xml:space="preserve">
+    <value>buttonGame4Field23</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field23.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field23.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame4x4</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field23.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="buttonGame4Field22.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 2x2 an</value>
+  </data>
+  <data name="buttonGame4Field22.AccessibleName" xml:space="preserve">
+    <value>Feld 2x2</value>
+  </data>
+  <data name="buttonGame4Field22.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame4Field22.Location" type="System.Drawing.Point, System.Drawing">
+    <value>56, 51</value>
+  </data>
+  <data name="buttonGame4Field22.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame4Field22.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 51</value>
+  </data>
+  <data name="buttonGame4Field22.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="buttonGame4Field22.ToolTip" xml:space="preserve">
+    <value>Feld 2x2</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field22.Name" xml:space="preserve">
+    <value>buttonGame4Field22</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field22.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field22.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame4x4</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field22.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="buttonGame4Field21.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 2x1 an</value>
+  </data>
+  <data name="buttonGame4Field21.AccessibleName" xml:space="preserve">
+    <value>Feld 2x1</value>
+  </data>
+  <data name="buttonGame4Field21.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame4Field21.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 51</value>
+  </data>
+  <data name="buttonGame4Field21.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame4Field21.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 51</value>
+  </data>
+  <data name="buttonGame4Field21.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="buttonGame4Field21.ToolTip" xml:space="preserve">
+    <value>Feld 2x1</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field21.Name" xml:space="preserve">
+    <value>buttonGame4Field21</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field21.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field21.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame4x4</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field21.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="buttonGame4Field14.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 1x4 an</value>
+  </data>
+  <data name="buttonGame4Field14.AccessibleName" xml:space="preserve">
+    <value>Feld 1x4</value>
+  </data>
+  <data name="buttonGame4Field14.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame4Field14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 0</value>
+  </data>
+  <data name="buttonGame4Field14.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame4Field14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 51</value>
+  </data>
+  <data name="buttonGame4Field14.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="buttonGame4Field14.ToolTip" xml:space="preserve">
+    <value>Feld 1x4</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field14.Name" xml:space="preserve">
+    <value>buttonGame4Field14</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field14.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame4x4</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field14.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="buttonGame4Field13.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 1x3 an</value>
+  </data>
+  <data name="buttonGame4Field13.AccessibleName" xml:space="preserve">
+    <value>Feld 1x3</value>
+  </data>
+  <data name="buttonGame4Field13.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame4Field13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>112, 0</value>
+  </data>
+  <data name="buttonGame4Field13.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame4Field13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 51</value>
+  </data>
+  <data name="buttonGame4Field13.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="buttonGame4Field13.ToolTip" xml:space="preserve">
+    <value>Feld 1x3</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field13.Name" xml:space="preserve">
+    <value>buttonGame4Field13</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field13.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame4x4</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field13.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="buttonGame4Field12.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 1x2 an</value>
+  </data>
+  <data name="buttonGame4Field12.AccessibleName" xml:space="preserve">
+    <value>Feld 1x2</value>
+  </data>
+  <data name="buttonGame4Field12.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame4Field12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>56, 0</value>
+  </data>
+  <data name="buttonGame4Field12.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame4Field12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 51</value>
+  </data>
+  <data name="buttonGame4Field12.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="buttonGame4Field12.ToolTip" xml:space="preserve">
+    <value>Feld 1x2</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field12.Name" xml:space="preserve">
+    <value>buttonGame4Field12</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field12.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame4x4</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field12.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="buttonGame4Field11.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 1x1 an</value>
+  </data>
+  <data name="buttonGame4Field11.AccessibleName" xml:space="preserve">
+    <value>Feld 1x1</value>
+  </data>
+  <data name="buttonGame4Field11.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame4Field11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="buttonGame4Field11.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame4Field11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 51</value>
+  </data>
+  <data name="buttonGame4Field11.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="buttonGame4Field11.ToolTip" xml:space="preserve">
+    <value>Feld 1x1</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field11.Name" xml:space="preserve">
+    <value>buttonGame4Field11</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field11.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame4x4</value>
+  </data>
+  <data name="&gt;&gt;buttonGame4Field11.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="tableLayoutPanelGame4x4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tableLayoutPanelGame4x4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tableLayoutPanelGame4x4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="tableLayoutPanelGame4x4.RowCount" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="tableLayoutPanelGame4x4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 205</value>
+  </data>
+  <data name="tableLayoutPanelGame4x4.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanelGame4x4.Name" xml:space="preserve">
+    <value>tableLayoutPanelGame4x4</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanelGame4x4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanelGame4x4.Parent" xml:space="preserve">
+    <value>tabPageGame4x4</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanelGame4x4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanelGame4x4.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="buttonGame4Field44" Row="3" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame4Field43" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame4Field42" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame4Field41" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame4Field34" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame4Field33" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame4Field32" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame4Field31" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame4Field24" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame4Field23" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame4Field22" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame4Field21" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame4Field14" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame4Field13" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame4Field12" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame4Field11" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,25,Percent,25,Percent,25,Percent,25" /&gt;&lt;Rows Styles="Percent,25,Percent,25,Percent,25,Percent,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tabPageGame4x4.ImageKey" xml:space="preserve">
+    <value>checkerboard.png</value>
+  </data>
+  <data name="tabPageGame4x4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="tabPageGame4x4.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPageGame4x4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 211</value>
+  </data>
+  <data name="tabPageGame4x4.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabPageGame4x4.Text" xml:space="preserve">
+    <value>Game 4x4</value>
+  </data>
+  <data name="tabPageGame4x4.ToolTip" xml:space="preserve">
+    <value>Game 4x4</value>
+  </data>
+  <data name="tabPageGame4x4.ToolTipText" xml:space="preserve">
+    <value>Game 4x4</value>
+  </data>
+  <data name="&gt;&gt;tabPageGame4x4.Name" xml:space="preserve">
+    <value>tabPageGame4x4</value>
+  </data>
+  <data name="&gt;&gt;tabPageGame4x4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageGame4x4.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabPageGame4x4.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tabPageGame5x5.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt die Tabseite mit Spielfeld in der Größe 5x5 an</value>
+  </data>
+  <data name="tabPageGame5x5.AccessibleName" xml:space="preserve">
+    <value>Tabseite mit Spielfeld in der Größe 5x5</value>
+  </data>
+  <data name="tableLayoutPanelGame5x5.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt die Spielfläche in der Größe 5x5</value>
+  </data>
+  <data name="tableLayoutPanelGame5x5.AccessibleName" xml:space="preserve">
+    <value>Spielfläche in der Größe 5x5</value>
+  </data>
+  <data name="tableLayoutPanelGame5x5.ColumnCount" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="buttonGame5Field45.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 4x5 an</value>
+  </data>
+  <data name="buttonGame5Field45.AccessibleName" xml:space="preserve">
+    <value>Feld 4x5</value>
+  </data>
+  <data name="buttonGame5Field45.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame5Field45.Location" type="System.Drawing.Point, System.Drawing">
+    <value>180, 123</value>
+  </data>
+  <data name="buttonGame5Field45.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame5Field45.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 41</value>
+  </data>
+  <data name="buttonGame5Field45.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="buttonGame5Field45.ToolTip" xml:space="preserve">
+    <value>Feld 4x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field45.Name" xml:space="preserve">
+    <value>buttonGame5Field45</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field45.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field45.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame5x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field45.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonGame5Field44.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 4x4 an</value>
+  </data>
+  <data name="buttonGame5Field44.AccessibleName" xml:space="preserve">
+    <value>Feld 4x4</value>
+  </data>
+  <data name="buttonGame5Field44.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame5Field44.Location" type="System.Drawing.Point, System.Drawing">
+    <value>135, 123</value>
+  </data>
+  <data name="buttonGame5Field44.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame5Field44.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 41</value>
+  </data>
+  <data name="buttonGame5Field44.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="buttonGame5Field44.ToolTip" xml:space="preserve">
+    <value>Feld 4x4</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field44.Name" xml:space="preserve">
+    <value>buttonGame5Field44</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field44.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field44.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame5x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field44.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="buttonGame5Field43.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 4x3 an</value>
+  </data>
+  <data name="buttonGame5Field43.AccessibleName" xml:space="preserve">
+    <value>Feld 4x3</value>
+  </data>
+  <data name="buttonGame5Field43.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame5Field43.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 123</value>
+  </data>
+  <data name="buttonGame5Field43.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame5Field43.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 41</value>
+  </data>
+  <data name="buttonGame5Field43.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="buttonGame5Field43.ToolTip" xml:space="preserve">
+    <value>Feld 4x3</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field43.Name" xml:space="preserve">
+    <value>buttonGame5Field43</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field43.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field43.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame5x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field43.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="buttonGame5Field42.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 4x2 an</value>
+  </data>
+  <data name="buttonGame5Field42.AccessibleName" xml:space="preserve">
+    <value>Feld 4x2</value>
+  </data>
+  <data name="buttonGame5Field42.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame5Field42.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 123</value>
+  </data>
+  <data name="buttonGame5Field42.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame5Field42.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 41</value>
+  </data>
+  <data name="buttonGame5Field42.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="buttonGame5Field42.ToolTip" xml:space="preserve">
+    <value>Feld 4x2</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field42.Name" xml:space="preserve">
+    <value>buttonGame5Field42</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field42.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field42.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame5x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field42.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="buttonGame5Field41.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 4x1 an</value>
+  </data>
+  <data name="buttonGame5Field41.AccessibleName" xml:space="preserve">
+    <value>Feld 4x1</value>
+  </data>
+  <data name="buttonGame5Field41.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame5Field41.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 123</value>
+  </data>
+  <data name="buttonGame5Field41.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame5Field41.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 41</value>
+  </data>
+  <data name="buttonGame5Field41.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="buttonGame5Field41.ToolTip" xml:space="preserve">
+    <value>Feld 4x1</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field41.Name" xml:space="preserve">
+    <value>buttonGame5Field41</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field41.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field41.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame5x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field41.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="buttonGame5Field35.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 3x5 an</value>
+  </data>
+  <data name="buttonGame5Field35.AccessibleName" xml:space="preserve">
+    <value>Feld 3x5</value>
+  </data>
+  <data name="buttonGame5Field35.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame5Field35.Location" type="System.Drawing.Point, System.Drawing">
+    <value>180, 82</value>
+  </data>
+  <data name="buttonGame5Field35.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame5Field35.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 41</value>
+  </data>
+  <data name="buttonGame5Field35.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="buttonGame5Field35.ToolTip" xml:space="preserve">
+    <value>Feld 3x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field35.Name" xml:space="preserve">
+    <value>buttonGame5Field35</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field35.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field35.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame5x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field35.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="buttonGame5Field34.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 3x4 an</value>
+  </data>
+  <data name="buttonGame5Field34.AccessibleName" xml:space="preserve">
+    <value>Feld 3x4</value>
+  </data>
+  <data name="buttonGame5Field34.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame5Field34.Location" type="System.Drawing.Point, System.Drawing">
+    <value>135, 82</value>
+  </data>
+  <data name="buttonGame5Field34.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame5Field34.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 41</value>
+  </data>
+  <data name="buttonGame5Field34.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="buttonGame5Field34.ToolTip" xml:space="preserve">
+    <value>Feld 3x4</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field34.Name" xml:space="preserve">
+    <value>buttonGame5Field34</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field34.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field34.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame5x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field34.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="buttonGame5Field33.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 3x3 an</value>
+  </data>
+  <data name="buttonGame5Field33.AccessibleName" xml:space="preserve">
+    <value>Feld 3x3</value>
+  </data>
+  <data name="buttonGame5Field33.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame5Field33.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 82</value>
+  </data>
+  <data name="buttonGame5Field33.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame5Field33.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 41</value>
+  </data>
+  <data name="buttonGame5Field33.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="buttonGame5Field33.ToolTip" xml:space="preserve">
+    <value>Feld 3x3</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field33.Name" xml:space="preserve">
+    <value>buttonGame5Field33</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field33.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field33.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame5x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field33.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="buttonGame5Field32.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 3x2 an</value>
+  </data>
+  <data name="buttonGame5Field32.AccessibleName" xml:space="preserve">
+    <value>Feld 3x2</value>
+  </data>
+  <data name="buttonGame5Field32.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame5Field32.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 82</value>
+  </data>
+  <data name="buttonGame5Field32.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame5Field32.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 41</value>
+  </data>
+  <data name="buttonGame5Field32.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="buttonGame5Field32.ToolTip" xml:space="preserve">
+    <value>Feld 3x2</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field32.Name" xml:space="preserve">
+    <value>buttonGame5Field32</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field32.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field32.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame5x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field32.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="buttonGame5Field31.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 3x1 an</value>
+  </data>
+  <data name="buttonGame5Field31.AccessibleName" xml:space="preserve">
+    <value>Feld 3x1</value>
+  </data>
+  <data name="buttonGame5Field31.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame5Field31.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 82</value>
+  </data>
+  <data name="buttonGame5Field31.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame5Field31.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 41</value>
+  </data>
+  <data name="buttonGame5Field31.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="buttonGame5Field31.ToolTip" xml:space="preserve">
+    <value>Feld 3x1</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field31.Name" xml:space="preserve">
+    <value>buttonGame5Field31</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field31.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field31.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame5x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field31.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="buttonGame5Field25.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 2x5 an</value>
+  </data>
+  <data name="buttonGame5Field25.AccessibleName" xml:space="preserve">
+    <value>Feld 2x5</value>
+  </data>
+  <data name="buttonGame5Field25.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame5Field25.Location" type="System.Drawing.Point, System.Drawing">
+    <value>180, 41</value>
+  </data>
+  <data name="buttonGame5Field25.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame5Field25.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 41</value>
+  </data>
+  <data name="buttonGame5Field25.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="buttonGame5Field25.ToolTip" xml:space="preserve">
+    <value>Feld 2x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field25.Name" xml:space="preserve">
+    <value>buttonGame5Field25</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field25.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field25.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame5x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field25.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="buttonGame5Field24.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 2x4 an</value>
+  </data>
+  <data name="buttonGame5Field24.AccessibleName" xml:space="preserve">
+    <value>Feld 2x4</value>
+  </data>
+  <data name="buttonGame5Field24.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame5Field24.Location" type="System.Drawing.Point, System.Drawing">
+    <value>135, 41</value>
+  </data>
+  <data name="buttonGame5Field24.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame5Field24.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 41</value>
+  </data>
+  <data name="buttonGame5Field24.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="buttonGame5Field24.ToolTip" xml:space="preserve">
+    <value>Feld 2x4</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field24.Name" xml:space="preserve">
+    <value>buttonGame5Field24</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field24.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field24.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame5x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field24.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="buttonGame5Field23.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 2x3 an</value>
+  </data>
+  <data name="buttonGame5Field23.AccessibleName" xml:space="preserve">
+    <value>Feld 2x3</value>
+  </data>
+  <data name="buttonGame5Field23.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame5Field23.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 41</value>
+  </data>
+  <data name="buttonGame5Field23.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame5Field23.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 41</value>
+  </data>
+  <data name="buttonGame5Field23.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="buttonGame5Field23.ToolTip" xml:space="preserve">
+    <value>Feld 2x3</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field23.Name" xml:space="preserve">
+    <value>buttonGame5Field23</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field23.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field23.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame5x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field23.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="buttonGame5Field22.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 2x2 an</value>
+  </data>
+  <data name="buttonGame5Field22.AccessibleName" xml:space="preserve">
+    <value>Feld 2x2</value>
+  </data>
+  <data name="buttonGame5Field22.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame5Field22.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 41</value>
+  </data>
+  <data name="buttonGame5Field22.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame5Field22.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 41</value>
+  </data>
+  <data name="buttonGame5Field22.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="buttonGame5Field22.ToolTip" xml:space="preserve">
+    <value>Feld 2x2</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field22.Name" xml:space="preserve">
+    <value>buttonGame5Field22</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field22.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field22.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame5x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field22.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="buttonGame5Field21.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 2x1 an</value>
+  </data>
+  <data name="buttonGame5Field21.AccessibleName" xml:space="preserve">
+    <value>Feld 2x1</value>
+  </data>
+  <data name="buttonGame5Field21.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame5Field21.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 41</value>
+  </data>
+  <data name="buttonGame5Field21.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame5Field21.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 41</value>
+  </data>
+  <data name="buttonGame5Field21.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="buttonGame5Field21.ToolTip" xml:space="preserve">
+    <value>Feld 2x1</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field21.Name" xml:space="preserve">
+    <value>buttonGame5Field21</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field21.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field21.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame5x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field21.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="buttonGame5Field15.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 1x5 an</value>
+  </data>
+  <data name="buttonGame5Field15.AccessibleName" xml:space="preserve">
+    <value>Feld 1x5</value>
+  </data>
+  <data name="buttonGame5Field15.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame5Field15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>180, 0</value>
+  </data>
+  <data name="buttonGame5Field15.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame5Field15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 41</value>
+  </data>
+  <data name="buttonGame5Field15.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="buttonGame5Field15.ToolTip" xml:space="preserve">
+    <value>Feld 1x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field15.Name" xml:space="preserve">
+    <value>buttonGame5Field15</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field15.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field15.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame5x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field15.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="buttonGame5Field14.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 1x4 an</value>
+  </data>
+  <data name="buttonGame5Field14.AccessibleName" xml:space="preserve">
+    <value>Feld 1x4</value>
+  </data>
+  <data name="buttonGame5Field14.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame5Field14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>135, 0</value>
+  </data>
+  <data name="buttonGame5Field14.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame5Field14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 41</value>
+  </data>
+  <data name="buttonGame5Field14.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="buttonGame5Field14.ToolTip" xml:space="preserve">
+    <value>Feld 1x4</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field14.Name" xml:space="preserve">
+    <value>buttonGame5Field14</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field14.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame5x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field14.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="buttonGame5Field13.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 1x3 an</value>
+  </data>
+  <data name="buttonGame5Field13.AccessibleName" xml:space="preserve">
+    <value>Feld 1x3</value>
+  </data>
+  <data name="buttonGame5Field13.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame5Field13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 0</value>
+  </data>
+  <data name="buttonGame5Field13.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame5Field13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 41</value>
+  </data>
+  <data name="buttonGame5Field13.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="buttonGame5Field13.ToolTip" xml:space="preserve">
+    <value>Feld 1x3</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field13.Name" xml:space="preserve">
+    <value>buttonGame5Field13</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field13.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame5x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field13.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="buttonGame5Field51.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 5x1 an</value>
+  </data>
+  <data name="buttonGame5Field51.AccessibleName" xml:space="preserve">
+    <value>Feld 5x1</value>
+  </data>
+  <data name="buttonGame5Field51.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame5Field51.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 164</value>
+  </data>
+  <data name="buttonGame5Field51.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame5Field51.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 41</value>
+  </data>
+  <data name="buttonGame5Field51.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="buttonGame5Field51.ToolTip" xml:space="preserve">
+    <value>Feld 5x1</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field51.Name" xml:space="preserve">
+    <value>buttonGame5Field51</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field51.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field51.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame5x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field51.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="buttonGame5Field54.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 5x4 an</value>
+  </data>
+  <data name="buttonGame5Field54.AccessibleName" xml:space="preserve">
+    <value>Feld 5x4</value>
+  </data>
+  <data name="buttonGame5Field54.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame5Field54.Location" type="System.Drawing.Point, System.Drawing">
+    <value>135, 164</value>
+  </data>
+  <data name="buttonGame5Field54.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame5Field54.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 41</value>
+  </data>
+  <data name="buttonGame5Field54.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="buttonGame5Field54.ToolTip" xml:space="preserve">
+    <value>Feld 5x4</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field54.Name" xml:space="preserve">
+    <value>buttonGame5Field54</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field54.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field54.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame5x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field54.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="buttonGame5Field52.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 5x2 an</value>
+  </data>
+  <data name="buttonGame5Field52.AccessibleName" xml:space="preserve">
+    <value>Feld 5x2</value>
+  </data>
+  <data name="buttonGame5Field52.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame5Field52.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 164</value>
+  </data>
+  <data name="buttonGame5Field52.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame5Field52.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 41</value>
+  </data>
+  <data name="buttonGame5Field52.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="buttonGame5Field52.ToolTip" xml:space="preserve">
+    <value>Feld 5x2</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field52.Name" xml:space="preserve">
+    <value>buttonGame5Field52</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field52.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field52.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame5x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field52.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="buttonGame5Field55.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 5x5 an</value>
+  </data>
+  <data name="buttonGame5Field55.AccessibleName" xml:space="preserve">
+    <value>Feld 5x5</value>
+  </data>
+  <data name="buttonGame5Field55.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame5Field55.Location" type="System.Drawing.Point, System.Drawing">
+    <value>180, 164</value>
+  </data>
+  <data name="buttonGame5Field55.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame5Field55.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 41</value>
+  </data>
+  <data name="buttonGame5Field55.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="buttonGame5Field55.ToolTip" xml:space="preserve">
+    <value>Feld 5x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field55.Name" xml:space="preserve">
+    <value>buttonGame5Field55</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field55.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field55.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame5x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field55.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="buttonGame5Field53.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 5x3 an</value>
+  </data>
+  <data name="buttonGame5Field53.AccessibleName" xml:space="preserve">
+    <value>Feld 5x3</value>
+  </data>
+  <data name="buttonGame5Field53.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame5Field53.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 164</value>
+  </data>
+  <data name="buttonGame5Field53.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame5Field53.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 41</value>
+  </data>
+  <data name="buttonGame5Field53.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="buttonGame5Field53.ToolTip" xml:space="preserve">
+    <value>Feld 5x3</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field53.Name" xml:space="preserve">
+    <value>buttonGame5Field53</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field53.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field53.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame5x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field53.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="buttonGame5Field11.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 1x1 an</value>
+  </data>
+  <data name="buttonGame5Field11.AccessibleName" xml:space="preserve">
+    <value>Feld 1x1</value>
+  </data>
+  <data name="buttonGame5Field11.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame5Field11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="buttonGame5Field11.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame5Field11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 41</value>
+  </data>
+  <data name="buttonGame5Field11.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="buttonGame5Field11.ToolTip" xml:space="preserve">
+    <value>Feld 5x1</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field11.Name" xml:space="preserve">
+    <value>buttonGame5Field11</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field11.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame5x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field11.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="buttonGame5Field12.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Feld 1x2 an</value>
+  </data>
+  <data name="buttonGame5Field12.AccessibleName" xml:space="preserve">
+    <value>Feld 1x2</value>
+  </data>
+  <data name="buttonGame5Field12.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGame5Field12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 0</value>
+  </data>
+  <data name="buttonGame5Field12.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonGame5Field12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 41</value>
+  </data>
+  <data name="buttonGame5Field12.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="buttonGame5Field12.ToolTip" xml:space="preserve">
+    <value>Feld 1x2</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field12.Name" xml:space="preserve">
+    <value>buttonGame5Field12</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field12.Parent" xml:space="preserve">
+    <value>tableLayoutPanelGame5x5</value>
+  </data>
+  <data name="&gt;&gt;buttonGame5Field12.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="tableLayoutPanelGame5x5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tableLayoutPanelGame5x5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tableLayoutPanelGame5x5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="tableLayoutPanelGame5x5.RowCount" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="tableLayoutPanelGame5x5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 205</value>
+  </data>
+  <data name="tableLayoutPanelGame5x5.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanelGame5x5.Name" xml:space="preserve">
+    <value>tableLayoutPanelGame5x5</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanelGame5x5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanelGame5x5.Parent" xml:space="preserve">
+    <value>tabPageGame5x5</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanelGame5x5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanelGame5x5.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="buttonGame5Field45" Row="3" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame5Field44" Row="3" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame5Field43" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame5Field42" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame5Field41" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame5Field35" Row="2" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame5Field34" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame5Field33" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame5Field32" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame5Field31" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame5Field25" Row="1" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame5Field24" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame5Field23" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame5Field22" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame5Field21" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame5Field15" Row="0" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame5Field14" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame5Field13" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame5Field51" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame5Field54" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame5Field52" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame5Field55" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame5Field53" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame5Field11" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonGame5Field12" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,20,Percent,20,Percent,20,Percent,20,Percent,20" /&gt;&lt;Rows Styles="Percent,20,Percent,20,Percent,20,Percent,20,Percent,20,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tabPageGame5x5.ImageKey" xml:space="preserve">
+    <value>checkerboard.png</value>
+  </data>
+  <data name="tabPageGame5x5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="tabPageGame5x5.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPageGame5x5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 211</value>
+  </data>
+  <data name="tabPageGame5x5.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tabPageGame5x5.Text" xml:space="preserve">
+    <value>Game 5x5</value>
+  </data>
+  <data name="tabPageGame5x5.ToolTip" xml:space="preserve">
+    <value>Game 5x5</value>
+  </data>
+  <data name="tabPageGame5x5.ToolTipText" xml:space="preserve">
+    <value>Game 5x5</value>
+  </data>
+  <data name="&gt;&gt;tabPageGame5x5.Name" xml:space="preserve">
+    <value>tabPageGame5x5</value>
+  </data>
+  <data name="&gt;&gt;tabPageGame5x5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageGame5x5.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabPageGame5x5.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
   <metadata name="imageListTabs.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>306, 19</value>
   </metadata>
@@ -128,7 +2474,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACS
-        CQAAAk1TRnQBSQFMAgEBAgEAAXABAAFwAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CQAAAk1TRnQBSQFMAgEBAgEAAcQBAAHEAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAARADAAEBAQABCAYAAQQYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -171,19 +2517,468 @@
         AQEBgAEBBQABAQGAAQEEAAGAAQMBgAEBBAABgAEDAYABAQQAAcABBwGAAQEEAAHwAR8C/wQACw==
 </value>
   </data>
-  <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>19, 19</value>
-  </metadata>
+  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tabControl.ShowToolTips" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 255</value>
+  </data>
+  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
+    <value>toolStripContainer.ContentPanel</value>
+  </data>
+  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="toolStripContainer.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 255</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer.ContentPanel.Name" xml:space="preserve">
+    <value>toolStripContainer.ContentPanel</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer.ContentPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripContentPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer.ContentPanel.Parent" xml:space="preserve">
+    <value>toolStripContainer</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer.ContentPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="toolStripContainer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="toolStripContainer.LeftToolStripPanel.AccessibleDescription" xml:space="preserve">
+    <value>Linker Inhalt des Containers</value>
+  </data>
+  <data name="toolStripContainer.LeftToolStripPanel.AccessibleName" xml:space="preserve">
+    <value>Linker Inhalt des Containers</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer.LeftToolStripPanel.Name" xml:space="preserve">
+    <value>toolStripContainer.LeftToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer.LeftToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer.LeftToolStripPanel.Parent" xml:space="preserve">
+    <value>toolStripContainer</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer.LeftToolStripPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="toolStripContainer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="toolStripContainer.RightToolStripPanel.AccessibleDescription" xml:space="preserve">
+    <value>Rechter Inhalt des Containers</value>
+  </data>
+  <data name="toolStripContainer.RightToolStripPanel.AccessibleName" xml:space="preserve">
+    <value>Rechter Inhalt des Containers</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer.RightToolStripPanel.Name" xml:space="preserve">
+    <value>toolStripContainer.RightToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer.RightToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer.RightToolStripPanel.Parent" xml:space="preserve">
+    <value>toolStripContainer</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer.RightToolStripPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="toolStripContainer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 293</value>
+  </data>
+  <data name="toolStripContainer.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="toolStripContainer.Text" xml:space="preserve">
+    <value>toolStripContainer</value>
+  </data>
+  <data name="toolStripContainer.TopToolStripPanel.AccessibleDescription" xml:space="preserve">
+    <value>Oberer Inhalt des Containers</value>
+  </data>
+  <data name="toolStripContainer.TopToolStripPanel.AccessibleName" xml:space="preserve">
+    <value>Oberer Inhalt des Containers</value>
+  </data>
   <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>99, 19</value>
+  </metadata>
+  <data name="toolStrip.AccessibleDescription" xml:space="preserve">
+    <value>Beinhaltet die Spielsteuerung</value>
+  </data>
+  <data name="toolStrip.AccessibleName" xml:space="preserve">
+    <value>Toolbar</value>
+  </data>
+  <data name="toolStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="toolStrip.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 7pt</value>
+  </data>
+  <data name="toolStripSplitButtonNewGame.AccessibleDescription" xml:space="preserve">
+    <value>Eines neues Spiel starten</value>
+  </data>
+  <data name="toolStripSplitButtonNewGame.AccessibleName" xml:space="preserve">
+    <value>Neues Spiel</value>
+  </data>
+  <data name="toolStripMenuItemGameSize.AccessibleDescription" xml:space="preserve">
+    <value>Spielfeldgröße auswählen</value>
+  </data>
+  <data name="toolStripMenuItemGameSize.AccessibleName" xml:space="preserve">
+    <value>Spielfeldgröße</value>
+  </data>
+  <data name="toolStripMenuItemNewGame3x3.AccessibleDescription" xml:space="preserve">
+    <value>Auf die Spielfeldgröße 3x3 einstellen</value>
+  </data>
+  <data name="toolStripMenuItemNewGame3x3.AccessibleName" xml:space="preserve">
+    <value>Spielfeldgröße 3x3</value>
+  </data>
+  <data name="toolStripMenuItemNewGame3x3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 22</value>
+  </data>
+  <data name="toolStripMenuItemNewGame3x3.Text" xml:space="preserve">
+    <value>Größe 3x3 = leicht</value>
+  </data>
+  <data name="toolStripMenuItemNewGame4x4.AccessibleDescription" xml:space="preserve">
+    <value>Auf die Spielfeldgröße 4x4 einstellen</value>
+  </data>
+  <data name="toolStripMenuItemNewGame4x4.AccessibleName" xml:space="preserve">
+    <value>Spielfeldgröße 4x4</value>
+  </data>
+  <data name="toolStripMenuItemNewGame4x4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 22</value>
+  </data>
+  <data name="toolStripMenuItemNewGame4x4.Text" xml:space="preserve">
+    <value>Größe 4x4 = mittel</value>
+  </data>
+  <data name="toolStripMenuItemNewGame5x5.AccessibleDescription" xml:space="preserve">
+    <value>Auf die Spielfeldgröße 5x5 einstellen</value>
+  </data>
+  <data name="toolStripMenuItemNewGame5x5.AccessibleName" xml:space="preserve">
+    <value>Spielfeldgröße 5x5</value>
+  </data>
+  <data name="toolStripMenuItemNewGame5x5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 22</value>
+  </data>
+  <data name="toolStripMenuItemNewGame5x5.Text" xml:space="preserve">
+    <value>Größe 5x5 = schwer</value>
+  </data>
+  <data name="toolStripMenuItemGameSize.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="toolStripMenuItemGameSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 22</value>
+  </data>
+  <data name="toolStripMenuItemGameSize.Text" xml:space="preserve">
+    <value>Spielfeldgröße</value>
+  </data>
+  <data name="toolStripMenuItemGameOptions.AccessibleDescription" xml:space="preserve">
+    <value>Spieleinstellungen ändern</value>
+  </data>
+  <data name="toolStripMenuItemGameOptions.AccessibleName" xml:space="preserve">
+    <value>Spieleinstellungen</value>
+  </data>
+  <data name="toolStripMenuItemOptionLinear.AccessibleDescription" xml:space="preserve">
+    <value>Lineare Nachbarfelder ändern</value>
+  </data>
+  <data name="toolStripMenuItemOptionLinear.AccessibleName" xml:space="preserve">
+    <value>Lineare ändern</value>
+  </data>
+  <data name="toolStripMenuItemOptionLinear.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 22</value>
+  </data>
+  <data name="toolStripMenuItemOptionLinear.Text" xml:space="preserve">
+    <value>linear</value>
+  </data>
+  <data name="toolStripMenuItemOptionDiagonal.AccessibleDescription" xml:space="preserve">
+    <value>Diagonale Nachbarfelder ändern</value>
+  </data>
+  <data name="toolStripMenuItemOptionDiagonal.AccessibleName" xml:space="preserve">
+    <value>Diagonal ändern</value>
+  </data>
+  <data name="toolStripMenuItemOptionDiagonal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 22</value>
+  </data>
+  <data name="toolStripMenuItemOptionDiagonal.Text" xml:space="preserve">
+    <value>diagonal</value>
+  </data>
+  <data name="toolStripMenuItemOptionCombined.AccessibleDescription" xml:space="preserve">
+    <value>Lineare und diagonale Nachbarfelder ändern</value>
+  </data>
+  <data name="toolStripMenuItemOptionCombined.AccessibleName" xml:space="preserve">
+    <value>Linear und diagonal ändern</value>
+  </data>
+  <data name="toolStripMenuItemOptionCombined.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 22</value>
+  </data>
+  <data name="toolStripMenuItemOptionCombined.Text" xml:space="preserve">
+    <value>linear und diagonal</value>
+  </data>
+  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 6</value>
+  </data>
+  <data name="toolStripMenuItemOptionCentered.AccessibleDescription" xml:space="preserve">
+    <value>Zentriertes Spielfeld ändern</value>
+  </data>
+  <data name="toolStripMenuItemOptionCentered.AccessibleName" xml:space="preserve">
+    <value>Zentriert ändern</value>
+  </data>
+  <data name="toolStripMenuItemOptionCentered.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 22</value>
+  </data>
+  <data name="toolStripMenuItemOptionCentered.Text" xml:space="preserve">
+    <value>zentriert</value>
+  </data>
+  <data name="toolStripMenuItemGameOptions.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="toolStripMenuItemGameOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 22</value>
+  </data>
+  <data name="toolStripMenuItemGameOptions.Text" xml:space="preserve">
+    <value>Spieleinstellungen</value>
+  </data>
+  <data name="toolStripSplitButtonNewGame.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="toolStripSplitButtonNewGame.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripSplitButtonNewGame.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="toolStripSplitButtonNewGame.Text" xml:space="preserve">
+    <value>Neues Spiel</value>
+  </data>
+  <data name="toolStripButtonPause.AccessibleDescription" xml:space="preserve">
+    <value>Ein Spiel pausieren</value>
+  </data>
+  <data name="toolStripButtonPause.AccessibleName" xml:space="preserve">
+    <value>Spiel pausieren</value>
+  </data>
+  <data name="toolStripButtonPause.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="toolStripButtonPause.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButtonPause.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 20</value>
+  </data>
+  <data name="toolStripButtonPause.Text" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="toolStripSplitButtonLanguage.AccessibleDescription" xml:space="preserve">
+    <value>In eine andere Sprache übersetzen</value>
+  </data>
+  <data name="toolStripSplitButtonLanguage.AccessibleName" xml:space="preserve">
+    <value>Sprache</value>
+  </data>
+  <data name="deutschToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 22</value>
+  </data>
+  <data name="deutschToolStripMenuItem.Text" xml:space="preserve">
+    <value>deutsch</value>
+  </data>
+  <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 22</value>
+  </data>
+  <data name="englishToolStripMenuItem.Text" xml:space="preserve">
+    <value>english</value>
+  </data>
+  <data name="toolStripSplitButtonLanguage.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="toolStripSplitButtonLanguage.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripSplitButtonLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 20</value>
+  </data>
+  <data name="toolStripSplitButtonLanguage.Text" xml:space="preserve">
+    <value>Sprache</value>
+  </data>
+  <data name="toolStripSplitButtonLanguage.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="toolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="toolStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 23</value>
+  </data>
+  <data name="toolStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="toolStrip.Text" xml:space="preserve">
+    <value>toolStrip</value>
+  </data>
+  <data name="&gt;&gt;toolStrip.Name" xml:space="preserve">
+    <value>toolStrip</value>
+  </data>
+  <data name="&gt;&gt;toolStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStrip.Parent" xml:space="preserve">
+    <value>toolStripContainer.TopToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;toolStrip.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="toolStripStatistic.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>525, 19</value>
+  </metadata>
+  <data name="toolStripStatistic.AccessibleDescription" xml:space="preserve">
+    <value>Beinhaltet die Spielstatistik</value>
+  </data>
+  <data name="toolStripStatistic.AccessibleName" xml:space="preserve">
+    <value>Toolbar</value>
+  </data>
+  <data name="toolStripStatistic.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="toolStripLabelStatistic.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt die Spielstatistik an</value>
+  </data>
+  <data name="toolStripLabelStatistic.AccessibleName" xml:space="preserve">
+    <value>Statistik</value>
+  </data>
+  <data name="toolStripLabelStatistic.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 6.75pt</value>
+  </data>
+  <data name="toolStripLabelStatistic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 12</value>
+  </data>
+  <data name="toolStripLabelStatistic.Text" xml:space="preserve">
+    <value>Klicks: 0 - Ticks: 0 - Blacks: 0 - Whites: 0 - Inverts: 0</value>
+  </data>
+  <data name="toolStripStatistic.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 23</value>
+  </data>
+  <data name="toolStripStatistic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 15</value>
+  </data>
+  <data name="toolStripStatistic.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="toolStripStatistic.Text" xml:space="preserve">
+    <value>Statistic</value>
+  </data>
+  <data name="&gt;&gt;toolStripStatistic.Name" xml:space="preserve">
+    <value>toolStripStatistic</value>
+  </data>
+  <data name="&gt;&gt;toolStripStatistic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripStatistic.Parent" xml:space="preserve">
+    <value>toolStripContainer.TopToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;toolStripStatistic.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer.TopToolStripPanel.Name" xml:space="preserve">
+    <value>toolStripContainer.TopToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer.TopToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer.TopToolStripPanel.Parent" xml:space="preserve">
+    <value>toolStripContainer</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer.TopToolStripPanel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer.Name" xml:space="preserve">
+    <value>toolStripContainer</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>19, 19</value>
   </metadata>
   <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>197, 19</value>
   </metadata>
+  <data name="statusStrip.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt die Statusbar an</value>
+  </data>
+  <data name="statusStrip.AccessibleName" xml:space="preserve">
+    <value>Statusbar</value>
+  </data>
+  <data name="toolStripStatusLabel.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt wichtige Infos an</value>
+  </data>
+  <data name="toolStripStatusLabel.AccessibleName" xml:space="preserve">
+    <value>Informationstext</value>
+  </data>
+  <data name="toolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 17</value>
+  </data>
+  <data name="toolStripStatusLabel.Text" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 293</value>
+  </data>
+  <data name="statusStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 22</value>
+  </data>
+  <data name="statusStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="statusStrip.Text" xml:space="preserve">
+    <value>statusStrip</value>
+  </data>
+  <data name="&gt;&gt;statusStrip.Name" xml:space="preserve">
+    <value>statusStrip</value>
+  </data>
+  <data name="&gt;&gt;statusStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statusStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;statusStrip.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>60</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.AccessibleDescription" xml:space="preserve">
+    <value>Zeigt das Programm an</value>
+  </data>
+  <data name="$this.AccessibleName" xml:space="preserve">
+    <value>Programm</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>240, 315</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAA8AMDACAAEAAQAwAwAA9gAAACAgAgABAAEAMAEAACYEAAAQEAIAAQABALAAAABWBQAAMDAQAAEA
@@ -709,5 +3504,140 @@
         Ev97Mx37AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAA==
 </value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>256, 347</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value> Black'n'White</value>
+  </data>
+  <data name="&gt;&gt;imageListTabs.Name" xml:space="preserve">
+    <value>imageListTabs</value>
+  </data>
+  <data name="&gt;&gt;imageListTabs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSplitButtonNewGame.Name" xml:space="preserve">
+    <value>toolStripSplitButtonNewGame</value>
+  </data>
+  <data name="&gt;&gt;toolStripSplitButtonNewGame.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemGameSize.Name" xml:space="preserve">
+    <value>toolStripMenuItemGameSize</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemGameSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemNewGame3x3.Name" xml:space="preserve">
+    <value>toolStripMenuItemNewGame3x3</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemNewGame3x3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemNewGame4x4.Name" xml:space="preserve">
+    <value>toolStripMenuItemNewGame4x4</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemNewGame4x4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemNewGame5x5.Name" xml:space="preserve">
+    <value>toolStripMenuItemNewGame5x5</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemNewGame5x5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemGameOptions.Name" xml:space="preserve">
+    <value>toolStripMenuItemGameOptions</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemGameOptions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemOptionLinear.Name" xml:space="preserve">
+    <value>toolStripMenuItemOptionLinear</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemOptionLinear.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemOptionDiagonal.Name" xml:space="preserve">
+    <value>toolStripMenuItemOptionDiagonal</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemOptionDiagonal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemOptionCombined.Name" xml:space="preserve">
+    <value>toolStripMenuItemOptionCombined</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemOptionCombined.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator3.Name" xml:space="preserve">
+    <value>toolStripSeparator3</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemOptionCentered.Name" xml:space="preserve">
+    <value>toolStripMenuItemOptionCentered</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemOptionCentered.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonPause.Name" xml:space="preserve">
+    <value>toolStripButtonPause</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonPause.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSplitButtonLanguage.Name" xml:space="preserve">
+    <value>toolStripSplitButtonLanguage</value>
+  </data>
+  <data name="&gt;&gt;toolStripSplitButtonLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;deutschToolStripMenuItem.Name" xml:space="preserve">
+    <value>deutschToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;deutschToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;englishToolStripMenuItem.Name" xml:space="preserve">
+    <value>englishToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;englishToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripLabelStatistic.Name" xml:space="preserve">
+    <value>toolStripLabelStatistic</value>
+  </data>
+  <data name="&gt;&gt;toolStripLabelStatistic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timer.Name" xml:space="preserve">
+    <value>timer</value>
+  </data>
+  <data name="&gt;&gt;timer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripStatusLabel.Name" xml:space="preserve">
+    <value>toolStripStatusLabel</value>
+  </data>
+  <data name="&gt;&gt;toolStripStatusLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolTip.Name" xml:space="preserve">
+    <value>toolTip</value>
+  </data>
+  <data name="&gt;&gt;toolTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>BlackAndWhiteForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
