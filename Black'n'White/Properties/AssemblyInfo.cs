@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Mijo Software")]
 [assembly: AssemblyProduct("Black'n'White")]
-[assembly: AssemblyCopyright("2010-2019 Michael Johne")]
+[assembly: AssemblyCopyright("2010-2023 Michael Johne")]
 [assembly: AssemblyTrademark("Black'n'White")]
 [assembly: AssemblyCulture("")]
 
@@ -32,7 +32,7 @@ using System.Runtime.InteropServices;
 // Sie können alle Werte angeben oder Standardwerte für die Build- und Revisionsnummern verwenden,
 // übernehmen, indem Sie "*" eingeben:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("3.1.2.14")]
-[assembly: AssemblyFileVersion("3.1.2.14")]
+[assembly: AssemblyVersion("3.1.3.15")]
+[assembly: AssemblyFileVersion("3.1.3.15")]
 [assembly: NeutralResourcesLanguage("de")]
 
