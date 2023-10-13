@@ -6,4 +6,4 @@ If you click on a field, the color of the field changes to the opposite color. T
 
 The goal is to solve the game with as few clicks and ticks as possible.
 
-The game is based on an idea by Sascha Seidel: [http://www.saschaseidel.de/html/eigeneprogramme/eigeneprogramme.php#Black_and_White](https://web.archive.org/web/20190629091530/https://www.saschaseidel.de/html/eigeneprogramme/eigeneprogramme.php#Black_and_White)
+The game is based on an idea by Sascha Seidel: [https://web.archive.org/web/20190629091530/https://www.saschaseidel.de/html/eigeneprogramme/eigeneprogramme.php#Black_and_White](https://web.archive.org/web/20190629091530/https://www.saschaseidel.de/html/eigeneprogramme/eigeneprogramme.php#Black_and_White)
