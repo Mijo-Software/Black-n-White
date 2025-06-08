@@ -24,8 +24,8 @@ namespace Office2007Rendering
 	public class UseAntiAlias : IDisposable
 	{
 		#region Instance Fields
-		private readonly Graphics _g;
-		private readonly SmoothingMode _old;
+		private readonly Graphics g;
+		private readonly SmoothingMode old;
 		#endregion
 
 		#region Identity
@@ -35,9 +35,9 @@ namespace Office2007Rendering
 		/// <param name="g">Graphics instance.</param>
 		public UseAntiAlias(Graphics g)
 		{
-			_g = g;
-			_old = _g.SmoothingMode;
-			_g.SmoothingMode = SmoothingMode.AntiAlias;
+			this.g = g;
+			old = this.g.SmoothingMode;
+			this.g.SmoothingMode = SmoothingMode.AntiAlias;
 		}
 
 		/// <summary>
@@ -45,7 +45,7 @@ namespace Office2007Rendering
 		/// </summary>
 		public void Dispose()
 		{
-			_g.SmoothingMode = _old;
+			g.SmoothingMode = old;
 		}
 		#endregion
 	}
@@ -56,8 +56,8 @@ namespace Office2007Rendering
 	public class UseClearTypeGridFit : IDisposable
 	{
 		#region Instance Fields
-		private readonly Graphics _g;
-		private readonly TextRenderingHint _old;
+		private readonly Graphics g;
+		private readonly TextRenderingHint old;
 		#endregion
 
 		#region Identity
@@ -67,9 +67,9 @@ namespace Office2007Rendering
 		/// <param name="g">Graphics instance.</param>
 		public UseClearTypeGridFit(Graphics g)
 		{
-			_g = g;
-			_old = _g.TextRenderingHint;
-			_g.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
+			this.g = g;
+			old = this.g.TextRenderingHint;
+			this.g.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
 		}
 
 		/// <summary>
@@ -77,7 +77,7 @@ namespace Office2007Rendering
 		/// </summary>
 		public void Dispose()
 		{
-			_g.TextRenderingHint = _old;
+			g.TextRenderingHint = old;
 		}
 		#endregion
 	}
@@ -88,8 +88,8 @@ namespace Office2007Rendering
 	public class UseClipping : IDisposable
 	{
 		#region Instance Fields
-		private readonly Graphics _g;
-		private readonly Region _old;
+		private readonly Graphics g;
+		private readonly Region old;
 		#endregion
 
 		#region Identity
@@ -100,11 +100,11 @@ namespace Office2007Rendering
 		/// <param name="path">Clipping path.</param>
 		public UseClipping(Graphics g, GraphicsPath path)
 		{
-			_g = g;
-			_old = g.Clip;
-			Region clip = _old.Clone();
+			this.g = g;
+			old = g.Clip;
+			Region clip = old.Clone();
 			clip.Intersect(path: path);
-			_g.Clip = clip;
+			this.g.Clip = clip;
 		}
 
 		/// <summary>
@@ -114,11 +114,11 @@ namespace Office2007Rendering
 		/// <param name="region">Clipping region.</param>
 		public UseClipping(Graphics g, Region region)
 		{
-			_g = g;
-			_old = g.Clip;
-			Region clip = _old.Clone();
+			this.g = g;
+			old = g.Clip;
+			Region clip = old.Clone();
 			clip.Intersect(region: region);
-			_g.Clip = clip;
+			this.g.Clip = clip;
 		}
 
 		/// <summary>
@@ -126,7 +126,7 @@ namespace Office2007Rendering
 		/// </summary>
 		public void Dispose()
 		{
-			_g.Clip = _old;
+			g.Clip = old;
 		}
 		#endregion
 	}

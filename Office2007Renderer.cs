@@ -118,18 +118,18 @@ namespace Office2007Rendering
 		#endregion
 
 		#region Static Metrics
-		private const int _gripOffset = 1;
-		private const int _gripSquare = 2;
-		private const int _gripSize = 3;
-		private const int _gripMove = 4;
-		private const int _gripLines = 3;
-		private const int _checkInset = 1;
-		private const int _marginInset = 2;
-		private const int _separatorInset = 31;
-		private const float _cutToolItemMenu = 1.0f;
-		private const float _cutContextMenu = 0f;
-		private const float _cutMenuItemBack = 1.2f;
-		private const float _contextCheckTickThickness = 1.6f;
+		private const int GripOffset = 1;
+		private const int GripSquare = 2;
+		private const int GripSize = 3;
+		private const int GripMove = 4;
+		private const int GripLines = 3;
+		private const int CheckInset = 1;
+		private const int MarginInset = 2;
+		private const int SeparatorInset = 31;
+		private const float CutToolItemMenu = 1.0f;
+		private const float CutContextMenu = 0f;
+		private const float CutMenuItemBack = 1.2f;
+		private const float ContextCheckTickThickness = 1.6f;
 		private static readonly Blend _statusStripBlend;
 		#endregion
 
@@ -313,17 +313,17 @@ namespace Office2007Rendering
 			checkBox.Inflate(width: 1, height: 1);
 
 			// Can we extend upwards?
-			if (checkBox.Top > _checkInset)
+			if (checkBox.Top > CheckInset)
 			{
-				int diff = checkBox.Top - _checkInset;
+				int diff = checkBox.Top - CheckInset;
 				checkBox.Y -= diff;
 				checkBox.Height += diff;
 			}
 
 			// Can we extend downwards?
-			if (checkBox.Height <= (e.Item.Bounds.Height - (_checkInset * 2)))
+			if (checkBox.Height <= (e.Item.Bounds.Height - (CheckInset * 2)))
 			{
-				int diff = e.Item.Bounds.Height - (_checkInset * 2) - checkBox.Height;
+				int diff = e.Item.Bounds.Height - (CheckInset * 2) - checkBox.Height;
 				checkBox.Height += diff;
 			}
 
@@ -331,7 +331,7 @@ namespace Office2007Rendering
 			using (UseAntiAlias uaa = new UseAntiAlias(g: e.Graphics))
 			{
 				// Create border path for the check box
-				using (GraphicsPath borderPath = CreateBorderPath(rect: checkBox, cut: _cutMenuItemBack))
+				using (GraphicsPath borderPath = CreateBorderPath(rect: checkBox, cut: CutMenuItemBack))
 				{
 					// Fill the background in a solid color
 					using (SolidBrush fillBrush = new SolidBrush(color: ColorTable.CheckBackground))
@@ -365,7 +365,7 @@ namespace Office2007Rendering
 								using (GraphicsPath tickPath = CreateTickPath(rect: checkBox))
 								{
 									// Draw the tick with a thickish brush
-									using (Pen tickPen = new Pen(color: _contextCheckTick, width: _contextCheckTickThickness))
+									using (Pen tickPen = new Pen(color: _contextCheckTick, width: ContextCheckTickThickness))
 									{
 										e.Graphics.DrawPath(tickPen, tickPath);
 									}
@@ -573,14 +573,14 @@ namespace Office2007Rendering
 				bool rtl = (e.ToolStrip.RightToLeft == RightToLeft.Yes);
 
 				// Find vertical position of the lowest grip line
-				int y = e.AffectedBounds.Bottom - (_gripSize * 2) + 1;
+				int y = e.AffectedBounds.Bottom - (GripSize * 2) + 1;
 
 				// Draw three lines of grips
-				for (int i = _gripLines; i >= 1; i--)
+				for (int i = GripLines; i >= 1; i--)
 				{
 					// Find the rightmost grip position on the line
 					int x = (rtl ? e.AffectedBounds.Left + 1 :
-												 e.AffectedBounds.Right - (_gripSize * 2) + 1);
+												 e.AffectedBounds.Right - (GripSize * 2) + 1);
 
 					// Draw grips from right to left on line
 					for (int j = 0; j < i; j++)
@@ -589,11 +589,11 @@ namespace Office2007Rendering
 						DrawGripGlyph(g: e.Graphics, x: x, y: y, darkBrush: darkBrush, lightBrush: lightBrush);
 
 						// Move left to next grip position
-						x -= (rtl ? -_gripMove : _gripMove);
+						x -= (rtl ? -GripMove : GripMove);
 					}
 
 					// Move upwards to next grip line
-					y -= _gripMove;
+					y -= GripMove;
 				}
 			}
 		}
@@ -639,7 +639,7 @@ namespace Office2007Rendering
 										darkPen = new Pen(_separatorMenuDark))
 				{
 					DrawSeparator(g: e.Graphics, vertical: e.Vertical, rect: e.Item.Bounds,
-												lightPen: lightPen, darkPen: darkPen, horizontalInset: _separatorInset,
+												lightPen: lightPen, darkPen: darkPen, horizontalInset: SeparatorInset,
 												rtl: e.ToolStrip.RightToLeft == RightToLeft.Yes);
 				}
 			}
@@ -671,8 +671,8 @@ namespace Office2007Rendering
 					|| (e.ToolStrip is ToolStripDropDownMenu))
 			{
 				// Create border and clipping paths
-				using (GraphicsPath borderPath = CreateBorderPath(rect: e.AffectedBounds, cut: _cutContextMenu),
-															clipPath = CreateClipBorderPath(rect: e.AffectedBounds, cut: _cutContextMenu))
+				using (GraphicsPath borderPath = CreateBorderPath(rect: e.AffectedBounds, cut: CutContextMenu),
+															clipPath = CreateClipBorderPath(rect: e.AffectedBounds, cut: CutContextMenu))
 				{
 					// Clip all drawing to within the border path
 					using (UseClipping clipping = new UseClipping(g: e.Graphics, path: clipPath))
@@ -726,17 +726,17 @@ namespace Office2007Rendering
 				// Do we need to draw with separator on the opposite edge?
 				bool rtl = (e.ToolStrip.RightToLeft == RightToLeft.Yes);
 
-				marginRect.Y += _marginInset;
-				marginRect.Height -= _marginInset * 2;
+				marginRect.Y += MarginInset;
+				marginRect.Height -= MarginInset * 2;
 
 				// Reduce so it is inside the border
 				if (!rtl)
 				{
-					marginRect.X += _marginInset;
+					marginRect.X += MarginInset;
 				}
 				else
 				{
-					marginRect.X += _marginInset / 2;
+					marginRect.X += MarginInset / 2;
 				}
 
 				// Draw the entire margin area in a solid color
@@ -790,9 +790,9 @@ namespace Office2007Rendering
 				}
 
 				// Create border and clipping paths
-				using (GraphicsPath borderPath = CreateBorderPath(e.AffectedBounds, exclude: e.ConnectedArea, cut: _cutContextMenu),
-														insidePath = CreateInsideBorderPath(rect: e.AffectedBounds, exclude: e.ConnectedArea, cut: _cutContextMenu),
-															clipPath = CreateClipBorderPath(rect: e.AffectedBounds, exclude: e.ConnectedArea, cut: _cutContextMenu))
+				using (GraphicsPath borderPath = CreateBorderPath(e.AffectedBounds, exclude: e.ConnectedArea, cut: CutContextMenu),
+														insidePath = CreateInsideBorderPath(rect: e.AffectedBounds, exclude: e.ConnectedArea, cut: CutContextMenu),
+															clipPath = CreateClipBorderPath(rect: e.AffectedBounds, exclude: e.ConnectedArea, cut: CutContextMenu))
 				{
 					// Create the different pen colors we need
 					using (Pen borderPen = new Pen(color: ColorTable.MenuBorder),
@@ -1035,7 +1035,7 @@ namespace Office2007Rendering
 				}
 
 				// Create border path around the item
-				using (GraphicsPath borderPath = CreateBorderPath(rect: backRect, cut: _cutMenuItemBack))
+				using (GraphicsPath borderPath = CreateBorderPath(rect: backRect, cut: CutMenuItemBack))
 				{
 					// Draw the normal button area background
 					DrawGradientBack(g: g, backRect: backRectButton, colors: colorsButton);
@@ -1074,9 +1074,9 @@ namespace Office2007Rendering
 			Rectangle itemRect = new Rectangle(location: Point.Empty, size: item.Bounds.Size);
 
 			// Create border and clipping paths
-			using (GraphicsPath borderPath = CreateBorderPath(rect: itemRect, cut: _cutToolItemMenu),
-													insidePath = CreateInsideBorderPath(rect: itemRect, cut: _cutToolItemMenu),
-														clipPath = CreateClipBorderPath(rect: itemRect, cut: _cutToolItemMenu))
+			using (GraphicsPath borderPath = CreateBorderPath(rect: itemRect, cut: CutToolItemMenu),
+													insidePath = CreateInsideBorderPath(rect: itemRect, cut: CutToolItemMenu),
+														clipPath = CreateClipBorderPath(rect: itemRect, cut: CutToolItemMenu))
 			{
 				// Clip all drawing to within the border path
 				using (UseClipping clipping = new UseClipping(g: g, path: clipPath))
@@ -1211,7 +1211,7 @@ namespace Office2007Rendering
 					using (Pen borderPen = new Pen(brush: borderBrush))
 					{
 						// Create border path around the entire item
-						using (GraphicsPath borderPath = CreateBorderPath(rect: backRect, cut: _cutMenuItemBack))
+						using (GraphicsPath borderPath = CreateBorderPath(rect: backRect, cut: CutMenuItemBack))
 						{
 							g.DrawPath(pen: borderPen, path: borderPath);
 						}
@@ -1234,8 +1234,8 @@ namespace Office2007Rendering
 															 Brush darkBrush,
 															 Brush lightBrush)
 		{
-			g.FillRectangle(brush: lightBrush, x: x + _gripOffset, y: y + _gripOffset, width: _gripSquare, height: _gripSquare);
-			g.FillRectangle(brush: darkBrush, x: x, y: y, width: _gripSquare, height: _gripSquare);
+			g.FillRectangle(brush: lightBrush, x: x + GripOffset, y: y + GripOffset, width: GripSquare, height: GripSquare);
+			g.FillRectangle(brush: darkBrush, x: x, y: y, width: GripSquare, height: GripSquare);
 		}
 
 		/// <summary>
