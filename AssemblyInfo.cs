@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace MijoSoftware.AssemblyInformation
+namespace BlackAndWhite
 {
 	/// <summary>
 	/// Provide some assembly information
@@ -12,27 +12,22 @@ namespace MijoSoftware.AssemblyInformation
 		/// <summary>
 		/// Return the title of the assembly
 		/// </summary>
-		public static string AssemblyTitle
+		public static string? AssemblyTitle
 		{
 			get
 			{
-				object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(attributeType: typeof(AssemblyTitleAttribute), inherit: false);
-				if (attributes.Length > 0)
-				{
-					AssemblyTitleAttribute titleAttribute = (AssemblyTitleAttribute)attributes[0];
-					if (!string.IsNullOrEmpty(value: titleAttribute.Title))
-					{
-						return titleAttribute.Title;
-					}
-				}
-				return Path.GetFileNameWithoutExtension(path: Assembly.GetExecutingAssembly().CodeBase);
+				object[] attributes = Assembly.GetExecutingAssembly()
+					.GetCustomAttributes(attributeType: typeof(AssemblyTitleAttribute), inherit: false);
+				return attributes.Length > 0 && attributes[0] is AssemblyTitleAttribute titleAttribute
+					? !string.IsNullOrEmpty(value: titleAttribute.Title) ? titleAttribute.Title : Path.GetFileNameWithoutExtension(path: AppContext.BaseDirectory)
+					: Path.GetFileNameWithoutExtension(path: AppContext.BaseDirectory);
 			}
 		}
 
 		/// <summary>
 		/// Return the version of the assembly
 		/// </summary>
-		public static string AssemblyVersion => Assembly.GetExecutingAssembly().GetName().Version.ToString();
+		public static string AssemblyVersion => Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? "Unknown Version";
 
 		/// <summary>
 		/// Return the description of the assembly
@@ -41,7 +36,8 @@ namespace MijoSoftware.AssemblyInformation
 		{
 			get
 			{
-				object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(attributeType: typeof(AssemblyDescriptionAttribute), inherit: false);
+				object[] attributes = Assembly.GetExecutingAssembly()
+					.GetCustomAttributes(attributeType: typeof(AssemblyDescriptionAttribute), inherit: false);
 				return attributes.Length == 0 ? string.Empty : ((AssemblyDescriptionAttribute)attributes[0]).Description;
 			}
 		}
@@ -53,7 +49,8 @@ namespace MijoSoftware.AssemblyInformation
 		{
 			get
 			{
-				object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(attributeType: typeof(AssemblyProductAttribute), inherit: false);
+				object[] attributes = Assembly.GetExecutingAssembly()
+					.GetCustomAttributes(attributeType: typeof(AssemblyProductAttribute), inherit: false);
 				return attributes.Length == 0 ? string.Empty : ((AssemblyProductAttribute)attributes[0]).Product;
 			}
 		}
@@ -65,7 +62,8 @@ namespace MijoSoftware.AssemblyInformation
 		{
 			get
 			{
-				object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(attributeType: typeof(AssemblyCopyrightAttribute), inherit: false);
+				object[] attributes = Assembly.GetExecutingAssembly()
+					.GetCustomAttributes(attributeType: typeof(AssemblyCopyrightAttribute), inherit: false);
 				return attributes.Length == 0 ? string.Empty : ((AssemblyCopyrightAttribute)attributes[0]).Copyright;
 			}
 		}
@@ -77,11 +75,12 @@ namespace MijoSoftware.AssemblyInformation
 		{
 			get
 			{
-				object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(attributeType: typeof(AssemblyCompanyAttribute), inherit: false);
+				object[] attributes = Assembly.GetExecutingAssembly()
+					.GetCustomAttributes(attributeType: typeof(AssemblyCompanyAttribute), inherit: false);
 				return attributes.Length == 0 ? string.Empty : ((AssemblyCompanyAttribute)attributes[0]).Company;
 			}
 		}
-
 		#endregion
+
 	}
 }

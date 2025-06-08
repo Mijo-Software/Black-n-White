@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net7.0-windows</TargetFramework>
+    <TargetFramework>net9.0-windows7.0</TargetFramework>
     <RootNamespace>BlackAndWhite</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
@@ -12,7 +12,7 @@
     <ApplicationIcon>Resources\Black'n'White-new.ico</ApplicationIcon>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <Title>Black'n'White</Title>
-    <Version>3.2.0.16</Version>
+    <Version>3.2.2.18</Version>
     <Company>Mijo Software</Company>
     <Authors>Michael Johne</Authors>
     <Description>Black'n'White ist ein kleines Logikspiel, bei dem alle Felder in eine einheitlich Farbe gebracht werden soll - entweder schwarz oder weiß.
@@ -22,14 +22,15 @@ Wenn man auf ein Feld klickt, so verändert sich die Farbe des Feldes in die ent
 Ziel ist es dabei, mit möglichst wenig Klicks &amp; Ticks, das Spiel zu lösen.
 
 Das Spiel basiert auf einer Idee von Sascha Seidel: http://www.saschaseidel.de/html/eigeneprogramme/eigeneprogramme.php#Black_and_White</Description>
-    <Copyright>2010-2023 Mijo Software</Copyright>
+    <Copyright>2010-2025 Mijo Software</Copyright>
     <PackageProjectUrl>https://mijo-software.de/programme/spiele/blacknwhite/</PackageProjectUrl>
-    <PackageIcon>fdtm-logo-32.png</PackageIcon>
+    <PackageIcon>Black'n'White-logo-48.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/Mijo-Software/Black-n-White.git</RepositoryUrl>
     <PackageTags>csharp;winforms;logic-game;neighboring-fields</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -87,18 +88,7 @@ Das Spiel basiert auf einer Idee von Sascha Seidel: http://www.saschaseidel.de/h
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\FileDateTime Manipulator\LICENSE">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Include="..\FileDateTime Manipulator\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Include="..\FileDateTime Manipulator\Resources\fdtm-logo-32.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
+    <PackageReference Include="NLog" Version="5.5.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -110,9 +100,21 @@ Das Spiel basiert auf einer Idee von Sascha Seidel: http://www.saschaseidel.de/h
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="Resources\Black%27n%27White-logo-48.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
 
